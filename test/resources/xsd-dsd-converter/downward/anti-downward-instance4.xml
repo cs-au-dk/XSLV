@@ -1,0 +1,5 @@
+<root xmlns="http://dongfang.dk/testdata">
+<a>
+  <element name="WithDocumentElementNamedRootThisShouldNeverHaveEffect"/>
+</a>
+</root>

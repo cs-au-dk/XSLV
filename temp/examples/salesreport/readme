@@ -1,0 +1,22 @@
+Feature demo example.
+--------------------
+
+Demonstrated:
+
+- Distinction between /foo and foo in match
+
+- Distinction between foo/bar and baz/bar (even though both just accept bar)
+
+- Demo of //foo step in selection
+
+- Demo of child-parent path folding
+
+- Demo of evaluation of functions
+
+- Demo of single type fidelity (x2, with the team colors and with the width attr that is copied from an xs:integer)
+
+- Demo of nillability???
+
+- Demo of type extension. Subtype subst???
+
+- Demo of "all"

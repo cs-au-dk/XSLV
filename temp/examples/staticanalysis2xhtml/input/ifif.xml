@@ -1,0 +1,32 @@
+<tip>
+		  <analysis name="Liveness" ref="0"/>
+		  <program>
+		    <function name="main" arguments="a" locals="b">
+		  <stm><if><exp><binop kind = "=="><exp><id name="a"/></exp><exp><intconst value="0"/></exp></binop><analysis ref="0">[a, b]</analysis></exp><then><stm><if><exp><binop kind = "=="><exp><id name="a"/></exp><exp><intconst value="0"/></exp></binop><analysis ref="0">[a, b]</analysis></exp><then><stm>
+		  <assignment id="b"><exp><id name="a"/></exp></assignment>
+		  <analysis ref="0">[a]</analysis>
+		</stm></then></if></stm></then><else><stm><if><exp><binop kind = "=="><exp><id name="a"/></exp><exp><intconst value="1"/></exp></binop><analysis ref="0">[a]</analysis></exp><then><stm>
+		  <assignment id="b"><exp><binop kind = "+"><exp><id name="a"/></exp><exp><intconst value="1"/></exp></binop></exp></assignment>
+		  <analysis ref="0">[a]</analysis>
+		</stm></then><else><stm>
+		  <assignment id="b"><exp><binop kind = "+"><exp><id name="a"/></exp><exp><intconst value="2"/></exp></binop></exp></assignment>
+		  <analysis ref="0">[a]</analysis>
+		</stm></else></if></stm></else></if></stm>
+		  <return>
+		    <exp><id name="b"/></exp>
+		  </return>
+		</function>
+		    <stm>
+		  <assignment id="a"><exp><input/></exp></assignment>
+		  <analysis ref="0">[]</analysis>
+		</stm><stm>
+		  <assignment id="_out"><exp>
+		  <call id="main">
+		    <exp><id name="a"/></exp>
+		  </call>
+		  
+		</exp></assignment>
+		  
+		</stm><stm><output><exp><id name="_out"/></exp></output><analysis ref="0">[_out]</analysis></stm>
+		  </program>
+		</tip>

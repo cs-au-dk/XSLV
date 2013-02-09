@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- some xsd problem fixed...-->
+
+<triple name="template-modes" enabled="true">
+  <input type="XSD" DTDNamespaceURI="">simple.xsd</input>
+  <output type="RNG" DTDNamespaceURI="">simple.rng</output>
+  <xslt>template-modes.xsl</xslt>
+</triple>

@@ -1,0 +1,5 @@
+<triple name="poem">
+  <input type="DTD" DTDNamespaceURI="http://dongfang.dk/testdata">poem.dtd</input>
+  <output type="RNG">poem.rng</output>
+  <xslt>../../general-identity-transform.xsl</xslt>
+</triple>

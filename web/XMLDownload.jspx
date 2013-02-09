@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+  <jsp:directive.page language="java" session="true" isThreadSafe="true" info="XML Download Page" isELIgnored="false" import="dongfang.xsltools.diagnostics.*, java.util.Iterator" contentType="application/xhtml+xml; charset=utf-8"/>
+  <jsp:useBean id="validator" scope="session" type="dongfang.xsltools.context.InteractiveRequestResponseBean" class="dongfang.xsltools.context.InteractiveRequestResponseBean"/>
+  <jsp:useBean id="xcfg_view_options" scope="session" class="dongfang.xsltools.diagnostics.DiagnosticsConfigurationOptions"/>
+<!-- jstl has a bug where forEach doesn't like to be in the root-->
+  <c:forEach var="option" items="${xcfg_view_options.configurationOptions}">
+    <c:if test="${param[option.key] != null}">
+      <c:set target="${option}" property="enabled" value="true"/>
+    </c:if>
+    <c:if test="${param[option.key] == null}">
+      <c:set target="${option}" property="enabled" value="false"/>
+    </c:if>
+  </c:forEach>
+
+  <jsp:expression>validator.getGeneratedXMLResourceAsString(request.getParameter("key"), xcfg_view_options)</jsp:expression>
+</jsp:root>

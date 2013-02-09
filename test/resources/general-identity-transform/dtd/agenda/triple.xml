@@ -1,0 +1,5 @@
+<triple name="agenda">
+  <input type="DTD" DTDNamespaceURI="http://dongfang.dk/testdata">agenda.dtd</input>
+  <output type="RNG">agenda.rng</output>
+  <xslt>../../general-identity-transform.xsl</xslt>
+</triple>

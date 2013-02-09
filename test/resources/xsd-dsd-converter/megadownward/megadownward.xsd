@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  targetNamespace="http://dongfang.dk/testdata" 
+  elementFormDefault="qualified">
+  <element name="boot">
+    <complexType>
+      <sequence>
+        <element name="a">
+          <complexType>
+            <sequence>
+            <element name="c">
+              <complexType>
+  				<sequence>
+                  <element name="d">
+                    <complexType>
+                      <sequence>
+                        <element name="e"/>
+                      </sequence>
+                    </complexType>
+                  </element>
+				</sequence>
+              </complexType>
+            </element>
+			</sequence>
+          </complexType>
+        </element>
+
+        <element name="b">
+          <complexType>
+			<sequence>
+            <element name="c">
+              <complexType>
+				<sequence>
+                  <element name="d">
+                    <complexType>
+                      <sequence>
+                        <element name="f"/>
+                      </sequence>
+                    </complexType>
+                  </element>
+				</sequence>
+              </complexType>
+            </element>
+			</sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

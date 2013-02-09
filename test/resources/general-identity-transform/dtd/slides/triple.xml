@@ -1,0 +1,6 @@
+<triple name="slides">
+<!-- The test fails, but due to an error in the msv converter (DTD ANY also has text) -->
+  <input type="DTD" DTDNamespaceURI="http://dongfang.dk/testdata">slides_corrected.dtd</input>
+  <output type="RNG">slides_corrected.rng</output>
+  <xslt>../../general-identity-transform.xsl</xslt>
+</triple>

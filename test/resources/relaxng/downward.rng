@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" ns="http://www.brics.dk/ixwt/recipes" datatypeLibrary="http://www.w3.org.2001.XMLSchema-datatype">
+  <start>
+    <element name="r">
+      <element name="a">
+        <element name="s">
+          <element name="x">
+          <element name="v">
+            <ref name="r"/>
+          </element>
+          </element>
+        </element>
+      </element>
+      <element name="s">
+        <element name="x">
+          <element name="v">
+            <ref name="r"/>
+          </element>
+        </element>
+      </element>
+    </element>
+  </start>
+</grammar>

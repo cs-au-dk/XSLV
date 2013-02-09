@@ -1,0 +1,6 @@
+<triple name="xmlspec" enabled="true">
+<!-- XPath parsefejl -->
+  <input type="XSD">input/xmlspec.dtd</input>
+  <output>output/xmlspec.rng</output>
+  <xslt>ident.xsl</xslt>
+</triple>

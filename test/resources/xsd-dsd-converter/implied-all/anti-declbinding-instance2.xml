@@ -1,0 +1,13 @@
+<n1 xmlns = "http://dongfang.dk/testdata">
+  <n1>
+    <skunk/>
+  </n1>
+  <n2>
+    <n1>
+      <goat/>
+    </n1>
+    <n2>
+      <skunk/>
+    </n2>
+  </n2>
+</n1>

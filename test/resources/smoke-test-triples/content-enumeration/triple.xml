@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Demonstrate enumerated simple type, colored text type survives flow -->
+
+<triple name="content-enumeration" enabled="true"><input type="XSD" DTDNamespaceURI="">content-enumeration.xsd</input><output type="DSD" DTDNamespaceURI="">simple.dsd</output><xslt>content-enumeration.xsl</xslt></triple>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- some xsd problem fixed...-->
+
+<triple name="crash" enabled="true"><input type="XSD" DTDNamespaceURI="">crash.xsd</input><output type="DSD" DTDNamespaceURI="">simple.dsd</output><xslt>blank.xsl</xslt></triple>

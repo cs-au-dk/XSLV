@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<triple name="pcdata" enabled="true">
+
+<!-- examine pcdata going missing problem with automaton algorithm -->
+<!-- just use default rules for this                               -->
+
+<input type="XSD" DTDNamespaceURI="">simple.xsd</input>
+<output type="RNG" DTDNamespaceURI="">simple.rng</output>
+<xslt>pcdata.xsl</xslt>
+</triple>

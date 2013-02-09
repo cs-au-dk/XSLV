@@ -1,0 +1,118 @@
+Buildfile: build.xml
+
+init:
+
+runtriple:
+     [echo] Running Triple Test
+     [java] arg: use-fast-algorithm
+     [java] arg: ${num-runs-each}
+     [java] arg: ${wait-each-triple}
+     [java] arg: ${only-test-files}
+     [java] arg: ${only-xcfg}
+     [java] Using fast algorithm
+     [java] Run # 0
+     [java] Running xmlspec
+     [java] Loaded resource: xslt1.0.defaults
+     [java] Loaded resource: file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec2fo-1.10.xsl
+     [java] Loaded resource: file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/pagesetup.xsl
+     [java] Stylesheet simplification done
+     [java] Loaded resource: file:/home/dongfang/speciale/test/resources/triples/xmlspec/input/xmlspec.xsd
+     [java] Loaded resource: file:/home/dongfang/speciale/test/resources/triples/xmlspec/input/xlink.xsd
+     [java] Loaded resource: file:/home/dongfang/speciale/test/resources/triples/xmlspec/input/xml.xsd
+     [java] Cyclic, or multiple include / import of file:/home/dongfang/speciale/test/resources/triples/xmlspec/input/xmlspec.xsd. Skipping. Dupe stack is: [file:/home/dongfang/speciale/test/resources/triples/xmlspec/input/xmlspec.xsd, file:/home/dongfang/speciale/test/resources/triples/xmlspec/input/xlink.xsd]
+     [java] Loaded resource: file:/home/dongfang/speciale/test/resources/triples/xmlspec/input/xml.xsd
+     [java] Loaded resource: xsd-builtins
+     [java] Content model processed, document element is: spec-->XSDSchema
+     [java] Input type construction done
+     [java] Control flow algorithm done
+     [java] SG contruction done
+     [java] Output type construction done
+     [java] Validation done
+     [java] <?xml version="1.0" encoding="utf-8"?>
+     [java] <errorReport numErrors="11">
+
+True error -- attribute not declated on element (or a version mixup)
+     [java]   <error origin="file:/home/dongfang/speciale/test/resources/triples/order2fo/output/fo_alternative.rng:40310:39">
+     [java]     <message>invalid attribute</message>
+     [java]     <example>master-name</example>
+     [java]     <element name="{http://www.w3.org/1999/XSL/Format}page-sequence" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec2fo-1.10.xsl:1295:7"/>
+     [java]   </error>
+
+True error -- attribute not declated on element (or a version mixup)
+     [java]   <error origin="file:/home/dongfang/speciale/test/resources/triples/order2fo/output/fo_alternative.rng:7:59">
+     [java]     <message>invalid attribute</message>
+     [java]     <example>master-name</example>
+     [java]     <element name="{http://www.w3.org/1999/XSL/Format}conditional-page-master-reference" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/pagesetup.xsl:398:9"/>
+     [java]   </error>
+
+True error -- attribute not declated on element (or a version mixup)
+     [java]   <error origin="file:/home/dongfang/speciale/test/resources/triples/order2fo/output/fo_alternative.rng:7:59">
+     [java]     <message>invalid attribute</message>
+     [java]     <example>master-name</example>
+     [java]     <element name="{http://www.w3.org/1999/XSL/Format}conditional-page-master-reference" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/pagesetup.xsl:330:9"/>
+     [java]   </error>
+
+True error -- attribute not declated on element (or a version mixup)
+     [java]   <error origin="file:/home/dongfang/speciale/test/resources/triples/order2fo/output/fo_alternative.rng:7:59">
+     [java]     <message>invalid attribute</message>
+     [java]     <example>master-name</example>
+     [java]     <element name="{http://www.w3.org/1999/XSL/Format}conditional-page-master-reference" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/pagesetup.xsl:414:9"/>
+     [java]   </error>
+
+True error -- attribute not declated on element (or a version mixup)
+     [java]   <error origin="file:/home/dongfang/speciale/test/resources/triples/order2fo/output/fo_alternative.rng:7:59">
+     [java]     <message>invalid attribute</message>
+     [java]     <example>master-name</example>
+     [java]     <element name="{http://www.w3.org/1999/XSL/Format}conditional-page-master-reference" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/pagesetup.xsl:382:9"/>
+     [java]   </error>
+
+True error -- attribute not declated on element (or a version mixup)
+     [java]   <error origin="file:/home/dongfang/speciale/test/resources/triples/order2fo/output/fo_alternative.rng:7:59">
+     [java]     <message>invalid attribute</message>
+     [java]     <example>master-name</example>
+     [java]     <element name="{http://www.w3.org/1999/XSL/Format}conditional-page-master-reference" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/pagesetup.xsl:372:9"/>
+     [java]   </error>
+
+True error -- attribute not declated on element (or a version mixup)
+     [java]   <error origin="file:/home/dongfang/speciale/test/resources/triples/order2fo/output/fo_alternative.rng:7:59">
+     [java]     <message>invalid attribute</message>
+     [java]     <example>master-name</example>
+     [java]     <element name="{http://www.w3.org/1999/XSL/Format}conditional-page-master-reference" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/pagesetup.xsl:362:9"/>
+     [java]   </error>
+
+True error -- attribute not declated on element (or a version mixup)
+     [java]   <error origin="file:/home/dongfang/speciale/test/resources/triples/order2fo/output/fo_alternative.rng:7:59">
+     [java]     <message>invalid attribute</message>
+     [java]     <example>master-name</example>
+     [java]     <element name="{http://www.w3.org/1999/XSL/Format}conditional-page-master-reference" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/pagesetup.xsl:440:9"/>
+     [java]   </error>
+
+True error -- attribute not declated on element (or a version mixup)
+     [java]   <error origin="file:/home/dongfang/speciale/test/resources/triples/order2fo/output/fo_alternative.rng:7:59">
+     [java]     <message>invalid attribute</message>
+     [java]     <example>master-name</example>
+     [java]     <element name="{http://www.w3.org/1999/XSL/Format}conditional-page-master-reference" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/pagesetup.xsl:450:9"/>
+     [java]   </error>
+
+True error -- attribute not declated on element (or a version mixup)
+     [java]   <error origin="file:/home/dongfang/speciale/test/resources/triples/order2fo/output/fo_alternative.rng:7:59">
+     [java]     <message>invalid attribute</message>
+     [java]     <example>master-name</example>
+     [java]     <element name="{http://www.w3.org/1999/XSL/Format}conditional-page-master-reference" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/pagesetup.xsl:430:9"/>
+     [java]   </error>
+
+True error -- attribute not declated on element (or a version mixup)
+     [java]   <error origin="file:/home/dongfang/speciale/test/resources/triples/order2fo/output/fo_alternative.rng:7:59">
+     [java]     <message>invalid attribute</message>
+     [java]     <example>master-name</example>
+     [java]     <element name="{http://www.w3.org/1999/XSL/Format}conditional-page-master-reference" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/pagesetup.xsl:346:9"/>
+     [java]   </error>
+     [java] </errorReport>
+     [java] With CG and input schema
+     [java] With input schema alone
+     [java] Without input schema
+     [java]   Test xmlspec completed w/o casualties
+
+
+BUILD SUCCESSFUL
+Total time: 1 minute 24 seconds

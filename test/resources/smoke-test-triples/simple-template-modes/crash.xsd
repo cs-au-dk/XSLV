@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+ xmlns:s="http://dongfang.dk/testdata" 
+ targetNamespace="http://dongfang.dk/testdata" 
+ elementFormDefault="qualified">
+
+    <complexType name="t1">
+      <sequence>
+        <element ref="s:a" minOccurs="1" maxOccurs="unbounded"/>
+        <element ref="s:b" minOccurs="0" maxOccurs="unbounded"/>
+        <element ref="s:c" minOccurs="0" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+
+<complexType name="t2">
+<complexContent>
+<extension base="s:t1">
+<sequence>
+<element ref="s:d"/>
+</sequence>
+</extension>
+</complexContent>
+</complexType>
+
+<element name="d" type="integer"/>
+
+  <element name="root" type="s:t2">
+  </element>
+
+  <element name="a" type="string"/>
+   
+  <element name="b">
+    <complexType>
+      <sequence>
+        <element ref="s:b"  minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="c">
+    <complexType>
+      <sequence/>
+    </complexType>
+  </element>
+</schema>

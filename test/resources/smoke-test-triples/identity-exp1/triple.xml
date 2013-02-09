@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Test of colored types -->
+
+<triple name="identity-exp1" enabled="true"><input type="XSD" DTDNamespaceURI="">texttypes.xsd</input><output type="DSD" DTDNamespaceURI="">simple.dsd</output><xslt>general-identity-transform.xsl</xslt></triple>

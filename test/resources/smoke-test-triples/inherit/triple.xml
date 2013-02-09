@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+  Test basic EXPLICIT inheritance: Inheritance of element and attribute declarations (extension), and 
+  removal by restriction of emptiable elements and attributes.
+
+  Does NOT test IMPLIED declarations appearing when types are inherited from, like
+  element a is of type ta
+  type tb extends type ta
+  -> there is now a declaration of an element named a, 
+     typed tb, and wiht a required xsl:type="tb" attribute   
+--> 
+
+<triple name="inherit" enabled="true">
+<input type="XSD" DTDNamespaceURI="">inherit.xsd</input>
+<output type="DSD" DTDNamespaceURI="">simple.dsd</output>
+<xslt>general-identity-transform.xsl</xslt></triple>

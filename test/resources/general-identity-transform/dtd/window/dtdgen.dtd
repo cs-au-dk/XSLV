@@ -1,0 +1,84 @@
+<!ELEMENT action ( #PCDATA ) >
+
+<!ELEMENT active EMPTY >
+<!ATTLIST active on NMTOKEN #FIXED "0" >
+
+<!ELEMENT author ( name, mail ) >
+
+<!ELEMENT coauthor ( name, mail ) >
+
+<!ELEMENT helpcontext EMPTY >
+
+<!ELEMENT icon ( path ) >
+
+<!ELEMENT img EMPTY >
+<!ATTLIST img src CDATA #REQUIRED >
+
+<!ELEMENT item ( action | active | img | itemtitle | key | submenu )* >
+<!ATTLIST item id ID #REQUIRED >
+
+<!ELEMENT itemtitle ( #PCDATA ) >
+
+<!ELEMENT key EMPTY >
+<!ATTLIST key code CDATA #REQUIRED >
+
+<!ELEMENT lastupdate ( #PCDATA ) >
+
+<!ELEMENT loadtime ( #PCDATA ) >
+
+<!ELEMENT mail ( #PCDATA ) >
+
+<!ELEMENT menu ( menusection+ ) >
+
+<!ELEMENT menusection ( item+ ) >
+<!ATTLIST menusection style NMTOKEN #REQUIRED >
+<!ATTLIST menusection title NMTOKEN #REQUIRED >
+
+<!ELEMENT msgcount ( #PCDATA ) >
+
+<!ELEMENT name ( #PCDATA ) >
+
+<!ELEMENT pagecontent ( #PCDATA ) >
+
+<!ELEMENT pageid ( #PCDATA ) >
+
+<!ELEMENT pageinfo ( author, coauthor, pagelocation, pageid, pagesubid, userid, systembuild, systemyear, lastupdate, visitcounter ) >
+
+<!ELEMENT pagelocation ( #PCDATA ) >
+
+<!ELEMENT pagesubid EMPTY >
+
+<!ELEMENT path ( #PCDATA ) >
+
+<!ELEMENT primarymenu ( menu, toolbar ) >
+
+<!ELEMENT secondarymenu ( menu ) >
+
+<!ELEMENT submenu ( item+ ) >
+<!ATTLIST submenu level NMTOKEN #FIXED "1" >
+
+<!ELEMENT systembuild ( #PCDATA ) >
+
+<!ELEMENT systemyear ( #PCDATA ) >
+
+<!ELEMENT tbar ( toolbarsection+ ) >
+<!ATTLIST tbar id NMTOKEN #REQUIRED >
+
+<!ELEMENT title ( #PCDATA ) >
+
+<!ELEMENT titlebar ( title, icon ) >
+
+<!ELEMENT toolbar ( tbar ) >
+
+<!ELEMENT toolbaritem ( itemtitle, img ) >
+<!ATTLIST toolbaritem id NMTOKEN #REQUIRED >
+
+<!ELEMENT toolbarsection ( toolbaritem ) >
+<!ATTLIST toolbarsection id NMTOKEN #REQUIRED >
+
+<!ELEMENT userid ( #PCDATA ) >
+
+<!ELEMENT visitcounter ( #PCDATA ) >
+
+<!ELEMENT window ( titlebar, pageinfo, helpcontext, msgcount, pagecontent, loadtime, primarymenu, secondarymenu ) >
+

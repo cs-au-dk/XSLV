@@ -1,0 +1,23 @@
+<triple name="searchdialog2xhtml">
+  <input type="XSD" RootElementName="SearchDialog">input/SearchDialog.xsd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/Ontolica.searchdialog.boot.xsl</xslt>
+  <info>Provided by Navigo Systems A/S</info>
+  <notes>
+This transform generates many of the errors often seen in (X)HTML code:
+<ul>
+<li>
+<tt>style</tt> elements appear in the (X)HTML <tt>body</tt> part.
+</li>
+<li>
+<tt>nowrap="true"</tt> attributes should have been <tt>nowrap="nowrap"</tt>.
+</li>
+<li>
+A table may have no rows (a related error is table rows without nested <tt>td</tt> elements).
+</li>
+<li>
+An attribute name is not in the proper case.
+</li>
+</ul>
+</notes>
+</triple>

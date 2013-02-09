@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <element name="tip">
+                <ref name="analysis"/>
+                <ref name="program"/>
+            </element>
+    </start>
+    <define name="ptr">
+        <element name="ptr">
+            <attribute name="id">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </element>
+    </define>
+    <define name="output">
+        <element name="output">
+            <ref name="exp"/>
+        </element>
+    </define>
+    <define name="malloc">
+        <element name="malloc">
+            <empty/>
+        </element>
+    </define>
+    <define name="exp">
+        <element name="exp">
+            <zeroOrMore>
+                <choice>
+                    <ref name="analysis"/>
+                    <ref name="binop"/>
+                    <ref name="call"/>
+                    <ref name="deref"/>
+                    <ref name="exp"/>
+                    <ref name="id"/>
+                    <ref name="input"/>
+                    <ref name="intconst"/>
+                    <ref name="malloc"/>
+                    <ref name="ptr"/>
+                    <ref name="ptrassign"/>
+                    <ref name="ptrcall"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="binop">
+        <element name="binop">
+            <attribute name="kind">
+                <data type="normalizedString"/>
+            </attribute>
+            <oneOrMore>
+                <ref name="exp"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="id">
+        <element name="id">
+            <attribute name="name">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </element>
+    </define>
+    <define name="return">
+        <element name="return">
+            <ref name="exp"/>
+        </element>
+    </define>
+    <define name="analysis">
+        <element name="analysis">
+            <optional>
+                <attribute name="ref">
+                    <value type="NMTOKEN">0</value>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="name">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <text/>
+        </element>
+    </define>
+    <define name="then">
+        <element name="then">
+            <ref name="stm"/>
+        </element>
+    </define>
+    <define name="call">
+        <element name="call">
+            <attribute name="id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <zeroOrMore>
+                <ref name="exp"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="input">
+        <element name="input">
+            <empty/>
+        </element>
+    </define>
+    <define name="else">
+        <element name="else">
+            <zeroOrMore>
+                <choice>
+                    <ref name="exp"/>
+                    <ref name="stm"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="ptrassign">
+        <element name="ptrassign">
+            <attribute name="id">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </element>
+    </define>
+    <define name="if">
+        <element name="if">
+            <ref name="exp"/>
+            <ref name="then"/>
+            <ref name="else"/>
+        </element>
+    </define>
+    <define name="assignment">
+        <element name="assignment">
+            <attribute name="id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <ref name="exp"/>
+        </element>
+    </define>
+    <define name="deref">
+        <element name="deref">
+            <ref name="exp"/>
+        </element>
+    </define>
+    <define name="program">
+        <element name="program">
+            <oneOrMore>
+                <ref name="function"/>
+            </oneOrMore>
+            <oneOrMore>
+                <ref name="stm"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="function">
+        <element name="function">
+            <attribute name="arguments">
+                <data type="normalizedString"/>
+            </attribute>
+            <attribute name="locals">
+                <data type="normalizedString"/>
+            </attribute>
+            <attribute name="name">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <oneOrMore>
+                <ref name="stm"/>
+            </oneOrMore>
+            <ref name="return"/>
+        </element>
+    </define>
+    <define name="stm">
+        <element name="stm">
+            <ref name="assignment"/>
+            <optional>
+                <ref name="analysis"/>
+            </optional>
+            <optional>
+                <ref name="if"/>
+            </optional>
+            <optional>
+                <ref name="output"/>
+            </optional>
+        </element>
+    </define>
+    <define name="intconst">
+        <element name="intconst">
+            <attribute name="value">
+                <data type="NMTOKEN"/>
+            </attribute>
+        </element>
+    </define>
+    <define name="ptrcall">
+        <element name="ptrcall">
+            <oneOrMore>
+                <ref name="exp"/>
+            </oneOrMore>
+        </element>
+    </define>
+</grammar>

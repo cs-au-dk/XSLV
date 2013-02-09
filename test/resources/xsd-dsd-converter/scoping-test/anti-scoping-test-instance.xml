@@ -1,0 +1,14 @@
+<root xmlns="http://dongfang.dk/testdata">
+  <title>text_not_allowed_in_this_kind_of_title_element</title>
+  <e_rootpayload>
+    <title>hejsa</title>
+    <tail>
+      <title>hejsa2</title>
+    </tail>
+    <othertail>
+      <payload>
+        <title>hejsa3</title>
+      </payload>
+    </othertail>
+  </e_rootpayload>
+</root>

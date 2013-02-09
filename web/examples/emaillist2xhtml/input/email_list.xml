@@ -1,0 +1,1773 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml:stylesheet type="text/xsl" href="emailliste.xsl"?>
+
+<ListOfEmails>
+
+    <UpdateDate>Torsdag, 9. august, 2001</UpdateDate>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Ronan</FirstName>
+            <LastName>Leboudec</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>35/2 Langford Cross Road</Street>
+            <City>Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile>9845282384</Mobile>
+            <Email>leboudec.r@sonata-software.com</Email>
+            <ICQ/>
+            <Home>
+                <Name>Mr Bernard Leboudec</Name>
+                <Phone>+33 296833397</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>March 20 1978</BirthDate>
+    </Person>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Kirsten</FirstName>
+            <LastName>Kuckulenz</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>001 Charles Campell Road</Street>
+            <City>Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile></Mobile>
+            <Email>kkuckulenz@hotmail.com</Email>
+            <ICQ/>
+            <Home>
+                <Name></Name>
+                <Phone></Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>24.3.1980</BirthDate>
+    </Person>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Markus</FirstName>
+            <LastName>Knoke</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>35/2 Langford Cross Road</Street>
+            <City>Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile>9845020312</Mobile>
+            <Email>mknoke@yahoo.com</Email>
+            <ICQ/>
+            <Home>
+                <Name>Thomas Knoke</Name>
+                <Phone>+49-40-67561635</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>29.4.1977</BirthDate>
+    </Person>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Nicola</FirstName>
+            <LastName>Groth</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City>Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile></Mobile>
+            <Email>nicola_groth@hotmail.com</Email>
+            <ICQ/>
+            <Home>
+                <Name></Name>
+                <Phone></Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate></BirthDate>
+    </Person>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Laura</FirstName>
+            <LastName>Shearer</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>35/2 Langford Cross Road</Street>
+            <City>Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>2229674 or 2237383 ext 121 (office)</Phone>
+            <Mobile></Mobile>
+            <Email>laura@mitoken.com</Email>
+            <ICQ/>
+            <Home>
+                <Name>Mr and Mrs Shearer</Name>
+                <Phone>+44 141 638 7702</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>09/10/79</BirthDate>
+    </Person>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Sara</FirstName>
+            <LastName>Armander</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>001 Charles Campell Road</Street>
+            <City>Coxtown, Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>+46 707 17 84 27 (SMS only)</Phone>
+            <Mobile></Mobile>
+            <Email>armander@hotmail.com</Email>
+            <ICQ/>
+            <Home>
+                <Name>Mr Martinsson</Name>
+                <Phone>+46 33262266</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>April 2nd 1979</BirthDate>
+    </Person>
+    
+    <Person group="theRest">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Liliana</FirstName>
+            <LastName>Alday</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>lilianaa@icode.com</Email>
+            <ICQ/>
+            <Phone></Phone>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Jan</FirstName>
+            <LastName>Valtera</LastName>
+            <NickName>Honza</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile></Mobile>
+            <Email>janv@icode.com</Email>
+            <ICQ/>
+            <Home>
+                <Name>Fam. Valtera</Name>
+                <Phone>+420.447.547205</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>March 2, 1978</BirthDate>
+    </Person>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Katie</FirstName>
+            <LastName>Barker</LastName>
+            <NickName>Kate</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile></Mobile>
+            <Email>katieb@icode.com</Email>
+            <ICQ/>
+            <Home>
+                <Name>Mr. Barker</Name>
+                <Phone>+441205.357573</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>June 30, 1981</BirthDate>
+    </Person>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Lorena</FirstName>
+            <LastName>Caiafa</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile></Mobile>
+            <Email>lorenac@icode.com</Email>
+            <ICQ/>
+            <Home>
+                <Name>Mr. and Mrs. Caiafa</Name>
+                <Phone>++55313.2965034</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>April 4, 1979</BirthDate>
+    </Person>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Alexandre</FirstName>
+            <LastName>Kuperman</LastName>
+            <NickName>Ale</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>001 Charles Campbell Road</Street>
+            <City>Coxtown, Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile></Mobile>
+            <Email>alexandrek@icode.com</Email>
+            <ICQ/>
+            <Home>
+                <Name>Selma G. Kuperman</Name>
+                <Phone>(5511) 3816-7033</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>November 1, 1977</BirthDate>
+    </Person>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Melanie</FirstName>
+            <LastName>Ovaert</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>35/2 Langford Cross Road</Street>
+            <City>Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile></Mobile>
+            <Email>melanieo@icode.com</Email>
+            <ICQ/>
+            <Home>
+                <Name>Fam. Ovaert</Name>
+                <Phone>+33 320774800</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>September 21 1977</BirthDate>
+    </Person>
+
+    <Person group="AIESECers">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Tushna</FirstName>
+            <LastName>Nazir</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>tushna_nazir@hotmail.com</Email>
+            <Phone></Phone>
+            <ICQ></ICQ>
+            <Mobile/>
+        </ContactInfo>
+        <BirthDate></BirthDate>
+    </Person>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Taichi</FirstName>
+            <LastName></LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>001 Charles Campbell Road</Street>
+            <City>Coxtown, Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile></Mobile>
+            <Email>kowaimararu2@hotmail.com</Email>
+            <ICQ/>
+            <Home>
+                <Name></Name>
+                <Phone></Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate></BirthDate>
+    </Person>
+
+    <Person group="AIESECers">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Amar Jethanand</FirstName>
+            <LastName>Daswani</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>001 Charles Campbell Road</Street>
+            <City>Coxtown, Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Email>amardaswani@hotmail.com</Email>
+            <Phone></Phone>
+            <ICQ></ICQ>
+            <Mobile/>
+        </ContactInfo>
+        <BirthDate>Sept 17, 1981</BirthDate>
+    </Person>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Alieth Marcela Forero</FirstName>
+            <LastName>Rivera</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>001 Charles Campbell Road</Street>
+            <City>Coxtown, Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile></Mobile>
+            <Email>marcelaf@icode.com</Email>
+            <ICQ/>
+            <Home>
+                <Name>Germán Forero Cortes</Name>
+                <Phone>+(Bogota, Colombia?) 2218281</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>February 12 1975</BirthDate>
+    </Person>
+   
+    <Person group="theRest">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Adhil</FirstName>
+            <LastName>Shetty</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>adhil@lycos.com</Email>
+            <ICQ/>
+            <Phone></Phone>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Cristina Alexandra Chalen</FirstName>
+            <LastName>Padilla</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>001 Charles Campbell Road</Street>
+            <City>Coxtown, Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile></Mobile>
+            <Email>christinac@icode.com</Email>
+            <ICQ/>
+            <Home>
+                <Name>Mr. Padilla?</Name>
+                <Phone>(593)4 786585</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>June 21 19??</BirthDate>
+    </Person>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Anders</FirstName>
+            <LastName>Wickberg</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>001 Charles Campbell Road</Street>
+            <City>Coxtown, Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile></Mobile>
+            <Email>andersw@icode.com</Email>
+            <ICQ/>
+            <Home>
+                <Name>Mr. Wickberg?</Name>
+                <Phone>004619245204</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>August 25, 1975</BirthDate>
+    </Person>
+
+    <Person group="theRest">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Jean</FirstName>
+            <LastName>Picardo</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>C3 #201 White House</Street>
+            <City>RT Nagar, Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Email>jean.picardo@iflexsolutions.com</Email>
+            <ICQ/>
+            <Phone>2284300 (work)</Phone>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+
+    <Person group="AIESECers">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Vandana</FirstName>
+            <LastName>Menon</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>vandy31@hotmail.com</Email>
+            <Phone></Phone>
+            <ICQ></ICQ>
+            <Mobile/>
+        </ContactInfo>
+    </Person>
+
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Courtney</FirstName>
+            <LastName>Meyers</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>35/2 Langford Cross Road</Street>
+            <City>Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Email>courtney_meyers7@yahoo.com</Email>
+            <Mobile/>
+            <ICQ/>
+            <Phone></Phone>
+            <Home>
+                <Name>Ken Meyers</Name>
+                <Phone>1(630)323-4585</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>July 17 19??</BirthDate>
+    </Person>
+
+    <Person group="AIESECers">
+        <Location>???</Location>
+        <Name>
+            <FirstName>Rajiv</FirstName>
+            <LastName>Chandna</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>chandna@softhome.net</Email>
+            <Phone></Phone>
+            <ICQ></ICQ>
+            <Mobile/>
+        </ContactInfo>
+    </Person>
+    
+    <Person group="AIESECers">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Avinash</FirstName>
+            <LastName>Samtani</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>avinash@aiesec.net</Email>
+            <Phone>5366186</Phone>
+            <ICQ></ICQ>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+
+    <Person group="AIESECers">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Kshama</FirstName>
+            <LastName></LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email></Email>
+            <Phone></Phone>
+            <ICQ></ICQ>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+
+    <Person group="AIESECers">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Aditi</FirstName>
+            <LastName>Rasquinha</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>aditi@aiesec.net</Email>
+            <Phone>5584633</Phone>
+            <ICQ></ICQ>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+
+    <Person group="AIESECers">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Nikhil</FirstName>
+            <LastName>Braganca</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>nikhilbraganca@hotmail.com</Email>
+            <Phone>5598973</Phone>
+            <ICQ></ICQ>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+
+    <Person group="AIESECers">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Sameer</FirstName>
+            <LastName>Gurjer</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>sameerg@aiesec.net</Email>
+            <Phone>2262527</Phone>
+            <ICQ></ICQ>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+
+    <Person group="AIESECers">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Satish</FirstName>
+            <LastName>Khemchandani</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>sats_k@yahoo.com</Email>
+            <Phone>2236405</Phone>
+            <ICQ></ICQ>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+
+    <Person group="theRest">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Dileep</FirstName>
+            <LastName>Premachandran</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Bell View, 159, Defence Colony</Street>
+            <City>Indiranagar, Bangalore 560038</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Email>verp1986@yahoo.com</Email>
+            <ICQ/>
+            <Phone>9844003000</Phone>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+
+    <Person group="Extrainees">
+        <Location>Holland</Location>
+        <Name>
+            <FirstName>Jolande</FirstName>
+            <LastName>Noordam</LastName>
+            <NickName>Yoli</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Huize Probitas, De Heurne 10A</Street>
+            <City>7511 GX Enschede</City>
+            <Country>Holland</Country>
+        </Address>
+        <ContactInfo>
+            <Email>j.k.noordam@student.utwente.nl</Email>
+            <Mobile>053-4325771</Mobile>
+            <ICQ/>
+            <Phone>06-20617838</Phone>
+        </ContactInfo>
+        <BirthDate>3. May 1979</BirthDate>
+    </Person>
+   
+    <Person group="Extrainees">
+        <Location>Malaysia</Location>
+        <Name>
+            <FirstName>Khay Ling</FirstName>
+            <LastName>Poh</LastName>
+            <NickName>Pupu!</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>49, Jalan BU 7/3, Bandar Utama</Street>
+            <City>47800 Petaling Jaya, Selangor</City>
+            <Country>Malaysia</Country>
+        </Address>
+        <ContactInfo>
+            <Email>jpoh123reb@hotmail.com</Email>
+            <Mobile>6012 3633588</Mobile>
+            <ICQ/>
+            <Phone>603 77221009</Phone>
+        </ContactInfo>
+    </Person>
+    
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Alberto Alonso</FirstName>
+            <LastName>Fradejas</LastName>
+            <NickName>Alfredo Alfonso</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>AlbertoA@icode.com</Email>
+            <Mobile>9845152963</Mobile>
+            <ICQ/>
+            <Phone>(work) 5520592 ext. 601 </Phone>
+            <Home>
+                <Name>Mr. Berto???</Name>
+                <Phone>+34 944711030</Phone>
+            </Home>
+        </ContactInfo>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>Holland</Location>
+        <Name>
+            <FirstName>Fleur</FirstName>
+            <LastName>de Nijs</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Soendastraat 13</Street>
+            <City>7512 DV Enschede</City>
+            <Country>Holland</Country>
+        </Address>
+        <ContactInfo>
+            <Email>fleurdenijs@hotmail.com</Email>
+            <Mobile>+31 (0)6 53289287</Mobile>
+            <ICQ/>
+            <Phone>+31 (0)53 4305140</Phone>
+        </ContactInfo>
+        <BirthDate>17. September 1980</BirthDate>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>???</Location>
+        <Name>
+            <FirstName>Sanna Maria</FirstName>
+            <LastName>Roppanen</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>sroppanen@yahoo.com</Email>
+            <Mobile></Mobile>
+            <ICQ/>
+            <Phone/>
+        </ContactInfo>
+    </Person>
+    
+    <Person group="theExRest">
+        <Location>Finland</Location>
+        <Name>
+            <FirstName>Jacqueline</FirstName>
+            <LastName>Thong</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>jacqueline.thong@jipeq.com</Email>
+            <ICQ/>
+            <Phone>9844111863</Phone>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+
+    <Person group="theExRest">
+        <Location>Finland</Location>
+        <Name>
+            <FirstName>Saku</FirstName>
+            <LastName>Sahramies</LastName>
+            <NickName>Flying finn</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Tehtaankatu 12 D 45</Street>
+            <City>00140 Helsinki</City>
+            <Country>Finland</Country>
+        </Address>
+        <ContactInfo>
+            <Email>saku.sahramies@360com.com</Email>
+            <ICQ/>
+            <Phone>+358 41 515 3125</Phone>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+    
+    <Person group="AIESECers">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Abhijeet</FirstName>
+            <LastName>Mehta</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>josephite@vsnl.com</Email>
+            <Phone></Phone>
+            <ICQ>43539415</ICQ>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+    
+    <Person group="AIESECers">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Kiran</FirstName>
+            <LastName>Menon</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>kayonemenon@yahoo.com</Email>
+            <Phone>5599084</Phone>
+            <ICQ>24753817</ICQ>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+
+    <Person group="theExRest">
+        <Location>Germany</Location>
+        <Name>
+            <FirstName>Tilmann</FirstName>
+            <LastName>Böckl</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Christburger Str. 43</Street>
+            <City>10405 Berlin</City>
+            <Country>Germany</Country>
+        </Address>
+        <ContactInfo>
+            <Email>doctriny@yahoo.de</Email>
+            <ICQ/>
+            <Phone/>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+    
+    <Person group="AIESECers">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Aneesh</FirstName>
+            <LastName>Rajaram</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>29, Ulsoor Road</Street>
+            <City>Bangalore 560 042</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Email>aneeshrajaram@yahoo.co.uk</Email>
+            <Phone>91-80-558 7796</Phone>
+            <ICQ>15405956</ICQ>
+            <Mobile/>
+        </ContactInfo>
+    </Person>    
+
+    <Person group="theRest">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Siegmund</FirstName>
+            <LastName>Maierbrugger</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street># 306 Elgin Appartments, Hosur Road</Street>
+            <City>Bangalore-560025</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Email>masaind@satyam.net.in</Email>
+            <Phone>2 99 03 18</Phone>
+            <Mobile>98450 40618</Mobile>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate>7. may 1964</BirthDate>
+    </Person>
+
+    <Person group="theExRest">
+        <Location>Germany</Location>
+        <Name>
+            <FirstName>Gaby</FirstName>
+            <LastName>Kahlert</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile>0049-173-8809697</Mobile>
+            <Email>gaby_baby@usa.net</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate>9. august 1978</BirthDate>
+    </Person>
+
+    <Person group="Extrainees">
+        <Location>USA</Location>
+        <Name>
+            <FirstName>Geremy</FirstName>
+            <LastName>Smith</LastName>
+            <NickName>G</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>976 Taylor Rd.</Street>
+            <City>Mansfield, OH 44903</City>
+            <Country>USA</Country>
+        </Address>
+        <ContactInfo>
+            <Email>gersmith2000@yahoo.com</Email>
+            <Mobile></Mobile>
+            <ICQ/>
+            <Phone>419-522-3017</Phone>
+        </ContactInfo>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>Denmark</Location>
+        <Name>
+            <FirstName>Lasse</FirstName>
+            <LastName>Westh-Nielsen</LastName>
+            <NickName>Shanti Lassi</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Snoegebaeksvej 49, room 7</Street>
+            <City>8210 Aarhus V</City>
+            <Country>Denmark</Country>
+        </Address>
+        <ContactInfo>
+            <ICQ>52354180</ICQ>
+            <Email>lasse@daimi.au.dk</Email>
+            <Phone>89446817</Phone>
+            <Mobile/>
+        </ContactInfo>
+        <BirthDate>7. august 1976</BirthDate>
+    </Person>
+    
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Peter</FirstName>
+            <LastName>Vasko</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>35/2 Langford Cross Road</Street>
+            <City>Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Email>vaskopet@mitoken.com</Email>
+            <ICQ/>
+            <Phone/>
+            <Mobile/>
+            <Home>
+                <Name/>
+                <Phone/>
+            </Home>
+        </ContactInfo>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>Holland</Location>
+        <Name>
+            <FirstName>Femmy</FirstName>
+            <LastName>Combrink</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>femmy_combrink@hotmail.com</Email>
+            <ICQ>7318969</ICQ>
+            <Phone></Phone>
+            <Mobile/>
+        </ContactInfo>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>Malta</Location>
+        <Name>
+            <FirstName>Romina</FirstName>
+            <LastName>Cachia</LastName>
+            <NickName>Ms. Malta</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>119/2, St Rita, Mensija Rd</Street>
+            <City>San Gwann - SGN 04</City>
+            <Country>Malta</Country>
+        </Address>
+        <ContactInfo>
+            <Email>rcachia@maltanet.net</Email>
+            <Mobile>+356 9829547</Mobile>
+            <ICQ>29268349</ICQ>
+            <Phone/>
+        </ContactInfo>
+        <BirthDate>30th june 1978</BirthDate>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>Helsinki</Location>
+        <Name>
+            <FirstName>Kristoffer</FirstName>
+            <LastName>Rosberg</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street/>
+            <City/>
+            <Country/>
+        </Address>
+        <ContactInfo>
+            <Phone/>
+            <Mobile/>
+            <Email>kristoffer_rosberg@hotmail.com</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate/>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>Chennai</Location>
+        <Name>
+            <FirstName>Tomoko</FirstName>
+            <LastName>Ota</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street/>
+            <City/>
+            <Country/>
+        </Address>
+        <ContactInfo>
+            <Phone/>
+            <Mobile/>
+            <Email>ota_tomoko@yahoo.com</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate/>
+    </Person>
+    
+    <Person group="theExRest">
+        <Location>Holland</Location>
+        <Name>
+            <FirstName>Laura Coello</FirstName>
+            <LastName>Casian</LastName>
+            <NickName>Miss Penis</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Massegast 1 bis</Street>
+            <City>3511 JL, Utrecht</City>
+            <Country>Netherlands</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>30-2311735</Phone>
+            <Email>lauracoello@hotmail.com</Email>
+            <Mobile/>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate>17. september 19??</BirthDate>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>Northern India...?</Location>
+        <Name>
+            <FirstName>Stefanie</FirstName>
+            <LastName>Seidel</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Am Huegel 16</Street>
+            <City>66123 Saarbruecken</City>
+            <Country>Deutschland</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>0049.681.34380</Phone>
+            <Mobile/>
+            <Email>stefanieseidel@yahoo.de</Email>
+            <ICQ>66338635</ICQ>
+        </ContactInfo>
+        <BirthDate>February 13, 1979</BirthDate>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>Germany</Location>
+        <Name>
+            <FirstName>Constantin Alexander</FirstName>
+            <LastName>Rau</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Am Baumgarten 11</Street>
+            <City>35085 Ebsdorfergrund</City>
+            <Country>Germany</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>0049-6424-70007</Phone>
+            <Mobile>0049-171-2666375</Mobile>
+            <Email>ConstantinRau@gmx.de</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate>24. january 19??</BirthDate>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>Spain</Location>
+        <Name>
+            <FirstName>Maria Carolina Duran</FirstName>
+            <LastName>Pena</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Avenida Diagonal 586, 202a</Street>
+            <City>Barcelona 08021</City>
+            <Country>Espana</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>93-2090632, 2091700</Phone>
+            <Mobile>629-578479</Mobile>
+            <Email>macaro_2000@yahoo.com</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate>12. june 19??</BirthDate>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>Mexico</Location>
+        <Name>
+            <FirstName>Shakti Urrutia</FirstName>
+            <LastName>Gomez</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Atlixco #173-5</Street>
+            <City>Condesa CP 06140</City>
+            <Country>Mexico D.F.</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>52-5-553-3229</Phone>
+            <Mobile></Mobile>
+            <Email>shaktiu@yahoo.com.mx</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate></BirthDate>
+    </Person>
+    
+    <Person group="theRest">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Adi</FirstName>
+            <LastName>Hastings</LastName>
+            <NickName>Mr. Chemical Playground</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>001, "Silverdale", #5, Hutchins Road</Street>
+            <City>Cooke Town, Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile></Mobile>
+            <Email>adihastings@hotmail.com</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate>May 10th 1971(!)</BirthDate>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>Germany</Location>
+        <Name>
+            <FirstName>Dennis</FirstName>
+            <LastName>Wuetscher</LastName>
+            <NickName>Mr. Frankfurter?</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Phone>49-64175138</Phone>
+            <Mobile>49-1773125054</Mobile>
+            <Email>dennis.wuetscher@web.de</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate></BirthDate>
+    </Person>
+    
+    <Person group="theExRest">
+        <Location>Netherlands</Location>
+        <Name>
+            <FirstName>Lonneke van der </FirstName>
+            <LastName>Weijden</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Utrechtesweg 48C</Street>
+            <City>3704 HE Zeist</City>
+            <Country>Netherlands</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>31-30-6954285</Phone>
+            <Mobile>31-621511009</Mobile>
+            <Email>lonneke95@hotmail.com</Email>
+            <ICQ>78208115</ICQ>
+        </ContactInfo>
+        <BirthDate>16. august 19??</BirthDate>
+    </Person>
+    
+    <Person group="theExRest">
+        <Location></Location>
+        <Name>
+            <FirstName>Sarah</FirstName>
+            <LastName>Masters</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>PO Box DC 254, Dansoman</Street>
+            <City>Accra</City>
+            <Country>Ghana</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>233-21-303946</Phone>
+            <Mobile></Mobile>
+            <Email>satm@hotmail.com</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate></BirthDate>
+    </Person>
+    
+    <Person group="theExRest">
+        <Location></Location>
+        <Name>
+            <FirstName>Salvador</FirstName>
+            <LastName>Soler</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>C/Santalo' 17050</Street>
+            <City>08021, Barcelona</City>
+            <Country>Espana</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>34-932003368</Phone>
+            <Mobile>34-687436219</Mobile>
+            <Email>salva_soler@hotmail.com</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate></BirthDate>
+    </Person>
+    
+    <Person group="Trainees">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Lutz</FirstName>
+            <LastName>Alexander</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>001 Charles Campbell Road</Street>
+            <City>Coxtown, Bangalore</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>2284300 ext. 6633 (work)</Phone>
+            <Mobile></Mobile>
+            <Email>lutz.alexander@iflexsolutions.com</Email>
+            <ICQ/>
+            <Home>
+                <Name>Fam. Alexander</Name>
+                <Phone>+49 202733054</Phone>
+            </Home>
+        </ContactInfo>
+        <BirthDate>23. january 1976</BirthDate>
+    </Person>
+    
+    Back to anoca@inorbit.com, and when I'm at home, I can be found at
+guerrini@uol.com.br (after 18th June) 
+
+    <Person group="Extrainees">
+        <Location>???</Location>
+        <Name>
+            <FirstName>Ana Waksberg</FirstName>
+            <LastName>Guerrini</LastName>
+            <NickName>Woman of Action!</NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Alameda Ubatuba, 933</Street>
+            <City>Alphaville 3, Santana do Parnaiba, SP, 06485100</City>
+            <Country>Brasil</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>(5511) 4153 4302</Phone>
+            <Mobile></Mobile>
+            <Email>anoca@inorbit.com</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate></BirthDate>
+    </Person>
+
+    <Person group="Extrainees">
+        <Location></Location>
+        <Name>
+            <FirstName>Rogier</FirstName>
+            <LastName>Verberne</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Sibculobrink 44</Street>
+            <City>7544 AC Enschede</City>
+            <Country>Netherlands</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>31-53-4783663</Phone>
+            <Mobile>+31-6-511 463 69</Mobile>
+            <Email>r.verberne@hetnet.nl</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate>17. february 1977</BirthDate>
+    </Person>
+    
+    <Person group="theRest">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Jasdev</FirstName>
+            <LastName>Manhas</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>161/G F.M. Manekshaw Enclave, St. John's Rd.</Street>
+            <City>Bangalore-42</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Email>smjasdev@miel.mot.com</Email>
+            <Phone>91-80-5548848</Phone>
+            <Mobile></Mobile>
+            <ICQ>99354588</ICQ>
+        </ContactInfo>
+        <BirthDate>4. may 19??</BirthDate>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>Brazil</Location>
+        <Name>
+            <FirstName>Rodrigo de </FirstName>
+            <LastName>Moraes</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Phone></Phone>
+            <Mobile></Mobile>
+            <Email>rodrigo_de_moraes@hotmail.com</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate>24. october 19??</BirthDate>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>USA</Location>
+        <Name>
+            <FirstName>Jason</FirstName>
+            <LastName>Weaver</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Phone>1-734-665-7621</Phone>
+            <Mobile>1-734-730-1679</Mobile>
+            <Email>jasonweaverindia@hotmail.com</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate></BirthDate>
+    </Person>
+
+    <Person group="Extrainees">
+        <Location></Location>
+        <Name>
+            <FirstName>Renke</FirstName>
+            <LastName>Mueller-Hellmann</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Genter Strabe 2</Street>
+            <City>50672 Koln</City>
+            <Country>Germany</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>49-0221-5103827</Phone>
+            <Mobile></Mobile>
+            <Email>renke_muehe@gmx.de</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate>20.06.1973</BirthDate>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>USA</Location>
+        <Name>
+            <FirstName>Shad</FirstName>
+            <LastName>Tidler</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>PO Box 423</Street>
+            <City>Tipton, IN 46072</City>
+            <Country>USA</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>1-765-675-3043</Phone>
+            <Mobile></Mobile>
+            <Email>shad_tidler@hotmail.com</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate>31. january 19??</BirthDate>
+    </Person>
+
+    <Person group="AIESECers">
+        <Location>Bangalore</Location>
+        <Name>
+            <FirstName>Karan</FirstName>
+            <LastName>Uthaiah</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>107/1, Gun Troops Officers Colony</Street>
+            <City>Airport Road Bangalore-7</City>
+            <Country>India</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>5514435</Phone>
+            <Mobile></Mobile>
+            <Email>karanu@hotmail.com</Email>
+            <ICQ>84943779</ICQ>
+        </ContactInfo>
+        <BirthDate>14. September 1981</BirthDate>
+    </Person>
+
+    <Person group="Extrainees">
+        <Location>USA</Location>
+        <Name>
+            <FirstName>Julian</FirstName>
+            <LastName>Robinson</LastName>
+            <NickName></NickName>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>50 Austin Ave Apt #830</Street>
+            <City>Hayward, CA 94544</City>
+            <Country>USA</Country>
+        </Address>
+        <ContactInfo>
+            <Phone>1-510-783-2988</Phone>
+            <Mobile></Mobile>
+            <Email>julianr78@hotmail.com</Email>
+            <ICQ/>
+        </ContactInfo>
+        <BirthDate></BirthDate>
+    </Person>
+    
+    <Person group="Extrainees">
+        <Location>Holland</Location>
+        <Name>
+            <FirstName>Tyr</FirstName>
+            <LastName>Beerendonk</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>t.beerendonk@student.utwente.nl</Email>
+            <Mobile/>
+            <ICQ/>
+            <Phone/>
+        </ContactInfo>
+    </Person>
+
+    <Person group="Extrainees">
+        <Location>Sweden</Location>
+        <Name>
+            <FirstName>Mats</FirstName>
+            <LastName>Nilson</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>Mats.Nilson@gfs.gu.se</Email>
+            <Mobile/>
+            <ICQ/>
+            <Phone/>
+        </ContactInfo>
+    </Person>
+
+    <Person group="Extrainees">
+        <Location>Spain</Location>
+        <Name>
+            <FirstName>Abel</FirstName>
+            <LastName>Campos</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>abeleuropa@hotmail.com</Email>
+            <Mobile/>
+            <ICQ/>
+            <Phone/>
+        </ContactInfo>
+    </Person>
+
+    <Person group="Extrainees">
+        <Location>Holland</Location>
+        <Name>
+            <FirstName>Katelijn</FirstName>
+            <LastName>Wilhelmij</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>kwilhelmij@hotmail.com</Email>
+            <Mobile/>
+            <ICQ/>
+            <Phone/>
+        </ContactInfo>
+    </Person>
+
+    <Person group="Extrainees">
+        <Location>Brazil</Location>
+        <Name>
+            <FirstName>Cynthia</FirstName>
+            <LastName>Hirata</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>cynthia_hirata@yahoo.com</Email>
+            <Mobile/>
+            <ICQ/>
+            <Phone/>
+        </ContactInfo>
+    </Person>
+
+    <Person group="Extrainees">
+        <Location>Norway</Location>
+        <Name>
+            <FirstName>Ronny</FirstName>
+            <LastName>Rodsjo</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>ronny_rodsjo@hotmail.com</Email>
+            <Mobile/>
+            <ICQ/>
+            <Phone/>
+        </ContactInfo>
+    </Person>
+
+    <Person group="Extrainees">
+        <Location>Switzerland</Location>
+        <Name>
+            <FirstName>Mischa</FirstName>
+            <LastName>Perrenoud</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street>Amselweg 17</Street>
+            <City>2563 Ipsach</City>
+            <Country>Switzerland</Country>
+        </Address>
+        <ContactInfo>
+            <Email>mischapp@yahoo.com</Email>
+            <Mobile>0041 76 376 70 76</Mobile>
+            <ICQ/>
+            <Phone/>
+        </ContactInfo>
+    </Person>
+
+    <Person group="Extrainees">
+        <Location>Poland</Location>
+        <Name>
+            <FirstName>Witold</FirstName>
+            <LastName>Juszczak</LastName>
+            <NickName/>
+        </Name>
+        <Address>
+            <CO></CO>
+            <Street></Street>
+            <City></City>
+            <Country></Country>
+        </Address>
+        <ContactInfo>
+            <Email>witjusz@hotmail.com</Email>
+            <Mobile/>
+            <ICQ/>
+            <Phone/>
+        </ContactInfo>
+    </Person>
+    
+</ListOfEmails>
+
+

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="poem.xsl"?>
+   
+<POEM>
+    <TITLE>Lines Written in Early Spring</TITLE>
+    <AUTHOR>
+        <FIRSTNAME>William</FIRSTNAME>
+        <LASTNAME>Wordsworth</LASTNAME>
+    </AUTHOR>
+    <STANZA>
+        <LINE N="1">I heard a thousand blended notes,</LINE>
+        <LINE N="2">While in grove I sate reclined,</LINE>
+        <LINE N="3">In that sweet mood when pleasant thoughts</LINE>
+        <LINE N="4">Bring sad thoughts to the mind.</LINE>
+    </STANZA>
+
+    <STANZA>
+        <LINE N="5">To her fair works did nature link</LINE>
+        <LINE N="6">The human soul that through me ran;</LINE>
+        <LINE N="7">And much it griev'd me my heart to think</LINE>
+        <LINE N="8">What man has made of man.</LINE>
+    </STANZA>
+</POEM>

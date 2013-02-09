@@ -1,0 +1,15 @@
+{<rule match="child::bar[attribute::a = '1']" 
+	mode="#default" index="1" hasLocalOutput="true" 
+	schemaLessContextSet="{[bar]}" 
+	contextSet="{{#default={AttributeValueDropOffDecorator over element name=bar[@a='1']=AttributeValueDropOffDecorator over element name=bar[@a='1']}}}" '/>
+	=[AttributeValueDropOffDecorator over element name=bar[@a='1']], 
+
+<rule match="child::bar[attribute::a = '2']" 
+	mode="#default" index="2" hasLocalOutput="true" 
+	schemaLessContextSet="{[bar]}" 
+	contextSet="{{#default={AttributeValueDropOffDecorator over element name=bar[@a='2']=AttributeValueDropOffDecorator over element name=bar[@a='2']}}}" '/>
+	=[AttributeValueDropOffDecorator over element name=bar[@a='2']], 
+
+<rule match="child::*" mode="#all" index="5" hasLocalOutput="false" 
+	schemaLessContextSet="{[{*}*]}" contextSet="{{#default={element name=bar=element name=bar}}}" '/>
+	=[element name=bar]}

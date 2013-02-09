@@ -1,0 +1,31 @@
+<!ELEMENT Order (Customer, Product+, Subtotal, Tax, Shipping, Total)>
+<!ELEMENT Customer (#PCDATA)>
+<!ATTLIST Customer id ID #REQUIRED>
+<!ELEMENT Product (Name, SKU, Quantity, Price, Discount?, 
+                   ShipTo, GiftMessage?)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT SKU (#PCDATA)>
+<!ELEMENT Quantity (#PCDATA)>
+<!ELEMENT Price (#PCDATA)>
+<!ATTLIST Price currency (USD | CAN | GBP) #REQUIRED>
+<!ELEMENT Discount (#PCDATA)>
+<!ELEMENT ShipTo (GiftRecipient?, Street+, City, State, Zip)>
+<!ELEMENT GiftRecipient (#PCDATA)>
+<!ELEMENT Street (#PCDATA)>
+<!ELEMENT City   (#PCDATA)>
+<!ELEMENT State  (#PCDATA)>
+<!ELEMENT Zip    (#PCDATA)>
+<!ELEMENT GiftMessage (#PCDATA)>
+<!ELEMENT Subtotal (#PCDATA)>
+<!ATTLIST Subtotal currency (USD | CAN | GBP) #REQUIRED>
+<!ELEMENT Tax (#PCDATA)>
+<!ATTLIST Tax currency (USD | CAN | GBP) #REQUIRED
+              rate CDATA "0.0"
+>
+
+<!ELEMENT Shipping (#PCDATA)>
+<!ATTLIST Shipping currency (USD | CAN | GBP) #REQUIRED
+                   method   (USPS | UPS | Overnight) "UPS">
+<!ELEMENT Total (#PCDATA)>
+<!ATTLIST Total currency (USD | CAN | GBP) #REQUIRED>
+

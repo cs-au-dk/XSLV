@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://dongfang.dk/testdata"
+  xmlns:t="http://dongfang.dk/testdata"
+  elementFormDefault="qualified">
+ 
+  <element name="a">
+    <complexType>
+      <sequence>
+        <element name="x"/>
+        <element name="b" minOccurs="0">
+          <complexType>
+            <sequence>
+              <element ref="t:a"/>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="b">
+    <complexType>
+      <sequence>
+        <element name="a">
+          <complexType>
+            <sequence>
+              <element name="y"/>
+              <element ref="t:b" minOccurs="0"/>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="boot">
+    <complexType>
+      <sequence>
+      <!-- the only way we can determine the type of an
+           a or b element is to see whether the ancestor
+           immediately under the document element (boot)
+           is an a or b element
+      -->
+        <element ref="t:a"/>
+        <element ref="t:b"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

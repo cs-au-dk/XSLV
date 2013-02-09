@@ -1,0 +1,24 @@
+Buildfile: build.xml
+
+init:
+
+runtriple:
+     [echo] Running Triple Test
+     [java] arg: use-fast-algorithm
+     [java] arg: ${num-runs-each}
+     [java] arg: ${wait-each-triple}
+     [java] arg: ${only-test-files}
+     [java] arg: ${only-xcfg}
+     [java] Using fast algorithm
+     [java] Run # 0
+     [java] Running xmlspec
+     [java] Loaded resource: xslt1.0.defaults
+     [java] Loaded resource: file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec.xsl
+     [java] Stylesheet simplification done
+     [java] Got document element name from context: null-->DTD
+     [java] Got NS URI from context: -->DTD
+     [java] Content model processed, document element is: spec-->DTD
+     [java] Input type construction done
+     [java] Control flow algorithm done
+     [java] SG contruction done
+     [java] Output type construction done

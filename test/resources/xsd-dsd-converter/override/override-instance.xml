@@ -1,0 +1,22 @@
+<boot xmlns="http://dongfang.dk/testdata">
+  <!-- should be ok -->
+  <a>
+    <c>
+      <d/>
+    </c>
+  </a>
+
+  <!-- should be ok -->
+  <b>
+    <c>
+      <e/>
+    </c>
+  </b>
+  
+  <!-- should be ok, inner c referred to toplevel declared c -->
+  <c>
+    <c>
+      <g/>
+    </c>
+  </c>
+</boot>

@@ -1,0 +1,345 @@
+options {
+  LOOKAHEAD = 2;
+  FORCE_LA_CHECK = true;
+  MULTI = true;
+  STATIC = false;
+  NODE_DEFAULT_VOID = true;
+  NODE_PREFIX = "DTD";
+}
+
+PARSER_BEGIN(DTDParser)
+
+package dongfang.xsltools.xmlclass.dtd;
+import java.io.Reader;
+import java.io.StringReader;
+
+public class DTDParser {
+
+private static void reportError(String s, String message) {
+  System.err.println("Failed to parse " + s + " : " + message);
+  System.err.print('(');
+  for (int i=0; i<s.length(); i++) {
+    char c = s.charAt(i);
+    if (i>0) 
+      System.err.print(", ");
+    System.err.print(Integer.toString(c));
+  }
+  System.err.println(')');
+}
+
+public static DTD parse(String s) throws XSLToolsDTDParseException {
+if (dump) System.err.println("Attempting to parse: " + s);
+try {
+p1.ReInit(new StringReader(s));
+p1.DTD();
+return p1.getParseTree();
+} catch (Throwable ex) {
+reportError(s, ex.getMessage());
+throw new XSLToolsDTDException(ex);
+}
+}
+}
+
+PARSER_END(DTDParser)
+
+SPECIAL_TOKEN :
+{  " " | "\n" | "\t" | "\r" | "\f" }
+
+/*
+ex: 
+TOKEN : { <NUMBER : (["0"-"9"])+ | (["0"-"9"])+ "." (["0"-"9"])+ |  (["0"-"9"])+ "." | "." (["0"-"9"])+> }
+samme som
+TOKEN : { <NUMBER :  <DIGITS> | <DIGITS> "." <DIGITS> |  <DIGITS> "." | "." <DIGITS>> }
+TOKEN : { <#DIGITS : (["0"-"9"])+> }
+
+range:
+TOKEN : { <#LETTER : ["a"-"z", "A"-"Z"] > }
+TOKEN : { <#NONLETTER : ~["a"-"z", "A"-"Z"] > }
+
+TOKEN : { <#SINGLEWHATEVER : ~[] > }
+*/
+
+TOKEN :
+{
+    < DIGIT: ["0"-"9"] >
+  | < EQUAL: "=" > 
+  | < LPAREN: "(" >
+  | < RPAREN: ")" >
+  | < BANG: "!" >
+  | < DOT: "." >
+  | < COMMA: "," >
+  | < COLON: ":" >
+  | < STAR: "*" >
+  | < PLUS: "+" >
+  | < MINUS: "-" >
+  | < PIPE: "|" >
+  | < UNDERSCORE : "_" >
+  | < RBRACKET: ">" >
+  | < LSQBRACKET: "[" >
+  | < RSQBRACKET: "]" >
+  | < QUESTION: "?" >
+  | < QUOTE: "\"" >
+  | < APOS: "'" >
+  | < LBRACKETBANGLSQBRACKET: "<![" >
+  | < LBRACKETBANGELEMENT: "<!ELEMENT" >
+  | < LBRACKETBANGATTLIST: "<!ATTLIST" >
+  | < LBRACKETQUESTION: "<?" >
+  | < QUESTIONRBRACKET: "?>" >
+  | <Nmtoken : (<NameChar>)+ > 
+  | <NMTOKEN : "NMTOKEN" >
+  | <NMTOKENS : "NMTOKENS" >
+  | <NOTATION : "NOTATION" >
+  | <ENTITY   : "ENTITY" >
+  | <ENTITIES : "ENTITIES" >
+  | <IDREF    : "IDREF" >
+  | <IDREFS   : "IDREFS" >
+  | <ID       : "ID" >
+  | <CDATA    : "CDATA" >
+  | <PCDATA   : "PCDATA" >
+  | <EMPTY    : "EMPTY" >
+  | <ANY      : "ANY" >
+  | <INCLUDE  : "INCLUDE" >
+  | <IGNORE   : "IGNORE" >
+  | <VERSION :  "version" >
+  | <ENCODING : "encoding" >
+  | <SECTIONEND : "]]>" >
+  | <COMMENTSTART : "<!--" >
+  | <COMMENTEND : "-->" >
+  | <PISTART  : "<?" >
+  | <PIEND    : "?>" >
+  | <VERSION10: "1.0" >
+  | <VERSION11: "1.1" >
+  | < LETTER: ["A"-"Z"] | ["a"-"z"] >
+  | <#NameStartChar : ":" | 
+    <LETTER>
+    <UNDERSCORE> | 
+    ["\u00C0"-"\u00D6"] | 
+    ["\u00D8"-"\u00F6"] | 
+    ["\u00F8"-"\u02FF"] | 
+    ["\u0370"-"\u037D"] | 
+    ["\u037F"-"\u1FFF"] | 
+    ["\u200C"-"\u200D"] | 
+    ["\u2070"-"\u218F"] | 
+    ["\u2C00"-"\u2FEF"] | 
+    ["\u3001"-"\uD7FF"] | 
+    ["\uF900"-"\uFDCF"] | 
+    ["\uFDF0"-"\uFFFD"] 
+    //["\u10000"-"\uEFFFF"] 
+    >
+  | <#NameChar : <NameStartChar> | <UNDERSCORE> | <DOT> | <DIGIT> | ["\u0300"-"\u036f"] | ["\u203f"-"\u2040"] > 
+  | <Name : <NameStartChar>(<NameChar>)* >
+  | < CHAR : <Name> | ~[] >
+}
+
+void DTD() :
+{}
+{
+  extSubset() <EOF>
+}
+
+void extSubset() :
+{}
+{
+  (TextDecl())? extSubsetDecl()
+}
+
+void extSubsetDecl() :
+{}
+{
+  ( markupDecl() | conditionalSect() | DeclSep() )*
+}
+
+void TextDecl() :
+{}
+{
+  <LBRACKETQUESTION> (VersionInfo())? EncodingDecl() <QUESTIONRBRACKET>
+}
+
+void VersionInfo() :
+{}
+{
+  <VERSION> eq() ((<APOS> VersionNum() <APOS>) | (<QUOTE> VersionNum() <QUOTE>))
+}
+
+void eq() :
+{}
+{
+  <EQUAL>
+}
+
+void VersionNum() :
+{
+  Token version;
+}
+{
+  (version = <VERSION10>) | (version = <VERSION11>)
+}
+
+void Misc() :
+{}
+{
+  Comment() | PI()
+}
+
+void EncodingDecl() :
+{
+  Token encodingName;
+}
+{
+  <ENCODING> eq() ((<APOS>EncName()<APOS>) | (<QUOTE>EncName()<QUOTE>))
+}
+
+void EncName() :
+{}
+{
+  <LETTER> (<LETTER> | <DIGIT> | <DOT> | <UNDERSCORE> | <MINUS>)*
+}
+
+
+void markupDecl() :
+{}
+{
+  elementdecl() | AttlistDecl() | EntityDecl() | NotationDecl() | Comment() | PI()
+}
+
+void conditionalSect() :
+{}
+{
+  includeSect() | ignoreSect()
+}
+
+void includeSect() :
+{}
+{
+  <LBRACKETBANGLSQBRACKET> <INCLUDE> <LSQBRACKET> extSubsetDecl() <SECTIONEND>
+}
+
+void ignoreSect() :
+{}
+{
+  <LBRACKETBANGLSQBRACKET> <IGNORE> <LSQBRACKET> (ignoreSectContents())* <SECTIONEND>
+}
+
+void ignoreSectContents() :
+{}
+{
+  Ignore() (<LBRACKETBANGLSQBRACKET> ignoreSectContents() <SECTIONEND> Ignore())*
+}
+
+// TODO: Balance
+void Ignore() :
+{}
+{
+  (<CHAR>)*
+}
+
+void DeclSep() :
+{}
+{
+  (PEReference())?
+}
+
+void elementdecl() :
+{}
+{
+/* approximated: Whitespace ... fixme */
+  <LBRACKETBANGELEMENT> <Name> contentspec() <RBRACKET>
+}
+
+void contentspec() :
+{}
+{
+  <EMPTY> | <ANY> | Mixed() | children()
+}
+
+void Mixed() :
+{}
+{
+  <LPAREN> <PCDATA> ((<PIPE> <Name>)* <RPAREN><STAR>) | <RPAREN>
+}
+
+void children() :
+{}
+{
+  (choice() | seq()) (<QUESTION> | <STAR> | <PLUS>)?
+}
+
+void cp() :
+{}
+{
+  (<Name> | choice() | seq()) (<QUESTION> | <STAR> | <PLUS>)?
+}
+
+void choice() :
+{}
+{
+  <LPAREN> cp() (<PIPE> cp())+ <RPAREN>
+}
+
+void seq() :
+{}
+{
+  <LPAREN> cp() (<COMMA> cp())* <RPAREN>
+}
+
+void AttlistDecl() :
+{}
+{
+  <LBRACKETBANGATTLIST> <Name> (AttDef())* <RBRACKET>
+}
+
+void AttDef() :
+{}
+{
+  <Name> AttType() DefaultDecl()
+}
+
+void AttType() :
+{}
+{
+  StringType() | TokenizedType() | EnumeratedType()
+}
+
+void StringType() :
+{}
+{
+  <CDATA>
+}
+
+void TokenizedType() :
+{}
+{
+  <ID> | <IDREF> | <IDREFS> | <ENTITY> | <ENTITIES> | <NMTOKEN> | <NMTOKENS>
+}
+
+void EnumeratedType() :
+{}
+{
+  NotationType() | Enumeration()
+}
+
+void NotationType() :
+{}
+{
+  <NOTATION> <LPAREN> <Name> (<PIPE> <Name>)* <RPAREN>
+}
+
+void Enumeration() :
+{}
+{
+  <LPAREN> <Nmtoken> (<PIPE> <NMTOKEN>)* <RPAREN>
+}
+
+void Comment() :
+{}
+{
+/* approximated */
+  <COMMENTSTART> (<CHAR>)* <COMMENTEND>
+}
+
+void PI() :
+{}
+{ 
+/* approximated */
+  <PISTART> PITarget() (<CHAR>)* <PIEND>
+}

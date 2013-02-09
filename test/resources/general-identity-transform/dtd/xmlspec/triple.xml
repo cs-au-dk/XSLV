@@ -1,0 +1,5 @@
+<triple name="xmlspec">
+  <input type="DTD" DTDNamespaceURI="http://dongfang.dk/testdata">xmlspec.dtd</input>
+  <output type="RNG">xmlspec.rng</output>
+  <xslt>../../general-identity-transform.xsl</xslt>
+</triple>

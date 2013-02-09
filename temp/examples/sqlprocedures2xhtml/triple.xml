@@ -1,0 +1,9 @@
+<!-- An interesting difference in results of fast and full algo WAS here...-->
+<triple name="sqlprocedures2xhtml">
+  <input type="DTD" DTDNamespaceURI="">input/proc.dtd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/proc-def.xsl</xslt>
+  <info>Credits: Unknown.</info>  
+  <notes>Some typical (X)HTML errors. Which are spurious still needs
+to be re-checked.</notes>
+</triple>

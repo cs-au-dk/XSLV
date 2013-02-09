@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+
+<!-- if attribute is there, go s -->
+<xsl:template match="bar">
+  <xsl:if test="@a='blah'">
+    <xsl:apply-templates select="." mode="afterburner"/>
+  </xsl:if>
+  <xsl:if test="@a!='blah'">
+    <xsl:apply-templates select="." mode="afterburner"/>
+  </xsl:if>
+</xsl:template>
+
+<!-- the test is in the recognition that the mandatory y element is output into t -->
+<xsl:template match="bar" mode="afterburner">
+</xsl:template>
+
+</xsl:stylesheet>

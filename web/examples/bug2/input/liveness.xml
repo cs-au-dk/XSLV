@@ -1,0 +1,38 @@
+<tip>
+		  <analysis name="Liveness" ref="0"/>
+		  <program>
+		    <function name="main" arguments="x" locals="y, z">
+		  <stm><while><exp><binop kind = "&gt;"><exp><id name="x"/></exp><exp><intconst value="1"/></exp></binop><analysis ref="0">[x]</analysis></exp><stm>
+		  <assignment id="y"><exp><binop kind = "/"><exp><id name="x"/></exp><exp><intconst value="2"/></exp></binop></exp></assignment>
+		  <analysis ref="0">[x]</analysis>
+		</stm><stm><if><exp><binop kind = "&gt;"><exp><id name="y"/></exp><exp><intconst value="3"/></exp></binop><analysis ref="0">[y, x]</analysis></exp><then><stm>
+		  <assignment id="x"><exp><binop kind = "-"><exp><id name="x"/></exp><exp><id name="y"/></exp></binop></exp></assignment>
+		  <analysis ref="0">[y, x]</analysis>
+		</stm></then></if></stm><stm>
+		  <assignment id="z"><exp><binop kind = "-"><exp><id name="x"/></exp><exp><intconst value="4"/></exp></binop></exp></assignment>
+		  <analysis ref="0">[x]</analysis>
+		</stm><stm><if><exp><binop kind = "&gt;"><exp><id name="z"/></exp><exp><intconst value="0"/></exp></binop><analysis ref="0">[z, x]</analysis></exp><then><stm>
+		  <assignment id="x"><exp><binop kind = "/"><exp><id name="x"/></exp><exp><intconst value="2"/></exp></binop></exp></assignment>
+		  <analysis ref="0">[z, x]</analysis>
+		</stm></then></if></stm><stm>
+		  <assignment id="z"><exp><binop kind = "-"><exp><id name="z"/></exp><exp><intconst value="1"/></exp></binop></exp></assignment>
+		  <analysis ref="0">[z, x]</analysis>
+		</stm></while></stm>
+		  <return>
+		    <exp><id name="x"/></exp>
+		  </return>
+		</function>
+		    <stm>
+		  <assignment id="x"><exp><input/></exp></assignment>
+		  <analysis ref="0">[]</analysis>
+		</stm><stm>
+		  <assignment id="_out"><exp>
+		  <call id="main">
+		    <exp><id name="x"/></exp>
+		  </call>
+		  
+		</exp></assignment>
+		  
+		</stm><stm><output><exp><id name="_out"/></exp></output><analysis ref="0">[_out]</analysis></stm>
+		  </program>
+		</tip>

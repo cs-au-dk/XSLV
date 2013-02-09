@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<boot xmlns="http://dongfang.dk/testdata">
+<!--
+      <element name="nonmixed" type="d:nonmixed"/>
+        <element name="mixed" type="d:mixed"/>
+        <element name="extended_nonmixed_1" type="d:extended_nonmixed_1"/>
+        <element name="extended_nonmixed_2" type="d:extended_nonmixed_2"/>
+        <element name="extended_mixed_1" type="d:extended_mixed_1"/>
+        <element name="extended_mixed_2" type="d:extended_mixed_2"/>
+-->
+  <nonmixed><a/></nonmixed>
+  <mixed> s1 <a/> s2 </mixed>
+  <extended_nonmixed_1><a/></extended_nonmixed_1>
+  <!-- this is an error -->
+  <extended_nonmixed_2> s0 <a/> s0again </extended_nonmixed_2>
+  <extended_mixed_1> s3 <a/> s4 </extended_mixed_1>
+  <extended_mixed_2> s5 <a/> s6 </extended_mixed_2>
+</boot>

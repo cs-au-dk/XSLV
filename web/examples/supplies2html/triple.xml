@@ -1,0 +1,13 @@
+<triple name="affordablesupplies2html">
+  <input type="DTD" DTDNamespaceURI="">input/Catalog.dtd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/AffordableSupplies_xhtml.xsl</xslt>
+  <info>Credits: School of Business, University of Wisconsin-Madison.</info>
+  <notes>3 errors:
+    <ul>
+      <li>The XHTML <tt>head</tt> element is missing; it is required. The validator complains that the <tt>{http://www.w3.org/1999/xhtml}body</tt> content <i>alone</i> in <tt>{http://www.w3.org/1999/xhtml}html</tt> it not enough.</li>
+      <li>There is an <tt>alt</tt> attribute missing on the <tt>img</tt> output.</li>
+      <li>The value of the <tt>href</tt> on the <tt>img</tt> element output it taken from a <tt>#PCDATA</tt>-declared element's text value. This may contain non-URL strings, such as the string of a single tab character (which is the first example the validator can find).</li>
+    </ul>
+  </notes>
+</triple>

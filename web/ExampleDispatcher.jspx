@@ -1,0 +1,32 @@
+<jsp:scriptlet>
+  validator.preresolve("principal-module", prefix + 				"agenda2xhtml/xslt/agenda.xsl");
+  validator.preresolve("input-schema", prefix +     				"agenda2xhtml/input/agenda.dtd");
+  validator.preresolve("output-schema", prefix +    				"xhtml-from-xsd/xhtml1-transitional.xsd");
+  validator.preresolve("http://www.w3.org/2001/xml.xsd", prefix + 	"xhtml-from-xsd/xml.xsd");
+  validator.preresolveString("input-root-element", 				null);
+  validator.preresolveString("dtd-input-namespace", 				null);
+  validator.preresolveString("output-root-element", 				null);
+  validator.service(request);
+</jsp:scriptlet>
+
+<jsp:scriptlet>
+  validator.preresolve("principal-module", prefix + 				"availablesupplies2html/xslt/AffordableSupplies_xhtml.xsl");
+  validator.preresolve("input-schema", prefix +     				"availablesupplies2html/input/Catalog.dtd");
+  validator.preresolve("output-schema", prefix +    				"xhtml-from-xsd/xhtml1-transitional.xsd");
+  validator.preresolve("http://www.w3.org/2001/xml.xsd", prefix + 	"xhtml-from-xsd/xml.xsd");
+  validator.preresolveString("input-root-element", 				null);
+  validator.preresolveString("dtd-input-namespace", 				null);
+  validator.preresolveString("output-root-element", 				null);
+  validator.service(request);
+</jsp:scriptlet>
+
+<jsp:scriptlet>
+  validator.preresolve("principal-module", prefix + 				"dsd2html/xslt/AffordableSupplies_xhtml.xsl");
+  validator.preresolve("input-schema", prefix +     				"availablesupplies2html/input/Catalog.dtd");
+  validator.preresolve("output-schema", prefix +    				"xhtml-from-xsd/xhtml1-transitional.xsd");
+  validator.preresolve("http://www.w3.org/2001/xml.xsd", prefix + 	"xhtml-from-xsd/xml.xsd");
+  validator.preresolveString("input-root-element", 				null);
+  validator.preresolveString("dtd-input-namespace", 				null);
+  validator.preresolveString("output-root-element", 				null);
+  validator.service(request);
+</jsp:scriptlet>

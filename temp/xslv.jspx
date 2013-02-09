@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+	<jsp:directive.page language="java" session="true" isThreadSafe="true"
+		info="Main XSLV Page" isELIgnored="false"
+		import="java.util.*,dongfang.xsltools.exceptions.*,dongfang.xsltools.context.*,dongfang.xsltools.validation.*,dongfang.xsltools.resolver.*,dongfang.xsltools.configuration.*"
+		contentType="application/xhtml+xml; charset=utf-8" />
+	<jsp:useBean id="validator" scope="session"
+		class="dongfang.xsltools.context.InteractiveRequestResponseBean" />
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+		doctype-system="http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
+	<c:set var="mainpage" scope="request" value="./xslv.html" />
+	<c:set var="twidth" scope="page" value="880" />
+	<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:c="http://java.sun.com/jsp/jstl/core" xml:lang="en" lang="en">
+	<head>
+	<title>Dongfang XSLT Validator</title>
+	<!-- D'oh! IE does not like self-closing tags like &lt;script foo="bar" /&gt; -->
+	<link href="./tabs.css" type="text/css" rel="stylesheet" />
+	<![CDATA[<script type="text/javascript" src="./xslv.js"></script>]]>
+	<meta name="pragma" content="nocache"/>
+	</head>
+	<c:if test="${! empty param.diagnostics}">
+		<c:set scope="session" var="diagnostics" value="true" />
+	</c:if>
+	<body>
+	<jsp:include page="Dongfang.jspx" />
+	<jsp:scriptlet>
+/*
+ * defeat the demonstrator bean when user jumps between validation and demo within same session
+ */
+if (!validator.getSessionType().equals("validation")) {
+  validator = new dongfang.xsltools.context.InteractiveRequestResponseBean();
+  session.setAttribute("validator", validator);
+}
+boolean semerr = false;
+/*
+ * Call the validator service routine
+ */
+try {
+  validator.service(request);
+} catch (Exception ex) {
+  semerr = true;
+  out.write("&lt;h2&gt;Ooops...&lt;/h2&gt;Error:" + ex.getClass().getName() + "(" + ex.getMessage() + ")");
+</jsp:scriptlet>
+	<!--
+An attempt at better exception traces
+-->
+	<table width="${twidth}">
+		<jsp:scriptlet>
+  StackTraceElement[] elms = ex.getStackTrace();
+  for (int i=0; i&lt;elms.length; i++) {
+  pageContext.setAttribute("stackFrame", elms[i]);
+</jsp:scriptlet>
+		<tr>
+			<td><c:out value="${stackFrame}" escapeXml="true" /></td>
+		</tr>
+		<jsp:scriptlet>}</jsp:scriptlet>
+	</table>
+	<!--
+<jsp:scriptlet>session.invalidate();</jsp:scriptlet>
+<jsp:include page="Resetbutton.jspx">
+  <jsp:param name="backlink" value="${mainpage}"/>
+  <jsp:param name="buttontext" value="Fix it, then try again"/>
+</jsp:include>
+-->
+<jsp:scriptlet>
+}
+</jsp:scriptlet>
+	<c:if test="${! empty sessionScope.diagnostics}">
+		<table>
+			${validator.diagnostics}
+		</table>
+	</c:if>
+	<jsp:scriptlet>
+if (!semerr) {
+</jsp:scriptlet>
+	<c:if test="${not (empty validator.nonFatalErrors)}">
+		<!--
+Other errors than validation errors
+-->
+		<h2>There are some semantic errors in the stylesheet</h2>
+		<jsp:include page="SemanticErrorList.jspx">
+			<jsp:param name="mainpage" value="${mainpage}" />
+			<jsp:param name="twidth" value="${twidth}" />
+		</jsp:include>
+	</c:if>
+	<!--
+Messages
+-->
+	<c:if test="${not empty validator.messages}">
+		<h2>Messages</h2>
+		<table border="1" width="${twidth}">
+			<c:forEach var="item" items="${validator.messages}" varStatus="stat">
+				<tr>
+					<td><c:out value="${item}" escapeXml="yes" /></td>
+				</tr>
+			</c:forEach>
+		</table>
+		<jsp:scriptlet>
+          validator.clearShortLivedMessages();
+          </jsp:scriptlet>
+	</c:if>
+	<!--
+Display validation result
+-->
+	<c:if test="${validator.havingResult}">
+		<c:choose>
+			<c:when test="${validator.validationResult.valid}">
+				<h2>XSLT is valid</h2>
+				No validation errors were found. The XSLT is type-safe!
+			</c:when>
+			<c:otherwise>
+				<jsp:include page="ValidationErrorList.jspx">
+					<jsp:param name="mainpage" value="${mainpage}" />
+					<jsp:param name="twidth" value="${twidth}" />
+				</jsp:include>
+			</c:otherwise>
+		</c:choose>
+	</c:if>
+	<!--
+Handle can-not-wait resource requests from the validator (it is the client, we are the server)
+-->
+	<c:if test="${validator.requestingResources}">
+		<h2>Resource(s) requested</h2>
+		<c:if test="! empty sessionScope.inputExplanation">
+			The XSLT Validator checks: Assuming that the input of an XSLT
+			is valid wrt. an input schema, can it be guaranteed that output is
+			valid wrt. an output schema? <br />
+			Before it can answer that, it needs to have the XSLT stylesheet, the
+			input and output schemas, and everything they include or import.
+			<c:set scope="session" var="imputExplanation" value="done" />
+		</c:if>
+
+		<c:url var="uploadURL" value="${mainpage}" />
+		<form name="upload" id="upload" method="post" action="${uploadURL}"
+			enctype="multipart/form-data">
+		<table border="1" width="${twidth}">
+			<c:choose>
+				<c:when
+					test="${validator.requestResourceType == validator.streamRequestResourceCode}">
+					<jsp:include page="ResourceUpload.jspx">
+						<jsp:param name="systemId" value="${validator.requestedFieldName}" />
+						<jsp:param name="resourceAppearsToBeURL"
+							value="${validator.systemIdAppearsToBeURL}" />
+						<jsp:param name="requestMessage"
+							value="${validator.requestMessage}" />
+						<jsp:param name="requestExplanation"
+							value="${validator.requestedResourceTypeName}" />
+						<jsp:param name="optional" value="false" />
+						<jsp:param name="size" value="LARGE" />
+						<!--<jsp:param name="inputMethod" value="FILE"/>-->
+						<jsp:param name="buttons" value="true" />
+						<jsp:param name="twidth" value="${twidth}" />
+					</jsp:include>
+				</c:when>
+				<c:otherwise>
+					<jsp:include page="StringUpload.jspx">
+						<jsp:param name="systemId" value="${validator.requestedFieldName}" />
+						<jsp:param name="requestMessage"
+							value="${validator.requestMessage}" />
+						<jsp:param name="requestExplanation"
+							value="${validator.requestedResourceTypeName}" />
+						<jsp:param name="someExplanation"
+							value="${validator.stringRequestUserExplanation}" />
+						<jsp:param name="noneExplanation"
+							value="${validator.stringRequestNoneExplanation}" />
+						<jsp:param name="optional" value="false" />
+						<jsp:param name="buttons" value="true" />
+						<jsp:param name="twidth" value="${twidth}" />
+					</jsp:include>
+				</c:otherwise>
+			</c:choose>
+			<!--
+Handle can-wait resource requests from the validator (it is the client, we are the server)
+-->
+			<c:forEach var="item" items="${validator.optionalStreamRequests}"
+				varStatus="stat">
+				<jsp:include page="ResourceUpload.jspx">
+					<jsp:param name="systemId" value="${item.systemId}" />
+					<jsp:param name="requestMessage" value="${item.humanReadable}" />
+					<jsp:param name="requestExplanation" value="${item.explanation}" />
+					<jsp:param name="optional" value="true" />
+					<jsp:param name="size" value="'NORMAL'" />
+					<jsp:param name="inputReference" value="" />
+					<!--<jsp:param name="inputMethod" value="FILE"/>-->
+					<jsp:param name="inputContents" value="ged" />
+					<jsp:param name="buttons" value="${stat.last}" />
+					<jsp:param name="twidth" value="${twidth}" />
+				</jsp:include>
+			</c:forEach>
+		</table>
+		</form>
+
+	</c:if>
+	<!--
+Display already uploaded resources
+-->
+	<c:if test="${validator.havingCachedResources}">
+		<h2>Resources already provided</h2>
+		<!--<p>These are the resources already avaliable to the validator. If you make any changes, these may not take effect until validation has finished, and you click "validate again".</p>-->
+		
+		<c:url var="downloadAllURL" value="validationSessionResources.zip" />
+		<a href="${downloadAllURL}">Download all as Zip</a>
+		
+		<table border="1" width="${twidth}">
+			<c:forEach var="item" items="${validator.cachedResources}"
+				varStatus="stat">
+				<jsp:include page="CachedResource.jspx">
+					<jsp:param name="systemId" value="${item.systemId}" />
+					<jsp:param name="abstractName" value="${item.abstractName}" />
+					<jsp:param name="mainjspx" value="/xslv.jspx" />
+					<jsp:param name="mainpage" value="${mainpage}" />
+					<jsp:param name="twidth" value="${twidth}" />
+				</jsp:include>
+			</c:forEach>
+		</table>
+	</c:if>
+	<c:if test="${! empty validator.generatedResources}">
+		<jsp:include page="GeneratedResources.jspx">
+			<jsp:param name="mainpage" value="${mainpage}" />
+			<jsp:param name="twidth" value="${twidth}" />
+		</jsp:include>
+	</c:if>
+	<jsp:scriptlet>}</jsp:scriptlet>
+	<c:if test="${validator.displayingSessionButtons}">
+		<jsp:include page="SessionButtons.jspx">
+			<jsp:param name="mainpage" value="${mainpage}" />
+			<jsp:param name="twidth" value="${twidth}" />
+		</jsp:include>
+	</c:if>
+	</body>
+	</html>
+</jsp:root>

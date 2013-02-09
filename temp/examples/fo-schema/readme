@@ -1,0 +1,3 @@
+fo.dtd is a legacy dtd schema
+fo_alternative.* are inherited from the madman xslv project. Don't know their origin.
+*.rnc and are from RenderX (www.renderx.com/tools/validators.html)

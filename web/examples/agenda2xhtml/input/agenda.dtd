@@ -1,0 +1,19 @@
+<!ENTITY % agendainfo '
+context NMTOKEN #REQUIRED
+'>
+
+<!ENTITY % timeinfo '
+start-date NMTOKEN #IMPLIED
+end-date NMTOKEN #IMPLIED
+submission-date NMTOKEN #REQUIRED
+submission-time NMTOKEN #REQUIRED
+'>
+
+<!ELEMENT agenda (event*)>
+<!ATTLIST agenda %agendainfo;>
+<!ELEMENT event (title,description,submitter,place?)>
+<!ATTLIST event %timeinfo;>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT submitter (#PCDATA)>
+<!ELEMENT place (#PCDATA)>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+	<jsp:directive.page language="java" session="true" isThreadSafe="true"
+		info="Launcher for XSLV Demo" isELIgnored="false"
+		import="java.util.*,dongfang.xsltools.exceptions.*,dongfang.xsltools.context.*,dongfang.xsltools.validation.*,dongfang.xsltools.resolver.*,dongfang.xsltools.configuration.*"
+		contentType="application/xhtml+xml; charset=utf-8" />
+	<jsp:useBean id="demonstrator" scope="session"
+		class="dongfang.xsltools.context.DemonstrationBean" />
+	<c:set var="twidth" value="880" />
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+		doctype-system="http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
+	<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:c="http://java.sun.com/jsp/jstl/core" xml:lang="en" lang="en">
+	<c:set var="mainpage" scope="request"
+		value="./xslv-demo.html?democase=${param.democase}" />
+	<c:if test="${! empty param.diagnostics}">
+		<c:set scope="session" var="diagnostics" value="true" />
+	</c:if>
+	<head>
+	<c:if test="${! empty param.diagnostics}">
+		<c:set scope="session" var="diagnostics" value="true" />
+	</c:if>
+	<title>Dongfang XSLT Validator Demo</title>
+	<link href="./tabs.css" type="text/css" rel="stylesheet" />
+	<![CDATA[<script type="text/javascript" src="./xslv.js"></script>]]>
+	</head>
+	<body>
+	<jsp:include page="Dongfang.jspx" />
+	<h2><i>${param.democase} example</i></h2>
+	<jsp:scriptlet>
+    /*
+     * I'd happily use a JSTL set tag with an EL expression here. Only thing is, it is broken (does string coercion)
+     */
+	pageContext.setAttribute("validator", demonstrator, pageContext.SESSION_SCOPE);
+	if (request.getParameter("democase") != null &amp;&amp; !request.getParameter("democase").
+	equals(pageContext.getAttribute("democase", pageContext.SESSION_SCOPE))) {
+	</jsp:scriptlet>
+	<c:set var="democase" scope="session" value="${param.democase}" />
+	<jsp:scriptlet>
+  String democase = request.getParameter("democase");
+  String prefix = "http://localhost:8080/" + request.getContextPath() + "/examples/";
+  String suffix = "/triple.xml";
+  
+  /* Quite silly style, but at least no security hole */
+  if ("adressebog2xhtml".equals(democase)
+   || "agenda2xhtml".equals(democase)
+   || "availablesupplies2html".equals(democase)
+   || "dsd2html".equals(democase)
+   || "emaillist2xhtml".equals(democase)
+   || "links2html".equals(democase)
+   || "musicxml".equals(democase)
+   || "ontopia2xtm".equals(democase)
+   || "order2fo".equals(democase)
+   || "poem2xhtml".equals(democase)
+   || "purchaseorder2invoice".equals(democase)
+   || "salesreport".equals(democase)
+   || "searchdialog".equals(democase)
+   || "slides2xhtml".equals(democase)
+   || "sqlprocedures2xhtml".equals(democase)
+   || "staticanalysis2xhtml".equals(democase)
+   || "window2xhtml".equals(democase)
+   || "xhtml2fo".equals(democase)
+   || "xmlspec".equals(democase)
+   || "bug".equals(democase)
+   || "bug2".equals(democase)
+   )
+  {
+    try {
+     String triple = prefix + democase + suffix;
+     demonstrator.preresolveTriple(triple, "http://localhost:8080" + request.getContextPath());
+     demonstrator.reset(false);
+  }
+  catch (Exception ex) {
+    ex.printStackTrace();
+    out.write("Error:" + ex.getClass().getName() + "(" + ex.getMessage() + ")");
+  }
+}
+}
+</jsp:scriptlet>
+	<c:if test="${! empty demonstrator.democaseInfo}">
+		<p>${demonstrator.democaseInfo}</p>
+	</c:if>
+	<c:if test="${! empty demonstrator.democaseNotes}">
+		<p>${demonstrator.democaseNotes}</p>
+	</c:if>
+	<jsp:scriptlet>
+boolean semerr = false;
+try {
+  demonstrator.service(request);
+} catch (Exception ex) {
+  semerr = true;
+  out.write("&lt;h2&gt;Ooops...&lt;/h2&gt;Error:" + ex.getClass().getName() + "(" + ex.getMessage() + ")");
+</jsp:scriptlet>
+<!--
+An attempt at better exception traces
+-->
+	<table width="${twidth}">
+		<jsp:scriptlet>
+  StackTraceElement[] elms = ex.getStackTrace();
+  for (int i=0; i&lt;elms.length; i++) {
+  pageContext.setAttribute("stackFrame", elms[i]);
+</jsp:scriptlet>
+		<tr>
+			<td><c:out value="${stackFrame}" escapeXml="true" /></td>
+		</tr>
+		<jsp:scriptlet>}</jsp:scriptlet>
+	</table>
+	<!--
+<jsp:scriptlet>session.invalidate();</jsp:scriptlet>
+<jsp:include page="Resetbutton.jspx">
+  <jsp:param name="backlink" value="${mainpage}"/>
+  <jsp:param name="buttontext" value="Fix it, then try again"/>
+</jsp:include>
+-->
+	<jsp:scriptlet>
+} 
+</jsp:scriptlet>
+	<c:if test="${! empty sessionScope.diagnostics}">
+		<table>
+			${validator.diagnostics}
+		</table>
+	</c:if>
+	<jsp:scriptlet>
+if (!semerr) {</jsp:scriptlet>
+	<c:if test="${not (empty demonstrator.nonFatalErrors)}">
+		<!--
+Other errors than validation errors
+-->
+		<h2>There are some semantic errors in the stylesheet</h2>
+		<jsp:include page="SemanticErrorList.jspx">
+			<jsp:param name="mainpage" value="${mainpage}" />
+			<jsp:param name="twidth" value="${twidth}" />
+		</jsp:include>
+	</c:if>
+	<!--
+Messages
+-->
+	<c:if test="${not empty demonstrator.messages}">
+		<h2>Messages</h2>
+		<table border="1" width="${twidth}">
+			<c:forEach var="item" items="${demonstrator.messages}"
+				varStatus="stat">
+				<tr>
+					<td><c:out value="${item}" escapeXml="yes" /></td>
+				</tr>
+			</c:forEach>
+		</table>
+		<jsp:scriptlet>
+          demonstrator.clearShortLivedMessages();
+          </jsp:scriptlet>
+	</c:if>
+	<!--
+Display validation result
+-->
+	<c:if test="${demonstrator.havingResult}">
+		<c:choose>
+			<c:when test="${demonstrator.validationResult.valid}">
+				<h2>XSLT is valid</h2>
+            No validation errors were found. The XSLT is type-safe!
+          </c:when>
+			<c:otherwise>
+				<jsp:include page="ValidationErrorList.jspx">
+					<jsp:param name="mainpage" value="${mainpage}" />
+					<jsp:param name="twidth" value="${twidth}" />
+				</jsp:include>
+			</c:otherwise>
+		</c:choose>
+	</c:if>
+<!--
+Handle can-not-wait resource requests from the demonstrator (it is the client, we are the server)
+-->
+	<c:if test="${demonstrator.requestingResources}">
+		<h2>Continue</h2>
+		<c:url var="uploadURL" value="${mainpage}" />
+		<form name="upload" id="upload" method="post" action="${uploadURL}"
+			enctype="multipart/form-data">
+		<table border="1" width="${twidth}">
+			<c:choose>
+				<c:when
+					test="${demonstrator.requestResourceType == demonstrator.streamRequestResourceCode}">
+					<jsp:include page="ResourceUpload.jspx">
+						<jsp:param name="systemId"
+							value="${demonstrator.requestedFieldName}" />
+						<jsp:param name="requestMessage"
+							value="${demonstrator.requestMessage}" />
+						<jsp:param name="requestExplanation"
+							value="${demonstrator.requestedResourceTypeName}" />
+						<jsp:param name="optional" value="false" />
+						<jsp:param name="size" value="LARGE" />
+						<jsp:param name="inputMethod" value="FILE" />
+						<jsp:param name="buttons" value="true" />
+						<jsp:param name="twidth" value="${twidth}" />
+					</jsp:include>
+				</c:when>
+				<c:when
+					test="${demonstrator.requestResourceType == demonstrator.stringRequestResourceCode}">
+					<jsp:include page="StringUpload.jspx">
+						<jsp:param name="systemId"
+							value="${demonstrator.requestedFieldName}" />
+						<jsp:param name="requestMessage"
+							value="${demonstrator.requestMessage}" />
+						<jsp:param name="requestExplanation"
+							value="${demonstrator.requestedResourceTypeName}" />
+						<jsp:param name="someExplanation"
+							value="${demonstrator.stringRequestUserExplanation}" />
+						<jsp:param name="noneExplanation"
+							value="${demonstrator.stringRequestNoneExplanation}" />
+						<jsp:param name="optional" value="false" />
+						<jsp:param name="buttons" value="true" />
+						<jsp:param name="twidth" value="${twidth}" />
+					</jsp:include>
+				</c:when>
+				<c:when
+					test="${demonstrator.requestResourceType == demonstrator.goAheadToControlFlowCode}">
+					<jsp:include page="GoAheadValidate.jspx">
+						<jsp:param name="systemId"
+							value="${demonstrator.requestedFieldName}" />
+						<jsp:param name="requestMessage"
+							value="${demonstrator.requestMessage}" />
+						<jsp:param name="requestExplanation"
+							value="${demonstrator.requestedResourceTypeName}" />
+						<jsp:param name="buttons" value="true" />
+					</jsp:include>
+				</c:when>
+				<c:when
+					test="${demonstrator.requestResourceType == demonstrator.goAheadToValidationCode}">
+					<jsp:include page="GoAheadValidate.jspx">
+						<jsp:param name="systemId"
+							value="${demonstrator.requestedFieldName}" />
+						<jsp:param name="requestMessage"
+							value="${demonstrator.requestMessage}" />
+						<jsp:param name="requestExplanation"
+							value="${demonstrator.requestedResourceTypeName}" />
+						<jsp:param name="buttons" value="true" />
+					</jsp:include>
+				</c:when>
+			</c:choose>
+			<!--
+Handle can-wait resource requests from the demonstrator (it is the client, we are the server)
+-->
+			<c:forEach var="item" items="${demonstrator.optionalStreamRequests}"
+				varStatus="stat">
+				<jsp:include page="ResourceUpload.jspx">
+					<jsp:param name="systemId" value="${item.systemId}" />
+					<jsp:param name="requestMessage" value="${item.humanReadable}" />
+					<jsp:param name="requestExplanation" value="${item.explanation}" />
+					<jsp:param name="optional" value="true" />
+					<jsp:param name="size" value="'NORMAL'" />
+					<jsp:param name="inputReference" value="" />
+					<jsp:param name="inputMethod" value="FILE" />
+					<jsp:param name="inputContents" value="ged" />
+					<jsp:param name="buttons" value="${stat.last}" />
+				</jsp:include>
+			</c:forEach>
+		</table>
+		</form>
+	</c:if>
+	<!--
+Display already uploaded resources
+-->
+	<c:if test="${demonstrator.havingCachedResources}">
+		<h2>Resources already provided</h2>
+		<!--<p>These are the resources already avaliable to the demonstrator. If you make any changes, these may not take effect until validation has finished, and you click "validate again".</p>-->
+		<c:url var="downloadURL" value="validationSessionResources.zip" />
+		<a href="${downloadURL}">Download all as Zip</a>
+		<table border="1" width="${twidth}">
+			<c:forEach var="item" items="${demonstrator.cachedResources}"
+				varStatus="stat">
+				<jsp:include page="CachedResource.jspx">
+					<jsp:param name="systemId" value="${item.systemId}" />
+					<jsp:param name="abstractName" value="${item.abstractName}" />
+					<jsp:param name="mainjspx" value="/xslv.jspx" />
+					<jsp:param name="mainpage" value="${mainpage}" />
+					<jsp:param name="twidth" value="${twidth}" />
+				</jsp:include>
+			</c:forEach>
+		</table>
+	</c:if>
+	<c:if test="${! empty demonstrator.generatedResources}">
+		<jsp:include page="GeneratedResources.jspx">
+			<jsp:param name="mainpage" value="${mainpage}" />
+			<jsp:param name="twidth" value="${twidth}" />
+		</jsp:include>
+	</c:if>
+	<jsp:scriptlet>}</jsp:scriptlet>
+	<c:if test="${demonstrator.displayingSessionButtons}">
+		<jsp:include page="SessionButtons.jspx">
+			<jsp:param name="mainpage" value="${mainpage}" />
+			<jsp:param name="twidth" value="${twidth}" />
+		</jsp:include>
+	</c:if>
+	</body>
+	</html>
+</jsp:root>

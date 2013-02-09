@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?dsd href="http://www.brics.dk/DSD/dsd2.dsd"?>
+
+<dsd xmlns="http://www.brics.dk/DSD/2.0"
+     xmlns:m="http://www.brics.dk/DSD/2.0/meta"
+     xmlns:u="http://www.brics.dk/DSD/uri"
+     xmlns:p="http://www.brics.dk/powerforms/2.0"
+     root="p:powerforms">
+
+  <m:doc> DSD2 description of PowerForms </m:doc>
+
+  <import href="http://www.brics.dk/DSD/uri.dsd"/>
+
+  <boolexp id="p:EXPRESSION">
+    <or>
+      <element name="p:count"/>
+      <element name="p:equal"/>
+      <element name="p:less-than"/>
+      <element name="p:match"/>
+      <element name="p:not"/>
+      <element name="p:and"/>
+      <element name="p:or"/>
+    </or>
+  </boolexp>
+
+  <boolexp id="p:REGEXP">
+    <or>
+      <element name="p:empty"/>
+      <element name="p:anychar"/>
+      <element name="p:anything"/>
+      <element name="p:const"/>
+      <element name="p:charset"/>
+      <element name="p:charrange"/>
+      <element name="p:interval"/>
+      <element name="p:repeat"/>
+      <element name="p:complement"/>
+      <element name="p:optional"/>
+      <element name="p:plus"/>
+      <element name="p:intersection"/>
+      <element name="p:union"/>
+      <element name="p:concat"/>
+      <element name="p:regexp"/>
+    </or>
+  </boolexp>
+
+  <boolexp id="p:CONSTRAINT-BODY">
+    <or>
+      <element name="p:if"/>
+      <element name="p:ignore"/>
+      <boolexp ref="p:REGEXP"/>
+      <boolexp ref="p:EXPRESSION"/>
+    </or>
+  </boolexp>
+
+  <stringtype id="p:INT">
+    <sequence>
+      <optional><char set="-"/></optional>
+      <repeat min="1"><char min="0" max="9"/></repeat>
+    </sequence>
+  </stringtype>
+
+  <if><element name="p:powerforms"/>
+    <declare><contents><repeat><union>
+      <and><element name="p:regexp"/><attribute name="id"/></and>
+      <element name="p:constraint"/>
+      <element name="p:status"/>
+      <element name="p:init"/>
+      <element name="p:autocomplete"/>
+    </union></repeat></contents></declare>
+  </if>
+
+  <if><element name="p:constraint"/>
+    <declare>
+      <attribute name="form"/>
+      <attribute name="field"/>
+      <attribute name="id"/>
+      <contents><boolexp ref="p:CONSTRAINT-BODY"/></contents>
+    </declare>
+  </if>
+
+  <if><element name="p:if"/>
+    <declare><contents><sequence>
+      <boolexp ref="p:EXPRESSION"/>
+      <element name="p:then"/>
+      <element name="p:else"/>
+    </sequence></contents></declare>
+  </if>
+
+  <if><or><element name="p:then"/><element name="p:else"/></or>
+    <declare><contents><boolexp ref="p:CONSTRAINT-BODY"/></contents></declare>
+  </if>
+
+  <if><element name="p:count"/>
+    <declare>
+      <attribute name="number"><stringtype ref="p:INT"/></attribute>
+      <attribute name="min"><stringtype ref="p:INT"/></attribute>
+      <attribute name="max"><stringtype ref="p:INT"/></attribute>
+    </declare>
+    <require>
+      <one>
+        <attribute name="number"/>
+        <attribute name="min"/>
+      </one>
+      <equiv>
+        <attribute name="min"/>
+        <attribute name="max"/>
+      </equiv>
+    </require>
+  </if>
+
+  <if><element name="p:equal"/>
+    <declare>
+      <required><attribute name="field"/></required>
+      <attribute name="value"/>
+      <contents><repeat min="1"><element name="p:field"/></repeat></contents>
+    </declare>
+  </if>
+
+  <if><element name="p:less-than"/>
+    <declare>
+      <attribute name="field"/>
+      <attribute name="value"/>
+      <attribute name="type"/>
+    </declare>
+    <if><not><attribute name="field"/></not>
+      <declare><contents>
+        <repeat min="1"><element name="p:field"/></repeat>
+      </contents></declare>
+    </if>
+  </if>
+
+  <if><element name="p:match"/>
+    <declare>
+      <attribute name="field"/>
+      <contents><boolexp ref="p:REGEXP"/></contents>
+    </declare>
+  </if>
+
+  <if>
+    <or>
+      <element name="p:not"/>
+      <element name="p:and"/>
+      <element name="p:or"/>
+    </or> 
+    <declare><contents>
+      <repeat><boolexp ref="p:EXPRESSION"/></repeat>
+    </contents></declare>
+  </if>
+
+
+  <if><element name="p:field"/>
+    <declare><required><attribute name="name"/></required></declare>
+  </if>
+
+  <if><or><element name="p:string"/><element name="p:charset"/></or>
+    <declare><required><attribute name="value"/></required></declare>
+  </if>
+
+  <if><element name="p:charrange"/>
+    <declare>
+      <required>
+        <attribute name="low"><char/></attribute>
+        <attribute name="high"><char/></attribute>
+      </required>
+    </declare>
+  </if>
+
+  <if><element name="p:interval"/>
+    <declare>
+      <required>
+        <attribute name="low"><stringtype ref="p:INT"/></attribute>
+        <attribute name="high"><stringtype ref="p:INT"/></attribute>
+      </required>
+      <attribute name="width"><stringtype ref="p:INT"/></attribute>
+      <attribute name="radix"><stringtype ref="p:INT"/></attribute>
+    </declare>
+  </if>
+
+  <if><element name="p:repeat"/>
+    <declare>
+      <attribute name="count"><stringtype ref="p:INT"/></attribute>
+      <contents><boolexp ref="p:REGEXP"/></contents>
+    </declare>
+    <if><not><attribute name="count"/></not>
+      <declare>
+        <attribute name="min"><stringtype ref="p:INT"/></attribute>
+        <attribute name="max"><stringtype ref="p:INT"/></attribute>
+      </declare>
+    </if>
+  </if>
+
+  <if>
+    <or>
+      <element name="p:complement"/>
+      <element name="p:optional"/>
+      <element name="p:plus"/>
+    </or>
+    <declare><contents><boolexp ref="p:REGEXP"/></contents></declare>
+  </if>
+
+  <if>
+    <or>
+      <element name="p:intersection"/>
+      <element name="p:union"/>
+      <element name="p:concat"/>
+    </or>
+    <declare><contents>
+      <repeat min="1"><boolexp ref="p:REGEXP"/></repeat>
+    </contents></declare>
+  </if>
+
+  <if><element name="p:regexp"/>
+    <declare>
+      <attribute name="pattern"/>
+      <attribute name="url"><stringtype ref="u:URI"/></attribute>
+      <attribute name="idref"/>
+      <attribute name="id"/>
+    </declare>
+  </if>
+
+  <if><element name="p:status"/>
+    <declare>
+      <attribute name="type"/>
+      <attribute name="red"><stringtype ref="u:URI"/></attribute>
+      <attribute name="yellow"><stringtype ref="u:URI"/></attribute>
+      <attribute name="green"><stringtype ref="u:URI"/></attribute>
+      <attribute name="na"><stringtype ref="u:URI"/></attribute>
+    </declare>
+  </if>
+
+  <if><element name="p:init"/>
+    <declare>
+      <attribute name="form"/>
+      <required>
+        <attribute name="field"/>
+        <attribute name="value"/>
+      </required>
+    </declare>
+  </if>
+
+  <if><element name="p:autocomplete"/>
+    <declare>
+      <required><attribute name="constraint"/></required>
+      <attribute name="type"/>
+      <attribute name="image"><stringtype ref="u:URI"/></attribute>
+      <attribute name="na"><stringtype ref="u:URI"/></attribute>
+    </declare>
+  </if>
+
+  <if><attribute name="idref"/>
+    <if><element name="p:regexp"/>
+      <pointer>
+        <element name="p:regexp"/>
+        <attributefield name="idref"/>
+      </pointer>
+    </if>
+    <if><element name="p:constraint"/>
+      <pointer>
+        <element name="p:constraint"/>
+        <attributefield name="idref"/>
+      </pointer>
+    </if>
+  </if>
+
+  <unique>
+    <attribute name="id"/>
+    <attributefield name="id"/>
+  </unique>
+
+</dsd>

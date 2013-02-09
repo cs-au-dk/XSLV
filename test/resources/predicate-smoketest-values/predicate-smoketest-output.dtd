@@ -1,0 +1,6 @@
+<!ELEMENT r (s|t)?>
+<!ELEMENT s (x)?>
+<!ELEMENT t (y)?>
+<!ELEMENT x EMPTY>
+<!ELEMENT y EMPTY>
+

@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?dsd href="http://www.brics.dk/DSD/dsd2.dsd"?>
+<dsd xmlns="http://www.brics.dk/DSD/2.0" xmlns:x="http://www.brics.dk/DSD/2.0">
+  <rule id="x:R4">
+    <declare>
+      <attribute name="meta" />
+      <attribute name="name" />
+    </declare>
+  </rule>
+  <rule id="x:R7">
+    <declare>
+      <attribute name="min" />
+      <attribute name="max" />
+    </declare>
+  </rule>
+  <rule id="x:R9">
+    <declare>
+      <attribute name="id" />
+      <attribute name="ref" />
+    </declare>
+  </rule>
+  <rule id="x:R11">
+    <rule ref="x:R9" />
+    <declare>
+      <contents>
+        <optional>
+          <union>
+            <element name="x:sequence" />
+            <element name="x:optional" />
+            <element name="x:complement" />
+            <element name="x:union" />
+            <element name="x:intersection" />
+            <element name="x:minus" />
+            <element name="x:repeat" />
+            <element name="x:string" />
+            <element name="x:char" />
+            <element name="x:stringtype" />
+            <element name="x:contenttype" />
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+        </optional>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R13">
+    <declare>
+      <contents>
+        <optional>
+          <union>
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+        </optional>
+      </contents>
+      <attribute name="type">
+        <union>
+          <string value="string" />
+          <string value="qname" />
+        </union>
+      </attribute>
+    </declare>
+  </rule>
+  <if>
+    <element name="x:dsd" />
+    <declare>
+      <attribute name="meta" />
+      <attribute name="root" />
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:declare" />
+            <element name="x:require" />
+            <element name="x:if" />
+            <element name="x:pointer" />
+            <element name="x:unique" />
+            <element name="x:rule" />
+            <element name="x:rule" />
+            <element name="x:boolexp" />
+            <element name="x:stringtype" />
+            <element name="x:contenttype" />
+            <element name="x:dsd" />
+            <element name="x:include" />
+            <element name="x:doc" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:declare" />
+    <declare>
+      <attribute name="meta" />
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:attribute" />
+            <element name="x:required" />
+            <element name="x:contents" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:require" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+        </repeat>
+      </contents>
+      <attribute name="meta" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:if" />
+    <declare>
+      <contents>
+        <sequence>
+          <union>
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+          <repeat>
+            <union>
+              <element name="x:declare" />
+              <element name="x:require" />
+              <element name="x:if" />
+              <element name="x:pointer" />
+              <element name="x:unique" />
+              <element name="x:rule" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:required" />
+    <declare>
+      <contents>
+        <repeat>
+          <element name="x:attribute" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:contents" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:sequence" />
+            <element name="x:optional" />
+            <element name="x:complement" />
+            <element name="x:union" />
+            <element name="x:intersection" />
+            <element name="x:minus" />
+            <element name="x:repeat" />
+            <element name="x:string" />
+            <element name="x:char" />
+            <element name="x:stringtype" />
+            <element name="x:contenttype" />
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+            <element name="x:normalize" />
+            <element name="x:default" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:and" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:or" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:not" />
+    <declare>
+      <contents>
+        <union>
+          <element name="x:and" />
+          <element name="x:or" />
+          <element name="x:not" />
+          <element name="x:imply" />
+          <element name="x:equiv" />
+          <element name="x:one" />
+          <element name="x:parent" />
+          <element name="x:ancestor" />
+          <element name="x:child" />
+          <element name="x:descendant" />
+          <element name="x:this" />
+          <element name="x:element" />
+          <element name="x:attribute" />
+          <element name="x:contents" />
+          <element name="x:boolexp" />
+        </union>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:imply" />
+    <declare>
+      <contents>
+        <sequence>
+          <union>
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+          <union>
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:equiv" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:one" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:parent" />
+    <declare>
+      <contents>
+        <union>
+          <element name="x:and" />
+          <element name="x:or" />
+          <element name="x:not" />
+          <element name="x:imply" />
+          <element name="x:equiv" />
+          <element name="x:one" />
+          <element name="x:parent" />
+          <element name="x:ancestor" />
+          <element name="x:child" />
+          <element name="x:descendant" />
+          <element name="x:this" />
+          <element name="x:element" />
+          <element name="x:attribute" />
+          <element name="x:contents" />
+          <element name="x:boolexp" />
+        </union>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:ancestor" />
+    <declare>
+      <contents>
+        <union>
+          <element name="x:and" />
+          <element name="x:or" />
+          <element name="x:not" />
+          <element name="x:imply" />
+          <element name="x:equiv" />
+          <element name="x:one" />
+          <element name="x:parent" />
+          <element name="x:ancestor" />
+          <element name="x:child" />
+          <element name="x:descendant" />
+          <element name="x:this" />
+          <element name="x:element" />
+          <element name="x:attribute" />
+          <element name="x:contents" />
+          <element name="x:boolexp" />
+        </union>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:child" />
+    <declare>
+      <contents>
+        <union>
+          <element name="x:and" />
+          <element name="x:or" />
+          <element name="x:not" />
+          <element name="x:imply" />
+          <element name="x:equiv" />
+          <element name="x:one" />
+          <element name="x:parent" />
+          <element name="x:ancestor" />
+          <element name="x:child" />
+          <element name="x:descendant" />
+          <element name="x:this" />
+          <element name="x:element" />
+          <element name="x:attribute" />
+          <element name="x:contents" />
+          <element name="x:boolexp" />
+        </union>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:descendant" />
+    <declare>
+      <contents>
+        <union>
+          <element name="x:and" />
+          <element name="x:or" />
+          <element name="x:not" />
+          <element name="x:imply" />
+          <element name="x:equiv" />
+          <element name="x:one" />
+          <element name="x:parent" />
+          <element name="x:ancestor" />
+          <element name="x:child" />
+          <element name="x:descendant" />
+          <element name="x:this" />
+          <element name="x:element" />
+          <element name="x:attribute" />
+          <element name="x:contents" />
+          <element name="x:boolexp" />
+        </union>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:element" />
+    <rule ref="x:R4" />
+  </if>
+  <if>
+    <element name="x:attribute" />
+    <rule ref="x:R4" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:sequence" />
+            <element name="x:optional" />
+            <element name="x:complement" />
+            <element name="x:union" />
+            <element name="x:intersection" />
+            <element name="x:minus" />
+            <element name="x:repeat" />
+            <element name="x:string" />
+            <element name="x:char" />
+            <element name="x:stringtype" />
+            <element name="x:contenttype" />
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+            <element name="x:normalize" />
+            <element name="x:default" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:sequence" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:sequence" />
+            <element name="x:optional" />
+            <element name="x:complement" />
+            <element name="x:union" />
+            <element name="x:intersection" />
+            <element name="x:minus" />
+            <element name="x:repeat" />
+            <element name="x:string" />
+            <element name="x:char" />
+            <element name="x:stringtype" />
+            <element name="x:contenttype" />
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:optional" />
+    <declare>
+      <contents>
+        <union>
+          <element name="x:sequence" />
+          <element name="x:optional" />
+          <element name="x:complement" />
+          <element name="x:union" />
+          <element name="x:intersection" />
+          <element name="x:minus" />
+          <element name="x:repeat" />
+          <element name="x:string" />
+          <element name="x:char" />
+          <element name="x:stringtype" />
+          <element name="x:contenttype" />
+          <element name="x:and" />
+          <element name="x:or" />
+          <element name="x:not" />
+          <element name="x:imply" />
+          <element name="x:equiv" />
+          <element name="x:one" />
+          <element name="x:parent" />
+          <element name="x:ancestor" />
+          <element name="x:child" />
+          <element name="x:descendant" />
+          <element name="x:this" />
+          <element name="x:element" />
+          <element name="x:attribute" />
+          <element name="x:contents" />
+          <element name="x:boolexp" />
+        </union>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:complement" />
+    <declare>
+      <contents>
+        <union>
+          <element name="x:sequence" />
+          <element name="x:optional" />
+          <element name="x:complement" />
+          <element name="x:union" />
+          <element name="x:intersection" />
+          <element name="x:minus" />
+          <element name="x:repeat" />
+          <element name="x:string" />
+          <element name="x:char" />
+          <element name="x:stringtype" />
+          <element name="x:contenttype" />
+          <element name="x:and" />
+          <element name="x:or" />
+          <element name="x:not" />
+          <element name="x:imply" />
+          <element name="x:equiv" />
+          <element name="x:one" />
+          <element name="x:parent" />
+          <element name="x:ancestor" />
+          <element name="x:child" />
+          <element name="x:descendant" />
+          <element name="x:this" />
+          <element name="x:element" />
+          <element name="x:attribute" />
+          <element name="x:contents" />
+          <element name="x:boolexp" />
+        </union>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:union" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:sequence" />
+            <element name="x:optional" />
+            <element name="x:complement" />
+            <element name="x:union" />
+            <element name="x:intersection" />
+            <element name="x:minus" />
+            <element name="x:repeat" />
+            <element name="x:string" />
+            <element name="x:char" />
+            <element name="x:stringtype" />
+            <element name="x:contenttype" />
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:intersection" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:sequence" />
+            <element name="x:optional" />
+            <element name="x:complement" />
+            <element name="x:union" />
+            <element name="x:intersection" />
+            <element name="x:minus" />
+            <element name="x:repeat" />
+            <element name="x:string" />
+            <element name="x:char" />
+            <element name="x:stringtype" />
+            <element name="x:contenttype" />
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:minus" />
+    <declare>
+      <contents>
+        <sequence>
+          <union>
+            <element name="x:sequence" />
+            <element name="x:optional" />
+            <element name="x:complement" />
+            <element name="x:union" />
+            <element name="x:intersection" />
+            <element name="x:minus" />
+            <element name="x:repeat" />
+            <element name="x:string" />
+            <element name="x:char" />
+            <element name="x:stringtype" />
+            <element name="x:contenttype" />
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+          <union>
+            <element name="x:sequence" />
+            <element name="x:optional" />
+            <element name="x:complement" />
+            <element name="x:union" />
+            <element name="x:intersection" />
+            <element name="x:minus" />
+            <element name="x:repeat" />
+            <element name="x:string" />
+            <element name="x:char" />
+            <element name="x:stringtype" />
+            <element name="x:contenttype" />
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:repeat" />
+    <rule ref="x:R7" />
+    <declare>
+      <contents>
+        <union>
+          <element name="x:sequence" />
+          <element name="x:optional" />
+          <element name="x:complement" />
+          <element name="x:union" />
+          <element name="x:intersection" />
+          <element name="x:minus" />
+          <element name="x:repeat" />
+          <element name="x:string" />
+          <element name="x:char" />
+          <element name="x:stringtype" />
+          <element name="x:contenttype" />
+          <element name="x:and" />
+          <element name="x:or" />
+          <element name="x:not" />
+          <element name="x:imply" />
+          <element name="x:equiv" />
+          <element name="x:one" />
+          <element name="x:parent" />
+          <element name="x:ancestor" />
+          <element name="x:child" />
+          <element name="x:descendant" />
+          <element name="x:this" />
+          <element name="x:element" />
+          <element name="x:attribute" />
+          <element name="x:contents" />
+          <element name="x:boolexp" />
+        </union>
+      </contents>
+      <attribute name="number" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:string" />
+    <declare>
+      <attribute name="value" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:char" />
+    <rule ref="x:R7" />
+    <declare>
+      <attribute name="set" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:rule" />
+    <rule ref="x:R9" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:declare" />
+            <element name="x:require" />
+            <element name="x:if" />
+            <element name="x:pointer" />
+            <element name="x:unique" />
+            <element name="x:rule" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:boolexp" />
+    <rule ref="x:R9" />
+    <declare>
+      <contents>
+        <optional>
+          <union>
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+        </optional>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:stringtype" />
+    <rule ref="x:R11" />
+    <declare>
+      <attribute name="meta" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:contenttype" />
+    <rule ref="x:R11" />
+  </if>
+  <if>
+    <element name="x:normalize" />
+    <declare>
+      <attribute name="whitespace">
+        <union>
+          <string value="preserve" />
+          <string value="compress" />
+          <string value="trim" />
+        </union>
+      </attribute>
+      <attribute name="case">
+        <union>
+          <string value="preserve" />
+          <string value="upper" />
+          <string value="lower" />
+        </union>
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:default" />
+    <declare>
+      <contents>
+        <repeat>
+          <element />
+        </repeat>
+      </contents>
+      <attribute name="meta" />
+      <attribute name="value" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:unique" />
+    <declare>
+      <contents>
+        <sequence>
+          <union>
+            <element name="x:and" />
+            <element name="x:or" />
+            <element name="x:not" />
+            <element name="x:imply" />
+            <element name="x:equiv" />
+            <element name="x:one" />
+            <element name="x:parent" />
+            <element name="x:ancestor" />
+            <element name="x:child" />
+            <element name="x:descendant" />
+            <element name="x:this" />
+            <element name="x:element" />
+            <element name="x:attribute" />
+            <element name="x:contents" />
+            <element name="x:boolexp" />
+          </union>
+          <repeat>
+            <union>
+              <element name="x:attributefield" />
+              <element name="x:chardatafield" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:pointer" />
+    <declare>
+      <contents>
+        <sequence>
+          <optional>
+            <union>
+              <element name="x:and" />
+              <element name="x:or" />
+              <element name="x:not" />
+              <element name="x:imply" />
+              <element name="x:equiv" />
+              <element name="x:one" />
+              <element name="x:parent" />
+              <element name="x:ancestor" />
+              <element name="x:child" />
+              <element name="x:descendant" />
+              <element name="x:this" />
+              <element name="x:element" />
+              <element name="x:attribute" />
+              <element name="x:contents" />
+              <element name="x:boolexp" />
+            </union>
+          </optional>
+          <repeat>
+            <union>
+              <element name="x:attributefield" />
+              <element name="x:chardatafield" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:attributefield" />
+    <rule ref="x:R13" />
+    <declare>
+      <required>
+        <attribute name="name" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:chardatafield" />
+    <rule ref="x:R13" />
+  </if>
+  <if>
+    <element name="x:include" />
+    <declare>
+      <required>
+        <attribute name="href" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:doc" />
+    <declare>
+      <contents>
+        <repeat>
+          <element />
+        </repeat>
+      </contents>
+      <attribute name="m" />
+    </declare>
+  </if>
+</dsd>
+

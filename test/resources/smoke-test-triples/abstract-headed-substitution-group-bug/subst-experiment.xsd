@@ -1,0 +1,27 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+xmlns:t = "http://dongfang.dk/testdata"
+targetNamespace="http://dongfang.dk/testdata"
+elementFormDefault="qualified">
+
+<complexType name="basetype"><sequence/></complexType>
+
+<element name="root" type="t:basetype" abstract="true"/>
+
+<complexType name="foo">
+  <complexContent>
+    <extension base="t:basetype">
+      <sequence>
+        <element ref="t:root" minOccurs="0"/>
+      </sequence>
+    </extension>
+  </complexContent>
+</complexType>
+
+<element name="slam1" type="t:foo" substitutionGroup="t:root"/>
+
+<!--
+<element name="slam2" type="t:foo" substitutionGroup="t:root"/>
+<element name="slam3" type="t:foo" substitutionGroup="t:slam1"/>
+-->
+
+</schema>

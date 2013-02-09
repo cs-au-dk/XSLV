@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <element name="root">
+                <oneOrMore>
+                    <ref name="a"/>
+                </oneOrMore>
+                <zeroOrMore>
+                    <ref name="b"/>
+                </zeroOrMore>
+                <optional>
+                    <ref name="c"/>
+                </optional>
+            </element>
+            <ref name="b"/>
+    </start>
+    <define name="b">
+        <element name="b">
+            <zeroOrMore>
+                <ref name="b"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="c">
+        <element name="c">
+            <empty/>
+        </element>
+    </define>
+    <define name="a">
+        <element name="a">
+            <text/>
+        </element>
+    </define>
+</grammar>

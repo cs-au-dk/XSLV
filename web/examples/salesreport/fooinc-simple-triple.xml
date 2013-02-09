@@ -1,0 +1,5 @@
+<triple name="fooinc">
+  <input type="XSD">fooinc.xsd</input>
+  <output type="DSD">../test/resources/triples/xhtml-schema/xhtml1-transitional</output>
+  <xslt>fooinc-simple.xsl</xslt>
+</triple>

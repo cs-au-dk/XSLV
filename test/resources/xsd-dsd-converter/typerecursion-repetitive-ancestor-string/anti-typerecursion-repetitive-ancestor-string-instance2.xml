@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<boot xmlns="http://dongfang.dk/testdata">
+  <a>
+    <x/>
+    <b>
+      <a>
+        <x/>
+      </a>
+    </b>
+  </a>
+  
+  <b>
+    <a>
+      <y/>
+      <b>
+        <a>
+          <x/>
+        </a>
+      </b>
+    </a>
+  </b>
+</boot>

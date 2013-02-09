@@ -1,0 +1,10 @@
+<boot xmlns="http://dongfang.dk/testdata">
+  <a>
+    <c>
+      <!-- toplevel declared c should not have effect here
+      (should not even declare anything for this element) 
+      -->
+      <g/>
+    </c>
+  </a>
+</boot>

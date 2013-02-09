@@ -1,0 +1,9 @@
+<root xmlns="http://dongfang.dk/testdata">
+  <a>
+    <b>
+      <b/>
+    </b>
+  </a>
+  <b/>
+  <c/>
+</root>

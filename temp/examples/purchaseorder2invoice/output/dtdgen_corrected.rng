@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<grammar ns="invoice" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <element name="Invoice">
+                <ref name="Header"/>
+                <ref name="Entry"/>
+                <ref name="ShippingAddress"/>
+            </element>
+    </start>
+    <define name="Entry">
+        <element name="Entry">
+            <ref name="Qty"/>
+            <ref name="ItemDescription"/>
+            <ref name="UnitPrice"/>
+            <ref name="SubTotal"/>
+        </element>
+    </define>
+    <define name="Seller">
+        <element name="Seller">
+            <attribute name="name">
+                <data type="normalizedString"/>
+            </attribute>
+        </element>
+    </define>
+    <define name="OrderNo">
+        <element name="OrderNo">
+            <text/>
+        </element>
+    </define>
+    <define name="Purchaser">
+        <element name="Purchaser">
+            <attribute name="name">
+                <data type="normalizedString"/>
+            </attribute>
+        </element>
+    </define>
+    <define name="ItemDescription">
+        <element name="ItemDescription">
+            <text/>
+        </element>
+    </define>
+    <define name="OrderTotal">
+        <element name="OrderTotal">
+            <attribute name="currency">
+                <data type="normalizedString"/>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="ShippingAddress">
+        <element name="ShippingAddress">
+            <text/>
+        </element>
+    </define>
+    <define name="Qty">
+        <element name="Qty">
+            <text/>
+        </element>
+    </define>
+    <define name="OrderDate">
+        <element name="OrderDate">
+            <text/>
+        </element>
+    </define>
+    <define name="Header">
+        <element name="Header">
+            <ref name="OrderNo"/>
+            <ref name="OrderDate"/>
+            <ref name="OrderTotal"/>
+            <ref name="Purchaser"/>
+            <ref name="Seller"/>
+        </element>
+    </define>
+    <define name="SubTotal">
+        <element name="SubTotal">
+            <attribute name="currency">
+                <data type="normalizedString"/>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="UnitPrice">
+        <element name="UnitPrice">
+            <attribute name="currency">
+                <data type="normalizedString"/>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+</grammar>

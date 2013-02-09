@@ -1,0 +1,41 @@
+<!ELEMENT Address ( CO, Street, City, Country ) >
+
+<!ELEMENT BirthDate ( #PCDATA ) >
+
+<!ELEMENT CO EMPTY >
+
+<!ELEMENT City ( #PCDATA ) >
+
+<!ELEMENT ContactInfo ( Email | Home | ICQ | Mobile | Phone )* >
+
+<!ELEMENT Country ( #PCDATA ) >
+
+<!ELEMENT Email ( #PCDATA ) >
+
+<!ELEMENT FirstName ( #PCDATA ) >
+
+<!ELEMENT Home ( Name, Phone ) >
+
+<!ELEMENT ICQ ( #PCDATA ) >
+
+<!ELEMENT LastName ( #PCDATA ) >
+
+<!ELEMENT ListOfEmails ( #PCDATA | Person | UpdateDate )* >
+
+<!ELEMENT Location ( #PCDATA ) >
+
+<!ELEMENT Mobile ( #PCDATA ) >
+
+<!ELEMENT Name ( #PCDATA | FirstName | LastName | NickName )* >
+
+<!ELEMENT NickName ( #PCDATA ) >
+
+<!ELEMENT Person ( Location, Name, Address, ContactInfo, BirthDate? ) >
+<!ATTLIST Person group ( AIESECers | Extrainees | Trainees | theExRest | theRest ) #REQUIRED >
+
+<!ELEMENT Phone ( #PCDATA ) >
+
+<!ELEMENT Street ( #PCDATA ) >
+
+<!ELEMENT UpdateDate ( #PCDATA ) >
+

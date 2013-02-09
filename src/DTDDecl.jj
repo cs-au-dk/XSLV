@@ -1,0 +1,184 @@
+options {
+  LOOKAHEAD = 2;
+  FORCE_LA_CHECK = true;
+  MULTI = true;
+  STATIC = false;
+  NODE_DEFAULT_VOID = true;
+  NODE_PREFIX = "DTD";
+}
+
+PARSER_BEGIN(DTDDeclParser)
+
+package dongfang.xsltools.xmlclass.dtd;
+import java.io.Reader;
+import java.io.StringReader;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import dongfang.xsltools.exceptions.XSLToolsDTDParseException;
+
+public class DTDDeclParser {
+
+private static DTDDeclParser p1 = new DTDDeclParser(new StringReader(""));
+public static boolean dump = true;
+
+private static void reportError(String s, String message) {
+  System.err.println("Failed to parse " + s + " : " + message);
+  System.err.print('(');
+  for (int i=0; i < s.length(); i++) {
+    char c = s.charAt(i);
+    if (i > 0) 
+      System.err.print(", ");
+    System.err.print(Integer.toString(c));
+  }
+  System.err.println(')');
+}
+
+public Node getParseTree() {
+  return jjtree.rootNode();
+}
+
+public static DTDContentModel parse(String s) throws XSLToolsDTDParseException {
+if (dump) System.err.println("Attempting to parse: \n" + s);
+try {
+p1.ReInit(new StringReader(s));
+p1.DTDContentModel();
+return (DTDContentModel)p1.getParseTree();
+} catch (Throwable ex) {
+reportError(s, ex.getMessage());
+throw new XSLToolsDTDParseException(ex);
+}
+}
+
+public static void main(String [] args) throws Exception {
+BufferedReader br = new BufferedReader(new FileReader("dtdmodels.txt"));
+while(br.ready()) {
+String s = br.readLine();
+System.err.println("got: \n" + parse(s));
+}
+}
+}
+
+PARSER_END(DTDDeclParser)
+
+SPECIAL_TOKEN :
+{  " " | "\n" | "\t" | "\r" | "\f" }
+
+TOKEN :
+{
+    < #DIGIT : ["0"-"9"] >
+  | < LPAREN : "(" >
+  | < RPAREN : ")" >
+  | < DOT    : "." >
+  | < COMMA  : "," >
+  | < STAR   : "*" >
+  | < PLUS   : "+" >
+  | < PIPE   : "|" >
+  | < #UNDERSCORE : "_" >
+  | < EMPTY : "EMPTY" >
+  | < ANY : "ANY" >
+  | < QUESTION : "?" >
+  | < HASHPCDATA : "#PCDATA" >
+//  | < Name : "gedefims" >
+  | < #LETTER : ["\u0041"-"\u005A"] | ["\u0061"-"\u007A"] >
+  | < #NameStartChar : ":" | 
+    <LETTER>            |
+    <UNDERSCORE>        | 
+    ["\u00C0"-"\u00D6"] | 
+    ["\u00D8"-"\u00F6"] | 
+    ["\u00F8"-"\u02FF"] | 
+    ["\u0370"-"\u037D"] | 
+    ["\u037F"-"\u1FFF"] | 
+    ["\u200C"-"\u200D"] | 
+    ["\u2070"-"\u218F"] | 
+    ["\u2C00"-"\u2FEF"] | 
+    ["\u3001"-"\uD7FF"] | 
+    ["\uF900"-"\uFDCF"] | 
+    ["\uFDF0"-"\uFFFD"] 
+  //["\u10000"-"\uEFFFF"] 
+    >
+    | <#NameOtherChar : "-" | <DOT> | <DIGIT> | "\u00b7" | ["\u0300"-"\u036f"] | ["\u203f"-"\u2040"] > 
+    | <Name : <NameStartChar> (<NameStartChar> | <NameOtherChar>)* >
+}
+
+void DTDContentModel() :
+{}
+{
+  contentspec() <EOF>
+}
+
+void contentspec() :
+{}
+{
+  empty() | any() | mixedOrChildren()
+}
+
+void empty() # Empty :
+{}
+{
+  <EMPTY>
+}
+
+void any() # Any :
+{}
+{
+  <ANY>
+}
+
+void mixedOrChildren() :
+{}
+{
+  <LPAREN> (Mixed() | sequenceOrChoice())
+}
+
+// An eeeeen-tire sequence of <LPAREN>, some sequence or disjunction, <RPAREN> but no occurence at tail.
+void nestedChoiceOrSeq() :
+{
+  Token op = null;
+  Token occurence = null;
+}
+{
+  <LPAREN> sequenceOrChoice() ((occurence = <QUESTION>) | (occurence=<STAR>) | (occurence=<PLUS>))?
+}
+
+void Mixed() #Mixed :
+{}
+{
+  <HASHPCDATA> (<PIPE> Name())* <RPAREN> (<STAR>)?
+}
+
+// single name or nested ( ... ), with an occurence indicator @ tail
+void cp() :
+{
+}
+{
+  (Name() | nestedChoiceOrSeq()) 
+}
+
+void Name() #NamedRef :
+{
+  Token name;
+  Token occurence = null;
+}
+{
+  (name = <Name>) ((occurence = <QUESTION>) | (occurence=<STAR>) | (occurence=<PLUS>))?
+  {
+    jjtThis.setName(name.image);
+    jjtThis.setOccurence(occurence == null ? null : occurence.image);
+  }
+}
+
+// sequence of , or | separated cp()'s, with <RPAREN> and occurence indicator @ tail
+void sequenceOrChoice() #SequenceOrChoice :
+{
+  Token op = null;
+  Token occurence = null;
+}
+{
+  cp() (((op = <PIPE>) cp())+  | ((op = <COMMA>) cp())*) <RPAREN>
+   ((occurence = <QUESTION>) | (occurence = <STAR>) | (occurence = <PLUS>))?
+  {
+    jjtThis.setValue(occurence == null ? null : occurence.image);
+    jjtThis.setOperator(op == null ? "," : op.image);
+  }
+}
+

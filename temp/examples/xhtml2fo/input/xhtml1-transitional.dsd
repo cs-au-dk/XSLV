@@ -1,0 +1,2798 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?dsd href="http://www.brics.dk/DSD/dsd2.dsd"?>
+<dsd xmlns="http://www.brics.dk/DSD/2.0" xmlns:x="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:n="http://www.brics.dk/DSD/names" root="x:html">
+  <xi:include href="http://www.brics.dk/DSD/names.dsd" />
+  <rule id="x:R0">
+    <rule ref="x:R97" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R11">
+    <rule ref="x:R103" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:p" />
+            <element name="x:h1" />
+            <element name="x:h2" />
+            <element name="x:h3" />
+            <element name="x:h4" />
+            <element name="x:h5" />
+            <element name="x:h6" />
+            <element name="x:div" />
+            <element name="x:ul" />
+            <element name="x:ol" />
+            <element name="x:dl" />
+            <element name="x:menu" />
+            <element name="x:dir" />
+            <element name="x:pre" />
+            <element name="x:hr" />
+            <element name="x:blockquote" />
+            <element name="x:address" />
+            <element name="x:center" />
+            <element name="x:noframes" />
+            <element name="x:isindex" />
+            <element name="x:fieldset" />
+            <element name="x:table" />
+            <element name="x:form" />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R17">
+    <rule ref="x:R103" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+      <attribute name="align">
+        <union>
+          <string value="left" />
+          <string value="center" />
+          <string value="right" />
+          <string value="justify" />
+        </union>
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R18">
+    <rule ref="x:R21" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:li" />
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R21">
+    <rule ref="x:R103" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <attribute name="compact">
+        <string value="compact" />
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R22">
+    <rule ref="x:R103" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R25">
+    <rule ref="x:R103" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <attribute name="width" />
+    </declare>
+  </rule>
+  <rule id="x:R27">
+    <rule ref="x:R11" />
+    <declare>
+      <attribute name="cite" />
+      <attribute name="datetime" />
+    </declare>
+  </rule>
+  <rule id="x:R28">
+    <rule ref="x:R102" />
+    <declare>
+      <attribute name="accesskey" />
+      <attribute name="target">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+      <attribute name="href" />
+      <attribute name="coords" />
+      <attribute name="shape">
+        <union>
+          <string value="rect" />
+          <string value="circle" />
+          <string value="poly" />
+          <string value="default" />
+        </union>
+        <default value="rect" />
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R29">
+    <declare>
+      <attribute name="charset" />
+      <attribute name="type" />
+      <attribute name="rev" />
+      <attribute name="rel" />
+      <attribute name="hreflang">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R32">
+    <rule ref="x:R105" />
+    <declare>
+      <attribute name="title" />
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R36">
+    <declare>
+      <attribute name="face" />
+      <attribute name="color" />
+    </declare>
+  </rule>
+  <rule id="x:R37">
+    <rule ref="x:R25" />
+    <rule ref="x:R87" />
+    <declare>
+      <attribute name="height" />
+      <attribute name="name">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+      <attribute name="align">
+        <union>
+          <string value="top" />
+          <string value="middle" />
+          <string value="bottom" />
+          <string value="left" />
+          <string value="right" />
+        </union>
+      </attribute>
+      <attribute name="usemap" />
+      <attribute name="border" />
+    </declare>
+  </rule>
+  <rule id="x:R38">
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:param" />
+            <element name="x:p" />
+            <element name="x:h1" />
+            <element name="x:h2" />
+            <element name="x:h3" />
+            <element name="x:h4" />
+            <element name="x:h5" />
+            <element name="x:h6" />
+            <element name="x:div" />
+            <element name="x:ul" />
+            <element name="x:ol" />
+            <element name="x:dl" />
+            <element name="x:menu" />
+            <element name="x:dir" />
+            <element name="x:pre" />
+            <element name="x:hr" />
+            <element name="x:blockquote" />
+            <element name="x:address" />
+            <element name="x:center" />
+            <element name="x:noframes" />
+            <element name="x:isindex" />
+            <element name="x:fieldset" />
+            <element name="x:table" />
+            <element name="x:form" />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+      <attribute name="archive" />
+      <attribute name="codebase" />
+    </declare>
+  </rule>
+  <rule id="x:R50">
+    <rule ref="x:R54" />
+    <declare>
+      <attribute name="accesskey" />
+      <attribute name="onselect" />
+      <attribute name="readonly">
+        <string value="readonly" />
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R54">
+    <rule ref="x:R102" />
+    <declare>
+      <attribute name="name" />
+      <attribute name="disabled">
+        <string value="disabled" />
+      </attribute>
+      <attribute name="onchange" />
+    </declare>
+  </rule>
+  <rule id="x:R55">
+    <rule ref="x:R103" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <attribute name="disabled">
+        <string value="disabled" />
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R57">
+    <rule ref="x:R103" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R58">
+    <rule ref="x:R57" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+      <attribute name="align">
+        <union>
+          <string value="top" />
+          <string value="bottom" />
+          <string value="left" />
+          <string value="right" />
+        </union>
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R65">
+    <rule ref="x:R57" />
+    <rule ref="x:R108" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:tr" />
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R66">
+    <rule ref="x:R57" />
+    <rule ref="x:R108" />
+    <declare>
+      <attribute name="width" />
+      <attribute name="span">
+        <string />
+        <default value="1" />
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R68">
+    <rule ref="x:R57" />
+    <rule ref="x:R108" />
+    <declare>
+      <attribute name="width" />
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:p" />
+            <element name="x:h1" />
+            <element name="x:h2" />
+            <element name="x:h3" />
+            <element name="x:h4" />
+            <element name="x:h5" />
+            <element name="x:h6" />
+            <element name="x:div" />
+            <element name="x:ul" />
+            <element name="x:ol" />
+            <element name="x:dl" />
+            <element name="x:menu" />
+            <element name="x:dir" />
+            <element name="x:pre" />
+            <element name="x:hr" />
+            <element name="x:blockquote" />
+            <element name="x:address" />
+            <element name="x:center" />
+            <element name="x:noframes" />
+            <element name="x:isindex" />
+            <element name="x:fieldset" />
+            <element name="x:table" />
+            <element name="x:form" />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+      <attribute name="height" />
+      <attribute name="bgcolor" />
+      <attribute name="headers">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAMES" />
+      </attribute>
+      <attribute name="nowrap">
+        <string value="nowrap" />
+      </attribute>
+      <attribute name="colspan">
+        <string />
+        <default value="1" />
+      </attribute>
+      <attribute name="axis" />
+      <attribute name="scope">
+        <union>
+          <string value="row" />
+          <string value="col" />
+          <string value="rowgroup" />
+          <string value="colgroup" />
+        </union>
+      </attribute>
+      <attribute name="rowspan">
+        <string />
+        <default value="1" />
+      </attribute>
+      <attribute name="abbr" />
+    </declare>
+  </rule>
+  <rule id="x:R87">
+    <declare>
+      <attribute name="vspace" />
+      <attribute name="hspace" />
+    </declare>
+  </rule>
+  <rule id="x:R97">
+    <declare>
+      <attribute name="lang">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+      <attribute name="xml_lang">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R102">
+    <rule ref="x:R103" />
+    <rule ref="x:R106" />
+    <declare>
+      <attribute name="tabindex" />
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R103">
+    <rule ref="x:R97" />
+    <rule ref="x:R105" />
+    <declare>
+      <attribute name="title" />
+      <attribute name="onkeypress" />
+      <attribute name="onmousemove" />
+      <attribute name="onmouseover" />
+      <attribute name="onkeydown" />
+      <attribute name="onclick" />
+      <attribute name="onmouseout" />
+      <attribute name="onkeyup" />
+      <attribute name="ondblclick" />
+      <attribute name="onmouseup" />
+      <attribute name="onmousedown" />
+    </declare>
+  </rule>
+  <rule id="x:R105">
+    <declare>
+      <attribute name="style" />
+      <attribute name="class" />
+    </declare>
+  </rule>
+  <rule id="x:R106">
+    <declare>
+      <attribute name="onblur" />
+      <attribute name="onfocus" />
+    </declare>
+  </rule>
+  <rule id="x:R108">
+    <declare>
+      <attribute name="valign">
+        <union>
+          <string value="top" />
+          <string value="middle" />
+          <string value="bottom" />
+          <string value="baseline" />
+        </union>
+      </attribute>
+      <attribute name="align">
+        <union>
+          <string value="left" />
+          <string value="center" />
+          <string value="right" />
+          <string value="justify" />
+          <string value="char" />
+        </union>
+      </attribute>
+      <attribute name="charoff" />
+      <attribute name="char" />
+    </declare>
+  </rule>
+  <if>
+    <element name="x:html" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:head" />
+          <element name="x:body" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:head" />
+    <rule ref="x:R0" />
+    <declare>
+      <attribute name="profile" />
+      <contents>
+        <sequence>
+          <repeat>
+            <union>
+              <element name="x:script" />
+              <element name="x:style" />
+              <element name="x:meta" />
+              <element name="x:link" />
+              <element name="x:object" />
+              <element name="x:isindex" />
+            </union>
+          </repeat>
+          <union>
+            <sequence>
+              <element name="x:title" />
+              <repeat>
+                <union>
+                  <element name="x:script" />
+                  <element name="x:style" />
+                  <element name="x:meta" />
+                  <element name="x:link" />
+                  <element name="x:object" />
+                  <element name="x:isindex" />
+                </union>
+              </repeat>
+              <optional>
+                <sequence>
+                  <element name="x:base" />
+                  <repeat>
+                    <union>
+                      <element name="x:script" />
+                      <element name="x:style" />
+                      <element name="x:meta" />
+                      <element name="x:link" />
+                      <element name="x:object" />
+                      <element name="x:isindex" />
+                    </union>
+                  </repeat>
+                </sequence>
+              </optional>
+            </sequence>
+            <sequence>
+              <element name="x:base" />
+              <repeat>
+                <union>
+                  <element name="x:script" />
+                  <element name="x:style" />
+                  <element name="x:meta" />
+                  <element name="x:link" />
+                  <element name="x:object" />
+                  <element name="x:isindex" />
+                </union>
+              </repeat>
+              <sequence>
+                <element name="x:title" />
+                <repeat>
+                  <union>
+                    <element name="x:script" />
+                    <element name="x:style" />
+                    <element name="x:meta" />
+                    <element name="x:link" />
+                    <element name="x:object" />
+                    <element name="x:isindex" />
+                  </union>
+                </repeat>
+              </sequence>
+            </sequence>
+          </union>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:title" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <string />
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:base" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="target">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+      <attribute name="href" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:meta" />
+    <rule ref="x:R0" />
+    <declare>
+      <attribute name="name" />
+      <attribute name="scheme" />
+      <attribute name="http-equiv" />
+      <required>
+        <attribute name="content" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:link" />
+    <rule ref="x:R103" />
+    <rule ref="x:R29" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <attribute name="target">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+      <attribute name="href" />
+      <attribute name="media" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:style" />
+    <rule ref="x:R97" />
+    <declare>
+      <attribute name="title" />
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <contents>
+        <string />
+      </contents>
+      <required>
+        <attribute name="type" />
+      </required>
+      <attribute name="media" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:script" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="src" />
+      <attribute name="charset" />
+      <contents>
+        <string />
+      </contents>
+      <required>
+        <attribute name="type" />
+      </required>
+      <attribute name="defer">
+        <string value="defer" />
+      </attribute>
+      <attribute name="language" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:noscript" />
+    <rule ref="x:R11" />
+  </if>
+  <if>
+    <element name="x:iframe" />
+    <rule ref="x:R105" />
+    <declare>
+      <attribute name="title" />
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="width" />
+      <attribute name="height" />
+      <attribute name="name">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+      <attribute name="align">
+        <union>
+          <string value="top" />
+          <string value="middle" />
+          <string value="bottom" />
+          <string value="left" />
+          <string value="right" />
+        </union>
+      </attribute>
+      <attribute name="longdesc" />
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:p" />
+            <element name="x:h1" />
+            <element name="x:h2" />
+            <element name="x:h3" />
+            <element name="x:h4" />
+            <element name="x:h5" />
+            <element name="x:h6" />
+            <element name="x:div" />
+            <element name="x:ul" />
+            <element name="x:ol" />
+            <element name="x:dl" />
+            <element name="x:menu" />
+            <element name="x:dir" />
+            <element name="x:pre" />
+            <element name="x:hr" />
+            <element name="x:blockquote" />
+            <element name="x:address" />
+            <element name="x:center" />
+            <element name="x:noframes" />
+            <element name="x:isindex" />
+            <element name="x:fieldset" />
+            <element name="x:table" />
+            <element name="x:form" />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+      <attribute name="src" />
+      <attribute name="marginheight" />
+      <attribute name="scrolling">
+        <union>
+          <string value="yes" />
+          <string value="no" />
+          <string value="auto" />
+        </union>
+        <default value="auto" />
+      </attribute>
+      <attribute name="frameborder">
+        <union>
+          <string value="1" />
+          <string value="0" />
+        </union>
+        <default value="1" />
+      </attribute>
+      <attribute name="marginwidth" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:noframes" />
+    <rule ref="x:R11" />
+  </if>
+  <if>
+    <element name="x:body" />
+    <rule ref="x:R11" />
+    <declare>
+      <attribute name="bgcolor" />
+      <attribute name="vlink" />
+      <attribute name="alink" />
+      <attribute name="link" />
+      <attribute name="onunload" />
+      <attribute name="text" />
+      <attribute name="background" />
+      <attribute name="onload" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:div" />
+    <rule ref="x:R103" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <attribute name="align">
+        <union>
+          <string value="left" />
+          <string value="center" />
+          <string value="right" />
+          <string value="justify" />
+        </union>
+      </attribute>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:p" />
+            <element name="x:h1" />
+            <element name="x:h2" />
+            <element name="x:h3" />
+            <element name="x:h4" />
+            <element name="x:h5" />
+            <element name="x:h6" />
+            <element name="x:div" />
+            <element name="x:ul" />
+            <element name="x:ol" />
+            <element name="x:dl" />
+            <element name="x:menu" />
+            <element name="x:dir" />
+            <element name="x:pre" />
+            <element name="x:hr" />
+            <element name="x:blockquote" />
+            <element name="x:address" />
+            <element name="x:center" />
+            <element name="x:noframes" />
+            <element name="x:isindex" />
+            <element name="x:fieldset" />
+            <element name="x:table" />
+            <element name="x:form" />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:p" />
+    <rule ref="x:R17" />
+  </if>
+  <if>
+    <element name="x:h1" />
+    <rule ref="x:R17" />
+  </if>
+  <if>
+    <element name="x:h2" />
+    <rule ref="x:R17" />
+  </if>
+  <if>
+    <element name="x:h3" />
+    <rule ref="x:R17" />
+  </if>
+  <if>
+    <element name="x:h4" />
+    <rule ref="x:R17" />
+  </if>
+  <if>
+    <element name="x:h5" />
+    <rule ref="x:R17" />
+  </if>
+  <if>
+    <element name="x:h6" />
+    <rule ref="x:R17" />
+  </if>
+  <if>
+    <element name="x:ul" />
+    <rule ref="x:R18" />
+    <declare>
+      <attribute name="type">
+        <union>
+          <string value="disc" />
+          <string value="square" />
+          <string value="circle" />
+        </union>
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:ol" />
+    <rule ref="x:R18" />
+    <declare>
+      <attribute name="type" />
+      <attribute name="start" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:menu" />
+    <rule ref="x:R18" />
+  </if>
+  <if>
+    <element name="x:dir" />
+    <rule ref="x:R18" />
+  </if>
+  <if>
+    <element name="x:li" />
+    <rule ref="x:R11" />
+    <declare>
+      <attribute name="type" />
+      <attribute name="value" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:dl" />
+    <rule ref="x:R21" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <union>
+            <element name="x:dt" />
+            <element name="x:dd" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:dt" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:dd" />
+    <rule ref="x:R11" />
+  </if>
+  <if>
+    <element name="x:address" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:hr" />
+    <rule ref="x:R103" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <attribute name="width" />
+      <attribute name="align">
+        <union>
+          <string value="left" />
+          <string value="center" />
+          <string value="right" />
+        </union>
+      </attribute>
+      <attribute name="size" />
+      <attribute name="noshade">
+        <string value="noshade" />
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:pre" />
+    <rule ref="x:R25" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:blockquote" />
+    <rule ref="x:R11" />
+    <declare>
+      <attribute name="cite" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:center" />
+    <rule ref="x:R11" />
+  </if>
+  <if>
+    <element name="x:ins" />
+    <rule ref="x:R27" />
+  </if>
+  <if>
+    <element name="x:del" />
+    <rule ref="x:R27" />
+  </if>
+  <if>
+    <element name="x:a" />
+    <rule ref="x:R28" />
+    <rule ref="x:R29" />
+    <declare>
+      <attribute name="name">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:span" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:bdo" />
+    <rule ref="x:R103" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+      <required>
+        <attribute name="dir">
+          <union>
+            <string value="ltr" />
+            <string value="rtl" />
+          </union>
+        </attribute>
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:br" />
+    <rule ref="x:R32" />
+    <declare>
+      <attribute name="clear">
+        <union>
+          <string value="left" />
+          <string value="all" />
+          <string value="right" />
+          <string value="none" />
+        </union>
+        <default value="none" />
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:em" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:strong" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:dfn" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:code" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:samp" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:kbd" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:var" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:cite" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:abbr" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:acronym" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:q" />
+    <rule ref="x:R22" />
+    <declare>
+      <attribute name="cite" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:sub" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:sup" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:tt" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:i" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:b" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:big" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:small" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:u" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:s" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:strike" />
+    <rule ref="x:R22" />
+  </if>
+  <if>
+    <element name="x:basefont" />
+    <rule ref="x:R36" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <required>
+        <attribute name="size" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:font" />
+    <rule ref="x:R97" />
+    <rule ref="x:R105" />
+    <rule ref="x:R36" />
+    <declare>
+      <attribute name="title" />
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+      <attribute name="size" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:object" />
+    <rule ref="x:R37" />
+    <rule ref="x:R38" />
+    <declare>
+      <attribute name="type" />
+      <attribute name="tabindex" />
+      <attribute name="standby" />
+      <attribute name="codetype" />
+      <attribute name="classid" />
+      <attribute name="declare">
+        <string value="declare" />
+      </attribute>
+      <attribute name="data" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:param" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="value" />
+      <attribute name="type" />
+      <attribute name="valuetype">
+        <union>
+          <string value="data" />
+          <string value="ref" />
+          <string value="object" />
+        </union>
+        <default value="data" />
+      </attribute>
+      <required>
+        <attribute name="name" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:applet" />
+    <rule ref="x:R32" />
+    <rule ref="x:R87" />
+    <rule ref="x:R38" />
+    <declare>
+      <attribute name="name">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+      <attribute name="align">
+        <union>
+          <string value="top" />
+          <string value="middle" />
+          <string value="bottom" />
+          <string value="left" />
+          <string value="right" />
+        </union>
+      </attribute>
+      <attribute name="alt" />
+      <required>
+        <attribute name="width" />
+      </required>
+      <attribute name="code" />
+      <attribute name="object" />
+      <required>
+        <attribute name="height" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:img" />
+    <rule ref="x:R37" />
+    <declare>
+      <required>
+        <attribute name="alt" />
+      </required>
+      <attribute name="longdesc" />
+      <required>
+        <attribute name="src" />
+      </required>
+      <attribute name="ismap">
+        <string value="ismap" />
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:map" />
+    <rule ref="x:R103" />
+    <declare>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <attribute name="name" />
+      <required>
+        <attribute name="id">
+          <normalize whitespace="trim" />
+          <stringtype ref="n:NAME" />
+        </attribute>
+      </required>
+      <contents>
+        <union>
+          <repeat min="1">
+            <union>
+              <element name="x:p" />
+              <element name="x:h1" />
+              <element name="x:h2" />
+              <element name="x:h3" />
+              <element name="x:h4" />
+              <element name="x:h5" />
+              <element name="x:h6" />
+              <element name="x:div" />
+              <element name="x:ul" />
+              <element name="x:ol" />
+              <element name="x:dl" />
+              <element name="x:menu" />
+              <element name="x:dir" />
+              <element name="x:pre" />
+              <element name="x:hr" />
+              <element name="x:blockquote" />
+              <element name="x:address" />
+              <element name="x:center" />
+              <element name="x:noframes" />
+              <element name="x:isindex" />
+              <element name="x:fieldset" />
+              <element name="x:table" />
+              <element name="x:form" />
+              <element name="x:ins" />
+              <element name="x:del" />
+              <element name="x:script" />
+              <element name="x:noscript" />
+            </union>
+          </repeat>
+          <repeat min="1">
+            <element name="x:area" />
+          </repeat>
+        </union>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:area" />
+    <rule ref="x:R28" />
+    <declare>
+      <required>
+        <attribute name="alt" />
+      </required>
+      <attribute name="nohref">
+        <string value="nohref" />
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:form" />
+    <rule ref="x:R103" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <attribute name="accept" />
+      <attribute name="target">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+      <attribute name="name">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+      <attribute name="method">
+        <union>
+          <string value="get" />
+          <string value="post" />
+        </union>
+        <default value="get" />
+      </attribute>
+      <attribute name="onreset" />
+      <attribute name="enctype">
+        <string />
+        <default value="application/x-www-form-urlencoded" />
+      </attribute>
+      <attribute name="onsubmit" />
+      <attribute name="accept-charset" />
+      <required>
+        <attribute name="action" />
+      </required>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:p" />
+            <element name="x:h1" />
+            <element name="x:h2" />
+            <element name="x:h3" />
+            <element name="x:h4" />
+            <element name="x:h5" />
+            <element name="x:h6" />
+            <element name="x:div" />
+            <element name="x:ul" />
+            <element name="x:ol" />
+            <element name="x:dl" />
+            <element name="x:menu" />
+            <element name="x:dir" />
+            <element name="x:pre" />
+            <element name="x:hr" />
+            <element name="x:blockquote" />
+            <element name="x:address" />
+            <element name="x:center" />
+            <element name="x:noframes" />
+            <element name="x:isindex" />
+            <element name="x:fieldset" />
+            <element name="x:table" />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:label" />
+    <if>
+      <attribute name="for" />
+      <pointer>
+        <attributefield name="for" />
+      </pointer>
+    </if>
+    <rule ref="x:R103" />
+    <rule ref="x:R106" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <attribute name="accesskey" />
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+      <attribute name="for">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:input" />
+    <rule ref="x:R50" />
+    <declare>
+      <attribute name="align">
+        <union>
+          <string value="top" />
+          <string value="middle" />
+          <string value="bottom" />
+          <string value="left" />
+          <string value="right" />
+        </union>
+      </attribute>
+      <attribute name="usemap" />
+      <attribute name="size" />
+      <attribute name="value" />
+      <attribute name="src" />
+      <attribute name="alt" />
+      <attribute name="accept" />
+      <attribute name="checked">
+        <string value="checked" />
+      </attribute>
+      <attribute name="maxlength" />
+      <attribute name="type">
+        <union>
+          <string value="text" />
+          <string value="password" />
+          <string value="checkbox" />
+          <string value="radio" />
+          <string value="submit" />
+          <string value="reset" />
+          <string value="file" />
+          <string value="hidden" />
+          <string value="image" />
+          <string value="button" />
+        </union>
+        <default value="text" />
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:select" />
+    <rule ref="x:R54" />
+    <declare>
+      <attribute name="size" />
+      <attribute name="multiple">
+        <string value="multiple" />
+      </attribute>
+      <contents>
+        <repeat min="1">
+          <union>
+            <element name="x:optgroup" />
+            <element name="x:option" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:optgroup" />
+    <rule ref="x:R55" />
+    <declare>
+      <required>
+        <attribute name="label" />
+      </required>
+      <contents>
+        <repeat min="1">
+          <element name="x:option" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:option" />
+    <rule ref="x:R55" />
+    <declare>
+      <contents>
+        <string />
+      </contents>
+      <attribute name="value" />
+      <attribute name="label" />
+      <attribute name="selected">
+        <string value="selected" />
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:textarea" />
+    <rule ref="x:R50" />
+    <declare>
+      <contents>
+        <string />
+      </contents>
+      <required>
+        <attribute name="rows" />
+      </required>
+      <required>
+        <attribute name="cols" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:fieldset" />
+    <rule ref="x:R57" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:legend" />
+            <element name="x:p" />
+            <element name="x:h1" />
+            <element name="x:h2" />
+            <element name="x:h3" />
+            <element name="x:h4" />
+            <element name="x:h5" />
+            <element name="x:h6" />
+            <element name="x:div" />
+            <element name="x:ul" />
+            <element name="x:ol" />
+            <element name="x:dl" />
+            <element name="x:menu" />
+            <element name="x:dir" />
+            <element name="x:pre" />
+            <element name="x:hr" />
+            <element name="x:blockquote" />
+            <element name="x:address" />
+            <element name="x:center" />
+            <element name="x:noframes" />
+            <element name="x:isindex" />
+            <element name="x:fieldset" />
+            <element name="x:table" />
+            <element name="x:form" />
+            <element name="x:a" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:iframe" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:input" />
+            <element name="x:select" />
+            <element name="x:textarea" />
+            <element name="x:label" />
+            <element name="x:button" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:legend" />
+    <rule ref="x:R58" />
+    <declare>
+      <attribute name="accesskey" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:button" />
+    <rule ref="x:R102" />
+    <declare>
+      <attribute name="name" />
+      <attribute name="disabled">
+        <string value="disabled" />
+      </attribute>
+      <attribute name="accesskey" />
+      <attribute name="value" />
+      <attribute name="type">
+        <union>
+          <string value="button" />
+          <string value="submit" />
+          <string value="reset" />
+        </union>
+        <default value="submit" />
+      </attribute>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:p" />
+            <element name="x:h1" />
+            <element name="x:h2" />
+            <element name="x:h3" />
+            <element name="x:h4" />
+            <element name="x:h5" />
+            <element name="x:h6" />
+            <element name="x:div" />
+            <element name="x:ul" />
+            <element name="x:ol" />
+            <element name="x:dl" />
+            <element name="x:menu" />
+            <element name="x:dir" />
+            <element name="x:pre" />
+            <element name="x:hr" />
+            <element name="x:blockquote" />
+            <element name="x:address" />
+            <element name="x:center" />
+            <element name="x:noframes" />
+            <element name="x:table" />
+            <element name="x:br" />
+            <element name="x:span" />
+            <element name="x:bdo" />
+            <element name="x:object" />
+            <element name="x:applet" />
+            <element name="x:img" />
+            <element name="x:map" />
+            <element name="x:tt" />
+            <element name="x:i" />
+            <element name="x:b" />
+            <element name="x:u" />
+            <element name="x:s" />
+            <element name="x:strike" />
+            <element name="x:big" />
+            <element name="x:small" />
+            <element name="x:font" />
+            <element name="x:basefont" />
+            <element name="x:em" />
+            <element name="x:strong" />
+            <element name="x:dfn" />
+            <element name="x:code" />
+            <element name="x:q" />
+            <element name="x:samp" />
+            <element name="x:kbd" />
+            <element name="x:var" />
+            <element name="x:cite" />
+            <element name="x:abbr" />
+            <element name="x:acronym" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:ins" />
+            <element name="x:del" />
+            <element name="x:script" />
+            <element name="x:noscript" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:isindex" />
+    <rule ref="x:R97" />
+    <rule ref="x:R105" />
+    <declare>
+      <attribute name="title" />
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <attribute name="dir">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+        </union>
+      </attribute>
+      <attribute name="prompt" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:table" />
+    <rule ref="x:R25" />
+    <declare>
+      <attribute name="bgcolor" />
+      <attribute name="align">
+        <union>
+          <string value="left" />
+          <string value="center" />
+          <string value="right" />
+        </union>
+      </attribute>
+      <attribute name="border" />
+      <attribute name="cellspacing" />
+      <attribute name="summary" />
+      <attribute name="rules">
+        <union>
+          <string value="none" />
+          <string value="groups" />
+          <string value="rows" />
+          <string value="cols" />
+          <string value="all" />
+        </union>
+      </attribute>
+      <attribute name="frame">
+        <union>
+          <string value="void" />
+          <string value="above" />
+          <string value="below" />
+          <string value="hsides" />
+          <string value="lhs" />
+          <string value="rhs" />
+          <string value="vsides" />
+          <string value="box" />
+          <string value="border" />
+        </union>
+      </attribute>
+      <attribute name="cellpadding" />
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:caption" />
+          </optional>
+          <union>
+            <repeat>
+              <element name="x:col" />
+            </repeat>
+            <repeat>
+              <element name="x:colgroup" />
+            </repeat>
+          </union>
+          <optional>
+            <element name="x:thead" />
+          </optional>
+          <optional>
+            <element name="x:tfoot" />
+          </optional>
+          <union>
+            <repeat min="1">
+              <element name="x:tbody" />
+            </repeat>
+            <repeat min="1">
+              <element name="x:tr" />
+            </repeat>
+          </union>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:caption" />
+    <rule ref="x:R58" />
+  </if>
+  <if>
+    <element name="x:thead" />
+    <rule ref="x:R65" />
+  </if>
+  <if>
+    <element name="x:tfoot" />
+    <rule ref="x:R65" />
+  </if>
+  <if>
+    <element name="x:tbody" />
+    <rule ref="x:R65" />
+  </if>
+  <if>
+    <element name="x:colgroup" />
+    <rule ref="x:R66" />
+    <declare>
+      <contents>
+        <repeat>
+          <element name="x:col" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:col" />
+    <rule ref="x:R66" />
+  </if>
+  <if>
+    <element name="x:tr" />
+    <rule ref="x:R57" />
+    <rule ref="x:R108" />
+    <declare>
+      <attribute name="bgcolor" />
+      <contents>
+        <repeat min="1">
+          <union>
+            <element name="x:th" />
+            <element name="x:td" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:th" />
+    <rule ref="x:R68" />
+  </if>
+  <if>
+    <element name="x:td" />
+    <rule ref="x:R68" />
+  </if>
+  <unique>
+    <or>
+      <and>
+        <element name="x:colgroup" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:table" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:kbd" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:html" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:script" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:p" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:caption" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:isindex" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:col" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:tr" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:q" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:th" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:tfoot" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:button" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:dir" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:meta" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:font" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:small" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:td" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:base" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:ins" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:code" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:fieldset" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:object" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:a" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:option" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:optgroup" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:u" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:style" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:abbr" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:noframes" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:menu" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:h4" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:hr" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:body" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:pre" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:var" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:iframe" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:b" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:select" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:em" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:legend" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:strong" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:big" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:applet" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:map" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:dt" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:thead" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:del" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:input" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:h5" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:form" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:title" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:sub" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:basefont" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:address" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:h6" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:blockquote" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:h2" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:i" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:div" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:ul" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:img" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:tt" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:center" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:s" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:tbody" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:textarea" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:dd" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:sup" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:h1" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:link" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:noscript" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:cite" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:dl" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:label" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:strike" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:dfn" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:head" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:param" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:li" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:br" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:samp" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:h3" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:area" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:ol" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:span" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:bdo" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:acronym" />
+        <attribute name="id" />
+      </and>
+    </or>
+    <attributefield name="id" />
+  </unique>
+</dsd>
+

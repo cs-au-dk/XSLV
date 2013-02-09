@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Test with input and output type of one empty element -->
+
+<triple name="dtdempty" enabled="true">
+<input type="DTD" RootElementName="ged" DTDNamespaceURI="">empty.dtd</input>
+<output type="RNG" DTDNamespaceURI="">empty.rng</output>
+<xslt>general-identity-transform.xsl</xslt></triple>

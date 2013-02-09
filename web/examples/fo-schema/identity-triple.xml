@@ -1,0 +1,5 @@
+<triple enabled="true" name="xhtml2fo">
+  <input type="DTD" DTDNamespaceURI="">../fo-schema/fo_alternative.dtd</input>
+  <output>../fo-schema/fo_alternative.dtd</output>
+  <xslt>../../general-identity-transform/general-identity-transform.xsl</xslt>
+</triple>

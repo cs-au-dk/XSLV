@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+  <jsp:directive.page language="java" session="true" isThreadSafe="true" info="Main XSLV Page" isELIgnored="false" import="dongfang.xsltools.diagnostics.*, java.util.Iterator" contentType="application/xhtml+xml; charset=utf-8"/>
+  <jsp:useBean id="validator" scope="session" class="dongfang.xsltools.context.InteractiveRequestResponseBean"/>
+  <jsp:useBean id="xcfg_view_options" scope="session" class="dongfang.xsltools.diagnostics.DiagnosticsConfigurationOptions"/>
+  <jsp:output doctype-root-element="html" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" doctype-system="http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
+<!-- params:
+key
+size
+backlink
+-->
+  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xml:lang="en" lang="en">
+    <c:set var="rows">
+      <c:choose>
+        <c:when test="${param.size == 'SMALL'}">
+    8
+    </c:when>
+        <c:when test="${param.size == 'NORMAL'}">
+    16
+    </c:when>
+        <c:when test="${param.size == 'LARGE'}">
+    24
+    </c:when>
+        <c:when test="${param.size == 'HUGE'}">
+    36
+    </c:when>
+        <c:otherwise>
+    16
+    </c:otherwise>
+      </c:choose>
+    </c:set>
+    <c:set var="cols" value="120"/>
+    <c:set var="userkey">
+      <c:choose>
+        <c:when test="${param.key == 'CONTROL_FLOW_GRAPH'}">Control flow graph diagnostics</c:when>
+      </c:choose>
+    </c:set>
+    <c:forEach var="option" items="${xcfg_view_options.configurationOptions}">
+      <c:if test="${param[option.key] != null}">
+        <c:set target="${option}" property="enabled" value="true"/>
+      </c:if>
+      <c:if test="${param[option.key] == null}">
+        <c:set target="${option}" property="enabled" value="false"/>
+      </c:if>
+    </c:forEach>
+    <head>
+      <title>Control flow graph view - ${userkey}</title>
+      <link href="./tabs.css" type="text/css" rel="stylesheet"></link>
+    </head>
+    <body>
+      <jsp:include page="Dongfang.jspx"/>
+      <h2>${userkey}</h2>
+      <p>
+        <textarea editable="false" rows="${rows}" cols="${cols}">
+          <jsp:expression>validator.escapeXML(
+          validator.truncateUntilSolved(
+            validator.getGeneratedXMLResourceAsString(request.getParameter("key"), xcfg_view_options))
+            )
+          </jsp:expression>
+        </textarea>
+      </p>
+      	 <c:url var="controlFlowGraphViewURL" value="controlFlowGraphView.html" />
+        <form action="${controlFlowGraphViewURL}" method="get">
+          <input type="hidden" name="key" value="${param.key}"/>
+          <input type="hidden" name="size" value="${param.size}"/>
+          <input type="hidden" name="backlink" value="${param.backlink}"/>
+          <table>
+            <tbody>
+              <c:forEach var="option" items="${xcfg_view_options.configurationOptions}" varStatus="stat">
+                <c:if test="${option.relevantForFastTypes and option.relevantForControlFlowDiagnostics}">
+                  <tr>
+                    <td>
+                      <c:choose>
+                        <c:when test="${option.relevantForFastTypes and option.relevantForControlFlowDiagnostics and option.enabled}">
+                          <input type="checkbox" name="${option.key}" checked="checked"/>
+                        </c:when>
+                        <c:when test="${option.relevantForFastTypes and option.relevantForControlFlowDiagnostics and !option.enabled}">
+                          <input type="checkbox" name="${option.key}"/>
+                        </c:when>
+                      </c:choose>
+                    </td>
+                    <td>${option.userString}</td>
+                  </tr>
+                </c:if>
+              </c:forEach>
+            </tbody>
+          </table>
+          <button type="submit">Update</button>
+        </form>
+        <c:url var="xmlDownloadURL" value="XMLDownload.xml" />
+        <form action="${xmlDownloadURL}" method="get">
+          <input type="hidden" name="key" value="${param.key}"/>
+          <input type="hidden" name="size" value="${param.size}"/>
+          <c:forEach var="option" items="${xcfg_view_options.configurationOptions}" varStatus="stat">
+            <c:if test="${option.enabled and option.relevantForFastTypes and option.relevantForControlFlowDiagnostics}">
+              <input type="hidden" name="${option.key}" value="on"/>
+            </c:if>
+          </c:forEach>
+          <c:url var="backURL" value="${param.backlink}" />
+          <button type="submit">Download</button>
+          <button onclick="document.location='${backURL}';return false">Back</button>
+        </form>
+    </body>
+  </html>
+</jsp:root>

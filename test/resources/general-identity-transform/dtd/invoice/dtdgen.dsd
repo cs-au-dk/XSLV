@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?dsd href="http://www.brics.dk/DSD/dsd2.dsd"?>
+<dsd xmlns="http://www.brics.dk/DSD/2.0" xmlns:x="invoice" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:n="http://www.brics.dk/DSD/names" root="x:Invoice">
+  <xi:include href="http://www.brics.dk/DSD/names.dsd" />
+  <rule id="x:R1">
+    <declare>
+      <contents>
+        <string />
+      </contents>
+      <required>
+        <attribute name="currency">
+          <normalize whitespace="trim" />
+          <stringtype ref="n:NMTOKEN" />
+        </attribute>
+      </required>
+    </declare>
+  </rule>
+  <if>
+    <element name="x:Entry" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:Qty" />
+          <element name="x:ItemDescription" />
+          <element name="x:UnitPrice" />
+          <element name="x:SubTotal" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:Header" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:OrderNo" />
+          <element name="x:OrderDate" />
+          <element name="x:OrderTotal" />
+          <element name="x:Purchaser" />
+          <element name="x:Seller" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:Invoice" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:Header" />
+          <element name="x:Entry" />
+          <element name="x:ShippingAddress" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:ItemDescription" />
+    <declare>
+      <contents>
+        <string />
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:OrderDate" />
+    <declare>
+      <contents>
+        <string />
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:OrderNo" />
+    <declare>
+      <contents>
+        <string />
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:OrderTotal" />
+    <rule ref="x:R1" />
+  </if>
+  <if>
+    <element name="x:Purchaser" />
+    <declare>
+      <required>
+        <attribute name="name" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:Qty" />
+    <declare>
+      <contents>
+        <string />
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:Seller" />
+    <declare>
+      <required>
+        <attribute name="name" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:ShippingAddress" />
+    <declare>
+      <contents>
+        <string />
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:SubTotal" />
+    <rule ref="x:R1" />
+  </if>
+  <if>
+    <element name="x:UnitPrice" />
+    <rule ref="x:R1" />
+  </if>
+</dsd>
+

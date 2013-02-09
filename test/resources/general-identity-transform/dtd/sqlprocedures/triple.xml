@@ -1,0 +1,5 @@
+<triple name="sqlprocedures">
+  <input type="DTD" DTDNamespaceURI="http://dongfang.dk/testdata">proc.dtd</input>
+  <output type="RNG">proc.rng</output>
+  <xslt>../../general-identity-transform.xsl</xslt>
+</triple>

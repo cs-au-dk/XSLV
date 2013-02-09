@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?dsd href="http://www.brics.dk/DSD/dsd2.dsd"?>
+<dsd xmlns="http://www.brics.dk/DSD/2.0" xmlns:x="dongfang" root="x:root">
+  <if>
+    <element name="x:root" />
+    <declare>
+      <contents>
+        <sequence>
+          <repeat min="1">
+            <element name="x:a" />
+          </repeat>
+          <repeat>
+            <element name="x:b" />
+          </repeat>
+          <optional>
+            <element name="x:c" />
+          </optional>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:a" />
+    <declare>
+      <contents>
+        <string />
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:b" />
+    <declare>
+      <contents>
+        <repeat>
+          <element name="x:b" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+</dsd>
+

@@ -1,0 +1,75 @@
+<!-- edited with XML Spy v3.0 (http://www.xmlspy.com) by sd (LEVU) -->
+<!-- 
+    DTD for database stored procedure
+    $Author: dongfang $
+    $Date: 2005/11/25 10:31:43 $
+    $Revision: 1.1.1.1 $
+-->
+<!ELEMENT procs (proc*)>
+<!ATTLIST procs
+	date CDATA #REQUIRED
+>
+<!ELEMENT proc ((name, description, input?, output?, resultset*, errorcodes, execlist?) | name?)>
+<!ATTLIST proc
+	name ID #IMPLIED
+	href IDREF #IMPLIED
+>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT input (param*)>
+<!ELEMENT output (param*)>
+<!ELEMENT resultset (description?, param*)>
+<!ELEMENT errorcodes (code*)>
+<!ELEMENT execlist (proc*)>
+<!ELEMENT param (name, type, required?, description?)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT required (#PCDATA)>
+<!ELEMENT code (value, description?)>
+<!ELEMENT value (#PCDATA)>
+<!--
+
+$Log: proc.dtd,v $
+Revision 1.1.1.1  2005/11/25 10:31:43  dongfang
+msg
+
+Revision 1.1  2005/10/29 17:22:43  dongfang
+*** empty log message ***
+
+Revision 1.1  2004/05/18 11:34:11  madman
+""
+
+Revision 1.13  2000/08/24 14:55:14  sd
+New ability - insert date from attribute of <procs> tag
+
+Revision 1.12  2000/08/23 16:11:49  sd
+Now links are works
+
+Revision 1.11  2000/08/22 15:44:52  sd
+changes....
+
+Revision 1.10  2000/08/22 15:10:18  sd
+Ohh-h... :)
+
+Revision 1.9  2000/08/22 14:03:52  sd
+Changed something in DTD & XSL
+
+Revision 1.8  2000/08/22 11:23:38  sd
+proc-def.xsl: XSL changed for new DTD
+proc.dtd: patched DTD for stored procs
+Added test stored proc description (test.xml)
+
+Revision 1.7  2000/08/21 15:00:33  sd
+Minor changes in DTD.
+Added XSL for stored procedures
+
+Revision 1.6  2000/08/21 10:33:05  sd
+Fixed errors
+
+Revision 1.5  2000/08/21 08:55:12  sd
+Added datatypes of sp parameters to DTD
+
+Revision 1.4  2000/08/21 07:56:08  sd
+DTD for stored procedures, first version
+
+
+-->

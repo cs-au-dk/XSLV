@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<xsl:stylesheet version="1.0" 
+xmlns:xsl="http://gedefims.dk"
+  xmlns:foo="http://dongfang.dk/foo"
+  xmlns:bar="http://dongfang.dk/bar">
+   <xsl:template select="/">
+     <xsl:gedefims name="snusk" select="snask"/>
+   </xsl:template>
+ </xsl:stylesheet>

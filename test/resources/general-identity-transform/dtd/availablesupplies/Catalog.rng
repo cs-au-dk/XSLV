@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <choice>
+            <element name="Catalog">
+                <ref name="Supplier"/>
+                <ref name="Index"/>
+                <ref name="Contract"/>
+            </element>
+        </choice>
+    </start>
+    <define name="SupplierID">
+        <element name="SupplierID">
+            <text/>
+        </element>
+    </define>
+    <define name="ContractItem">
+        <element name="ContractItem">
+            <ref name="ItemID"/>
+            <ref name="UnitPrice"/>
+        </element>
+    </define>
+    <define name="ManufacturerPartID">
+        <element name="ManufacturerPartID">
+            <text/>
+        </element>
+    </define>
+    <define name="ManufacturerName">
+        <element name="ManufacturerName">
+            <text/>
+        </element>
+    </define>
+    <define name="Supplier">
+        <element name="Supplier">
+            <optional>
+                <attribute name="storeFrontURL">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <ref name="Name"/>
+            </optional>
+            <oneOrMore>
+                <ref name="SupplierID"/>
+            </oneOrMore>
+            <optional>
+                <ref name="Address"/>
+            </optional>
+        </element>
+    </define>
+    <define name="ItemID">
+        <element name="ItemID">
+            <ref name="SupplierPartID"/>
+        </element>
+    </define>
+    <define name="Description">
+        <element name="Description">
+            <text/>
+        </element>
+    </define>
+    <define name="Address">
+        <element name="Address">
+            <text/>
+        </element>
+    </define>
+    <define name="IndexItem">
+        <element name="IndexItem">
+            <ref name="ItemID"/>
+            <ref name="ItemDetail"/>
+            <ref name="UnitPrice"/>
+        </element>
+    </define>
+    <define name="ItemDetail">
+        <element name="ItemDetail">
+            <ref name="UnitOfMeasure"/>
+            <oneOrMore>
+                <ref name="Description"/>
+            </oneOrMore>
+            <ref name="ManufacturerName"/>
+            <ref name="ManufacturerPartID"/>
+        </element>
+    </define>
+    <define name="Name">
+        <element name="Name">
+            <attribute name="lang">
+                <data type="normalizedString"/>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="SupplierPartID">
+        <element name="SupplierPartID">
+            <text/>
+        </element>
+    </define>
+    <define name="UnitOfMeasure">
+        <element name="UnitOfMeasure">
+            <text/>
+        </element>
+    </define>
+    <define name="Money">
+        <element name="Money">
+            <optional>
+                <attribute name="currency">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <text/>
+        </element>
+    </define>
+    <define name="Contract">
+        <element name="Contract">
+            <optional>
+                <attribute name="effectiveDate">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="expirationDate">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <zeroOrMore>
+                <ref name="ContractItem"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="Index">
+        <element name="Index">
+            <zeroOrMore>
+                <ref name="IndexItem"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="UnitPrice">
+        <element name="UnitPrice">
+            <ref name="Money"/>
+        </element>
+    </define>
+</grammar>

@@ -1,0 +1,5 @@
+<triple name="xmlspec" enabled="true">
+  <input type="XSD" DTDNamespaceURI="">input/xmlspec.xsd</input>
+  <output>../fo-schema/fo_alternative.rng</output>
+  <xslt>xslt/xmlspec2fo-1.10.xsl</xslt>
+</triple>

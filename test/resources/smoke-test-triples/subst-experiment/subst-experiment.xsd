@@ -1,0 +1,25 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+xmlns:t = "http://dongfang.dk/testdata"
+targetNamespace="http://dongfang.dk/testdata"
+elementFormDefault="qualified">
+
+<element name="root" />
+
+<!-- putting on the extension block should kill off substitution of slam1 for slam2 - works. 
+<complexType name="fims" block="extension">
+</complexType>
+-->
+
+<complexType name="fims"></complexType>
+
+<complexType name="foo">
+<complexContent>
+<extension base="t:fims"/>
+</complexContent>
+</complexType>
+
+<element name="slam1" type="t:fims" substitutionGroup="t:root"/>
+
+<element name="slam2" substitutionGroup="t:slam1" type="t:foo"/>
+
+</schema>

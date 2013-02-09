@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<triple name="org" enabled="true">
+<input type="XSD" DTDNamespaceURI="">company-example.xsd</input>
+<output type="RNG" DTDNamespaceURI="">simple.rng</output>
+<xslt>company-example.xsl</xslt>
+</triple>

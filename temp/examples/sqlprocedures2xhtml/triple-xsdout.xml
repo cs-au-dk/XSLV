@@ -1,0 +1,6 @@
+<!-- An interesting difference in results of fast and full algo in here...-->
+<triple name="sqlprocedures2xhtml">
+  <input type="DTD" DTDNamespaceURI="">input/proc.dtd</input>
+  <output>../xhtml-from-xsd/xhtml1-strict.xsd</output>
+  <xslt>xslt/proc-def.xsl</xslt>
+</triple>

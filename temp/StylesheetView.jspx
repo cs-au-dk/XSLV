@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+  <jsp:directive.page language="java" session="true" isThreadSafe="true" info="Main XSLV Page" isELIgnored="false" import="dongfang.xsltools.diagnostics.*, java.util.Iterator" contentType="application/xhtml+xml; charset=utf-8"/>
+  <jsp:useBean id="validator" scope="session" class="dongfang.xsltools.context.InteractiveRequestResponseBean"/>
+  <jsp:output doctype-root-element="html" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" doctype-system="http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
+<!--
+version
+-->
+  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xml:lang="en" lang="en">
+    <c:choose>
+      <c:when test="${param.version=='APPROXIMATED_STYLESHEET'}">
+        <c:set var="stylesheet" scope="page" value="${validator.approximatedStylesheet}"/>
+        <c:set var="heading" scope="page" value="Approximately simplifed stylesheet"/>
+        <c:set var="notes">These are the XSLT stylesheet modules, 
+        in the validator's core XSLT language. <br/>
+        Some constructs which are not relevant to validation have been removed, 
+        while others may have been approximated - always in the direction of more validation errors. <br/>
+        <b>unknownString()</b> is a pseudo-XPath function that is defined to return any XML string. It is used as a replacement for string
+        expressions that are too complicated to analyze.
+        </c:set>
+      </c:when>
+      <c:when test="${param.version=='SEMANTICS_PRESERVED_STYLESHEET'}">
+        <c:set var="stylesheet" scope="page" value="${validator.semamticsPreservedStylesheet}"/>
+        <c:set var="heading" scope="page" value="Semantics-preserved simplifed stylesheet"/>
+        <c:set var="notes">These are the XSLT stylesheet modules,
+        after semantics-preserving simplification.<br/>
+        The semantics preservation is not pedantic here, for example, <b>xsl:space</b>, <b>xsl:comment</b> and
+        <b>xsl:output</b> instructions are left out. However, it is good enough for proof-of-concept purposes, 
+        and with some implementation effort, it could be made perfect.
+        </c:set>
+      </c:when>
+    </c:choose>
+    <head>
+      <title>${heading} - ${stylesheet.principalModule.systemId}</title>
+      <link href="./tabs.css" type="text/css" rel="stylesheet"></link>
+    </head>
+    <body>
+      <jsp:include page="Dongfang.jspx"/>
+      <h2>${heading}</h2>
+      <p>
+	    ${notes}
+        <ul>
+          <c:forEach var="module" items="${stylesheet.allModules}">
+            <li>
+              <c:url var="stylesheetURL" value="stylesheetModule.xml?module=${module.systemId}&amp;amp;version=${param.version}" />
+              <a href="${stylesheetURL}">View / download ${module.systemId}
+    <c:if test="${module.systemId == 'urn:XSLTValidator'}"> (built-in templates)</c:if>
+    </a>
+            </li>
+          </c:forEach>
+        </ul>
+Note: Some browsers cannot reliably display XML: Namespace declarations and the XML header are not shown. To save a document, use "Save Link As" in the link's right-click menu.
+      </p>
+    </body>
+  </html>
+</jsp:root>

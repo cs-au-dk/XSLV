@@ -1,0 +1,37 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  targetNamespace="http://dongfang.dk/testdata" 
+  xmlns:t="http://dongfang.dk/testdata" 
+  elementFormDefault="qualified">
+
+  <group name="all-group">
+    <all>
+      <element name="c"/>
+      <element name="d" minOccurs="0"/>
+    </all>
+  </group>
+
+  <element name="x">
+    <complexType>
+      <all>
+        <element name="a"/>
+        <element name="b" minOccurs="0"/>
+      </all>
+    </complexType>
+  </element>
+
+  <element name="y">
+    <complexType>
+      <group ref="t:all-group"/>
+    </complexType>
+  </element>
+  
+  <element name="boot">
+    <complexType>
+      <sequence>
+        <element ref="t:x"/>
+        <element ref="t:y"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+</schema>

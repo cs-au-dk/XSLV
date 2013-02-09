@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<triple name="poem2xhtml">
+  <input type="DTD" DTDNamespaceURI="">input/poem.dtd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/poem_xhtml.xsl</xslt>
+  <info>The input DTD was generated (the dtdgen program) from sample data.
+Origin of XSLT unknown.</info>
+  <notes>There is one error in the transform: 
+A required <tt>head</tt> child of XHTML´s <tt>html</tt> element is not output.</notes>
+</triple>

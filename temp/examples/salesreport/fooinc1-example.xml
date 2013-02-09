@@ -1,0 +1,47 @@
+<sales xmlns="http://www.example.com">
+  <spersons>
+    <sperson teamcolor="ff1010">
+      <name>Amy</name>
+      <email>mailto:amy@example.com</email>
+
+      <sales>
+        <customer>barco</customer>
+        <amount>34</amount>
+
+        <customer>bozinc</customer>
+        <amount>44</amount>
+      </sales>
+    </sperson>
+
+    <sperson teamcolor="10ff10">
+      <name>Bertha</name>
+      <email>mailto:bertha@example.com</email>
+
+      <sales>
+        <customer>barco</customer>
+        <amount>54</amount>
+
+        <customer>bozinc</customer>
+        <amount>64</amount>
+      </sales>
+
+    </sperson>
+  </spersons>
+
+  <customers>
+    <customer id="barco">
+      <name>The Bar Company</name>
+      <homepage>www.bar.com</homepage>
+      <contact>
+        <name>Bar the Barbarian</name>
+        <email>mailto:bar@bar.com</email>
+      </contact>
+    </customer>  
+
+    <customer id="bozinc">
+      <name>Frobozz Magic</name>
+      <homepage>http://www.frobozz.zork</homepage>
+    </customer>  
+  </customers>
+</sales>
+

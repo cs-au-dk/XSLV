@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+ xmlns:foo="http://dongfang.dk/foo
+ xmlns:bar="http://dongfang.dk/bar
+>
+  <xsl:import href="super.xsl"/>
+  <xsl:include href="included.xsl"/>
+  
+  <!-- test NS significance -->
+  <xsl:varible name="a" value="1"/>
+  <xsl:varible name="foo:a" value="2"/>
+  <xsl:varible name="bar:a" value="3"/>
+  
+  <!-- test ref in decl, this module -->
+  <xsl:variable name="b" value="1"/>
+
+  <!-- test ref in decl, imported module -->
+  <xsl:variable name="c" value="import-1"/>
+  
+  <xsl:variable name="t" value="principal"/>
+
+  <!-- see that override works -->
+  <xsl:variable name="e" value="import-2"/>
+  
+</xsl:stylesheet>

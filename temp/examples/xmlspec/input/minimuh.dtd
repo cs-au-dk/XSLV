@@ -1,0 +1,5 @@
+<!ELEMENT r (a,b+)>
+<!ELEMENT a EMPTY>
+<!ELEMENT b EMPTY>
+<!ATTLIST a a PCDATA #FIXED "attribute a of a's value">
+<!ATTLIST b a PCDATA #FIXED "attribute a of b's value">

@@ -1,0 +1,2 @@
+#!/bin/sh
+java -classpath xalan.jar org.apache.xalan.xslt.Process -in $1 -xsl html2xhtml.xsl -out $2

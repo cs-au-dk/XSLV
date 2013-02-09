@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         xmlns:x="http://www.w3.org/1999/xhtml">
+
+  <x:h1>Scripting Module</x:h1>
+
+  <div>
+    <x:h2>The noscript element</x:h2>
+
+    <define name="noscript">
+      <element name="noscript">
+        <ref name="noscript.attlist"/>
+        <ref name="Block.model"/>
+      </element>
+    </define>
+
+    <define name="noscript.attlist">
+      <ref name="Common.attrib"/>
+    </define>
+  </div>
+
+  <div>
+    <x:h2>The script element</x:h2>
+
+    <define name="script">
+      <element name="script">
+        <ref name="script.attlist"/>
+        <choice>
+          <text/>
+          <ref name="script"/>
+          <ref name="noscript"/>
+        </choice>
+      </element>
+    </define>
+
+    <define name="script.attlist">
+      <optional>
+        <attribute name="charset">
+          <ref name="Charset.datatype"/>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="declare">
+          <value>declare</value>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="src">
+          <ref name="URI.datatype"/>
+        </attribute>
+      </optional>
+      <attribute name="type">
+        <ref name="ContentType.datatype"/>
+      </attribute>
+      <optional>
+        <attribute name="xml:space">
+          <value>preserve</value>
+        </attribute>
+      </optional>
+    </define>
+  </div>
+
+  <define name="head.content" combine="interleave">
+    <zeroOrMore>
+      <ref name="script"/>
+    </zeroOrMore>
+  </define>
+
+  <define name="Script.class">
+    <choice>
+      <ref name="noscript"/>
+      <ref name="script"/>
+    </choice>
+  </define>
+
+  <define name="Inline.class" combine="choice">
+    <ref name="Script.class"/>
+  </define>
+
+  <define name="Block.class" combine="choice">
+    <ref name="Script.class"/>
+  </define>
+
+</grammar>
+

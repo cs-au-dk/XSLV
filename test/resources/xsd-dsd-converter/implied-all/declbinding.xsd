@@ -1,0 +1,30 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+xmlns:tg = "http://dongfang.dk/testdata"
+targetNamespace="http://dongfang.dk/testdata"
+elementFormDefault="qualified">
+
+<complexType name="typename">
+  <sequence>
+    <element name="n1" minOccurs="0"/> <!-- q1 -->
+    <element ref="tg:n2" minOccurs="0"/>
+  </sequence>
+</complexType>
+
+<element name="n1">
+  <complexType>
+    <sequence>
+      <element name="n1" minOccurs="0"/> <!-- q2 -->
+      <element ref="tg:n2" minOccurs="0"/>
+    </sequence>
+  </complexType>
+</element>
+
+<element name="n2">
+  <complexType>
+    <sequence>
+      <element name="n1" minOccurs="0"/> <!-- q2 -->
+      <element ref="tg:n2" minOccurs="0"/>
+    </sequence>
+  </complexType>
+</element>
+</schema> 

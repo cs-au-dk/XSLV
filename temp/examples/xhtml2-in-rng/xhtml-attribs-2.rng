@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         xmlns:x="http://www.w3.org/1999/xhtml">
+
+  <x:h1>Attribute Collections Module</x:h1>
+
+  <div>
+    <x:h2>Core Attribute Collection</x:h2>
+
+    <define name="class.attrib">
+      <optional>
+        <attribute name="class">
+          <ref name="NMTOKENS.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="id.attrib">
+      <optional>
+        <attribute name="id">
+          <ref name="ID.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="title.attrib">
+      <optional>
+        <attribute name="title">
+          <ref name="Text.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="Core.attrib">
+      <ref name="id.attrib"/>
+      <ref name="class.attrib"/>
+      <ref name="title.attrib"/>
+    </define>
+  </div>
+
+  <div>
+    <x:h2>I18N Attribute Collection</x:h2>
+
+    <define name="lang.attrib">
+      <optional>
+        <attribute name="xml:lang">
+          <ref name="LanguageCode.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="I18n.attrib">
+      <ref name="lang.attrib"/>
+    </define>
+  </div>
+
+  <div>
+    <x:h2>Bi-directional Text Collection</x:h2>
+
+    <define name="dir.attrib">
+      <optional>
+        <attribute name="dir">
+          <choice>
+            <value>ltr</value>
+            <value>rtl</value>
+            <value>lro</value>
+            <value>rlo</value>
+          </choice>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="Bidi.attrib">
+      <ref name="dir.attrib"/>
+    </define>
+  </div>
+
+  <div>
+    <x:h2>Edit Collection</x:h2>
+
+    <define name="edit.attrib">
+      <optional>
+        <attribute name="edit">
+          <choice>
+            <value>inserted</value>
+            <value>deleted</value>
+            <value>changed</value>
+            <value>moved</value>
+          </choice>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="datetime.attrib">
+      <optional>
+        <attribute name="datetime">
+          <ref name="Datetime.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="Edit.attrib">
+      <ref name="edit.attrib"/>
+      <ref name="datetime.attrib"/>
+    </define>
+  </div>
+
+  <div>
+    <x:h2>Hypertext Attribute Collection</x:h2>
+
+    <define name="href.attrib">
+      <optional>
+        <attribute name="href">
+          <ref name="URI.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="cite.attrib">
+      <optional>
+        <attribute name="cite">
+          <ref name="URI.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="target.attrib">
+      <optional>
+        <attribute name="target">
+          <ref name="HrefTarget.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="rel.attrib">
+      <optional>
+        <attribute name="rel">
+          <ref name="LinkTypes.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="rev.attrib">
+      <optional>
+        <attribute name="rev">
+          <ref name="LinkTypes.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="accesskey.attrib">
+      <optional>
+        <attribute name="accesskey">
+          <ref name="Character.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="navindex.attrib">
+      <optional>
+        <attribute name="navindex">
+          <ref name="navindexNumber.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="base.attrib">
+      <optional>
+        <attribute name="xml:base">
+          <ref name="URI.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="Hypertext.attrib">
+      <ref name="href.attrib"/>
+      <ref name="cite.attrib"/>
+      <ref name="target.attrib"/>
+      <ref name="rel.attrib"/>
+      <ref name="rev.attrib"/>
+      <ref name="accesskey.attrib"/>
+      <ref name="navindex.attrib"/>
+      <ref name="base.attrib"/>
+    </define>
+  </div>
+
+  <div>
+    <x:h2>Embedding Attribute Collection</x:h2>
+
+    <define name="src.attrib">
+      <optional>
+        <attribute name="src">
+          <ref name="URI.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="type.attrib">
+      <optional>
+        <attribute name="type">
+          <ref name="ContentType.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="Embedding.attrib">
+      <ref name="src.attrib"/>
+      <ref name="type.attrib"/>
+    </define>
+  </div>
+
+  <div>
+    <x:h2>Image Map Attribute Collection</x:h2>
+
+    <define name="usemap.attrib">
+      <optional>
+        <attribute name="usemap">
+          <ref name="URI.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="ismap.attrib">
+      <optional>
+        <attribute name="ismap">
+          <value>ismap</value>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="shape.attrib">
+      <optional>
+        <attribute name="shape">
+          <choice>
+            <value>rect</value>
+            <value>circle</value>
+            <value>poly</value>
+            <value>default</value>
+          </choice>
+        </attribute>
+      </optional>
+    </define>
+
+    <define name="coords.attrib">
+      <optional>
+        <attribute name="coords"/>
+      </optional>
+    </define>
+
+    <define name="ImageMap.attrib">
+      <ref name="usemap.attrib"/>
+      <ref name="ismap.attrib"/>
+      <ref name="shape.attrib"/>
+      <ref name="coords.attrib"/>
+    </define>
+  </div>
+
+  <define name="Common.extra.attrib">
+    <empty/>
+  </define>
+
+  <define name="Common.attrib">
+    <ref name="Core.attrib"/>
+    <ref name="I18n.attrib"/>
+    <ref name="Bidi.attrib"/>
+    <ref name="Edit.attrib"/>
+    <ref name="Hypertext.attrib"/>
+    <ref name="Embedding.attrib"/>
+    <ref name="ImageMap.attrib"/>
+    <ref name="Common.extra.attrib"/>
+  </define>
+
+  <define name="CommonIdRequired.attrib">
+    <attribute name="id">
+      <ref name="ID.datatype"/>
+    </attribute>
+    <ref name="class.attrib"/>
+    <ref name="title.attrib"/>
+    <ref name="I18n.attrib"/>
+    <ref name="Bidi.attrib"/>
+    <ref name="Edit.attrib"/>
+    <ref name="Hypertext.attrib"/>
+    <ref name="Embedding.attrib"/>
+    <ref name="ImageMap.attrib"/>
+    <ref name="Common.extra.attrib"/>
+  </define>
+
+</grammar>

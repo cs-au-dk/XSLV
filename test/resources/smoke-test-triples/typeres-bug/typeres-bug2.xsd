@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:d="http://dongfang.dk/testdata" blockDefault="#all" elementFormDefault="qualified" xml:lang="EN" targetNamespace="http://dongfang.dk/testdata">
+  <element name="root">
+    <complexType>
+      <sequence>
+        <element ref="d:shima"/>
+        <element ref="d:shimb"/>
+        <element ref="d:shimc"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="shima">
+    <complexType>
+      <sequence>
+        <element name="x">
+          <complexType>
+            <sequence>
+              <element name="a"/>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="shimb">
+    <complexType>
+      <sequence>
+        <element name="x">
+          <complexType>
+            <sequence>
+              <element name="b"/>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="shimc">
+    <complexType>
+      <sequence>
+        <element name="x">
+          <complexType>
+            <sequence>
+              <element name="c"/>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

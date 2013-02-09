@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+<!--
+Params: 
+twidth
+evt. mainpage
+-->
+  <jsp:directive.page language="java" session="true" isThreadSafe="true" isELIgnored="false" pageEncoding="utf-8"/>
+  <jsp:useBean id="validator" scope="session" class="dongfang.xsltools.context.InteractiveRequestResponseBean"/>
+  <h2>XSLT is invalid. ${validator.validationResult.errorCount} validation error${validator.validationResult.errorCount gt 1 ? "s" : ""}:</h2>
+  <p>
+<table width="${param.twidth}">
+<tr>
+<td>
+    <table border="1">
+      <tr>
+        <th align="left">Error</th>
+        <th align="left">Example of error</th>
+        <th align="left" colspan="2">Schema violated</th>
+        <th align="left" colspan="4">Error is in content or attribute model of:</th>
+      </tr>
+      <c:forEach var="item" items="${validator.validationResult.validationErrors}" varStatus="stat">
+        <tr>
+          <td align="left" valign="top" rowspan="2">
+            <c:out escapeXml="true" value="${item.message}"/>
+          </td>
+          <td rowspan="2" valign="top">
+            <pre>
+              <c:out escapeXml="true" value="${item.example}"/>
+            </pre>
+          </td>
+          <td colspan="2" valign="top">
+            <pre>
+              <c:out escapeXml="true" value="${item.filename}"/>
+            </pre>
+          </td>
+          <td colspan="3" valign="top">
+            <pre>
+              <c:out value="${item.culpritElementName}"/>
+            </pre>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <pre>Line: ${item.line}</pre>
+          </td>
+          <td valign="top">
+            <pre>Col: ${item.column}</pre>
+          </td>
+          <td valign="top">
+            <pre>
+              <c:out value="${item.culpritFilename}"/>
+            </pre>
+          </td>
+          <td valign="top">
+            <pre>
+              <c:out value="Line: ${item.culpritLineNumberAsString}"/>
+            </pre>
+          </td>
+          <td valign="top">
+            <pre>
+              <c:out value="Col: ${item.culpritColNumberAsString}"/>
+            </pre>
+          </td>
+        </tr>
+      </c:forEach>
+    </table>
+</td>
+</tr>
+</table>
+  </p>
+</jsp:root>

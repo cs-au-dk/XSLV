@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Limitations in the current implementation</title>
+</head>
+<body>
+<h2>Limitations in the current implementation</h2>
+
+General - unsupported features
+<ul>
+<li>Only the structural part of schema compliance is checked - that names, content models and data are valid as declared. Referential constraints (#IDREFS) are not considered (that is completely different affair, with its own problems and solutions).</li>
+<li>Restricted Relax NG is not yet supported for input schemas.</li>
+<li>The XML Schema <tt>redefine</tt> feature is not supported for input schemas.</li>
+<li>Flow into templates matching <tt>comment()</tt> and <tt>processing-instruction(...)</tt> is analyzed, and so is analysis of output and outgoing flow from those templates. However, since it rarely ever matters for validity, and it most often just fills up control flow graphs with edges to empty templates, it is currently disabled.</li>
+<li>Analysis of XML Infoset types is not implemented. In the thesis report is an idea for how it could be done.</li>
+<li>Passing and binding of stylesheet parameters is currently not implemented. When left open, nothing is assumed about them, except that they are valid <tt>#PCDATA</tt> values.</li>
+<li>Other character encodings than UTF-8 for resources have not been tested.</li>
+</ul>
+
+General - unsupported antifeatures
+<ul>
+<li>Output of elements as text enclosed in unescaped <tt>&lt;</tt> and <tt>&gt;</tt> is not analyzed.</li>
+<li>Attributes and namespace declarations are treated differently: The DTD trick of enforcing a namespace declaration on an element, by using a required <tt>xmlns:foo=bar</tt> attribute on its declaration, will not work.</li>
+<li>The XPath <tt>namespace</tt> axis is not supported (and it is deprecated in XSLT 2.0).</li>
+</ul>
+
+Wish list
+<ul>
+<li>A predicate evaluator: Having a simple predicate evaluator, capable of refining node types to, say, <tt>foo</tt> elements with a <tt>bar</tt> attribute and <tt>foo</tt> elements without the attribute, could eliminate most remaining spurious errors.</li>
+<li>Precision of evaluation of &quot;hard&quot; selection expressions, such as <tt>descendant-or-self::node()</tt>, could be enhanced by constructing a regular expression whose language is (an approximation of) the possible sequences of node types that might be selected, and in document order. Mohri-Nederhof might be used here.</li>
+<li>Support for XML Infoset datatypes (in XSLT 2.0 stylesheets)</li>
+<li>Support for type annotations, functions etc. in XSLT 2.0</li>
+<li>Support for the full XML Schema language (probably only the redefine feature is missing)</li>
+<li>Support for Restricted Relax NG schemas on the input side</li>
+</ul>
+
+Known bugs
+<ul>
+<li>The current Web front-end is rather sensitive towards invalid stylesheets and schemas. Users should do a schema validation of these before submitting them.</li>
+<li>The current Web front-end is not really mature. Users may occasionally experience sessions getting into strange states, etc. Remedy: Close all browser windows, start over.</li>
+<li>The current Web front-end is session based, without any refinements. Users cannot reliably run separate validation sessions in separate browser windows.</li>
+<li>BRICS Schematools stalls or thrashes on a few transform / output XML Graph combinations, or the generated XML Graphs are bad. In any case, validation appears to inf-loop.</li>
+</ul>
+</body>

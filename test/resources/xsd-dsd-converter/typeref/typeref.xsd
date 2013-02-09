@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  targetNamespace="http://dongfang.dk/testdata" 
+  xmlns:df="http://dongfang.dk/testdata"
+  elementFormDefault="qualified">
+  
+  <element name="a" type="string"/>
+  
+  <element name="b">
+    <complexType>
+      <sequence>
+        <element ref="df:b" minOccurs="0"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+  <complexType name="gedefims">
+    <sequence>
+      <element ref="df:a"/>
+      <element ref="df:b"/>
+    </sequence>
+  </complexType>
+  
+  <element name="boot" type="df:gedefims"/>
+</schema>

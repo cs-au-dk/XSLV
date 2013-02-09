@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <element name="PurchaseOrder">
+                <ref name="Header"/>
+                <ref name="OrderRequest"/>
+            </element>
+    </start>
+    <define name="From">
+        <element name="From">
+            <text/>
+        </element>
+    </define>
+    <define name="To">
+        <element name="To">
+            <text/>
+        </element>
+    </define>
+    <define name="Total">
+        <element name="Total">
+            <ref name="Money"/>
+        </element>
+    </define>
+    <define name="OrderRequestHeader">
+        <element name="OrderRequestHeader">
+            <attribute name="orderDate">
+                <data type="normalizedString"/>
+            </attribute>
+            <attribute name="orderID">
+                <data type="normalizedString"/>
+            </attribute>
+            <ref name="Total"/>
+            <ref name="ShipTo"/>
+            <ref name="BillTo"/>
+        </element>
+    </define>
+    <define name="ManufacturerPartID">
+        <element name="ManufacturerPartID">
+            <text/>
+        </element>
+    </define>
+    <define name="BillTo">
+        <element name="BillTo">
+            <ref name="Address"/>
+        </element>
+    </define>
+    <define name="SubTotal">
+        <element name="SubTotal">
+            <ref name="Money"/>
+        </element>
+    </define>
+    <define name="ManufacturerName">
+        <element name="ManufacturerName">
+            <text/>
+        </element>
+    </define>
+    <define name="ItemID">
+        <element name="ItemID">
+            <ref name="SupplierPartID"/>
+        </element>
+    </define>
+    <define name="Address">
+        <element name="Address">
+            <text/>
+        </element>
+    </define>
+    <define name="Description">
+        <element name="Description">
+            <attribute name="lang">
+                <data type="normalizedString"/>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="ShipTo">
+        <element name="ShipTo">
+            <ref name="Address"/>
+        </element>
+    </define>
+    <define name="OrderRequest">
+        <element name="OrderRequest">
+            <ref name="OrderRequestHeader"/>
+            <oneOrMore>
+                <ref name="ItemOut"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="ItemDetail">
+        <element name="ItemDetail">
+            <ref name="UnitOfMeasure"/>
+            <ref name="Description"/>
+            <ref name="ManufacturerName"/>
+            <ref name="ManufacturerPartID"/>
+        </element>
+    </define>
+    <define name="ItemOut">
+        <element name="ItemOut">
+            <attribute name="requestedDeliveryDate">
+                <data type="normalizedString"/>
+            </attribute>
+            <attribute name="quantity">
+                <data type="normalizedString"/>
+            </attribute>
+            <ref name="ItemID"/>
+            <ref name="ItemDetail"/>
+            <ref name="UnitPrice"/>
+            <ref name="SubTotal"/>
+        </element>
+    </define>
+    <define name="SupplierPartID">
+        <element name="SupplierPartID">
+            <text/>
+        </element>
+    </define>
+    <define name="Sender">
+        <element name="Sender">
+            <text/>
+        </element>
+    </define>
+    <define name="UnitOfMeasure">
+        <element name="UnitOfMeasure">
+            <text/>
+        </element>
+    </define>
+    <define name="Money">
+        <element name="Money">
+            <attribute name="currency">
+                <data type="normalizedString"/>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="Header">
+        <element name="Header">
+            <oneOrMore>
+                <ref name="From"/>
+            </oneOrMore>
+            <ref name="To"/>
+            <ref name="Sender"/>
+        </element>
+    </define>
+    <define name="UnitPrice">
+        <element name="UnitPrice">
+            <ref name="Money"/>
+        </element>
+    </define>
+</grammar>

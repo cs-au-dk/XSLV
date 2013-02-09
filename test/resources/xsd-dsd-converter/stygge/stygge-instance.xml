@@ -1,0 +1,12 @@
+<n4 xmlns="http://dongfang.dk/testdata">
+  <n1>
+    <n2><n5/></n2>
+    <n3>hejsa</n3>
+  </n1>
+  <n2><n5/></n2>
+  <n3>hejsa</n3>
+  <n4>
+    <n2><n5/></n2>
+    <n3>hejsa</n3>
+  </n4>
+</n4>

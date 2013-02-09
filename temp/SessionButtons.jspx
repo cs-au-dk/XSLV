@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+	<jsp:directive.page language="java" session="true" isThreadSafe="true"
+		info="text" isELIgnored="false" />
+	<jsp:useBean id="validator" scope="session"
+		class="dongfang.xsltools.context.InteractiveRequestResponseBean" />
+	<c:if test="${validator.displayingSessionButtons}">
+		<c:url var="uploadURL" value="${param.mainpage}" />
+		<form name="upload" method="post" action="${uploadURL}" enctype="multipart/form-data">
+		<table width="${param.twidth}">
+			<tr>
+				<td align="right" colspan="4"><input value="Validate again"
+					type="submit" name="DONE:restart"></input> <c:if
+					test="${validator.displayingResetButton}">
+					<input value="Reset session" type="submit" name="DONE:reset"></input>
+				</c:if> &#160;</td>
+			</tr>
+		</table>
+		</form>
+	</c:if>
+</jsp:root>

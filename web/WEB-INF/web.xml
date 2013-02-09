@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
+
+    <description>
+      Online XSLV
+    </description>
+
+    <display-name>Online XSLV</display-name>
+
+	<welcome-file-list>
+		<welcome-file>xslv.html</welcome-file>
+	</welcome-file-list>
+
+    <servlet>
+        <servlet-name>xslv</servlet-name>
+        <jsp-file>/xslv.jspx</jsp-file>
+    </servlet>
+
+    <servlet>
+        <servlet-name>xslv-demo</servlet-name>
+        <jsp-file>/xslv-demo.jspx</jsp-file>
+    </servlet>
+
+    <servlet>
+        <servlet-name>xslv-demos</servlet-name>
+        <jsp-file>/xslv-demos.jspx</jsp-file>
+    </servlet>
+
+    <servlet>
+        <servlet-name>xslf</servlet-name>
+        <jsp-file>/xslf.jspx</jsp-file>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ControlFlowGraphView</servlet-name>
+        <jsp-file>/ControlFlowGraphView.jspx</jsp-file>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DeleteResource</servlet-name>
+        <jsp-file>/DeleteResource.jspx</jsp-file>
+    </servlet>
+
+    <servlet>
+        <servlet-name>EditorWindow</servlet-name>
+        <jsp-file>/EditorWindow.jspx</jsp-file>
+    </servlet>
+
+    <servlet>
+        <servlet-name>XMLDownload</servlet-name>
+        <jsp-file>/XMLDownload.jspx</jsp-file>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ImageConverterServlet</servlet-name>
+        <servlet-class>dongfang.xsltools.web.ImageConverterServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>XMLGraphServlet</servlet-name>
+        <servlet-class>dongfang.xsltools.web.XMLGraphServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>InputDiagnosticsView</servlet-name>
+        <jsp-file>/InputDiagnosticsView.jspx</jsp-file>
+    </servlet>
+
+    <servlet>
+        <servlet-name>CachedResourcesServlet</servlet-name>
+        <servlet-class>dongfang.xsltools.web.CachedResourcesServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>StylesheetModuleServlet</servlet-name>
+        <servlet-class>dongfang.xsltools.web.StylesheetServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DOTServlet</servlet-name>
+        <servlet-class>dongfang.xsltools.web.DOTServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>StylesheetView</servlet-name>
+        <jsp-file>/StylesheetView.jspx</jsp-file>
+    </servlet>
+
+    <servlet>
+        <servlet-name>XSLFServlet</servlet-name>
+        <servlet-class>dongfang.xsltools.web.XSLFServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>xslv</servlet-name>
+        <url-pattern>/xslv.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>xslv-demo</servlet-name>
+        <url-pattern>/xslv-demo.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>xslv-demos</servlet-name>
+        <url-pattern>/xslv-demos.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>xslv</servlet-name>
+        <url-pattern>/xslv.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>xslf</servlet-name>
+        <url-pattern>/xslf.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>xslf</servlet-name>
+        <url-pattern>/xslf.jsp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ControlFlowGraphView</servlet-name>
+        <url-pattern>/controlFlowGraphView.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DeleteResource</servlet-name>
+        <url-pattern>/DeleteResource.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>EditorWindow</servlet-name>
+        <url-pattern>/EditorWindow.html</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>ImageConverterServlet</servlet-name>
+        <url-pattern>/controlFlowGraph.png</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ImageConverterServlet</servlet-name>
+        <url-pattern>/controlFlowGraph.ps</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ImageConverterServlet</servlet-name>
+        <url-pattern>/transformXMLGraph.png</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ImageConverterServlet</servlet-name>
+        <url-pattern>/transformXMLGraph.ps</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>DOTServlet</servlet-name>
+        <url-pattern>/transformXMLGraph.dot</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ImageConverterServlet</servlet-name>
+        <url-pattern>/outputTypeXMLGraph.png</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ImageConverterServlet</servlet-name>
+        <url-pattern>/outputTypeXMLGraph.ps</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DOTServlet</servlet-name>
+        <url-pattern>/outputTypeXMLGraph.dot</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>XMLGraphServlet</servlet-name>
+        <url-pattern>/outputTypeXMLGraph.zip</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>XMLGraphServlet</servlet-name>
+        <url-pattern>/transformXMLGraph.zip</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>InputDiagnosticsView</servlet-name>
+        <url-pattern>/inputDiagnosticsView.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CachedResourcesServlet</servlet-name>
+        <url-pattern>/validationSessionResources.zip</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>StylesheetView</servlet-name>
+        <url-pattern>/stylesheetView.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>StylesheetModuleServlet</servlet-name>
+        <url-pattern>/stylesheetModule.xml</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>XMLDownload</servlet-name>
+        <url-pattern>/XMLDownload.xml</url-pattern>
+    </servlet-mapping>
+    
+<!--
+    <servlet-mapping>
+        <servlet-name>XSLFServlet</servlet-name>
+        <url-pattern>*.flowannotated</url-pattern>
+    </servlet-mapping>
+-->
+    
+</web-app>

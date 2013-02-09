@@ -1,0 +1,527 @@
+    <error>
+        <message>invalid attribute value</message>
+        <example>class=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}div" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:737:64"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>class="enum!"</example>
+        <element name="{http://www.w3.org/1999/xhtml}ol" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:1409:72"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2042:78"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:1774:11"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:338:45"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:1379:45"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:820:7"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:536:11"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2186:11"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2121:11"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:536:11"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2121:11"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2186:11"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2549:45"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2511:45"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2583:45"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2492:45"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2568:45"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2530:45"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#FN-ANCH-&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2386:9"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="#FN-ANCH-&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2358:7"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:1316:60"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2236:60"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2071:79"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2236:60"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2064:64"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2236:60"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:701:60"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:1242:6"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:1577:54"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:1562:7"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>href="&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:1571:7"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2386:9"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2358:7"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>id="FN-ANCH-!"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:820:7"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>lang="_"</example>
+        <element name="{http://www.w3.org/1999/xhtml}html" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:1704:48"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2386:9"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2358:7"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:2716:70"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>name="FN-ANCH-!"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:820:7"/>
+    </error>
+    <error>
+        <message>invalid attribute value</message>
+        <example>src="&amp;#x9;"</example>
+        <element name="{http://www.w3.org/1999/xhtml}img" origin="file:/home/dongfang/speciale/test/resources/triples/xmlspec/xslt/xmlspec-1.13.xsl:864:63"/>
+    </error>
+    <error>
+
+
+
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<control-flow-graph template-rule-count="7">
+    <root-selection>
+        <selection originalPath="/" downwardizedPath="" waywardPath="">
+            <no-schema-flows>
+                <under-mode mode="#default">
+                    <context-flow>
+                        <template-rule index="2" mode="#all" match="/" priority="-0.5" reachableOutput="false"/>
+                        <node-type type="[root]"/>
+                    </context-flow>
+                </under-mode>
+            </no-schema-flows>
+            <schema-context-flows>
+                <under-mode mode="#default">
+                    <node type="[root]"/>
+                    <context-flow>
+                        <template-rule index="2" mode="#all" match="/" priority="-0.5" reachableOutput="false"/>
+                        <node type="[root]"/>
+                    </context-flow>
+                </under-mode>
+            </schema-context-flows>
+        </selection>
+    </root-selection>
+    <template-rules>
+        <template-rule index="0" mode="#default" match="child::input:a" priority="0.0" reachableOutput="false">
+            <no-schema-context-set>
+                <ElementNT name="{http://dongfang.dk/testdata}a"/>
+            </no-schema-context-set>
+            <contextSet>
+                <under-mode mode="#default">
+                    <SubsumptionElementUse declaration="{http://dongfang.dk/testdata}a" type="&lt;XSDRestrictionSimpleType refName=&quot;{http://dongfang.dk/testdata}smallblock&quot; derivedFromRef=&quot;{http://www.w3.org/2001/XMLSchema}string&quot;contentStringExample=&quot;smallblock&quot;/&gt;"/>
+                </under-mode>
+            </contextSet>
+            <instructions/>
+        </template-rule>
+        <template-rule index="1" mode="#all" match="child::*" priority="-0.5" reachableOutput="false">
+            <no-schema-context-set>
+                <ElementNT name="{*}*"/>
+            </no-schema-context-set>
+            <contextSet>
+                <under-mode mode="#default">
+                    <SubsumptionElementUse declaration="{http://dongfang.dk/testdata}root" type="&lt;XSDComplexContentType refName=&quot;{http://dongfang.dk/testdata}typeof-root-00&quot; derivedFromRef=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;contentStringExample=&quot;null&quot;/&gt;"/>
+                    <SubsumptionElementUse declaration="{http://dongfang.dk/testdata}c" type="&lt;XSDComplexContentType refName=&quot;{http://dongfang.dk/testdata}typeof-c-02&quot; derivedFromRef=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;contentStringExample=&quot;null&quot;/&gt;"/>
+                    <SubsumptionElementUse declaration="{http://dongfang.dk/testdata}b" type="&lt;XSDComplexContentType refName=&quot;{http://dongfang.dk/testdata}typeof-b-01&quot; derivedFromRef=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;contentStringExample=&quot;null&quot;/&gt;"/>
+                </under-mode>
+            </contextSet>
+            <instructions>
+                <apply-templates-inst mode="#current" containsSorts="false">
+                    <selection originalPath="child::node()" downwardizedPath="child::node()" waywardPath="">
+                        <no-schema-flows>
+                            <under-mode mode="#default">
+                                <context-flow>
+                                    <template-rule index="0" mode="#default" match="child::input:a" priority="0.0" reachableOutput="false"/>
+                                    <node-type type="{http://dongfang.dk/testdata}a"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="1" mode="#all" match="child::*" priority="-0.5" reachableOutput="false"/>
+                                    <node-type type="{*}*"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="3" mode="#all" match="child::text()" priority="-0.5" reachableOutput="true"/>
+                                    <node-type type="[pcdata]()"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="5" mode="#all" match="child::processing-instruction()" priority="-0.5" reachableOutput="false"/>
+                                    <node-type type="[pi]"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="6" mode="#all" match="child::comment()" priority="-0.5" reachableOutput="false"/>
+                                    <node-type type="[comment]"/>
+                                </context-flow>
+                            </under-mode>
+                        </no-schema-flows>
+                        <schema-context-flows>
+                            <under-mode mode="#default">
+                                <SubsumptionElementUse declaration="{http://dongfang.dk/testdata}b" type="&lt;XSDComplexContentType refName=&quot;{http://dongfang.dk/testdata}typeof-b-01&quot; derivedFromRef=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;contentStringExample=&quot;null&quot;/&gt;"/>
+                                <context-flow>
+                                    <template-rule index="1" mode="#all" match="child::*" priority="-0.5" reachableOutput="false"/>
+                                    <SubsumptionElementUse declaration="{http://dongfang.dk/testdata}b" type="&lt;XSDComplexContentType refName=&quot;{http://dongfang.dk/testdata}typeof-b-01&quot; derivedFromRef=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;contentStringExample=&quot;null&quot;/&gt;"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="5" mode="#all" match="child::processing-instruction()" priority="-0.5" reachableOutput="false"/>
+                                    <node type="[pi]"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="6" mode="#all" match="child::comment()" priority="-0.5" reachableOutput="false"/>
+                                    <node type="[comment]"/>
+                                </context-flow>
+                                <SubsumptionElementUse declaration="{http://dongfang.dk/testdata}c" type="&lt;XSDComplexContentType refName=&quot;{http://dongfang.dk/testdata}typeof-c-02&quot; derivedFromRef=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;contentStringExample=&quot;null&quot;/&gt;"/>
+                                <context-flow>
+                                    <template-rule index="5" mode="#all" match="child::processing-instruction()" priority="-0.5" reachableOutput="false"/>
+                                    <node type="[pi]"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="6" mode="#all" match="child::comment()" priority="-0.5" reachableOutput="false"/>
+                                    <node type="[comment]"/>
+                                </context-flow>
+                                <SubsumptionElementUse declaration="{http://dongfang.dk/testdata}root" type="&lt;XSDComplexContentType refName=&quot;{http://dongfang.dk/testdata}typeof-root-00&quot; derivedFromRef=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;contentStringExample=&quot;null&quot;/&gt;"/>
+                                <context-flow>
+                                    <template-rule index="0" mode="#default" match="child::input:a" priority="0.0" reachableOutput="false"/>
+                                    <SubsumptionElementUse declaration="{http://dongfang.dk/testdata}a" type="&lt;XSDRestrictionSimpleType refName=&quot;{http://dongfang.dk/testdata}smallblock&quot; derivedFromRef=&quot;{http://www.w3.org/2001/XMLSchema}string&quot;contentStringExample=&quot;smallblock&quot;/&gt;"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="1" mode="#all" match="child::*" priority="-0.5" reachableOutput="false"/>
+                                    <SubsumptionElementUse declaration="{http://dongfang.dk/testdata}b" type="&lt;XSDComplexContentType refName=&quot;{http://dongfang.dk/testdata}typeof-b-01&quot; derivedFromRef=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;contentStringExample=&quot;null&quot;/&gt;"/>
+                                    <SubsumptionElementUse declaration="{http://dongfang.dk/testdata}c" type="&lt;XSDComplexContentType refName=&quot;{http://dongfang.dk/testdata}typeof-c-02&quot; derivedFromRef=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;contentStringExample=&quot;null&quot;/&gt;"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="5" mode="#all" match="child::processing-instruction()" priority="-0.5" reachableOutput="false"/>
+                                    <node type="[pi]"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="6" mode="#all" match="child::comment()" priority="-0.5" reachableOutput="false"/>
+                                    <node type="[comment]"/>
+                                </context-flow>
+                            </under-mode>
+                        </schema-context-flows>
+                    </selection>
+                    <with-params/>
+                    <deadFlows>
+                        <OverriddenContextFlow cause="higher import precedence" victim="rule index=1 match=child::* mode=#all" source="FastContextSensitiveAnalyzer" robber="rule index=0 match=child::input:a mode=#default">
+                            <SubsumptionElementUse declaration="{http://dongfang.dk/testdata}a" type="&lt;XSDRestrictionSimpleType refName=&quot;{http://dongfang.dk/testdata}smallblock&quot; derivedFromRef=&quot;{http://www.w3.org/2001/XMLSchema}string&quot;contentStringExample=&quot;smallblock&quot;/&gt;"/>
+                        </OverriddenContextFlow>
+                        <DeadContextFlow cause="input schema restrictions" victim="rule index=3 match=child::text() mode=#all" source="InsensitiveFlowDeathalyzer">
+                            <node type="[pcdata]()"/>
+                        </DeadContextFlow>
+                    </deadFlows>
+                </apply-templates-inst>
+            </instructions>
+        </template-rule>
+        <template-rule index="2" mode="#all" match="/" priority="-0.5" reachableOutput="false">
+            <no-schema-context-set>
+                <node type="[root]"/>
+            </no-schema-context-set>
+            <contextSet>
+                <under-mode mode="#default">
+                    <node type="[root]"/>
+                </under-mode>
+            </contextSet>
+            <instructions>
+                <apply-templates-inst mode="#current" containsSorts="false">
+                    <selection originalPath="child::node()" downwardizedPath="child::node()" waywardPath="">
+                        <no-schema-flows>
+                            <under-mode mode="#default">
+                                <context-flow>
+                                    <template-rule index="0" mode="#default" match="child::input:a" priority="0.0" reachableOutput="false"/>
+                                    <node-type type="{http://dongfang.dk/testdata}a"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="1" mode="#all" match="child::*" priority="-0.5" reachableOutput="false"/>
+                                    <node-type type="{*}*"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="5" mode="#all" match="child::processing-instruction()" priority="-0.5" reachableOutput="false"/>
+                                    <node-type type="[pi]"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="6" mode="#all" match="child::comment()" priority="-0.5" reachableOutput="false"/>
+                                    <node-type type="[comment]"/>
+                                </context-flow>
+                            </under-mode>
+                        </no-schema-flows>
+                        <schema-context-flows>
+                            <under-mode mode="#default">
+                                <node type="[root]"/>
+                                <context-flow>
+                                    <template-rule index="1" mode="#all" match="child::*" priority="-0.5" reachableOutput="false"/>
+                                    <SubsumptionElementUse declaration="{http://dongfang.dk/testdata}root" type="&lt;XSDComplexContentType refName=&quot;{http://dongfang.dk/testdata}typeof-root-00&quot; derivedFromRef=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;contentStringExample=&quot;null&quot;/&gt;"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="5" mode="#all" match="child::processing-instruction()" priority="-0.5" reachableOutput="false"/>
+                                    <node type="[pi]"/>
+                                </context-flow>
+                                <context-flow>
+                                    <template-rule index="6" mode="#all" match="child::comment()" priority="-0.5" reachableOutput="false"/>
+                                    <node type="[comment]"/>
+                                </context-flow>
+                            </under-mode>
+                        </schema-context-flows>
+                    </selection>
+                    <with-params/>
+                    <deadFlows>
+                        <DeadContextFlow cause="input schema restrictions" victim="rule index=0 match=child::input:a mode=#default" source="InsensitiveFlowDeathalyzer">
+                            <ElementNT name="{http://dongfang.dk/testdata}a"/>
+                        </DeadContextFlow>
+                    </deadFlows>
+                </apply-templates-inst>
+            </instructions>
+        </template-rule>
+        <template-rule index="3" mode="#all" match="child::text()" priority="-0.5" reachableOutput="true">
+            <no-schema-context-set>
+                <node type="[pcdata]()"/>
+            </no-schema-context-set>
+            <contextSet/>
+            <instructions>
+                <value-of-inst select="self::node()"/>
+            </instructions>
+        </template-rule>
+        <template-rule index="4" mode="#all" match="attribute::*" priority="-0.5" reachableOutput="true">
+            <pronouncedDead/>
+        </template-rule>
+        <template-rule index="5" mode="#all" match="child::processing-instruction()" priority="-0.5" reachableOutput="false">
+            <no-schema-context-set>
+                <node type="[pi]"/>
+            </no-schema-context-set>
+            <contextSet>
+                <under-mode mode="#default">
+                    <node type="[pi]"/>
+                </under-mode>
+            </contextSet>
+            <instructions/>
+        </template-rule>
+        <template-rule index="6" mode="#all" match="child::comment()" priority="-0.5" reachableOutput="false">
+            <no-schema-context-set>
+                <node type="[comment]"/>
+            </no-schema-context-set>
+            <contextSet>
+                <under-mode mode="#default">
+                    <node type="[comment]"/>
+                </under-mode>
+            </contextSet>
+            <instructions/>
+        </template-rule>
+    </template-rules>
+</control-flow-graph>

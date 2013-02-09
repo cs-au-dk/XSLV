@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<control-flow-graph template-rule-count="20">
+    <root-selection>
+        <selection originalPath="/" downwardizedPath="" waywardPath="">
+            <no-schema-flows>
+                <context-flow>
+                    <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="0" mode="#default" match="/" priority="-0.5"/>
+                    <node-type type="[root]"/>
+                </context-flow>
+            </no-schema-flows>
+            <schema-context-flows>
+                <node type="[root]"/>
+                <context-flow>
+                    <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="0" mode="#default" match="/" priority="-0.5"/>
+                    <node type="[root]"/>
+                </context-flow>
+            </schema-context-flows>
+        </selection>
+    </root-selection>
+    <template-rules>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="0" mode="#default" match="/" priority="-0.5">
+            <no-schema-context-set>
+                <node type="[root]"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <node type="[root]"/>
+            </schema-context-set>
+            <instructions>
+                <element-inst nameAVT="html" namespaceAVT="http://www.w3.org/1999/xhtml">
+                    <element-inst nameAVT="head" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <element-inst nameAVT="title" namespaceAVT="http://www.w3.org/1999/xhtml">
+                            <value-of-inst select="'
+					Stored procedures
+				'"/>
+                        </element-inst>
+                        <element-inst nameAVT="style" namespaceAVT="http://www.w3.org/1999/xhtml">
+                            <attribute-inst nameAVT="type">
+                                <value-of-inst select="'text/css'"/>
+                            </attribute-inst>
+                            <value-of-inst select="' 
+a, a:link, a:visited {
+	color: navy;
+	text-decoration: underline;
+}
+a:hover, a:active {
+	color: red;
+	text-decoration: underline;
+}
+p, td, li {
+	color: black;
+	font-family: Arial, Helvetica, Vedrana;
+	font-size: 10pt;
+	text-align: left;
+}
+h1, h2, h3 {
+	color: navy;
+	font-family: Arial, Helvetica, Vedrana;
+}
+h1 {
+	font-size: 14pt;
+	font-weight: bold;
+}
+h2 {
+	font-size: 12pt;
+	color: navy;
+	background-color: #CCCCCC;
+	font-style: italic;
+}
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+body {
+	background-color:white;
+}
+
+.context {
+	background-color: white;
+	font-weight: normal;
+}
+.fieldname {
+	font-weight: bold;
+	text-align: center;
+	vertical-align: text-top;
+	color: white;
+	background-color: navy;
+}
+.name {
+	text-decoration: none;
+}
+'"/>
+                        </element-inst>
+                    </element-inst>
+                    <element-inst nameAVT="body" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <apply-templates-inst mode="#default" containsSorts="false">
+                            <selection originalPath="child::procs" downwardizedPath="child::procs" waywardPath="">
+                                <no-schema-flows>
+                                    <context-flow>
+                                        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="1" mode="#default" match="child::procs" priority="0.0"/>
+                                        <node-type type="procs"/>
+                                    </context-flow>
+                                    <context-flow>
+                                        <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                        <node-type type="procs"/>
+                                    </context-flow>
+                                </no-schema-flows>
+                                <schema-context-flows>
+                                    <node type="[root]"/>
+                                    <context-flow>
+                                        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="1" mode="#default" match="child::procs" priority="0.0"/>
+                                        <DTDElementDecl name="procs" char="D(68)" ancestor-string-example="0D"/>
+                                    </context-flow>
+                                </schema-context-flows>
+                            </selection>
+                            <with-params/>
+                            <deadFlows>
+                                <OverriddenContextFlow cause="higher import precedence" victim="rule index=14 match=child::* mode=#default" source="FastContextSensitiveAnalyzer" robber="rule index=1 match=child::procs mode=#default">
+                                    <DTDElementDecl name="procs" char="D(68)" ancestor-string-example="0D"/>
+                                </OverriddenContextFlow>
+                                <DeadContextFlow cause="input schema restrictions" victim="rule index=14 match=child::* mode=#default" source="InsensitiveFlowDeathalyzer">
+                                    <ElementNT name="procs"/>
+                                </DeadContextFlow>
+                            </deadFlows>
+                        </apply-templates-inst>
+                    </element-inst>
+                </element-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="1" mode="#default" match="child::procs" priority="0.0">
+            <no-schema-context-set>
+                <ElementNT name="procs"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="procs" char="D(68)" ancestor-string-example="0D"/>
+            </schema-context-set>
+            <instructions>
+                <element-inst nameAVT="h1" namespaceAVT="http://www.w3.org/1999/xhtml">
+                    <value-of-inst select="'Stored procedures'"/>
+                </element-inst>
+                <element-inst nameAVT="p" namespaceAVT="http://www.w3.org/1999/xhtml">
+                    <element-inst nameAVT="i" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <value-of-inst select="'Date: '"/>
+                        <value-of-inst select="attribute::date"/>
+                    </element-inst>
+                </element-inst>
+                <element-inst nameAVT="hr" namespaceAVT="http://www.w3.org/1999/xhtml">
+                    <attribute-inst nameAVT="size">
+                        <value-of-inst select="'2'"/>
+                    </attribute-inst>
+                </element-inst>
+                <element-inst nameAVT="h2" namespaceAVT="http://www.w3.org/1999/xhtml">
+                    <value-of-inst select="'Contents'"/>
+                </element-inst>
+                <element-inst nameAVT="ol" namespaceAVT="http://www.w3.org/1999/xhtml">
+                    <element-inst nameAVT="li" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <choose-inst>
+                            <whens-and-otherwise>
+                                <when-inst>
+                                    <element-inst nameAVT="a" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="href">
+                                            <value-of-inst select="unknownString()"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="child::proc/child::name"/>
+                                    </element-inst>
+                                </when-inst>
+                                <otherwise-inst>
+                                    <value-of-inst select="'
+    			  N/A
+          '"/>
+                                </otherwise-inst>
+                            </whens-and-otherwise>
+                        </choose-inst>
+                    </element-inst>
+                </element-inst>
+                <element-inst nameAVT="hr" namespaceAVT="http://www.w3.org/1999/xhtml">
+                    <attribute-inst nameAVT="size">
+                        <value-of-inst select="'2'"/>
+                    </attribute-inst>
+                </element-inst>
+                <apply-templates-inst mode="#default" containsSorts="false">
+                    <selection originalPath="child::proc" downwardizedPath="child::proc" waywardPath="">
+                        <no-schema-flows>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="2" mode="#default" match="child::execlist/child::proc" priority="0.5"/>
+                                <node-type type="proc"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="4" mode="#default" match="child::procs/child::proc" priority="0.5"/>
+                                <node-type type="proc"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                <node-type type="proc"/>
+                            </context-flow>
+                        </no-schema-flows>
+                        <schema-context-flows>
+                            <DTDElementDecl name="procs" char="D(68)" ancestor-string-example="0D"/>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="2" mode="#default" match="child::execlist/child::proc" priority="0.5"/>
+                                <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="4" mode="#default" match="child::procs/child::proc" priority="0.5"/>
+                                <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                            </context-flow>
+                        </schema-context-flows>
+                    </selection>
+                    <with-params/>
+                    <deadFlows collection-null="true"/>
+                </apply-templates-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="2" mode="#default" match="child::execlist/child::proc" priority="0.5">
+            <no-schema-context-set>
+                <ElementNT name="proc"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+            </schema-context-set>
+            <instructions>
+                <element-inst nameAVT="ul" namespaceAVT="http://www.w3.org/1999/xhtml">
+                    <element-inst nameAVT="li" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <choose-inst>
+                            <whens-and-otherwise>
+                                <when-inst>
+                                    <element-inst nameAVT="a" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="href">
+                                            <value-of-inst select="unknownString()"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="child::proc/child::name"/>
+                                    </element-inst>
+                                </when-inst>
+                                <otherwise-inst>
+                                    <value-of-inst select="'
+    			  N/A
+          '"/>
+                                </otherwise-inst>
+                            </whens-and-otherwise>
+                        </choose-inst>
+                    </element-inst>
+                </element-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="3" mode="#default" match="child::proc/child::name" priority="0.5">
+            <no-schema-context-set>
+                <ElementNT name="name"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+            </schema-context-set>
+            <instructions>
+                <element-inst nameAVT="li" namespaceAVT="http://www.w3.org/1999/xhtml">
+                    <element-inst nameAVT="a" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <attribute-inst nameAVT="href">
+                            <value-of-inst select="unknownString()"/>
+                        </attribute-inst>
+                        <value-of-inst select="child::node()"/>
+                    </element-inst>
+                </element-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="4" mode="#default" match="child::procs/child::proc" priority="0.5">
+            <no-schema-context-set>
+                <ElementNT name="proc"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+            </schema-context-set>
+            <instructions>
+                <choose-inst>
+                    <whens-and-otherwise>
+                        <when-inst>
+                            <element-inst nameAVT="h2" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                <element-inst nameAVT="a" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                    <attribute-inst nameAVT="class">
+                                        <value-of-inst select="'name'"/>
+                                    </attribute-inst>
+                                    <attribute-inst nameAVT="name">
+                                        <value-of-inst select="attribute::name"/>
+                                    </attribute-inst>
+                                    <value-of-inst select="child::name"/>
+                                </element-inst>
+                            </element-inst>
+                            <element-inst nameAVT="pre" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                <element-inst nameAVT="b" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                    <element-inst nameAVT="i" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <value-of-inst select="'Description:'"/>
+                                    </element-inst>
+                                </element-inst>
+                                <value-of-inst select="child::description"/>
+                            </element-inst>
+                            <apply-templates-inst mode="#default" containsSorts="false">
+                                <selection originalPath="child::input" downwardizedPath="child::input" waywardPath="">
+                                    <no-schema-flows>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="5" mode="#default" match="child::input" priority="0.0"/>
+                                            <node-type type="input"/>
+                                        </context-flow>
+                                        <context-flow>
+                                            <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                            <node-type type="input"/>
+                                        </context-flow>
+                                    </no-schema-flows>
+                                    <schema-context-flows>
+                                        <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="5" mode="#default" match="child::input" priority="0.0"/>
+                                            <DTDElementDecl name="input" char="B(66)" ancestor-string-example="0DEB"/>
+                                        </context-flow>
+                                    </schema-context-flows>
+                                </selection>
+                                <with-params/>
+                                <deadFlows>
+                                    <OverriddenContextFlow cause="higher import precedence" victim="rule index=14 match=child::* mode=#default" source="FastContextSensitiveAnalyzer" robber="rule index=5 match=child::input mode=#default">
+                                        <DTDElementDecl name="input" char="B(66)" ancestor-string-example="0DEB"/>
+                                    </OverriddenContextFlow>
+                                    <DeadContextFlow cause="input schema restrictions" victim="rule index=14 match=child::* mode=#default" source="InsensitiveFlowDeathalyzer">
+                                        <ElementNT name="input"/>
+                                    </DeadContextFlow>
+                                </deadFlows>
+                            </apply-templates-inst>
+                            <apply-templates-inst mode="#default" containsSorts="false">
+                                <selection originalPath="child::output" downwardizedPath="child::output" waywardPath="">
+                                    <no-schema-flows>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="6" mode="#default" match="child::output" priority="0.0"/>
+                                            <node-type type="output"/>
+                                        </context-flow>
+                                        <context-flow>
+                                            <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                            <node-type type="output"/>
+                                        </context-flow>
+                                    </no-schema-flows>
+                                    <schema-context-flows>
+                                        <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="6" mode="#default" match="child::output" priority="0.0"/>
+                                            <DTDElementDecl name="output" char="F(70)" ancestor-string-example="0DEF"/>
+                                        </context-flow>
+                                    </schema-context-flows>
+                                </selection>
+                                <with-params/>
+                                <deadFlows>
+                                    <OverriddenContextFlow cause="higher import precedence" victim="rule index=14 match=child::* mode=#default" source="FastContextSensitiveAnalyzer" robber="rule index=6 match=child::output mode=#default">
+                                        <DTDElementDecl name="output" char="F(70)" ancestor-string-example="0DEF"/>
+                                    </OverriddenContextFlow>
+                                    <DeadContextFlow cause="input schema restrictions" victim="rule index=14 match=child::* mode=#default" source="InsensitiveFlowDeathalyzer">
+                                        <ElementNT name="output"/>
+                                    </DeadContextFlow>
+                                </deadFlows>
+                            </apply-templates-inst>
+                            <apply-templates-inst mode="#default" containsSorts="false">
+                                <selection originalPath="child::resultset" downwardizedPath="child::resultset" waywardPath="">
+                                    <no-schema-flows>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="7" mode="#default" match="child::resultset" priority="0.0"/>
+                                            <node-type type="resultset"/>
+                                        </context-flow>
+                                        <context-flow>
+                                            <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                            <node-type type="resultset"/>
+                                        </context-flow>
+                                    </no-schema-flows>
+                                    <schema-context-flows>
+                                        <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="7" mode="#default" match="child::resultset" priority="0.0"/>
+                                            <DTDElementDecl name="resultset" char="A(65)" ancestor-string-example="0DEA"/>
+                                        </context-flow>
+                                    </schema-context-flows>
+                                </selection>
+                                <with-params/>
+                                <deadFlows>
+                                    <OverriddenContextFlow cause="higher import precedence" victim="rule index=14 match=child::* mode=#default" source="FastContextSensitiveAnalyzer" robber="rule index=7 match=child::resultset mode=#default">
+                                        <DTDElementDecl name="resultset" char="A(65)" ancestor-string-example="0DEA"/>
+                                    </OverriddenContextFlow>
+                                    <DeadContextFlow cause="input schema restrictions" victim="rule index=14 match=child::* mode=#default" source="InsensitiveFlowDeathalyzer">
+                                        <ElementNT name="resultset"/>
+                                    </DeadContextFlow>
+                                </deadFlows>
+                            </apply-templates-inst>
+                            <apply-templates-inst mode="#default" containsSorts="false">
+                                <selection originalPath="child::errorcodes" downwardizedPath="child::errorcodes" waywardPath="">
+                                    <no-schema-flows>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="8" mode="#default" match="child::errorcodes" priority="0.0"/>
+                                            <node-type type="errorcodes"/>
+                                        </context-flow>
+                                        <context-flow>
+                                            <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                            <node-type type="errorcodes"/>
+                                        </context-flow>
+                                    </no-schema-flows>
+                                    <schema-context-flows>
+                                        <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="8" mode="#default" match="child::errorcodes" priority="0.0"/>
+                                            <DTDElementDecl name="errorcodes" char="K(75)" ancestor-string-example="0DEK"/>
+                                        </context-flow>
+                                    </schema-context-flows>
+                                </selection>
+                                <with-params/>
+                                <deadFlows>
+                                    <OverriddenContextFlow cause="higher import precedence" victim="rule index=14 match=child::* mode=#default" source="FastContextSensitiveAnalyzer" robber="rule index=8 match=child::errorcodes mode=#default">
+                                        <DTDElementDecl name="errorcodes" char="K(75)" ancestor-string-example="0DEK"/>
+                                    </OverriddenContextFlow>
+                                    <DeadContextFlow cause="input schema restrictions" victim="rule index=14 match=child::* mode=#default" source="InsensitiveFlowDeathalyzer">
+                                        <ElementNT name="errorcodes"/>
+                                    </DeadContextFlow>
+                                </deadFlows>
+                            </apply-templates-inst>
+                            <apply-templates-inst mode="#default" containsSorts="false">
+                                <selection originalPath="child::execlist" downwardizedPath="child::execlist" waywardPath="">
+                                    <no-schema-flows>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="10" mode="#default" match="child::execlist" priority="0.0"/>
+                                            <node-type type="execlist"/>
+                                        </context-flow>
+                                        <context-flow>
+                                            <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                            <node-type type="execlist"/>
+                                        </context-flow>
+                                    </no-schema-flows>
+                                    <schema-context-flows>
+                                        <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="10" mode="#default" match="child::execlist" priority="0.0"/>
+                                            <DTDElementDecl name="execlist" char="J(74)" ancestor-string-example="0DEJ"/>
+                                        </context-flow>
+                                    </schema-context-flows>
+                                </selection>
+                                <with-params/>
+                                <deadFlows>
+                                    <OverriddenContextFlow cause="higher import precedence" victim="rule index=14 match=child::* mode=#default" source="FastContextSensitiveAnalyzer" robber="rule index=10 match=child::execlist mode=#default">
+                                        <DTDElementDecl name="execlist" char="J(74)" ancestor-string-example="0DEJ"/>
+                                    </OverriddenContextFlow>
+                                    <DeadContextFlow cause="input schema restrictions" victim="rule index=14 match=child::* mode=#default" source="InsensitiveFlowDeathalyzer">
+                                        <ElementNT name="execlist"/>
+                                    </DeadContextFlow>
+                                </deadFlows>
+                            </apply-templates-inst>
+                            <element-inst nameAVT="hr" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                <attribute-inst nameAVT="size">
+                                    <value-of-inst select="'1'"/>
+                                </attribute-inst>
+                            </element-inst>
+                        </when-inst>
+                        <otherwise-inst/>
+                    </whens-and-otherwise>
+                </choose-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="5" mode="#default" match="child::input" priority="0.0">
+            <no-schema-context-set>
+                <ElementNT name="input"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="input" char="B(66)" ancestor-string-example="0DEB"/>
+            </schema-context-set>
+            <instructions>
+                <choose-inst>
+                    <whens-and-otherwise>
+                        <when-inst>
+                            <element-inst nameAVT="h3" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                <value-of-inst select="'Input parameters'"/>
+                            </element-inst>
+                            <element-inst nameAVT="table" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                <attribute-inst nameAVT="border">
+                                    <value-of-inst select="'1'"/>
+                                </attribute-inst>
+                                <attribute-inst nameAVT="cellpadding">
+                                    <value-of-inst select="'1'"/>
+                                </attribute-inst>
+                                <attribute-inst nameAVT="cellspacing">
+                                    <value-of-inst select="'0'"/>
+                                </attribute-inst>
+                                <element-inst nameAVT="tr" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="class">
+                                            <value-of-inst select="'fieldname'"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="'Name'"/>
+                                    </element-inst>
+                                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="class">
+                                            <value-of-inst select="'fieldname'"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="'Type'"/>
+                                    </element-inst>
+                                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="class">
+                                            <value-of-inst select="'fieldname'"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="'Required'"/>
+                                    </element-inst>
+                                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="class">
+                                            <value-of-inst select="'fieldname'"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="'Description'"/>
+                                    </element-inst>
+                                </element-inst>
+                                <apply-templates-inst mode="#default" containsSorts="false">
+                                    <selection originalPath="child::param" downwardizedPath="child::param" waywardPath="">
+                                        <no-schema-flows>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="11" mode="#default" match="child::input/child::param" priority="0.5"/>
+                                                <node-type type="param"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="12" mode="#default" match="child::output/child::param" priority="0.5"/>
+                                                <node-type type="param"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="13" mode="#default" match="child::resultset/child::param" priority="0.5"/>
+                                                <node-type type="param"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                                <node-type type="param"/>
+                                            </context-flow>
+                                        </no-schema-flows>
+                                        <schema-context-flows>
+                                            <DTDElementDecl name="input" char="B(66)" ancestor-string-example="0DEB"/>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="11" mode="#default" match="child::input/child::param" priority="0.5"/>
+                                                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="12" mode="#default" match="child::output/child::param" priority="0.5"/>
+                                                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="13" mode="#default" match="child::resultset/child::param" priority="0.5"/>
+                                                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                                            </context-flow>
+                                        </schema-context-flows>
+                                    </selection>
+                                    <with-params/>
+                                    <deadFlows collection-null="true"/>
+                                </apply-templates-inst>
+                            </element-inst>
+                        </when-inst>
+                        <otherwise-inst/>
+                    </whens-and-otherwise>
+                </choose-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="6" mode="#default" match="child::output" priority="0.0">
+            <no-schema-context-set>
+                <ElementNT name="output"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="output" char="F(70)" ancestor-string-example="0DEF"/>
+            </schema-context-set>
+            <instructions>
+                <choose-inst>
+                    <whens-and-otherwise>
+                        <when-inst>
+                            <element-inst nameAVT="h3" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                <value-of-inst select="'Output parameters'"/>
+                            </element-inst>
+                            <element-inst nameAVT="table" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                <attribute-inst nameAVT="border">
+                                    <value-of-inst select="'1'"/>
+                                </attribute-inst>
+                                <attribute-inst nameAVT="cellpadding">
+                                    <value-of-inst select="'1'"/>
+                                </attribute-inst>
+                                <attribute-inst nameAVT="cellspacing">
+                                    <value-of-inst select="'0'"/>
+                                </attribute-inst>
+                                <element-inst nameAVT="tr" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="class">
+                                            <value-of-inst select="'fieldname'"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="'Name'"/>
+                                    </element-inst>
+                                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="class">
+                                            <value-of-inst select="'fieldname'"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="'Type'"/>
+                                    </element-inst>
+                                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="class">
+                                            <value-of-inst select="'fieldname'"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="'Description'"/>
+                                    </element-inst>
+                                </element-inst>
+                                <apply-templates-inst mode="#default" containsSorts="false">
+                                    <selection originalPath="child::param" downwardizedPath="child::param" waywardPath="">
+                                        <no-schema-flows>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="11" mode="#default" match="child::input/child::param" priority="0.5"/>
+                                                <node-type type="param"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="12" mode="#default" match="child::output/child::param" priority="0.5"/>
+                                                <node-type type="param"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="13" mode="#default" match="child::resultset/child::param" priority="0.5"/>
+                                                <node-type type="param"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                                <node-type type="param"/>
+                                            </context-flow>
+                                        </no-schema-flows>
+                                        <schema-context-flows>
+                                            <DTDElementDecl name="output" char="F(70)" ancestor-string-example="0DEF"/>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="11" mode="#default" match="child::input/child::param" priority="0.5"/>
+                                                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="12" mode="#default" match="child::output/child::param" priority="0.5"/>
+                                                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="13" mode="#default" match="child::resultset/child::param" priority="0.5"/>
+                                                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                                            </context-flow>
+                                        </schema-context-flows>
+                                    </selection>
+                                    <with-params/>
+                                    <deadFlows collection-null="true"/>
+                                </apply-templates-inst>
+                            </element-inst>
+                        </when-inst>
+                        <otherwise-inst/>
+                    </whens-and-otherwise>
+                </choose-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="7" mode="#default" match="child::resultset" priority="0.0">
+            <no-schema-context-set>
+                <ElementNT name="resultset"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="resultset" char="A(65)" ancestor-string-example="0DEA"/>
+            </schema-context-set>
+            <instructions>
+                <choose-inst>
+                    <whens-and-otherwise>
+                        <when-inst>
+                            <element-inst nameAVT="h3" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                <value-of-inst select="'Resultset'"/>
+                            </element-inst>
+                            <element-inst nameAVT="p" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                <value-of-inst select="child::description"/>
+                            </element-inst>
+                            <element-inst nameAVT="table" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                <attribute-inst nameAVT="border">
+                                    <value-of-inst select="'1'"/>
+                                </attribute-inst>
+                                <attribute-inst nameAVT="cellpadding">
+                                    <value-of-inst select="'1'"/>
+                                </attribute-inst>
+                                <attribute-inst nameAVT="cellspacing">
+                                    <value-of-inst select="'0'"/>
+                                </attribute-inst>
+                                <element-inst nameAVT="tr" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="class">
+                                            <value-of-inst select="'fieldname'"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="'Name'"/>
+                                    </element-inst>
+                                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="class">
+                                            <value-of-inst select="'fieldname'"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="'Type'"/>
+                                    </element-inst>
+                                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="class">
+                                            <value-of-inst select="'fieldname'"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="'Description'"/>
+                                    </element-inst>
+                                </element-inst>
+                                <apply-templates-inst mode="#default" containsSorts="false">
+                                    <selection originalPath="child::param" downwardizedPath="child::param" waywardPath="">
+                                        <no-schema-flows>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="11" mode="#default" match="child::input/child::param" priority="0.5"/>
+                                                <node-type type="param"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="12" mode="#default" match="child::output/child::param" priority="0.5"/>
+                                                <node-type type="param"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="13" mode="#default" match="child::resultset/child::param" priority="0.5"/>
+                                                <node-type type="param"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                                <node-type type="param"/>
+                                            </context-flow>
+                                        </no-schema-flows>
+                                        <schema-context-flows>
+                                            <DTDElementDecl name="resultset" char="A(65)" ancestor-string-example="0DEA"/>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="11" mode="#default" match="child::input/child::param" priority="0.5"/>
+                                                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="12" mode="#default" match="child::output/child::param" priority="0.5"/>
+                                                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="13" mode="#default" match="child::resultset/child::param" priority="0.5"/>
+                                                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                                            </context-flow>
+                                        </schema-context-flows>
+                                    </selection>
+                                    <with-params/>
+                                    <deadFlows collection-null="true"/>
+                                </apply-templates-inst>
+                            </element-inst>
+                        </when-inst>
+                        <otherwise-inst/>
+                    </whens-and-otherwise>
+                </choose-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="8" mode="#default" match="child::errorcodes" priority="0.0">
+            <no-schema-context-set>
+                <ElementNT name="errorcodes"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="errorcodes" char="K(75)" ancestor-string-example="0DEK"/>
+            </schema-context-set>
+            <instructions>
+                <choose-inst>
+                    <whens-and-otherwise>
+                        <when-inst>
+                            <element-inst nameAVT="h3" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                <value-of-inst select="'Error codes'"/>
+                            </element-inst>
+                            <element-inst nameAVT="table" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                <attribute-inst nameAVT="border">
+                                    <value-of-inst select="'1'"/>
+                                </attribute-inst>
+                                <attribute-inst nameAVT="cellpadding">
+                                    <value-of-inst select="'1'"/>
+                                </attribute-inst>
+                                <attribute-inst nameAVT="cellspacing">
+                                    <value-of-inst select="'0'"/>
+                                </attribute-inst>
+                                <element-inst nameAVT="tr" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="class">
+                                            <value-of-inst select="'fieldname'"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="'Value'"/>
+                                    </element-inst>
+                                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                        <attribute-inst nameAVT="class">
+                                            <value-of-inst select="'fieldname'"/>
+                                        </attribute-inst>
+                                        <value-of-inst select="'Description'"/>
+                                    </element-inst>
+                                </element-inst>
+                                <apply-templates-inst mode="#default" containsSorts="false">
+                                    <selection originalPath="child::code" downwardizedPath="child::code" waywardPath="">
+                                        <no-schema-flows>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="9" mode="#default" match="child::code" priority="0.0"/>
+                                                <node-type type="code"/>
+                                            </context-flow>
+                                            <context-flow>
+                                                <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                                <node-type type="code"/>
+                                            </context-flow>
+                                        </no-schema-flows>
+                                        <schema-context-flows>
+                                            <DTDElementDecl name="errorcodes" char="K(75)" ancestor-string-example="0DEK"/>
+                                            <context-flow>
+                                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="9" mode="#default" match="child::code" priority="0.0"/>
+                                                <DTDElementDecl name="code" char="I(73)" ancestor-string-example="0DEKI"/>
+                                            </context-flow>
+                                        </schema-context-flows>
+                                    </selection>
+                                    <with-params/>
+                                    <deadFlows>
+                                        <OverriddenContextFlow cause="higher import precedence" victim="rule index=14 match=child::* mode=#default" source="FastContextSensitiveAnalyzer" robber="rule index=9 match=child::code mode=#default">
+                                            <DTDElementDecl name="code" char="I(73)" ancestor-string-example="0DEKI"/>
+                                        </OverriddenContextFlow>
+                                        <DeadContextFlow cause="input schema restrictions" victim="rule index=14 match=child::* mode=#default" source="InsensitiveFlowDeathalyzer">
+                                            <ElementNT name="code"/>
+                                        </DeadContextFlow>
+                                    </deadFlows>
+                                </apply-templates-inst>
+                            </element-inst>
+                        </when-inst>
+                        <otherwise-inst/>
+                    </whens-and-otherwise>
+                </choose-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="9" mode="#default" match="child::code" priority="0.0">
+            <no-schema-context-set>
+                <ElementNT name="code"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="code" char="I(73)" ancestor-string-example="0DEKI"/>
+            </schema-context-set>
+            <instructions>
+                <element-inst nameAVT="tr" namespaceAVT="http://www.w3.org/1999/xhtml">
+                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <attribute-inst nameAVT="class">
+                            <value-of-inst select="'context'"/>
+                        </attribute-inst>
+                        <value-of-inst select="child::value"/>
+                    </element-inst>
+                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <attribute-inst nameAVT="class">
+                            <value-of-inst select="'context'"/>
+                        </attribute-inst>
+                        <value-of-inst select="child::description"/>
+                        <element-inst nameAVT="font" namespaceAVT="http://www.w3.org/1999/xhtml">
+                            <attribute-inst nameAVT="color">
+                                <value-of-inst select="'white'"/>
+                            </attribute-inst>
+                            <value-of-inst select="'.'"/>
+                        </element-inst>
+                    </element-inst>
+                </element-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="10" mode="#default" match="child::execlist" priority="0.0">
+            <no-schema-context-set>
+                <ElementNT name="execlist"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="execlist" char="J(74)" ancestor-string-example="0DEJ"/>
+            </schema-context-set>
+            <instructions>
+                <choose-inst>
+                    <whens-and-otherwise>
+                        <when-inst>
+                            <element-inst nameAVT="h3" namespaceAVT="http://www.w3.org/1999/xhtml">
+                                <value-of-inst select="'Called procedures list'"/>
+                            </element-inst>
+                            <apply-templates-inst mode="#default" containsSorts="false">
+                                <selection originalPath="child::proc" downwardizedPath="child::proc" waywardPath="">
+                                    <no-schema-flows>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="2" mode="#default" match="child::execlist/child::proc" priority="0.5"/>
+                                            <node-type type="proc"/>
+                                        </context-flow>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="4" mode="#default" match="child::procs/child::proc" priority="0.5"/>
+                                            <node-type type="proc"/>
+                                        </context-flow>
+                                        <context-flow>
+                                            <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                            <node-type type="proc"/>
+                                        </context-flow>
+                                    </no-schema-flows>
+                                    <schema-context-flows>
+                                        <DTDElementDecl name="execlist" char="J(74)" ancestor-string-example="0DEJ"/>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="2" mode="#default" match="child::execlist/child::proc" priority="0.5"/>
+                                            <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                                        </context-flow>
+                                        <context-flow>
+                                            <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="4" mode="#default" match="child::procs/child::proc" priority="0.5"/>
+                                            <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                                        </context-flow>
+                                        <context-flow>
+                                            <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                            <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                                        </context-flow>
+                                    </schema-context-flows>
+                                </selection>
+                                <with-params/>
+                                <deadFlows collection-null="true"/>
+                            </apply-templates-inst>
+                        </when-inst>
+                        <otherwise-inst/>
+                    </whens-and-otherwise>
+                </choose-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="11" mode="#default" match="child::input/child::param" priority="0.5">
+            <no-schema-context-set>
+                <ElementNT name="param"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+            </schema-context-set>
+            <instructions>
+                <element-inst nameAVT="tr" namespaceAVT="http://www.w3.org/1999/xhtml">
+                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <attribute-inst nameAVT="class">
+                            <value-of-inst select="'context'"/>
+                        </attribute-inst>
+                        <value-of-inst select="child::name"/>
+                    </element-inst>
+                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <attribute-inst nameAVT="class">
+                            <value-of-inst select="'context'"/>
+                        </attribute-inst>
+                        <value-of-inst select="child::type"/>
+                    </element-inst>
+                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <attribute-inst nameAVT="class">
+                            <value-of-inst select="'context'"/>
+                        </attribute-inst>
+                        <value-of-inst select="child::required"/>
+                    </element-inst>
+                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <attribute-inst nameAVT="class">
+                            <value-of-inst select="'context'"/>
+                        </attribute-inst>
+                        <value-of-inst select="child::description"/>
+                        <element-inst nameAVT="font" namespaceAVT="http://www.w3.org/1999/xhtml">
+                            <attribute-inst nameAVT="color">
+                                <value-of-inst select="'white'"/>
+                            </attribute-inst>
+                            <value-of-inst select="'.'"/>
+                        </element-inst>
+                    </element-inst>
+                </element-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="12" mode="#default" match="child::output/child::param" priority="0.5">
+            <no-schema-context-set>
+                <ElementNT name="param"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+            </schema-context-set>
+            <instructions>
+                <element-inst nameAVT="tr" namespaceAVT="http://www.w3.org/1999/xhtml">
+                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <attribute-inst nameAVT="class">
+                            <value-of-inst select="'context'"/>
+                        </attribute-inst>
+                        <value-of-inst select="child::name"/>
+                    </element-inst>
+                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <attribute-inst nameAVT="class">
+                            <value-of-inst select="'context'"/>
+                        </attribute-inst>
+                        <value-of-inst select="child::type"/>
+                    </element-inst>
+                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <attribute-inst nameAVT="class">
+                            <value-of-inst select="'context'"/>
+                        </attribute-inst>
+                        <value-of-inst select="child::description"/>
+                        <element-inst nameAVT="font" namespaceAVT="http://www.w3.org/1999/xhtml">
+                            <attribute-inst nameAVT="color">
+                                <value-of-inst select="'white'"/>
+                            </attribute-inst>
+                            <value-of-inst select="'.'"/>
+                        </element-inst>
+                    </element-inst>
+                </element-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="13" mode="#default" match="child::resultset/child::param" priority="0.5">
+            <no-schema-context-set>
+                <ElementNT name="param"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+            </schema-context-set>
+            <instructions>
+                <element-inst nameAVT="tr" namespaceAVT="http://www.w3.org/1999/xhtml">
+                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <attribute-inst nameAVT="class">
+                            <value-of-inst select="'context'"/>
+                        </attribute-inst>
+                        <value-of-inst select="child::name"/>
+                    </element-inst>
+                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <attribute-inst nameAVT="class">
+                            <value-of-inst select="'context'"/>
+                        </attribute-inst>
+                        <value-of-inst select="child::type"/>
+                    </element-inst>
+                    <element-inst nameAVT="td" namespaceAVT="http://www.w3.org/1999/xhtml">
+                        <attribute-inst nameAVT="class">
+                            <value-of-inst select="'context'"/>
+                        </attribute-inst>
+                        <value-of-inst select="child::description"/>
+                        <element-inst nameAVT="font" namespaceAVT="http://www.w3.org/1999/xhtml">
+                            <attribute-inst nameAVT="color">
+                                <value-of-inst select="'white'"/>
+                            </attribute-inst>
+                            <value-of-inst select="'.'"/>
+                        </element-inst>
+                    </element-inst>
+                </element-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5">
+            <no-schema-context-set>
+                <ElementNT name="{*}*"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+            </schema-context-set>
+            <instructions>
+                <apply-templates-inst mode="#default" containsSorts="false">
+                    <selection originalPath="child::node()" downwardizedPath="child::node()" waywardPath="">
+                        <no-schema-flows>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="2" mode="#default" match="child::execlist/child::proc" priority="0.5"/>
+                                <node-type type="proc"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="3" mode="#default" match="child::proc/child::name" priority="0.5"/>
+                                <node-type type="name"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="4" mode="#default" match="child::procs/child::proc" priority="0.5"/>
+                                <node-type type="proc"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="11" mode="#default" match="child::input/child::param" priority="0.5"/>
+                                <node-type type="param"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="12" mode="#default" match="child::output/child::param" priority="0.5"/>
+                                <node-type type="param"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="13" mode="#default" match="child::resultset/child::param" priority="0.5"/>
+                                <node-type type="param"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="1" mode="#default" match="child::procs" priority="0.0"/>
+                                <node-type type="procs"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="5" mode="#default" match="child::input" priority="0.0"/>
+                                <node-type type="input"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="6" mode="#default" match="child::output" priority="0.0"/>
+                                <node-type type="output"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="7" mode="#default" match="child::resultset" priority="0.0"/>
+                                <node-type type="resultset"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="8" mode="#default" match="child::errorcodes" priority="0.0"/>
+                                <node-type type="errorcodes"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="9" mode="#default" match="child::code" priority="0.0"/>
+                                <node-type type="code"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="10" mode="#default" match="child::execlist" priority="0.0"/>
+                                <node-type type="execlist"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                <node-type type="{*}*"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="16" mode="#default" match="child::text()" priority="-0.5"/>
+                                <node-type type="[pcdata]()"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="18" mode="#default" match="child::processing-instruction()" priority="-0.5"/>
+                                <node-type type="[pi]"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="19" mode="#default" match="child::comment()" priority="-0.5"/>
+                                <node-type type="[comment]"/>
+                            </context-flow>
+                        </no-schema-flows>
+                        <schema-context-flows>
+                            <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="3" mode="#default" match="child::proc/child::name" priority="0.5"/>
+                                <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="5" mode="#default" match="child::input" priority="0.0"/>
+                                <DTDElementDecl name="input" char="B(66)" ancestor-string-example="0DEB"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="6" mode="#default" match="child::output" priority="0.0"/>
+                                <DTDElementDecl name="output" char="F(70)" ancestor-string-example="0DEF"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="7" mode="#default" match="child::resultset" priority="0.0"/>
+                                <DTDElementDecl name="resultset" char="A(65)" ancestor-string-example="0DEA"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="8" mode="#default" match="child::errorcodes" priority="0.0"/>
+                                <DTDElementDecl name="errorcodes" char="K(75)" ancestor-string-example="0DEK"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="10" mode="#default" match="child::execlist" priority="0.0"/>
+                                <DTDElementDecl name="execlist" char="J(74)" ancestor-string-example="0DEJ"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                                <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="18" mode="#default" match="child::processing-instruction()" priority="-0.5"/>
+                                <node type="[pi]"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="19" mode="#default" match="child::comment()" priority="-0.5"/>
+                                <node type="[comment]"/>
+                            </context-flow>
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="16" mode="#default" match="child::text()" priority="-0.5"/>
+                                <node type="[pcdata]()"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="18" mode="#default" match="child::processing-instruction()" priority="-0.5"/>
+                                <node type="[pi]"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="19" mode="#default" match="child::comment()" priority="-0.5"/>
+                                <node type="[comment]"/>
+                            </context-flow>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="16" mode="#default" match="child::text()" priority="-0.5"/>
+                                <node type="[pcdata]()"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="18" mode="#default" match="child::processing-instruction()" priority="-0.5"/>
+                                <node type="[pi]"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="19" mode="#default" match="child::comment()" priority="-0.5"/>
+                                <node type="[comment]"/>
+                            </context-flow>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="16" mode="#default" match="child::text()" priority="-0.5"/>
+                                <node type="[pcdata]()"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="18" mode="#default" match="child::processing-instruction()" priority="-0.5"/>
+                                <node type="[pi]"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="19" mode="#default" match="child::comment()" priority="-0.5"/>
+                                <node type="[comment]"/>
+                            </context-flow>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                            <context-flow>
+                                <template-rule home-module="file:/home/dongfang/speciale/test/resources/triples/sqlprocedures2xhtml/xslt/proc-def_corrected.xsl" index="3" mode="#default" match="child::proc/child::name" priority="0.5"/>
+                                <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="14" mode="#default" match="child::*" priority="-0.5"/>
+                                <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                                <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                                <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                                <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="18" mode="#default" match="child::processing-instruction()" priority="-0.5"/>
+                                <node type="[pi]"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="19" mode="#default" match="child::comment()" priority="-0.5"/>
+                                <node type="[comment]"/>
+                            </context-flow>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="16" mode="#default" match="child::text()" priority="-0.5"/>
+                                <node type="[pcdata]()"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="18" mode="#default" match="child::processing-instruction()" priority="-0.5"/>
+                                <node type="[pi]"/>
+                            </context-flow>
+                            <context-flow>
+                                <template-rule home-module="urn:XSLTValidator" index="19" mode="#default" match="child::comment()" priority="-0.5"/>
+                                <node type="[comment]"/>
+                            </context-flow>
+                        </schema-context-flows>
+                    </selection>
+                    <with-params/>
+                    <deadFlows>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=2 match=child::execlist/child::proc mode=#default" source="Selection">
+                            <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=1 match=child::procs mode=#default" source="Selection">
+                            <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=11 match=child::input/child::param mode=#default" source="Selection">
+                            <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=9 match=child::code mode=#default" source="Selection">
+                            <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=4 match=child::procs/child::proc mode=#default" source="Selection">
+                            <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=13 match=child::resultset/child::param mode=#default" source="Selection">
+                            <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=16 match=child::text() mode=#default" source="Selection">
+                            <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=12 match=child::output/child::param mode=#default" source="Selection">
+                            <DTDElementDecl name="proc" char="E(69)" ancestor-string-example="0DE"/>
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <OverriddenContextFlow cause="higher import precedence" victim="rule index=14 match=child::* mode=#default" source="FastContextSensitiveAnalyzer" robber="rule index=8 match=child::errorcodes mode=#default">
+                            <DTDElementDecl name="execlist" char="J(74)" ancestor-string-example="0DEJ"/>
+                            <DTDElementDecl name="resultset" char="A(65)" ancestor-string-example="0DEA"/>
+                            <DTDElementDecl name="input" char="B(66)" ancestor-string-example="0DEB"/>
+                            <DTDElementDecl name="errorcodes" char="K(75)" ancestor-string-example="0DEK"/>
+                            <DTDElementDecl name="output" char="F(70)" ancestor-string-example="0DEF"/>
+                        </OverriddenContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=8 match=child::errorcodes mode=#default" source="Selection">
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=6 match=child::output mode=#default" source="Selection">
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=10 match=child::execlist mode=#default" source="Selection">
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=7 match=child::resultset mode=#default" source="Selection">
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=5 match=child::input mode=#default" source="Selection">
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="param" char="M(77)" ancestor-string-example="0DEAM"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=14 match=child::* mode=#default" source="Selection">
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="Smoky smoker" victim="rule index=3 match=child::proc/child::name mode=#default" source="Selection">
+                            <DTDElementDecl name="required" char="G(71)" ancestor-string-example="0DEAMG"/>
+                            <DTDElementDecl name="type" char="H(72)" ancestor-string-example="0DEAMH"/>
+                            <DTDElementDecl name="description" char="L(76)" ancestor-string-example="0DEL"/>
+                            <DTDElementDecl name="name" char="N(78)" ancestor-string-example="0DEN"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="input schema restrictions" victim="rule index=2 match=child::execlist/child::proc mode=#default" source="InsensitiveFlowDeathalyzer">
+                            <ElementNT name="proc"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="input schema restrictions" victim="rule index=1 match=child::procs mode=#default" source="InsensitiveFlowDeathalyzer">
+                            <ElementNT name="procs"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="input schema restrictions" victim="rule index=11 match=child::input/child::param mode=#default" source="InsensitiveFlowDeathalyzer">
+                            <ElementNT name="param"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="input schema restrictions" victim="rule index=9 match=child::code mode=#default" source="InsensitiveFlowDeathalyzer">
+                            <ElementNT name="code"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="input schema restrictions" victim="rule index=4 match=child::procs/child::proc mode=#default" source="InsensitiveFlowDeathalyzer">
+                            <ElementNT name="proc"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="input schema restrictions" victim="rule index=13 match=child::resultset/child::param mode=#default" source="InsensitiveFlowDeathalyzer">
+                            <ElementNT name="param"/>
+                        </DeadContextFlow>
+                        <DeadContextFlow cause="input schema restrictions" victim="rule index=12 match=child::output/child::param mode=#default" source="InsensitiveFlowDeathalyzer">
+                            <ElementNT name="param"/>
+                        </DeadContextFlow>
+                    </deadFlows>
+                </apply-templates-inst>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="urn:XSLTValidator" index="15" mode="#default" match="/" priority="-0.5">
+            <pronouncedDead/>
+        </template-rule>
+        <template-rule home-module="urn:XSLTValidator" index="16" mode="#default" match="child::text()" priority="-0.5">
+            <no-schema-context-set>
+                <node type="[pcdata]()"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <node type="[pcdata]()"/>
+            </schema-context-set>
+            <instructions>
+                <value-of-inst select="self::node()"/>
+            </instructions>
+        </template-rule>
+        <template-rule home-module="urn:XSLTValidator" index="17" mode="#default" match="attribute::*" priority="-0.5">
+            <pronouncedDead/>
+        </template-rule>
+        <template-rule home-module="urn:XSLTValidator" index="18" mode="#default" match="child::processing-instruction()" priority="-0.5">
+            <no-schema-context-set>
+                <node type="[pi]"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <node type="[pi]"/>
+            </schema-context-set>
+            <instructions/>
+        </template-rule>
+        <template-rule home-module="urn:XSLTValidator" index="19" mode="#default" match="child::comment()" priority="-0.5">
+            <no-schema-context-set>
+                <node type="[comment]"/>
+            </no-schema-context-set>
+            <schema-context-set>
+                <node type="[comment]"/>
+            </schema-context-set>
+            <instructions/>
+        </template-rule>
+    </template-rules>
+</control-flow-graph>

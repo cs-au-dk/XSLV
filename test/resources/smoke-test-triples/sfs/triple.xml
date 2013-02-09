@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Schema for Schema test -->
+
+<triple name="sfs" enabled="true">
+<input type="XSD" DTDNamespaceURI="">XMLSchema.xsd</input>
+<output type="RNG" DTDNamespaceURI="">simple.rng</output>
+<xslt>blank.xsl</xslt></triple>

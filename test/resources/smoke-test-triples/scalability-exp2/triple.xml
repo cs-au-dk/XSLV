@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<triple name="scalability-exp2" enabled="true"><input type="XSD" DTDNamespaceURI="">DSMLv2.xsd</input><output type="DSD" DTDNamespaceURI="">simple.dsd</output><xslt>general-identity-transform.xsl</xslt></triple>

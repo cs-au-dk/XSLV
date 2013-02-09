@@ -1,0 +1,1128 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <ref name="dsd"/>
+    </start>
+    <define name="complement">
+        <element name="complement">
+            <choice>
+                <ref name="sequence"/>
+                <ref name="optional"/>
+                <ref name="complement"/>
+                <ref name="union"/>
+                <ref name="intersection"/>
+                <ref name="minus"/>
+                <ref name="repeat"/>
+                <ref name="string"/>
+                <ref name="char"/>
+                <ref name="stringtype"/>
+                <ref name="contenttype"/>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+        </element>
+    </define>
+    <define name="minus">
+        <element name="minus">
+            <choice>
+                <ref name="sequence"/>
+                <ref name="optional"/>
+                <ref name="complement"/>
+                <ref name="union"/>
+                <ref name="intersection"/>
+                <ref name="minus"/>
+                <ref name="repeat"/>
+                <ref name="string"/>
+                <ref name="char"/>
+                <ref name="stringtype"/>
+                <ref name="contenttype"/>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+            <choice>
+                <ref name="sequence"/>
+                <ref name="optional"/>
+                <ref name="complement"/>
+                <ref name="union"/>
+                <ref name="intersection"/>
+                <ref name="minus"/>
+                <ref name="repeat"/>
+                <ref name="string"/>
+                <ref name="char"/>
+                <ref name="stringtype"/>
+                <ref name="contenttype"/>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+        </element>
+    </define>
+    <define name="element">
+        <element name="element">
+            <optional>
+                <attribute name="name">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="meta">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+    <define name="imply">
+        <element name="imply">
+            <choice>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+            <choice>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+        </element>
+    </define>
+    <define name="boolexp">
+        <element name="boolexp">
+            <optional>
+                <attribute name="ref">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="id">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <choice>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </optional>
+        </element>
+    </define>
+    <define name="repeat">
+        <element name="repeat">
+            <optional>
+                <attribute name="min">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="max">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="number">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <choice>
+                <ref name="sequence"/>
+                <ref name="optional"/>
+                <ref name="complement"/>
+                <ref name="union"/>
+                <ref name="intersection"/>
+                <ref name="minus"/>
+                <ref name="repeat"/>
+                <ref name="string"/>
+                <ref name="char"/>
+                <ref name="stringtype"/>
+                <ref name="contenttype"/>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+        </element>
+    </define>
+    <define name="default">
+        <element name="default">
+            <optional>
+                <attribute name="value">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="meta">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <zeroOrMore>
+                <ref name="$  all  $"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="equiv">
+        <element name="equiv">
+            <zeroOrMore>
+                <choice>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="$  all  $">
+        <choice>
+            <ref name="and"/>
+            <ref name="unique"/>
+            <ref name="contenttype"/>
+            <ref name="attribute"/>
+            <ref name="include"/>
+            <ref name="attributefield"/>
+            <ref name="dsd"/>
+            <ref name="declare"/>
+            <ref name="sequence"/>
+            <ref name="chardatafield"/>
+            <ref name="contents"/>
+            <ref name="char"/>
+            <ref name="descendant"/>
+            <ref name="string"/>
+            <ref name="or"/>
+            <ref name="rule"/>
+            <ref name="optional"/>
+            <ref name="intersection"/>
+            <ref name="minus"/>
+            <ref name="boolexp"/>
+            <ref name="one"/>
+            <ref name="imply"/>
+            <ref name="repeat"/>
+            <ref name="required"/>
+            <ref name="equiv"/>
+            <ref name="complement"/>
+            <ref name="default"/>
+            <ref name="not"/>
+            <ref name="child"/>
+            <ref name="element"/>
+            <ref name="doc"/>
+            <ref name="normalize"/>
+            <ref name="if"/>
+            <ref name="pointer"/>
+            <ref name="stringtype"/>
+            <ref name="ancestor"/>
+            <ref name="union"/>
+            <ref name="require"/>
+            <ref name="this"/>
+            <ref name="parent"/>
+        </choice>
+    </define>
+    <define name="not">
+        <element name="not">
+            <choice>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+        </element>
+    </define>
+    <define name="one">
+        <element name="one">
+            <zeroOrMore>
+                <choice>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="this">
+        <element name="this">
+            <empty/>
+        </element>
+    </define>
+    <define name="ancestor">
+        <element name="ancestor">
+            <choice>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+        </element>
+    </define>
+    <define name="doc">
+        <element name="doc">
+            <optional>
+                <attribute name="m">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <zeroOrMore>
+                <ref name="$  all  $"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="require">
+        <element name="require">
+            <optional>
+                <attribute name="meta">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="child">
+        <element name="child">
+            <choice>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+        </element>
+    </define>
+    <define name="attributefield">
+        <element name="attributefield">
+            <optional>
+                <attribute name="type">
+                    <choice>
+                        <value>string</value>
+                        <value>qname</value>
+                    </choice>
+                </attribute>
+            </optional>
+            <attribute name="name">
+                <data type="normalizedString"/>
+            </attribute>
+            <optional>
+                <choice>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </optional>
+        </element>
+    </define>
+    <define name="or">
+        <element name="or">
+            <zeroOrMore>
+                <choice>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="union">
+        <element name="union">
+            <zeroOrMore>
+                <choice>
+                    <ref name="sequence"/>
+                    <ref name="optional"/>
+                    <ref name="complement"/>
+                    <ref name="union"/>
+                    <ref name="intersection"/>
+                    <ref name="minus"/>
+                    <ref name="repeat"/>
+                    <ref name="string"/>
+                    <ref name="char"/>
+                    <ref name="stringtype"/>
+                    <ref name="contenttype"/>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="stringtype">
+        <element name="stringtype">
+            <optional>
+                <attribute name="ref">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="meta">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="id">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <choice>
+                    <ref name="sequence"/>
+                    <ref name="optional"/>
+                    <ref name="complement"/>
+                    <ref name="union"/>
+                    <ref name="intersection"/>
+                    <ref name="minus"/>
+                    <ref name="repeat"/>
+                    <ref name="string"/>
+                    <ref name="char"/>
+                    <ref name="stringtype"/>
+                    <ref name="contenttype"/>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </optional>
+        </element>
+    </define>
+    <define name="required">
+        <element name="required">
+            <zeroOrMore>
+                <ref name="attribute"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="attribute">
+        <element name="attribute">
+            <optional>
+                <attribute name="name">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="meta">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="sequence"/>
+                    <ref name="optional"/>
+                    <ref name="complement"/>
+                    <ref name="union"/>
+                    <ref name="intersection"/>
+                    <ref name="minus"/>
+                    <ref name="repeat"/>
+                    <ref name="string"/>
+                    <ref name="char"/>
+                    <ref name="stringtype"/>
+                    <ref name="contenttype"/>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                    <ref name="normalize"/>
+                    <ref name="default"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="parent">
+        <element name="parent">
+            <choice>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+        </element>
+    </define>
+    <define name="pointer">
+        <element name="pointer">
+            <optional>
+                <choice>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="attributefield"/>
+                    <ref name="chardatafield"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="unique">
+        <element name="unique">
+            <choice>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+            <zeroOrMore>
+                <choice>
+                    <ref name="attributefield"/>
+                    <ref name="chardatafield"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="dsd">
+        <element name="dsd">
+            <optional>
+                <attribute name="root">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="meta">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="declare"/>
+                    <ref name="require"/>
+                    <ref name="if"/>
+                    <ref name="pointer"/>
+                    <ref name="unique"/>
+                    <ref name="rule"/>
+                    <ref name="boolexp"/>
+                    <ref name="stringtype"/>
+                    <ref name="contenttype"/>
+                    <ref name="dsd"/>
+                    <ref name="include"/>
+                    <ref name="doc"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="declare">
+        <element name="declare">
+            <optional>
+                <attribute name="meta">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="attribute"/>
+                    <ref name="required"/>
+                    <ref name="contents"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="normalize">
+        <element name="normalize">
+            <optional>
+                <attribute name="case">
+                    <choice>
+                        <value>preserve</value>
+                        <value>upper</value>
+                        <value>lower</value>
+                    </choice>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="whitespace">
+                    <choice>
+                        <value>preserve</value>
+                        <value>compress</value>
+                        <value>trim</value>
+                    </choice>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+    <define name="contenttype">
+        <element name="contenttype">
+            <optional>
+                <attribute name="ref">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="id">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <choice>
+                    <ref name="sequence"/>
+                    <ref name="optional"/>
+                    <ref name="complement"/>
+                    <ref name="union"/>
+                    <ref name="intersection"/>
+                    <ref name="minus"/>
+                    <ref name="repeat"/>
+                    <ref name="string"/>
+                    <ref name="char"/>
+                    <ref name="stringtype"/>
+                    <ref name="contenttype"/>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </optional>
+        </element>
+    </define>
+    <define name="include">
+        <element name="include">
+            <attribute name="href">
+                <data type="normalizedString"/>
+            </attribute>
+        </element>
+    </define>
+    <define name="chardatafield">
+        <element name="chardatafield">
+            <optional>
+                <attribute name="type">
+                    <choice>
+                        <value>string</value>
+                        <value>qname</value>
+                    </choice>
+                </attribute>
+            </optional>
+            <optional>
+                <choice>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </optional>
+        </element>
+    </define>
+    <define name="sequence">
+        <element name="sequence">
+            <zeroOrMore>
+                <choice>
+                    <ref name="sequence"/>
+                    <ref name="optional"/>
+                    <ref name="complement"/>
+                    <ref name="union"/>
+                    <ref name="intersection"/>
+                    <ref name="minus"/>
+                    <ref name="repeat"/>
+                    <ref name="string"/>
+                    <ref name="char"/>
+                    <ref name="stringtype"/>
+                    <ref name="contenttype"/>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="and">
+        <element name="and">
+            <zeroOrMore>
+                <choice>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="optional">
+        <element name="optional">
+            <choice>
+                <ref name="sequence"/>
+                <ref name="optional"/>
+                <ref name="complement"/>
+                <ref name="union"/>
+                <ref name="intersection"/>
+                <ref name="minus"/>
+                <ref name="repeat"/>
+                <ref name="string"/>
+                <ref name="char"/>
+                <ref name="stringtype"/>
+                <ref name="contenttype"/>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+        </element>
+    </define>
+    <define name="descendant">
+        <element name="descendant">
+            <choice>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+        </element>
+    </define>
+    <define name="contents">
+        <element name="contents">
+            <zeroOrMore>
+                <choice>
+                    <ref name="sequence"/>
+                    <ref name="optional"/>
+                    <ref name="complement"/>
+                    <ref name="union"/>
+                    <ref name="intersection"/>
+                    <ref name="minus"/>
+                    <ref name="repeat"/>
+                    <ref name="string"/>
+                    <ref name="char"/>
+                    <ref name="stringtype"/>
+                    <ref name="contenttype"/>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                    <ref name="normalize"/>
+                    <ref name="default"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="rule">
+        <element name="rule">
+            <optional>
+                <attribute name="ref">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="id">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="declare"/>
+                    <ref name="require"/>
+                    <ref name="if"/>
+                    <ref name="pointer"/>
+                    <ref name="unique"/>
+                    <ref name="rule"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="if">
+        <element name="if">
+            <choice>
+                <ref name="and"/>
+                <ref name="or"/>
+                <ref name="not"/>
+                <ref name="imply"/>
+                <ref name="equiv"/>
+                <ref name="one"/>
+                <ref name="parent"/>
+                <ref name="ancestor"/>
+                <ref name="child"/>
+                <ref name="descendant"/>
+                <ref name="this"/>
+                <ref name="element"/>
+                <ref name="attribute"/>
+                <ref name="contents"/>
+                <ref name="boolexp"/>
+            </choice>
+            <zeroOrMore>
+                <choice>
+                    <ref name="declare"/>
+                    <ref name="require"/>
+                    <ref name="if"/>
+                    <ref name="pointer"/>
+                    <ref name="unique"/>
+                    <ref name="rule"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="char">
+        <element name="char">
+            <optional>
+                <attribute name="min">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="set">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="max">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+    <define name="string">
+        <element name="string">
+            <optional>
+                <attribute name="value">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+    <define name="intersection">
+        <element name="intersection">
+            <zeroOrMore>
+                <choice>
+                    <ref name="sequence"/>
+                    <ref name="optional"/>
+                    <ref name="complement"/>
+                    <ref name="union"/>
+                    <ref name="intersection"/>
+                    <ref name="minus"/>
+                    <ref name="repeat"/>
+                    <ref name="string"/>
+                    <ref name="char"/>
+                    <ref name="stringtype"/>
+                    <ref name="contenttype"/>
+                    <ref name="and"/>
+                    <ref name="or"/>
+                    <ref name="not"/>
+                    <ref name="imply"/>
+                    <ref name="equiv"/>
+                    <ref name="one"/>
+                    <ref name="parent"/>
+                    <ref name="ancestor"/>
+                    <ref name="child"/>
+                    <ref name="descendant"/>
+                    <ref name="this"/>
+                    <ref name="element"/>
+                    <ref name="attribute"/>
+                    <ref name="contents"/>
+                    <ref name="boolexp"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+</grammar>

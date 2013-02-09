@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- testing any, anyAttribute in xsd -->
+
+<triple name="anyTest" enabled="true"><input type="XSD" DTDNamespaceURI="">anyTest.xsd</input><output type="DSD" DTDNamespaceURI="">simple.dsd</output><xslt>general-identity-transform.xsl</xslt></triple>

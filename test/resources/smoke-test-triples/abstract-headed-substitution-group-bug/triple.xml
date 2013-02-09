@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<triple name="abstract-headed-substitution-group-bug" enabled="true">
+<input type="XSD" DTDNamespaceURI="">subst-experiment.xsd</input>
+<output type="DSD" DTDNamespaceURI="">simple.dsd</output>
+<xslt>general-identity-transform.xsl</xslt>
+</triple>

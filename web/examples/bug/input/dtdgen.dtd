@@ -1,0 +1,3 @@
+<!ELEMENT stm ( analysis? ) >
+<!ELEMENT analysis ( #PCDATA ) >
+<!ATTLIST analysis ref NMTOKEN #FIXED "0" >

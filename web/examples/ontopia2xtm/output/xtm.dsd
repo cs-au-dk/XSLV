@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?dsd href="http://www.brics.dk/DSD/dsd2.dsd"?>
+<dsd xmlns="http://www.brics.dk/DSD/2.0" xmlns:x="http://www.topicmaps.org/xtm/1.0/" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:n="http://www.brics.dk/DSD/names" root="x:topicMap">
+  <xi:include href="http://www.brics.dk/DSD/names.dsd" />
+  <rule id="x:R1">
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <union>
+          <element name="x:topicRef" />
+          <element name="x:subjectIndicatorRef" />
+        </union>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R2">
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <required>
+        <attribute name="href" />
+      </required>
+    </declare>
+  </rule>
+  <rule id="x:R3">
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <string />
+      </contents>
+    </declare>
+  </rule>
+  <if>
+    <element name="x:topicMap" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:topic" />
+            <element name="x:association" />
+            <element name="x:mergeMap" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:topic" />
+    <declare>
+      <required>
+        <attribute name="id">
+          <normalize whitespace="trim" />
+          <stringtype ref="n:NAME" />
+        </attribute>
+      </required>
+      <contents>
+        <sequence>
+          <repeat>
+            <element name="x:instanceOf" />
+          </repeat>
+          <optional>
+            <element name="x:subjectIdentity" />
+          </optional>
+          <repeat>
+            <union>
+              <element name="x:baseName" />
+              <element name="x:occurrence" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:instanceOf" />
+    <rule ref="x:R1" />
+  </if>
+  <if>
+    <element name="x:subjectIdentity" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:resourceRef" />
+          </optional>
+          <repeat>
+            <union>
+              <element name="x:topicRef" />
+              <element name="x:subjectIndicatorRef" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:topicRef" />
+    <rule ref="x:R2" />
+  </if>
+  <if>
+    <element name="x:subjectIndicatorRef" />
+    <rule ref="x:R2" />
+  </if>
+  <if>
+    <element name="x:baseName" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:scope" />
+          </optional>
+          <element name="x:baseNameString" />
+          <repeat>
+            <element name="x:variant" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:baseNameString" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:variant" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <sequence>
+          <element name="x:parameters" />
+          <optional>
+            <element name="x:variantName" />
+          </optional>
+          <repeat>
+            <element name="x:variant" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:variantName" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <union>
+          <element name="x:resourceRef" />
+          <element name="x:resourceData" />
+        </union>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:parameters" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <repeat min="1">
+          <union>
+            <element name="x:topicRef" />
+            <element name="x:subjectIndicatorRef" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:occurrence" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:instanceOf" />
+          </optional>
+          <optional>
+            <element name="x:scope" />
+          </optional>
+          <union>
+            <element name="x:resourceRef" />
+            <element name="x:resourceData" />
+          </union>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:resourceRef" />
+    <rule ref="x:R2" />
+  </if>
+  <if>
+    <element name="x:resourceData" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:association" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:instanceOf" />
+          </optional>
+          <optional>
+            <element name="x:scope" />
+          </optional>
+          <repeat min="1">
+            <element name="x:member" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:member" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:roleSpec" />
+          </optional>
+          <repeat>
+            <union>
+              <element name="x:topicRef" />
+              <element name="x:resourceRef" />
+              <element name="x:subjectIndicatorRef" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:roleSpec" />
+    <rule ref="x:R1" />
+  </if>
+  <if>
+    <element name="x:scope" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <repeat min="1">
+          <union>
+            <element name="x:topicRef" />
+            <element name="x:resourceRef" />
+            <element name="x:subjectIndicatorRef" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:mergeMap" />
+    <rule ref="x:R2" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:topicRef" />
+            <element name="x:resourceRef" />
+            <element name="x:subjectIndicatorRef" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <unique>
+    <or>
+      <and>
+        <element name="x:parameters" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:resourceData" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:topic" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:association" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:baseNameString" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:member" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:subjectIdentity" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:occurrence" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:variant" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:baseName" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:variantName" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:scope" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:mergeMap" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:instanceOf" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:topicRef" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:subjectIndicatorRef" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:topicMap" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:resourceRef" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:roleSpec" />
+        <attribute name="id" />
+      </and>
+    </or>
+    <attributefield name="id" />
+  </unique>
+</dsd>
+

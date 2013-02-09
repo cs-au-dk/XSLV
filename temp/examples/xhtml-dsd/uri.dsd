@@ -1,0 +1,395 @@
+<?xml version="1.0"?>
+<?dsd href="http://www.brics.dk/DSD/dsd2.dsd"?>
+
+<dsd xmlns="http://www.brics.dk/DSD/2.0"
+     xmlns:u="http://www.brics.dk/DSD/uri">
+
+  <m:doc xmlns:m="http://www.brics.dk/DSD/2.0/meta">
+    Translated to DSD 2.0 from RFC2396.
+  </m:doc>
+
+  <stringtype id="u:URI">
+    <sequence>
+      <optional>
+        <union>
+          <stringtype ref="u:absoluteURI"/>
+          <stringtype ref="u:relativeURI"/>
+        </union>
+      </optional>
+      <optional>
+        <sequence>
+          <char set="#"/>
+          <stringtype ref="u:fragment"/>
+        </sequence>
+      </optional>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:absoluteURI">
+    <sequence>
+      <stringtype ref="u:scheme"/>
+      <char set=":"/>
+      <union>
+        <stringtype ref="u:hier_part"/>
+        <stringtype ref="u:opaque_part"/>
+      </union>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:relativeURI">
+    <sequence>
+      <union>
+        <stringtype ref="u:net_path"/>
+        <stringtype ref="u:abs_path"/>
+        <stringtype ref="u:rel_path"/>
+      </union>
+      <optional>
+        <sequence>
+          <char set="?"/>
+          <stringtype ref="u:query"/>
+        </sequence>
+      </optional>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:hier_part">
+    <sequence>
+      <union>
+        <stringtype ref="u:net_path"/>
+        <stringtype ref="u:abs_path"/>
+      </union>
+      <optional>
+        <sequence>
+          <char set="?"/>
+          <stringtype ref="u:query"/>
+        </sequence>
+      </optional>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:opaque_part">
+    <sequence>
+      <stringtype ref="u:uric_no_slash"/>
+      <repeat>
+        <stringtype ref="u:uric"/>
+      </repeat>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:uric_no_slash">
+    <union>
+      <stringtype ref="u:unreserved"/>
+      <stringtype ref="u:escaped"/>
+      <char set=";?:@&amp;=+$,"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="u:net_path">
+    <sequence>
+      <string value="//"/>
+      <stringtype ref="u:authority"/>
+      <optional>
+        <stringtype ref="u:abs_path"/>
+      </optional>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:abs_path">
+    <sequence>
+      <char set="/"/>
+      <stringtype ref="u:path_segments"/>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:rel_path">
+    <sequence>
+      <stringtype ref="u:rel_segment"/>
+      <optional>
+        <stringtype ref="u:abs_path"/>
+      </optional>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:rel_segment">
+    <repeat min="1">
+      <union>
+        <stringtype ref="u:unreserved"/>
+        <stringtype ref="u:escaped"/>
+        <char set=";@&amp;=+$,"/>
+      </union>
+    </repeat>
+  </stringtype>
+
+  <stringtype id="u:scheme">
+    <sequence>
+      <stringtype ref="u:alpha"/>
+      <repeat>
+        <union>
+          <stringtype ref="u:alpha"/>
+          <stringtype ref="u:digit"/>
+          <char set="+-."/>
+        </union>
+      </repeat>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:authority">
+    <union>
+      <stringtype ref="u:server"/>
+      <stringtype ref="u:reg_name"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="u:reg_name">
+    <repeat min="1">
+      <union>
+        <stringtype ref="u:unreserved"/>
+        <stringtype ref="u:escaped"/>
+        <char set="$,;:@&amp;=+"/>
+      </union>
+    </repeat>
+  </stringtype>
+
+  <stringtype id="u:server">
+    <optional>
+      <sequence>
+        <optional>
+          <sequence>
+            <stringtype ref="u:userinfo"/>
+            <char set="@"/>
+          </sequence>
+        </optional>
+        <stringtype ref="u:hostport"/>
+      </sequence>
+    </optional>
+  </stringtype>
+
+  <stringtype id="u:userinfo">
+    <repeat>
+      <union>
+        <stringtype ref="u:unreserved"/>
+        <stringtype ref="u:escaped"/>
+        <char set=";:&amp;=+$,"/>
+      </union>
+    </repeat>
+  </stringtype>
+
+  <stringtype id="u:hostport">
+    <sequence>
+      <stringtype ref="u:host"/>
+      <optional>
+        <sequence>
+          <char set=":"/>
+          <stringtype ref="u:port"/>
+        </sequence>
+      </optional>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:host">
+    <union>
+      <stringtype ref="u:hostname"/>
+      <stringtype ref="u:IPv4address"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="u:hostname">
+    <sequence>
+      <repeat>
+        <sequence>
+          <stringtype ref="u:domainlabel"/>
+          <char set="."/>
+        </sequence>
+      </repeat>
+      <stringtype ref="u:toplabel"/>
+      <optional>
+        <char set="."/>
+      </optional>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:domainlabel">
+    <union>
+      <stringtype ref="u:alphanum"/>
+      <sequence>
+        <stringtype ref="u:alphanum"/>
+        <repeat>
+          <union>
+            <stringtype ref="u:alphanum"/>
+            <char set="-"/>
+          </union>        
+        </repeat>
+        <stringtype ref="u:alphanum"/>
+      </sequence>
+    </union>
+  </stringtype>
+
+  <stringtype id="u:toplabel">
+    <union>
+      <stringtype ref="u:alpha"/>
+      <sequence>
+        <stringtype ref="u:alpha"/>
+        <repeat>
+          <union>
+            <stringtype ref="u:alphanum"/>
+            <char set="-"/>
+          </union>        
+        </repeat>
+        <stringtype ref="u:alphanum"/>
+      </sequence>
+    </union>
+  </stringtype>
+
+  <stringtype id="u:IPv4address">
+    <sequence>
+      <repeat min="1">
+        <stringtype ref="u:digit"/>
+      </repeat>
+      <char set="."/>
+      <repeat min="1">
+        <stringtype ref="u:digit"/>
+      </repeat>
+      <char set="."/>
+      <repeat min="1">
+        <stringtype ref="u:digit"/>
+      </repeat>
+      <char set="."/>
+      <repeat min="1">
+        <stringtype ref="u:digit"/>
+      </repeat>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:port">
+    <repeat>
+      <stringtype ref="u:digit"/>
+    </repeat>
+  </stringtype>
+
+  <stringtype id="u:path">
+    <optional>
+      <union>
+        <stringtype ref="u:abs_path"/>
+        <stringtype ref="u:opaque_part"/>
+      </union>
+    </optional>
+  </stringtype>
+
+  <stringtype id="u:path_segments">
+    <sequence>
+      <stringtype ref="u:segment"/>
+      <repeat>
+        <sequence>
+          <char set="/"/>
+          <stringtype ref="u:segment"/>
+        </sequence>
+      </repeat>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:segment">
+    <sequence>
+      <repeat>
+        <stringtype ref="u:pchar"/>
+      </repeat>
+      <repeat>
+        <sequence>
+          <char set=";"/>
+          <stringtype ref="u:param"/>
+        </sequence>
+      </repeat>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:param">
+    <repeat>
+      <stringtype ref="u:pchar"/>
+    </repeat>
+  </stringtype>
+
+  <stringtype id="u:pchar">
+    <union>
+      <stringtype ref="u:unreserved"/>
+      <stringtype ref="u:escaped"/>
+      <char set=":@&amp;=+$,"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="u:query">
+    <repeat>
+      <stringtype ref="u:uric"/>
+    </repeat>
+  </stringtype>
+
+  <stringtype id="u:fragment">
+    <repeat>
+      <stringtype ref="u:uric"/>
+    </repeat>
+  </stringtype>
+
+  <stringtype id="u:uric">
+    <union>
+      <stringtype ref="u:reserved"/>
+      <stringtype ref="u:unreserved"/>
+      <stringtype ref="u:escaped"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="u:reserved">
+    <char set=";/?:@&amp;=+$,"/>
+  </stringtype>
+
+  <stringtype id="u:unreserved">
+    <union>
+      <stringtype ref="u:alphanum"/>
+      <stringtype ref="u:mark"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="u:mark">
+    <char set="-_.!~*'()"/>
+  </stringtype>
+
+  <stringtype id="u:escaped">
+    <sequence>
+      <char set="%"/>
+      <stringtype ref="u:hex"/>
+      <stringtype ref="u:hex"/>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="u:hex">
+    <union>
+      <stringtype ref="u:digit"/>
+      <char min="a" max="f"/>
+      <char min="A" max="F"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="u:alphanum">
+    <union>
+      <stringtype ref="u:alpha"/>
+      <stringtype ref="u:digit"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="u:alpha">
+    <union>
+      <stringtype ref="u:lowalpha"/>
+      <stringtype ref="u:upalpha"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="u:lowalpha">
+    <char min="a" max="z"/>
+  </stringtype>
+
+  <stringtype id="u:upalpha">
+    <char min="A" max="Z"/>
+  </stringtype>
+
+  <stringtype id="u:digit">
+    <char min="0" max="9"/>
+  </stringtype>
+
+</dsd>

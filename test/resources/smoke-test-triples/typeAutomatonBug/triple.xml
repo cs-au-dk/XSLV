@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Manually check that the ancestor path root.a.b.c.PCDATA AND!!! a.c.PCDATA BOTH are created in PCDATA automaton -->
+<triple name="autobug" enabled="true">
+<input type="DTD" RootElementName="a" DTDNamespaceURI="">autobug.dtd</input>
+<output type="RNG" DTDNamespaceURI="">empty.rng</output>
+<xslt>general-identity-transform.xsl</xslt></triple>

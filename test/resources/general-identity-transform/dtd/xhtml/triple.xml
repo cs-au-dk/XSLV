@@ -1,0 +1,5 @@
+<triple name="xhtml">
+  <input type="DTD" DTDNamespaceURI="http://www.w3.org/1999/xhtml">xhtml1-transitional.dtd</input>
+  <output type="RNG">xhtml1-transitional.rng</output>
+  <xslt>../../general-identity-transform.xsl</xslt>
+</triple>

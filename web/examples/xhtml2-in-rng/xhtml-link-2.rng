@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         xmlns:x="http://www.w3.org/1999/xhtml">
+
+  <x:h1>Link Module</x:h1>
+
+  <div>
+    <x:h2>The link element</x:h2>
+
+    <define name="link">
+      <element name="link">
+        <ref name="link.attlist"/>
+      </element>
+    </define>
+
+    <define name="link.attlist">
+      <ref name="Common.attrib"/>
+      <optional>
+        <attribute name="charset">
+          <ref name="Charset.datatype"/>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="media">
+          <ref name="MediaDesc.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+  </div>
+
+  <define name="head.content" combine="interleave">
+    <zeroOrMore>
+      <ref name="link"/>
+    </zeroOrMore>
+  </define>
+
+</grammar>

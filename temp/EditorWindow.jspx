@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- params
+abstractName
+systemId
+size
+mainpage
+repostMessage
+header
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+  <jsp:directive.page language="java" session="true" isELIgnored="false" isThreadSafe="true" contentType="application/xhtml+xml; charset=utf-8" info="XSL Editor"/>
+  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xml:lang="en" lang="en">
+    <head>
+      <title>Edit ${param.abstractName}</title>
+       <link href="./tabs.css" type="text/css" rel="stylesheet"/>
+       <![CDATA[<script type="text/javascript" src="./xslv.js"></script>]]>
+   </head>
+    <body>
+      <jsp:include page="Dongfang.jspx"/>
+      <c:set scope="page" var="action">
+        <c:choose>
+          <c:when test="${param.mode=='window'}">${param.mainpage}</c:when>
+          <c:otherwise>${param.mainpage}</c:otherwise>
+        </c:choose>
+      </c:set>
+      <c:set scope="page" var="submitscript">
+        <c:choose>
+          <c:when test="${param.mode=='window'}">window.close()</c:when>
+          <c:otherwise></c:otherwise>
+        </c:choose>
+      </c:set>
+      <c:if test="${! empty param.header}">
+        <h2>${param.header}</h2>
+      </c:if>
+      <c:url var="uploadURL" value="${pageScope.action}" />
+      <form name="upload" id="upload" method="post" action="${uploadURL}" enctype="multipart/form-data" onsubmit="${pageScope.submitscript}">
+        <input type="hidden" name="input-method:${param.abstractName}" value="TEXT"></input>
+        <table>
+          <jsp:include page="EditorPane.jspx">
+            <jsp:param name="abstractName" value="${param.abstractName}"/>
+            <jsp:param name="systemId" value="${param.systemId}"/>
+            <jsp:param name="size" value="${param.size}"/>
+            <jsp:param name="repostMessage" value="${param.repostMessage}"/>
+          </jsp:include>
+          <tr>
+            <td colspan="2" align="right">
+              <input value="Save" type="submit"></input>
+              <c:choose>
+                <c:when test="${param.mode=='window'}">
+                  <input value="Close" type="button" onclick="window.close()"></input>
+                </c:when>
+                <c:otherwise>
+                  <c:url var="mainpageURL" value="${param.mainpage}" />
+                  <input value="Back" type="button" onclick="document.location='${mainpageURL}'"></input>
+                </c:otherwise>
+              </c:choose>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </body>
+  </html>
+</jsp:root>

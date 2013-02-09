@@ -1,0 +1,5 @@
+<triple name="fo">
+  <input type="DTD" RootElementName="root" DTDNamespaceURI="http://dongfang.dk/testdata">fo_alternative.dtd</input>
+  <output type="RNG">fo_alternative.rng</output>
+  <xslt>../../general-identity-transform.xsl</xslt>
+</triple>

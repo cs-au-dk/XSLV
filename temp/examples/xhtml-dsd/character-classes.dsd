@@ -1,0 +1,393 @@
+<?xml version="1.0"?>
+<?dsd href="http://www.brics.dk/DSD/dsd2.dsd"?>
+
+<dsd xmlns="http://www.brics.dk/DSD/2.0"
+     xmlns:c="http://www.brics.dk/DSD/character-classes">
+
+  <m:doc xmlns:m="http://www.brics.dk/DSD/2.0/meta">
+    Translated to DSD 2.0 from 
+    "Extensible Markup Language (XML) 1.0 (Second Edition)"
+  </m:doc>
+
+  <stringtype id="c:LETTER">
+    <union>
+      <stringtype ref="c:BASECHAR"/>
+      <stringtype ref="c:IDEOGRAPHIC"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="c:BASECHAR">
+    <union>
+      <char min="&#x0041;" max="&#x005A;"/>
+      <char min="&#x0061;" max="&#x007A;"/>
+      <char min="&#x00C0;" max="&#x00D6;"/>
+      <char min="&#x00D8;" max="&#x00F6;"/>
+      <char min="&#x00F8;" max="&#x00FF;"/>
+      <char min="&#x0100;" max="&#x0131;"/>
+      <char min="&#x0134;" max="&#x013E;"/>
+      <char min="&#x0141;" max="&#x0148;"/>
+      <char min="&#x014A;" max="&#x017E;"/>
+      <char min="&#x0180;" max="&#x01C3;"/>
+      <char min="&#x01CD;" max="&#x01F0;"/>
+      <char min="&#x01F4;" max="&#x01F5;"/>
+      <char min="&#x01FA;" max="&#x0217;"/>
+      <char min="&#x0250;" max="&#x02A8;"/>
+      <char min="&#x02BB;" max="&#x02C1;"/>
+      <char set="&#x0386;"/>
+      <char min="&#x0388;" max="&#x038A;"/>
+      <char set="&#x038C;"/> 
+      <char min="&#x038E;" max="&#x03A1;"/>
+      <char min="&#x03A3;" max="&#x03CE;"/>
+      <char min="&#x03D0;" max="&#x03D6;"/>
+      <char set="&#x03DA;"/>
+      <char set="&#x03DC;"/>
+      <char set="&#x03DE;"/>
+      <char set="&#x03E0;"/>
+      <char min="&#x03E2;" max="&#x03F3;"/>
+      <char min="&#x0401;" max="&#x040C;"/>
+      <char min="&#x040E;" max="&#x044F;"/>
+      <char min="&#x0451;" max="&#x045C;"/>
+      <char min="&#x045E;" max="&#x0481;"/>
+      <char min="&#x0490;" max="&#x04C4;"/>
+      <char min="&#x04C7;" max="&#x04C8;"/>
+      <char min="&#x04CB;" max="&#x04CC;"/>
+      <char min="&#x04D0;" max="&#x04EB;"/>
+      <char min="&#x04EE;" max="&#x04F5;"/>
+      <char min="&#x04F8;" max="&#x04F9;"/>
+      <char min="&#x0531;" max="&#x0556;"/>
+      <char set="&#x0559;"/>
+      <char min="&#x0561;" max="&#x0586;"/>
+      <char min="&#x05D0;" max="&#x05EA;"/>
+      <char min="&#x05F0;" max="&#x05F2;"/>
+      <char min="&#x0621;" max="&#x063A;"/>
+      <char min="&#x0641;" max="&#x064A;"/>
+      <char min="&#x0671;" max="&#x06B7;"/>
+      <char min="&#x06BA;" max="&#x06BE;"/>
+      <char min="&#x06C0;" max="&#x06CE;"/>
+      <char min="&#x06D0;" max="&#x06D3;"/>
+      <char set="&#x06D5;"/>
+      <char min="&#x06E5;" max="&#x06E6;"/>
+      <char min="&#x0905;" max="&#x0939;"/>
+      <char set="&#x093D;"/>
+      <char min="&#x0958;" max="&#x0961;"/>
+      <char min="&#x0985;" max="&#x098C;"/>
+      <char min="&#x098F;" max="&#x0990;"/>
+      <char min="&#x0993;" max="&#x09A8;"/>
+      <char min="&#x09AA;" max="&#x09B0;"/>
+      <char set="&#x09B2;"/>
+      <char min="&#x09B6;" max="&#x09B9;"/>
+      <char min="&#x09DC;" max="&#x09DD;"/>
+      <char min="&#x09DF;" max="&#x09E1;"/>
+      <char min="&#x09F0;" max="&#x09F1;"/>
+      <char min="&#x0A05;" max="&#x0A0A;"/>
+      <char min="&#x0A0F;" max="&#x0A10;"/>
+      <char min="&#x0A13;" max="&#x0A28;"/>
+      <char min="&#x0A2A;" max="&#x0A30;"/>
+      <char min="&#x0A32;" max="&#x0A33;"/>
+      <char min="&#x0A35;" max="&#x0A36;"/>
+      <char min="&#x0A38;" max="&#x0A39;"/>
+      <char min="&#x0A59;" max="&#x0A5C;"/>
+      <char set="&#x0A5E;"/>
+      <char min="&#x0A72;" max="&#x0A74;"/>
+      <char min="&#x0A85;" max="&#x0A8B;"/>
+      <char set="&#x0A8D;"/>
+      <char min="&#x0A8F;" max="&#x0A91;"/>
+      <char min="&#x0A93;" max="&#x0AA8;"/>
+      <char min="&#x0AAA;" max="&#x0AB0;"/>
+      <char min="&#x0AB2;" max="&#x0AB3;"/>
+      <char min="&#x0AB5;" max="&#x0AB9;"/>
+      <char set="&#x0ABD;"/> 
+      <char set="&#x0AE0;"/>
+      <char min="&#x0B05;" max="&#x0B0C;"/>
+      <char min="&#x0B0F;" max="&#x0B10;"/>
+      <char min="&#x0B13;" max="&#x0B28;"/>
+      <char min="&#x0B2A;" max="&#x0B30;"/>
+      <char min="&#x0B32;" max="&#x0B33;"/>
+      <char min="&#x0B36;" max="&#x0B39;"/>
+      <char set="&#x0B3D;"/>
+      <char min="&#x0B5C;" max="&#x0B5D;"/>
+      <char min="&#x0B5F;" max="&#x0B61;"/>
+      <char min="&#x0B85;" max="&#x0B8A;"/>
+      <char min="&#x0B8E;" max="&#x0B90;"/>
+      <char min="&#x0B92;" max="&#x0B95;"/>
+      <char min="&#x0B99;" max="&#x0B9A;"/>
+      <char set="&#x0B9C;"/>
+      <char min="&#x0B9E;" max="&#x0B9F;"/>
+      <char min="&#x0BA3;" max="&#x0BA4;"/>
+      <char min="&#x0BA8;" max="&#x0BAA;"/>
+      <char min="&#x0BAE;" max="&#x0BB5;"/>
+      <char min="&#x0BB7;" max="&#x0BB9;"/>
+      <char min="&#x0C05;" max="&#x0C0C;"/>
+      <char min="&#x0C0E;" max="&#x0C10;"/>
+      <char min="&#x0C12;" max="&#x0C28;"/>
+      <char min="&#x0C2A;" max="&#x0C33;"/>
+      <char min="&#x0C35;" max="&#x0C39;"/>
+      <char min="&#x0C60;" max="&#x0C61;"/>
+      <char min="&#x0C85;" max="&#x0C8C;"/>
+      <char min="&#x0C8E;" max="&#x0C90;"/>
+      <char min="&#x0C92;" max="&#x0CA8;"/>
+      <char min="&#x0CAA;" max="&#x0CB3;"/>
+      <char min="&#x0CB5;" max="&#x0CB9;"/>
+      <char set="&#x0CDE;"/>
+      <char min="&#x0CE0;" max="&#x0CE1;"/>
+      <char min="&#x0D05;" max="&#x0D0C;"/>
+      <char min="&#x0D0E;" max="&#x0D10;"/>
+      <char min="&#x0D12;" max="&#x0D28;"/>
+      <char min="&#x0D2A;" max="&#x0D39;"/>
+      <char min="&#x0D60;" max="&#x0D61;"/>
+      <char min="&#x0E01;" max="&#x0E2E;"/>
+      <char set="&#x0E30;"/>
+      <char min="&#x0E32;" max="&#x0E33;"/>
+      <char min="&#x0E40;" max="&#x0E45;"/>
+      <char min="&#x0E81;" max="&#x0E82;"/>
+      <char set="&#x0E84;"/>
+      <char min="&#x0E87;" max="&#x0E88;"/>
+      <char set="&#x0E8A;"/>
+      <char set="&#x0E8D;"/>
+      <char min="&#x0E94;" max="&#x0E97;"/>
+      <char min="&#x0E99;" max="&#x0E9F;"/>
+      <char min="&#x0EA1;" max="&#x0EA3;"/>
+      <char set="&#x0EA5;"/>
+      <char set="&#x0EA7;"/>
+      <char min="&#x0EAA;" max="&#x0EAB;"/>
+      <char min="&#x0EAD;" max="&#x0EAE;"/>
+      <char set="&#x0EB0;"/>
+      <char min="&#x0EB2;" max="&#x0EB3;"/>
+      <char set="&#x0EBD;"/>
+      <char min="&#x0EC0;" max="&#x0EC4;"/>
+      <char min="&#x0F40;" max="&#x0F47;"/>
+      <char min="&#x0F49;" max="&#x0F69;"/>
+      <char min="&#x10A0;" max="&#x10C5;"/>
+      <char min="&#x10D0;" max="&#x10F6;"/>
+      <char set="&#x1100;"/>
+      <char min="&#x1102;" max="&#x1103;"/>
+      <char min="&#x1105;" max="&#x1107;"/>
+      <char set="&#x1109;"/>
+      <char min="&#x110B;" max="&#x110C;"/>
+      <char min="&#x110E;" max="&#x1112;"/>
+      <char set="&#x113C;"/>
+      <char set="&#x113E;"/>
+      <char set="&#x1140;"/>
+      <char set="&#x114C;"/>
+      <char set="&#x114E;"/>
+      <char set="&#x1150;"/>
+      <char min="&#x1154;" max="&#x1155;"/>
+      <char set="&#x1159;"/>
+      <char min="&#x115F;" max="&#x1161;"/>
+      <char set="&#x1163;"/>
+      <char set="&#x1165;"/>
+      <char set="&#x1167;"/>
+      <char set="&#x1169;"/>
+      <char min="&#x116D;" max="&#x116E;"/>
+      <char min="&#x1172;" max="&#x1173;"/>
+      <char set="&#x1175;"/>
+      <char set="&#x119E;"/>
+      <char set="&#x11A8;"/>
+      <char set="&#x11AB;"/>
+      <char min="&#x11AE;" max="&#x11AF;"/>
+      <char min="&#x11B7;" max="&#x11B8;"/>
+      <char set="&#x11BA;"/>
+      <char min="&#x11BC;" max="&#x11C2;"/>
+      <char set="&#x11EB;"/>
+      <char set="&#x11F0;"/>
+      <char set="&#x11F9;"/>
+      <char min="&#x1E00;" max="&#x1E9B;"/>
+      <char min="&#x1EA0;" max="&#x1EF9;"/>
+      <char min="&#x1F00;" max="&#x1F15;"/>
+      <char min="&#x1F18;" max="&#x1F1D;"/>
+      <char min="&#x1F20;" max="&#x1F45;"/>
+      <char min="&#x1F48;" max="&#x1F4D;"/>
+      <char min="&#x1F50;" max="&#x1F57;"/>
+      <char set="&#x1F59;"/>
+      <char set="&#x1F5B;"/>
+      <char set="&#x1F5D;"/>
+      <char min="&#x1F5F;" max="&#x1F7D;"/>
+      <char min="&#x1F80;" max="&#x1FB4;"/>
+      <char min="&#x1FB6;" max="&#x1FBC;"/>
+      <char set="&#x1FBE;"/>
+      <char min="&#x1FC2;" max="&#x1FC4;"/>
+      <char min="&#x1FC6;" max="&#x1FCC;"/>
+      <char min="&#x1FD0;" max="&#x1FD3;"/>
+      <char min="&#x1FD6;" max="&#x1FDB;"/>
+      <char min="&#x1FE0;" max="&#x1FEC;"/>
+      <char min="&#x1FF2;" max="&#x1FF4;"/>
+      <char min="&#x1FF6;" max="&#x1FFC;"/>
+      <char set="&#x2126;"/>
+      <char min="&#x212A;" max="&#x212B;"/>
+      <char set="&#x212E;"/>
+      <char min="&#x2180;" max="&#x2182;"/> 
+      <char min="&#x3041;" max="&#x3094;"/> 
+      <char min="&#x30A1;" max="&#x30FA;"/> 
+      <char min="&#x3105;" max="&#x312C;"/> 
+      <char min="&#xAC00;" max="&#xD7A3;"/>  
+    </union>
+  </stringtype>
+
+  <stringtype id="c:IDEOGRAPHIC">
+    <union>
+      <char min="&#x4E00;" max="&#x9FA5;"/>
+      <char set="&#x3007;"/>
+      <char min="&#x3021;" max="&#x3029;"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="c:COMBININGCHAR">
+    <union>
+      <char min="&#x0300;" max="&#x0345;"/> 
+      <char min="&#x0360;" max="&#x0361;"/> 
+      <char min="&#x0483;" max="&#x0486;"/> 
+      <char min="&#x0591;" max="&#x05A1;"/> 
+      <char min="&#x05A3;" max="&#x05B9;"/>
+      <char min="&#x05BB;" max="&#x05BD;"/> 
+      <char set="&#x05BF;"/>
+      <char min="&#x05C1;" max="&#x05C2;"/> 
+      <char set="&#x05C4;"/>
+      <char min="&#x064B;" max="&#x0652;"/> 
+      <char set="&#x0670;"/>
+      <char min="&#x06D6;" max="&#x06DC;"/>
+      <char min="&#x06DD;" max="&#x06DF;"/> 
+      <char min="&#x06E0;" max="&#x06E4;"/> 
+      <char min="&#x06E7;" max="&#x06E8;"/> 
+      <char min="&#x06EA;" max="&#x06ED;"/> 
+      <char min="&#x0901;" max="&#x0903;"/> 
+      <char set="&#x093C;"/>
+      <char min="&#x093E;" max="&#x094C;"/> 
+      <char set="&#x094D;"/>
+      <char min="&#x0951;" max="&#x0954;"/> 
+      <char min="&#x0962;" max="&#x0963;"/> 
+      <char min="&#x0981;" max="&#x0983;"/> 
+      <char set="&#x09BC;"/>
+      <char set="&#x09BE;"/>
+      <char set="&#x09BF;"/>
+      <char min="&#x09C0;" max="&#x09C4;"/> 
+      <char min="&#x09C7;" max="&#x09C8;"/> 
+      <char min="&#x09CB;" max="&#x09CD;"/> 
+      <char set="&#x09D7;"/>
+      <char min="&#x09E2;" max="&#x09E3;"/> 
+      <char set="&#x0A02;"/>
+      <char set="&#x0A3C;"/>
+      <char set="&#x0A3E;"/>
+      <char set="&#x0A3F;"/>
+      <char min="&#x0A40;" max="&#x0A42;"/> 
+      <char min="&#x0A47;" max="&#x0A48;"/> 
+      <char min="&#x0A4B;" max="&#x0A4D;"/> 
+      <char min="&#x0A70;" max="&#x0A71;"/>
+      <char min="&#x0A81;" max="&#x0A83;"/> 
+      <char set="&#x0ABC;"/>
+      <char min="&#x0ABE;" max="&#x0AC5;"/> 
+      <char min="&#x0AC7;" max="&#x0AC9;"/> 
+      <char min="&#x0ACB;" max="&#x0ACD;"/> 
+      <char min="&#x0B01;" max="&#x0B03;"/>
+      <char set="&#x0B3C;"/>
+      <char min="&#x0B3E;" max="&#x0B43;"/> 
+      <char min="&#x0B47;" max="&#x0B48;"/> 
+      <char min="&#x0B4B;" max="&#x0B4D;"/> 
+      <char min="&#x0B56;" max="&#x0B57;"/> 
+      <char min="&#x0B82;" max="&#x0B83;"/>
+      <char min="&#x0BBE;" max="&#x0BC2;"/> 
+      <char min="&#x0BC6;" max="&#x0BC8;"/> 
+      <char min="&#x0BCA;" max="&#x0BCD;"/> 
+      <char set="&#x0BD7;"/>
+      <char min="&#x0C01;" max="&#x0C03;"/> 
+      <char min="&#x0C3E;" max="&#x0C44;"/>
+      <char min="&#x0C46;" max="&#x0C48;"/> 
+      <char min="&#x0C4A;" max="&#x0C4D;"/> 
+      <char min="&#x0C55;" max="&#x0C56;"/> 
+      <char min="&#x0C82;" max="&#x0C83;"/> 
+      <char min="&#x0CBE;" max="&#x0CC4;"/>
+      <char min="&#x0CC6;" max="&#x0CC8;"/> 
+      <char min="&#x0CCA;" max="&#x0CCD;"/> 
+      <char min="&#x0CD5;" max="&#x0CD6;"/> 
+      <char min="&#x0D02;" max="&#x0D03;"/> 
+      <char min="&#x0D3E;" max="&#x0D43;"/>
+      <char min="&#x0D46;" max="&#x0D48;"/> 
+      <char min="&#x0D4A;" max="&#x0D4D;"/> 
+      <char set="&#x0D57;"/>
+      <char set="&#x0E31;"/>
+      <char min="&#x0E34;" max="&#x0E3A;"/> 
+      <char min="&#x0E47;" max="&#x0E4E;"/> 
+      <char set="&#x0EB1;"/>
+      <char min="&#x0EB4;" max="&#x0EB9;"/> 
+      <char min="&#x0EBB;" max="&#x0EBC;"/> 
+      <char min="&#x0EC8;" max="&#x0ECD;"/> 
+      <char min="&#x0F18;" max="&#x0F19;"/> 
+      <char set="&#x0F35;"/>
+      <char set="&#x0F37;"/>
+      <char set="&#x0F39;"/>
+      <char set="&#x0F3E;"/>
+      <char set="&#x0F3F;"/>
+      <char min="&#x0F71;" max="&#x0F84;"/> 
+      <char min="&#x0F86;" max="&#x0F8B;"/> 
+      <char min="&#x0F90;" max="&#x0F95;"/> 
+      <char set="&#x0F97;"/>
+      <char min="&#x0F99;" max="&#x0FAD;"/>
+      <char min="&#x0FB1;" max="&#x0FB7;"/> 
+      <char set="&#x0FB9;"/>
+      <char min="&#x20D0;" max="&#x20DC;"/> 
+      <char set="&#x20E1;"/>
+      <char min="&#x302A;" max="&#x302F;"/> 
+      <char set="&#x3099;"/>
+      <char set="&#x309A;"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="c:DIGIT">
+    <union>
+      <char min="&#x0030;" max="&#x0039;"/> 
+      <char min="&#x0660;" max="&#x0669;"/> 
+      <char min="&#x06F0;" max="&#x06F9;"/> 
+      <char min="&#x0966;" max="&#x096F;"/> 
+      <char min="&#x09E6;" max="&#x09EF;"/> 
+      <char min="&#x0A66;" max="&#x0A6F;"/> 
+      <char min="&#x0AE6;" max="&#x0AEF;"/> 
+      <char min="&#x0B66;" max="&#x0B6F;"/> 
+      <char min="&#x0BE7;" max="&#x0BEF;"/> 
+      <char min="&#x0C66;" max="&#x0C6F;"/> 
+      <char min="&#x0CE6;" max="&#x0CEF;"/> 
+      <char min="&#x0D66;" max="&#x0D6F;"/> 
+      <char min="&#x0E50;" max="&#x0E59;"/> 
+      <char min="&#x0ED0;" max="&#x0ED9;"/> 
+      <char min="&#x0F20;" max="&#x0F29;"/> 
+    </union>
+  </stringtype>
+
+  <stringtype id="c:EXTENDER">
+    <union>
+      <char set="&#x00B7;"/>
+      <char set="&#x02D0;"/>
+      <char set="&#x02D1;"/>
+      <char set="&#x0387;"/>
+      <char set="&#x0640;"/>
+      <char set="&#x0E46;"/>
+      <char set="&#x0EC6;"/>
+      <char set="&#x3005;"/>
+      <char min="&#x3031;" max="&#x3035;"/>
+      <char min="&#x309D;" max="&#x309E;"/>
+      <char min="&#x30FC;" max="&#x30FE;"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="c:NCNAMECHAR">
+    <union>
+      <stringtype ref="c:LETTER"/>
+      <stringtype ref="c:DIGIT"/>
+      <char set=".-_"/>
+      <stringtype ref="c:COMBININGCHAR"/>
+      <stringtype ref="c:EXTENDER"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="c:NAMECHAR">
+    <union>
+      <stringtype ref="c:NCNAMECHAR"/>
+      <char set=":"/>
+    </union>
+  </stringtype>
+
+  <stringtype id="c:WHITESPACE">
+    <repeat min="1">
+      <char set="&#x0020;&#x0009;&#x000d;&#x000a;"/>
+    </repeat>
+  </stringtype>
+
+</dsd>

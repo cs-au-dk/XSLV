@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  targetNamespace="http://dongfang.dk/testdata" 
+  xmlns:d="http://dongfang.dk/testdata"
+  elementFormDefault="qualified">
+  <element name="boot">
+    <complexType>
+      <sequence>
+        <element name="a" minOccurs="0">
+          <complexType>
+            <sequence>
+              <!-- a c decl in an anon typedef -->
+              <element name="c">
+                <complexType>
+  	  	          <sequence>
+                    <!-- c elements under a elements may have some d children, but NO g children -->
+                    <element name="d" minOccurs="0" maxOccurs="7"/>
+		          </sequence>
+                </complexType>
+              </element>
+            </sequence>
+          </complexType>
+        </element>
+        <element name="b" minOccurs="0">
+          <complexType>
+            <sequence>
+               <!-- a c decl in an anon typedef, different parent and contents -->
+               <element name="c">
+                <complexType>
+       	  	      <sequence>
+                    <!-- c elements under a elements may have some d children, but NO g children -->
+                    <element name="e" minOccurs="0" maxOccurs="7"/>
+		          </sequence>
+                </complexType>
+              </element>
+            </sequence>
+          </complexType>
+        </element>
+        <!-- a c decl right under named type def -->
+        <element name="c" minOccurs="0">
+          <complexType>
+            <sequence>
+               <element ref="d:c" minOccurs="0"/>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+
+  <!-- a top level c decl -->  
+  <!-- c elements elsewhere may have a g child -->
+  <element name="c">
+    <complexType>
+      <sequence>
+        <element name="g" minOccurs="0"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

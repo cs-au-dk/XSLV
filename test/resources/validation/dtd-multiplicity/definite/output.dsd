@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?dsd href="http://www.brics.dk/DSD/dsd2.dsd"?>
+<dsd xmlns="http://www.brics.dk/DSD/2.0" xmlns:x="http://dongfang.dk/testdata" root="x:boot">
+  <if>
+    <element name="x:boot" />
+    <declare>
+      <contents>
+        <element name="x:a" />
+      </contents>
+    </declare>
+  </if>
+</dsd>

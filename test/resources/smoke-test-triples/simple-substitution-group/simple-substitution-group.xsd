@@ -1,0 +1,22 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+xmlns:t = "http://dongfang.dk/testdata"
+targetNamespace="http://dongfang.dk/testdata"
+elementFormDefault="qualified">
+
+<element name="root"/>
+
+<complexType name="fims"></complexType>
+
+<complexType name="foo">
+  <complexContent> 
+    <extension base="t:fims"/>
+  </complexContent>
+</complexType>
+
+<!-- type of this most definitely is a subtype of the head's type -->
+<element name="slam1" type="t:fims" substitutionGroup="t:root"/>
+
+<!-- test transitivity: The groups shold merge -->
+<element name="slam2" substitutionGroup="t:slam1" type="t:foo"/>
+
+</schema>

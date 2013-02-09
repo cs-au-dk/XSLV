@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<errorReport numErrors="17">
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>sup</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:38:5"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>br</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:38:5"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>sub</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:38:5"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:3778:31">
+        <message>invalid contents</message>
+        <example></example>
+        <element name="{http://www.w3.org/1999/xhtml}table" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:31:5"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid contents</message>
+        <example></example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:44:5"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:1375:28">
+        <message>invalid child</message>
+        <example>sup</example>
+        <element name="{http://www.w3.org/1999/xhtml}td" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:86:5"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:1375:28">
+        <message>invalid child</message>
+        <example>br</example>
+        <element name="{http://www.w3.org/1999/xhtml}td" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:86:5"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:1375:28">
+        <message>invalid child</message>
+        <example>sub</example>
+        <element name="{http://www.w3.org/1999/xhtml}td" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:86:5"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid child</message>
+        <example>sup</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:93:5"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid child</message>
+        <example>br</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:93:5"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid child</message>
+        <example>sub</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:93:5"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:1375:28">
+        <message>invalid child</message>
+        <example>sup</example>
+        <element name="{http://www.w3.org/1999/xhtml}td" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:81:9"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:1375:28">
+        <message>invalid child</message>
+        <example>br</example>
+        <element name="{http://www.w3.org/1999/xhtml}td" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:81:9"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:1375:28">
+        <message>invalid child</message>
+        <example>sub</example>
+        <element name="{http://www.w3.org/1999/xhtml}td" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:81:9"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid child</message>
+        <example>sup</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:55:7"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid child</message>
+        <example>br</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:55:7"/>
+    </error>
+    <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid child</message>
+        <example>sub</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="file:/home/dongfang/speciale/test/resources/triples/links2html/xslt/psicode-links_corrected.xsl:55:7"/>
+    </error>
+</errorReport>

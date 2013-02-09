@@ -1,0 +1,5 @@
+<triple name="xtm">
+  <input type="DTD" DTDNamespaceURI="http://dongfang.dk/testdata">xtm.dtd</input>
+  <output type="RNG">xtm.rng</output>
+  <xslt>../../general-identity-transform.xsl</xslt>
+</triple>

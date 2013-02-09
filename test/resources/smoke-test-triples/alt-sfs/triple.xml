@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- another Schema for Schema smoke test - everything OK -->
+
+<triple name="alt-sfs" enabled="true"><input type="XSD" DTDNamespaceURI="">alt-sfs.xsd</input>
+<output type="DSD" DTDNamespaceURI="">simple.dsd</output>
+<xslt>blank.xsl</xslt>
+</triple>

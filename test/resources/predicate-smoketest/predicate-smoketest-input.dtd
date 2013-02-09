@@ -1,0 +1,3 @@
+<!ELEMENT foo (bar)>
+<!ELEMENT bar EMPTY>
+<!ATTLIST bar a CDATA #IMPLIED>

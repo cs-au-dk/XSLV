@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<grammar ns="http://www.topicmaps.org/xtm/1.0/" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <element name="topicMap">
+                <optional>
+                    <attribute name="id">
+                        <data type="ID"/>
+                    </attribute>
+                </optional>
+                <zeroOrMore>
+                    <choice>
+                        <ref name="topic"/>
+                        <ref name="association"/>
+                        <ref name="mergeMap"/>
+                    </choice>
+                </zeroOrMore>
+            </element>
+    </start>
+    <define name="parameters">
+        <element name="parameters">
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <oneOrMore>
+                <choice>
+                    <ref name="topicRef"/>
+                    <ref name="subjectIndicatorRef"/>
+                </choice>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="subjectIndicatorRef">
+        <element name="subjectIndicatorRef">
+            <attribute name="href">
+                <data type="normalizedString"/>
+            </attribute>
+            <optional>
+                <attribute name="type">
+                    <value type="NMTOKEN">simple</value>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+    <define name="occurrence">
+        <element name="occurrence">
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <optional>
+                <ref name="instanceOf"/>
+            </optional>
+            <optional>
+                <ref name="scope"/>
+            </optional>
+            <choice>
+                <ref name="resourceRef"/>
+                <ref name="resourceData"/>
+            </choice>
+        </element>
+    </define>
+    <define name="resourceData">
+        <element name="resourceData">
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <text/>
+        </element>
+    </define>
+    <define name="association">
+        <element name="association">
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <optional>
+                <ref name="instanceOf"/>
+            </optional>
+            <optional>
+                <ref name="scope"/>
+            </optional>
+            <oneOrMore>
+                <ref name="member"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="variantName">
+        <element name="variantName">
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <choice>
+                <ref name="resourceRef"/>
+                <ref name="resourceData"/>
+            </choice>
+        </element>
+    </define>
+    <define name="baseName">
+        <element name="baseName">
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <optional>
+                <ref name="scope"/>
+            </optional>
+            <ref name="baseNameString"/>
+            <zeroOrMore>
+                <ref name="variant"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="member">
+        <element name="member">
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <optional>
+                <ref name="roleSpec"/>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="topicRef"/>
+                    <ref name="resourceRef"/>
+                    <ref name="subjectIndicatorRef"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="resourceRef">
+        <element name="resourceRef">
+            <attribute name="href">
+                <data type="normalizedString"/>
+            </attribute>
+            <optional>
+                <attribute name="type">
+                    <value type="NMTOKEN">simple</value>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+    <define name="baseNameString">
+        <element name="baseNameString">
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <text/>
+        </element>
+    </define>
+    <define name="subjectIdentity">
+        <element name="subjectIdentity">
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <optional>
+                <ref name="resourceRef"/>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="topicRef"/>
+                    <ref name="subjectIndicatorRef"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="topic">
+        <element name="topic">
+            <attribute name="id">
+                <data type="ID"/>
+            </attribute>
+            <zeroOrMore>
+                <ref name="instanceOf"/>
+            </zeroOrMore>
+            <optional>
+                <ref name="subjectIdentity"/>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="baseName"/>
+                    <ref name="occurrence"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="instanceOf">
+        <element name="instanceOf">
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <choice>
+                <ref name="topicRef"/>
+                <ref name="subjectIndicatorRef"/>
+            </choice>
+        </element>
+    </define>
+    <define name="variant">
+        <element name="variant">
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <ref name="parameters"/>
+            <optional>
+                <ref name="variantName"/>
+            </optional>
+            <zeroOrMore>
+                <ref name="variant"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="topicRef">
+        <element name="topicRef">
+            <attribute name="href">
+                <data type="normalizedString"/>
+            </attribute>
+            <optional>
+                <attribute name="type">
+                    <value type="NMTOKEN">simple</value>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+    <define name="roleSpec">
+        <element name="roleSpec">
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <choice>
+                <ref name="topicRef"/>
+                <ref name="subjectIndicatorRef"/>
+            </choice>
+        </element>
+    </define>
+    <define name="mergeMap">
+        <element name="mergeMap">
+            <attribute name="href">
+                <data type="normalizedString"/>
+            </attribute>
+            <optional>
+                <attribute name="type">
+                    <value type="NMTOKEN">simple</value>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="topicRef"/>
+                    <ref name="resourceRef"/>
+                    <ref name="subjectIndicatorRef"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="scope">
+        <element name="scope">
+            <optional>
+                <attribute name="id">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <oneOrMore>
+                <choice>
+                    <ref name="topicRef"/>
+                    <ref name="resourceRef"/>
+                    <ref name="subjectIndicatorRef"/>
+                </choice>
+            </oneOrMore>
+        </element>
+    </define>
+</grammar>

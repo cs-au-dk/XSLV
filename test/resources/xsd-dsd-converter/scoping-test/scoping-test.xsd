@@ -1,0 +1,34 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+xmlns:b = "http://dongfang.dk/testdata"
+targetNamespace="http://dongfang.dk/testdata"
+elementFormDefault="qualified"
+>
+
+<complexType name="some_type">
+ <sequence>
+   <element name="title" type="string"/>
+   <element name="tail"  type="b:some_type" minOccurs="0"/>
+   <element name="othertail" minOccurs="0">
+     <complexType>
+       <sequence>
+         <element name="payload" type="b:some_type"/>
+       </sequence>
+     </complexType>
+   </element>
+ </sequence>
+</complexType>
+
+<complexType name="rootpayload"> 
+  <sequence> 
+    <element name="title" type="integer"/>
+    <element name="e_rootpayload" type="b:some_type"/>
+  </sequence>
+  <attribute name="some-att" type="string"/>
+</complexType>
+
+<element name="root" type="b:rootpayload"/>
+
+<!-- idea: Always do contents types by ref / pointer, 
+but only output as named rules those that were named in source --> 
+
+</schema>

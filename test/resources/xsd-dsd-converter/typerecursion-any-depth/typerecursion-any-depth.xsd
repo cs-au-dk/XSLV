@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://dongfang.dk/testdata"
+  xmlns:t="http://dongfang.dk/testdata"
+  elementFormDefault="qualified">
+ 
+  <complexType name="t1">
+    <sequence>
+      <element name="x"/>
+      <element name="r" type="t:t1" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="t2">
+    <sequence>
+      <element name="y"/>
+      <element name="r" type="t:t2" minOccurs="0"/>
+    </sequence>
+  </complexType>
+
+  <element name="boot">
+    <complexType>
+      <choice>
+        
+      <!-- effectively dismiss all hope of making a sufficient ancestor check -->
+        <sequence>
+          <element name="a" type="t:t1"/>
+          <element name="b" type="t:t2"/>
+        </sequence>
+        
+        <sequence>
+          <element name="b" type="t:t1"/>
+          <element name="a" type="t:t2"/>
+        </sequence>
+      </choice>
+    </complexType>
+  </element>
+</schema>

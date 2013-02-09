@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <element name="ListOfEmails">
+                <mixed>
+                    <zeroOrMore>
+                        <choice>
+                            <ref name="Person"/>
+                            <ref name="UpdateDate"/>
+                        </choice>
+                    </zeroOrMore>
+                </mixed>
+            </element>
+    </start>
+    <define name="BirthDate">
+        <element name="BirthDate">
+            <text/>
+        </element>
+    </define>
+    <define name="Street">
+        <element name="Street">
+            <text/>
+        </element>
+    </define>
+    <define name="Country">
+        <element name="Country">
+            <text/>
+        </element>
+    </define>
+    <define name="City">
+        <element name="City">
+            <text/>
+        </element>
+    </define>
+    <define name="CO">
+        <element name="CO">
+            <empty/>
+        </element>
+    </define>
+    <define name="Email">
+        <element name="Email">
+            <text/>
+        </element>
+    </define>
+    <define name="ContactInfo">
+        <element name="ContactInfo">
+            <zeroOrMore>
+                <choice>
+                    <ref name="Email"/>
+                    <ref name="Home"/>
+                    <ref name="ICQ"/>
+                    <ref name="Mobile"/>
+                    <ref name="Phone"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="Home">
+        <element name="Home">
+            <ref name="Name"/>
+            <ref name="Phone"/>
+        </element>
+    </define>
+    <define name="Address">
+        <element name="Address">
+            <ref name="CO"/>
+            <ref name="Street"/>
+            <ref name="City"/>
+            <ref name="Country"/>
+        </element>
+    </define>
+    <define name="Mobile">
+        <element name="Mobile">
+            <text/>
+        </element>
+    </define>
+    <define name="Location">
+        <element name="Location">
+            <text/>
+        </element>
+    </define>
+    <define name="ICQ">
+        <element name="ICQ">
+            <text/>
+        </element>
+    </define>
+    <define name="FirstName">
+        <element name="FirstName">
+            <text/>
+        </element>
+    </define>
+    <define name="LastName">
+        <element name="LastName">
+            <text/>
+        </element>
+    </define>
+    <define name="Name">
+        <element name="Name">
+            <mixed>
+                <zeroOrMore>
+                    <choice>
+                        <ref name="FirstName"/>
+                        <ref name="LastName"/>
+                        <ref name="NickName"/>
+                    </choice>
+                </zeroOrMore>
+            </mixed>
+        </element>
+    </define>
+    <define name="UpdateDate">
+        <element name="UpdateDate">
+            <text/>
+        </element>
+    </define>
+    <define name="Phone">
+        <element name="Phone">
+            <text/>
+        </element>
+    </define>
+    <define name="NickName">
+        <element name="NickName">
+            <text/>
+        </element>
+    </define>
+    <define name="Person">
+        <element name="Person">
+            <attribute name="group">
+                <choice>
+                    <value>AIESECers</value>
+                    <value>Extrainees</value>
+                    <value>Trainees</value>
+                    <value>theExRest</value>
+                    <value>theRest</value>
+                </choice>
+            </attribute>
+            <ref name="Location"/>
+            <ref name="Name"/>
+            <ref name="Address"/>
+            <ref name="ContactInfo"/>
+            <optional>
+                <ref name="BirthDate"/>
+            </optional>
+        </element>
+    </define>
+</grammar>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<triple name="purchaseorder2invoice" enabled="true">
+<!-- template without original id error -->
+  <input type="DTD" DTDNamespaceURI="">input/PurchaseOrder.dtd</input>
+  <output type="RNG">output/dtdgen_corrected.rng</output>
+  <xslt>xslt/CreateInvoice.xsl</xslt>
+  <info>Credits: School of Business, University of Wisconsin-Madison.</info>
+  <notes>
+Some spurious errors are caused by an inaccurate approximation 
+of several selections on the form <tt>//node</tt> in the stylesheet.
+<br/>
+For example, there is a complaint the the output <tt>{invoice}Invoice</tt>
+element may have an empty content model - in fact, there will always
+be some output. One real error, that too <em>many</em> <tt>Entry</tt>
+elements may be output, is masked by the spurious error.
+<br/>
+The easiest way to get a more accurate analysis would be to provide
+better input: The <tt>//</tt> selections in the stylesheet are in
+fact not necessary, and can replaced by selections relative to the
+context node. This might also perform better at run-time. After this 
+clean-up is done on the stylesheet (try!), the validator will reveal
+the single real error.
+</notes>
+</triple>

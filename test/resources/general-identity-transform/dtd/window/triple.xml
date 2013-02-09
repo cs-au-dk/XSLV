@@ -1,0 +1,5 @@
+<triple name="window">
+  <input type="DTD" DTDNamespaceURI="http://dongfang.dk/testdata">dtdgen.dtd</input>
+  <output type="RNG">dtdgen.rng</output>
+  <xslt>../../general-identity-transform.xsl</xslt>
+</triple>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<triple name="predicate" enabled="true">
+
+<input type="XSD" DTDNamespaceURI="">simple.xsd</input>
+<output type="RNG" DTDNamespaceURI="">simple.rng</output>
+<xslt>predicate.xsl</xslt>
+</triple>

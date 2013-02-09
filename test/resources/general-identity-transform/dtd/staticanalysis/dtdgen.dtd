@@ -1,0 +1,56 @@
+<!ELEMENT analysis ( #PCDATA ) >
+<!ATTLIST analysis name NMTOKEN #IMPLIED >
+<!ATTLIST analysis ref NMTOKEN #FIXED "0" >
+
+<!ELEMENT assignment ( exp ) >
+<!ATTLIST assignment id NMTOKEN #REQUIRED >
+
+<!ELEMENT binop ( exp+ ) >
+<!ATTLIST binop kind CDATA #REQUIRED >
+
+<!ELEMENT call ( exp* ) >
+<!ATTLIST call id NMTOKEN #REQUIRED >
+
+<!ELEMENT deref ( exp ) >
+
+<!ELEMENT else ( exp | stm )* >
+
+<!ELEMENT exp ( analysis | binop | call | deref | exp | id | input | intconst | malloc | ptr | ptrassign | ptrcall )* >
+
+<!ELEMENT function ( stm+, return ) >
+<!ATTLIST function arguments CDATA #REQUIRED >
+<!ATTLIST function locals CDATA #REQUIRED >
+<!ATTLIST function name NMTOKEN #REQUIRED >
+
+<!ELEMENT id EMPTY >
+<!ATTLIST id name NMTOKEN #REQUIRED >
+
+<!ELEMENT if ( exp, then, else ) >
+
+<!ELEMENT input EMPTY >
+
+<!ELEMENT intconst EMPTY >
+<!ATTLIST intconst value NMTOKEN #REQUIRED >
+
+<!ELEMENT malloc EMPTY >
+
+<!ELEMENT output ( exp ) >
+
+<!ELEMENT program ( function+, stm+ ) >
+
+<!ELEMENT ptr EMPTY >
+<!ATTLIST ptr id NMTOKEN #REQUIRED >
+
+<!ELEMENT ptrassign EMPTY >
+<!ATTLIST ptrassign id NMTOKEN #REQUIRED >
+
+<!ELEMENT ptrcall ( exp+ ) >
+
+<!ELEMENT return ( exp ) >
+
+<!ELEMENT stm ( assignment, analysis?, if?, output? ) >
+
+<!ELEMENT then ( stm ) >
+
+<!ELEMENT tip ( analysis, program ) >
+

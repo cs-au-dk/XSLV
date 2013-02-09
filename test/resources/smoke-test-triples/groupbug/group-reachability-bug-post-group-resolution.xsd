@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:s="http://dongfang.dk/testdata" targetNamespace="http://dongfang.dk/testdata" elementFormDefault="qualified">
+  <element name="root">
+    <complexType>
+      <sequence>
+        <element ref="s:b" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+  <group name="g">
+    <sequence>
+      <element name="riot" type="string"/>
+    </sequence>
+  </group>
+  <element name="b">
+    <complexType>
+      <sequence>
+        <element ref="s:b" minOccurs="0" maxOccurs="unbounded"/>
+        <sequence>
+          <element name="riot" type="string"/>
+        </sequence>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

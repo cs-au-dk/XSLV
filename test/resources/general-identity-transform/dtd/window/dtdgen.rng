@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <element name="window">
+                <ref name="titlebar"/>
+                <ref name="pageinfo"/>
+                <ref name="helpcontext"/>
+                <ref name="msgcount"/>
+                <ref name="pagecontent"/>
+                <ref name="loadtime"/>
+                <ref name="primarymenu"/>
+                <ref name="secondarymenu"/>
+            </element>
+    </start>
+    <define name="titlebar">
+        <element name="titlebar">
+            <ref name="title"/>
+            <ref name="icon"/>
+        </element>
+    </define>
+    <define name="action">
+        <element name="action">
+            <text/>
+        </element>
+    </define>
+    <define name="msgcount">
+        <element name="msgcount">
+            <text/>
+        </element>
+    </define>
+    <define name="key">
+        <element name="key">
+            <attribute name="code">
+                <data type="normalizedString"/>
+            </attribute>
+        </element>
+    </define>
+    <define name="primarymenu">
+        <element name="primarymenu">
+            <ref name="menu"/>
+            <ref name="toolbar"/>
+        </element>
+    </define>
+    <define name="pagelocation">
+        <element name="pagelocation">
+            <text/>
+        </element>
+    </define>
+    <define name="pageinfo">
+        <element name="pageinfo">
+            <ref name="author"/>
+            <ref name="coauthor"/>
+            <ref name="pagelocation"/>
+            <ref name="pageid"/>
+            <ref name="pagesubid"/>
+            <ref name="userid"/>
+            <ref name="systembuild"/>
+            <ref name="systemyear"/>
+            <ref name="lastupdate"/>
+            <ref name="visitcounter"/>
+        </element>
+    </define>
+    <define name="mail">
+        <element name="mail">
+            <text/>
+        </element>
+    </define>
+    <define name="icon">
+        <element name="icon">
+            <ref name="path"/>
+        </element>
+    </define>
+    <define name="toolbar">
+        <element name="toolbar">
+            <ref name="tbar"/>
+        </element>
+    </define>
+    <define name="lastupdate">
+        <element name="lastupdate">
+            <text/>
+        </element>
+    </define>
+    <define name="author">
+        <element name="author">
+            <ref name="name"/>
+            <ref name="mail"/>
+        </element>
+    </define>
+    <define name="submenu">
+        <element name="submenu">
+            <optional>
+                <attribute name="level">
+                    <value type="NMTOKEN">1</value>
+                </attribute>
+            </optional>
+            <oneOrMore>
+                <ref name="item"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="secondarymenu">
+        <element name="secondarymenu">
+            <ref name="menu"/>
+        </element>
+    </define>
+    <define name="coauthor">
+        <element name="coauthor">
+            <ref name="name"/>
+            <ref name="mail"/>
+        </element>
+    </define>
+    <define name="tbar">
+        <element name="tbar">
+            <attribute name="id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <oneOrMore>
+                <ref name="toolbarsection"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="systembuild">
+        <element name="systembuild">
+            <text/>
+        </element>
+    </define>
+    <define name="toolbaritem">
+        <element name="toolbaritem">
+            <attribute name="id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <ref name="itemtitle"/>
+            <ref name="img"/>
+        </element>
+    </define>
+    <define name="menusection">
+        <element name="menusection">
+            <attribute name="title">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <attribute name="style">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <oneOrMore>
+                <ref name="item"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="item">
+        <element name="item">
+            <attribute name="id">
+                <data type="ID"/>
+            </attribute>
+            <zeroOrMore>
+                <choice>
+                    <ref name="action"/>
+                    <ref name="active"/>
+                    <ref name="img"/>
+                    <ref name="itemtitle"/>
+                    <ref name="key"/>
+                    <ref name="submenu"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="visitcounter">
+        <element name="visitcounter">
+            <text/>
+        </element>
+    </define>
+    <define name="pageid">
+        <element name="pageid">
+            <text/>
+        </element>
+    </define>
+    <define name="toolbarsection">
+        <element name="toolbarsection">
+            <attribute name="id">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <ref name="toolbaritem"/>
+        </element>
+    </define>
+    <define name="userid">
+        <element name="userid">
+            <text/>
+        </element>
+    </define>
+    <define name="menu">
+        <element name="menu">
+            <oneOrMore>
+                <ref name="menusection"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="title">
+        <element name="title">
+            <text/>
+        </element>
+    </define>
+    <define name="pagesubid">
+        <element name="pagesubid">
+            <empty/>
+        </element>
+    </define>
+    <define name="systemyear">
+        <element name="systemyear">
+            <text/>
+        </element>
+    </define>
+    <define name="helpcontext">
+        <element name="helpcontext">
+            <empty/>
+        </element>
+    </define>
+    <define name="path">
+        <element name="path">
+            <text/>
+        </element>
+    </define>
+    <define name="active">
+        <element name="active">
+            <optional>
+                <attribute name="on">
+                    <value type="NMTOKEN">0</value>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+    <define name="name">
+        <element name="name">
+            <text/>
+        </element>
+    </define>
+    <define name="img">
+        <element name="img">
+            <attribute name="src">
+                <data type="normalizedString"/>
+            </attribute>
+        </element>
+    </define>
+    <define name="itemtitle">
+        <element name="itemtitle">
+            <text/>
+        </element>
+    </define>
+    <define name="loadtime">
+        <element name="loadtime">
+            <text/>
+        </element>
+    </define>
+    <define name="pagecontent">
+        <element name="pagecontent">
+            <text/>
+        </element>
+    </define>
+</grammar>

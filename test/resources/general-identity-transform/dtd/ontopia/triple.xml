@@ -1,0 +1,5 @@
+<triple name="links">
+  <input type="DTD" DTDNamespaceURI="http://dongfang.dk/testdata">tmstrict.dtd</input>
+  <output type="RNG">tmstrict.rng</output>
+  <xslt>../../general-identity-transform.xsl</xslt>
+</triple>

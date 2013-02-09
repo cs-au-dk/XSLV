@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+ xmlns:s="http://dongfang.dk/testdata" 
+ targetNamespace="http://dongfang.dk/testdata" 
+ elementFormDefault="qualified">
+
+<element name="root">
+  <complexType>
+    <sequence>
+      <element name="a" type="s:a"/>
+      <element name="b" type="s:b"/>
+      <element name="c" type="s:c"/>
+    </sequence>
+  </complexType>
+</element>
+
+<complexType name="a">
+  <sequence>
+    <element name="a-and-b-should-have-me" minOccurs="0"/>
+  </sequence>
+  <attribute name="Howdy-I-am-an-attribute.A-and-B-should-have-me"/>
+</complexType>
+
+<complexType name="b">
+  <complexContent>
+     <extension base="s:a">
+       <sequence>
+         <element name="b-should-have-me"/>
+       </sequence>
+       <attribute name="Howdy-I-am-an-attribute.B-should-have-me" use="required"/>
+     </extension>
+  </complexContent>
+</complexType>
+
+<complexType name="c">
+  <complexContent>
+    <restriction base="s:a">
+      <attribute name="Howdy-I-am-an-attribute.A-and-B-should-have-me" use="prohibited"/>
+    </restriction>
+  </complexContent>
+</complexType>
+
+
+</schema>

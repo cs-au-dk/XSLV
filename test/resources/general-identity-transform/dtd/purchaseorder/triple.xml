@@ -1,0 +1,5 @@
+<triple name="purchaseorder">
+  <input type="DTD" DTDNamespaceURI="http://dongfang.dk/testdata">PurchaseOrder.dtd</input>
+  <output type="RNG">PurchaseOrder.rng</output>
+  <xslt>../../general-identity-transform.xsl</xslt>
+</triple>

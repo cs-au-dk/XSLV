@@ -1,0 +1,23 @@
+<?xml version="1.0"?> 
+<!--validerer m xmllint -->
+
+<boot xmlns="http://dongfang.dk/testdata">
+  <a>s1</a>
+  <b>
+    <a>s2</a>
+    <c>
+      <a>blaaaaaaaaaaah</a>
+      <c>
+        <d>s3</d>
+      </c>
+      <d>s4</d>
+    </c>
+  </b>
+  <c>
+    <a>s5</a>
+    <c>
+      <d>s6</d>
+    </c>
+    <d>s6</d>
+  </c>
+</boot>

@@ -1,0 +1,7 @@
+<root xmlns="http://dongfang.dk/testdata">
+<a>
+  <c>
+    <WithCElementsAllAsChildrenOfAOrBElementsThisShouldNeverHaveEffect/>
+  </c>
+</a>
+</root>

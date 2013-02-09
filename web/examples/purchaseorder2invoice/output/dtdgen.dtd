@@ -1,0 +1,32 @@
+<!ELEMENT Entry ( Qty, ItemDescription, UnitPrice, SubTotal ) >
+
+<!ELEMENT Header ( OrderNo, OrderDate, OrderTotal, Purchaser, Seller ) >
+
+<!ELEMENT Invoice ( Header, Entry, ShippingAddress ) >
+
+<!ELEMENT ItemDescription ( #PCDATA ) >
+
+<!ELEMENT OrderDate ( #PCDATA ) >
+
+<!ELEMENT OrderNo ( #PCDATA ) >
+
+<!ELEMENT OrderTotal ( #PCDATA ) >
+<!ATTLIST OrderTotal currency NMTOKEN #REQUIRED >
+
+<!ELEMENT Purchaser EMPTY >
+<!ATTLIST Purchaser name CDATA #REQUIRED >
+
+<!ELEMENT Qty ( #PCDATA ) >
+
+<!ELEMENT Seller EMPTY >
+<!ATTLIST Seller name CDATA #REQUIRED >
+
+<!ELEMENT ShippingAddress ( #PCDATA ) >
+
+<!ELEMENT SubTotal ( #PCDATA ) >
+<!ATTLIST SubTotal currency NMTOKEN #REQUIRED >
+
+<!ELEMENT UnitPrice ( #PCDATA ) >
+
+<!ATTLIST UnitPrice currency NMTOKEN #REQUIRED >
+

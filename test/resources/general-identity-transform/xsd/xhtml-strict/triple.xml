@@ -1,0 +1,5 @@
+<triple name="xhtml-strict">
+  <input type="XSD">../../../triples/xhtml-from-xsd/xhtml1-strict.xsd</input>
+  <output type="RNG">../../../triples/xhtml-jing-rng/xhtml-strict.rng</output>
+  <xslt>../../general-identity-transform.xsl</xslt>
+</triple>

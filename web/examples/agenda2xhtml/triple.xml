@@ -1,0 +1,17 @@
+<triple name="agenda2xhtml">
+  <input type="DTD" DTDNamespaceURI="">input/agenda.dtd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/agenda.xsl</xslt>
+  <info>Credits: David Ott, <a href="http://tecfa.unige.ch/~ott/xml/agenda/agenda.php">http://tecfa.unige.ch/~ott/xml/agenda/agenda.php</a></info>
+  <notes>
+2 errors:
+    <ul>
+      <li>
+There is only a <tt>style</tt> element in the <tt>head</tt> element. <tt>title</tt> is missing.
+      </li>
+      <li>
+The required <tt>type</tt> attribute is missing on the <tt>style</tt> element output at line 8 in the stylesheet.
+      </li>
+    </ul>
+  </notes>
+</triple>

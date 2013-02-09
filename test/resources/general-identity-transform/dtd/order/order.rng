@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <element name="Order">
+                <ref name="Customer"/>
+                <oneOrMore>
+                    <ref name="Product"/>
+                </oneOrMore>
+                <ref name="Subtotal"/>
+                <ref name="Tax"/>
+                <ref name="Shipping"/>
+                <ref name="Total"/>
+            </element>
+    </start>
+    <define name="Total">
+        <element name="Total">
+            <attribute name="currency">
+                <choice>
+                    <value>USD</value>
+                    <value>CAN</value>
+                    <value>GBP</value>
+                </choice>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="Shipping">
+        <element name="Shipping">
+            <attribute name="currency">
+                <choice>
+                    <value>USD</value>
+                    <value>CAN</value>
+                    <value>GBP</value>
+                </choice>
+            </attribute>
+            <optional>
+                <attribute name="method">
+                    <choice>
+                        <value>USPS</value>
+                        <value>UPS</value>
+                        <value>Overnight</value>
+                    </choice>
+                </attribute>
+            </optional>
+            <text/>
+        </element>
+    </define>
+    <define name="GiftMessage">
+        <element name="GiftMessage">
+            <text/>
+        </element>
+    </define>
+    <define name="Street">
+        <element name="Street">
+            <text/>
+        </element>
+    </define>
+    <define name="State">
+        <element name="State">
+            <text/>
+        </element>
+    </define>
+    <define name="City">
+        <element name="City">
+            <text/>
+        </element>
+    </define>
+    <define name="Zip">
+        <element name="Zip">
+            <text/>
+        </element>
+    </define>
+    <define name="Product">
+        <element name="Product">
+            <ref name="Name"/>
+            <ref name="SKU"/>
+            <ref name="Quantity"/>
+            <ref name="Price"/>
+            <optional>
+                <ref name="Discount"/>
+            </optional>
+            <ref name="ShipTo"/>
+            <optional>
+                <ref name="GiftMessage"/>
+            </optional>
+        </element>
+    </define>
+    <define name="Tax">
+        <element name="Tax">
+            <attribute name="currency">
+                <choice>
+                    <value>USD</value>
+                    <value>CAN</value>
+                    <value>GBP</value>
+                </choice>
+            </attribute>
+            <optional>
+                <attribute name="rate">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <text/>
+        </element>
+    </define>
+    <define name="Discount">
+        <element name="Discount">
+            <text/>
+        </element>
+    </define>
+    <define name="ShipTo">
+        <element name="ShipTo">
+            <optional>
+                <ref name="GiftRecipient"/>
+            </optional>
+            <oneOrMore>
+                <ref name="Street"/>
+            </oneOrMore>
+            <ref name="City"/>
+            <ref name="State"/>
+            <ref name="Zip"/>
+        </element>
+    </define>
+    <define name="GiftRecipient">
+        <element name="GiftRecipient">
+            <text/>
+        </element>
+    </define>
+    <define name="Price">
+        <element name="Price">
+            <attribute name="currency">
+                <choice>
+                    <value>USD</value>
+                    <value>CAN</value>
+                    <value>GBP</value>
+                </choice>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="Name">
+        <element name="Name">
+            <text/>
+        </element>
+    </define>
+    <define name="Quantity">
+        <element name="Quantity">
+            <text/>
+        </element>
+    </define>
+    <define name="Customer">
+        <element name="Customer">
+            <attribute name="id">
+                <data type="ID"/>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="Subtotal">
+        <element name="Subtotal">
+            <attribute name="currency">
+                <choice>
+                    <value>USD</value>
+                    <value>CAN</value>
+                    <value>GBP</value>
+                </choice>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+    <define name="SKU">
+        <element name="SKU">
+            <text/>
+        </element>
+    </define>
+</grammar>

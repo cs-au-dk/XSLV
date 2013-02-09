@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <element name="agenda">
+                <attribute name="context">
+                    <data type="NMTOKEN"/>
+                </attribute>
+                <zeroOrMore>
+                    <ref name="event"/>
+                </zeroOrMore>
+            </element>
+    </start>
+    <define name="submitter">
+        <element name="submitter">
+            <text/>
+        </element>
+    </define>
+    <define name="title">
+        <element name="title">
+            <text/>
+        </element>
+    </define>
+    <define name="place">
+        <element name="place">
+            <text/>
+        </element>
+    </define>
+    <define name="description">
+        <element name="description">
+            <text/>
+        </element>
+    </define>
+    <define name="event">
+        <element name="event">
+            <attribute name="submission-date">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <attribute name="end-date">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <attribute name="submission-time">
+                <data type="NMTOKEN"/>
+            </attribute>
+            <optional>
+                <attribute name="start-date">
+                    <data type="NMTOKEN"/>
+                </attribute>
+            </optional>
+            <ref name="title"/>
+            <ref name="description"/>
+            <ref name="submitter"/>
+            <optional>
+                <ref name="place"/>
+            </optional>
+        </element>
+    </define>
+</grammar>

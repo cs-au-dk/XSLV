@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+ xmlns:s="http://dongfang.dk/testdata" 
+ targetNamespace="http://dongfang.dk/testdata" 
+ elementFormDefault="qualified">
+
+  <element name="root">
+    <complexType>
+      <sequence>
+        <element ref="s:b" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
+
+<group name="g1">
+<sequence>
+<group ref="s:g2"/>
+</sequence>
+</group>
+
+<group name="g2">
+<sequence>
+<group ref="s:g3" minOccurs="3" maxOccurs="4"/>
+</sequence>
+</group>
+
+<group name="g3">
+<sequence>
+<element name="hejsa"/>
+</sequence>
+</group>
+   
+  <element name="b">
+    <complexType>
+      <sequence>
+        <element ref="s:b"  minOccurs="0" maxOccurs="unbounded"/>
+        <group ref="s:g1" minOccurs="1" maxOccurs="2"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

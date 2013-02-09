@@ -1,0 +1,24 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+xmlns:b="http://dongfang.dk/testdata"
+targetNamespace="http://dongfang.dk/testdata"
+elementFormDefault="unqualified"
+attributeFormDefault="unqualified">
+
+<element name="root">
+  <complexType>
+    <sequence>
+      <element ref="b:a"/>
+      <element name="b" form="qualified"/>
+      <element name="c"/>
+    </sequence>
+    <attribute name="atta" type="string"/>
+    <attribute name="attb" type="string" form="qualified"/>
+    <attribute ref="b:attc"/>
+  </complexType>
+</element>
+
+<element name="a"/>
+
+<attribute name="attc" type="string"/>
+
+</schema>

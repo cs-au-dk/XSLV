@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<triple name="salesreport">
+  <input type="XSD">input/fooinc1.xsd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/fooinc1.xsl</xslt>
+  <info>Constructed demo example.
+  See the <a href="http://www.brics.dk/XSLV/dongfang.pdf">
+dongfang XSLV thesis report</a>.
+</info>
+<notes>
+This example demonstrates the validator´s ability to work with full 
+<em>single-type</em> regular tree languages (XML Schema), in addition to the
+smaller family of <em>local</em> regular tree languages (DTD). For example, 
+there are two different declarations of elements named <tt>customer</tt>,
+and they are distinguished in the analysis.
+<br/>
+Some quite accurate string analysis features are also demonstrated:
+The validator can distinguish between different XML Schema <tt>SingleType</tt>s,
+even where text nodes are context types.
+<br/>
+The transform has no errors.
+</notes>
+</triple>

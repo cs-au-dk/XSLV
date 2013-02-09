@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- params
+systemId
+abstractName
+size
+onfocus
+repostMessage
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+  <jsp:directive.page language="java" session="true" isELIgnored="false" isThreadSafe="true" info="text"/>
+  <jsp:useBean id="validator" scope="session" class="dongfang.xsltools.context.InteractiveRequestResponseBean"/>
+  <c:set var="rows">
+    <c:choose>
+      <c:when test="${param.size == 'SMALL'}">
+    16
+    </c:when>
+      <c:when test="${param.size == 'NORMAL'}">
+    32
+    </c:when>
+      <c:when test="${param.size == 'LARGE'}">
+    48
+    </c:when>
+      <c:when test="${param.size == 'HUGE'}">
+    64
+    </c:when>
+      <c:otherwise>
+    32
+    </c:otherwise>
+    </c:choose>
+  </c:set>
+  <c:set var="cols" value="90"/>
+  <tr xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xml:lang="en" lang="en">
+<!--    <td align="right" colspan="1">
+      <textarea rows="${rows}" cols="1">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</textarea>
+    </td>
+-->
+    <td colspan="4" align="left">
+      <textarea name="TEXT:${param.systemId}" rows="${rows}" cols="${cols}" onfocus="${param.onfocus}" id="editor"
+      onkeyup="cursorPos(this.value, this, document.getElementById('linedumper').childNodes[0], 'data')"
+      onclick="cursorPos(this.value, this, document.getElementById('linedumper').childNodes[0], 'data')"
+      >
+        <jsp:expression>validator.escapeXML(validator.getResourceAsString(request.getParameter("abstractName")))</jsp:expression>
+      </textarea>
+      <c:if test="! empty ${param.repostMessage}">
+        You must click the 'Validate again' button before your changes take effect.
+      </c:if>
+    </td>
+  </tr>
+  <tr>
+    <td align="left" colspan="2" id="linedumper">&#160;</td> 
+    <!--<td><input type="button" value="x" onclick="highlight(document.getElementById('editor'), 3, 5, 10)"></input></td>-->
+  </tr>
+</jsp:root>

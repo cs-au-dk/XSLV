@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <element name="topicmap">
+                <optional>
+                    <attribute name="addthems">
+                        <data type="IDREFS"/>
+                    </attribute>
+                </optional>
+                <optional>
+                    <attribute name="topic">
+                        <data type="normalizedString"/>
+                    </attribute>
+                </optional>
+                <zeroOrMore>
+                    <choice>
+                        <ref name="topic"/>
+                        <ref name="assoc"/>
+                        <ref name="facet"/>
+                    </choice>
+                </zeroOrMore>
+            </element>
+    </start>
+    <define name="occurs">
+        <element name="occurs">
+            <attribute name="href">
+                <data type="normalizedString"/>
+            </attribute>
+            <attribute name="type">
+                <data type="IDREF"/>
+            </attribute>
+            <optional>
+                <attribute name="scope">
+                    <data type="IDREFS"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="occrl">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="loctype">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+    <define name="fvalue">
+        <element name="fvalue">
+            <optional>
+                <attribute name="facetval">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <attribute name="href">
+                <data type="normalizedString"/>
+            </attribute>
+            <attribute name="type">
+                <data type="IDREF"/>
+            </attribute>
+            <optional>
+                <attribute name="loctype">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+    <define name="dispname">
+        <element name="dispname">
+            <optional>
+                <attribute name="scope">
+                    <data type="IDREFS"/>
+                </attribute>
+            </optional>
+            <text/>
+        </element>
+    </define>
+    <define name="topic">
+        <element name="topic">
+            <optional>
+                <attribute name="types">
+                    <data type="IDREFS"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="identity">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="scope">
+                    <data type="IDREFS"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="linktype">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <attribute name="id">
+                <data type="ID"/>
+            </attribute>
+            <zeroOrMore>
+                <ref name="topname"/>
+            </zeroOrMore>
+            <zeroOrMore>
+                <ref name="occurs"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="assocrl">
+        <element name="assocrl">
+            <attribute name="href">
+                <data type="IDREF"/>
+            </attribute>
+            <attribute name="type">
+                <data type="IDREF"/>
+            </attribute>
+            <optional>
+                <attribute name="anchrole">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+    <define name="sortname">
+        <element name="sortname">
+            <optional>
+                <attribute name="scope">
+                    <data type="IDREFS"/>
+                </attribute>
+            </optional>
+            <text/>
+        </element>
+    </define>
+    <define name="facet">
+        <element name="facet">
+            <attribute name="type">
+                <data type="IDREF"/>
+            </attribute>
+            <optional>
+                <attribute name="linktype">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <oneOrMore>
+                <ref name="fvalue"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="assoc">
+        <element name="assoc">
+            <attribute name="type">
+                <data type="IDREF"/>
+            </attribute>
+            <optional>
+                <attribute name="scope">
+                    <data type="IDREFS"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="linktype">
+                    <data type="normalizedString"/>
+                </attribute>
+            </optional>
+            <oneOrMore>
+                <ref name="assocrl"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="topname">
+        <element name="topname">
+            <optional>
+                <attribute name="scope">
+                    <data type="IDREFS"/>
+                </attribute>
+            </optional>
+            <oneOrMore>
+                <ref name="basename"/>
+            </oneOrMore>
+            <zeroOrMore>
+                <ref name="dispname"/>
+            </zeroOrMore>
+            <zeroOrMore>
+                <ref name="sortname"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="basename">
+        <element name="basename">
+            <optional>
+                <attribute name="scope">
+                    <data type="IDREFS"/>
+                </attribute>
+            </optional>
+            <text/>
+        </element>
+    </define>
+</grammar>

@@ -1,0 +1,56 @@
+r<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  targetNamespace="http://dongfang.dk/testdata" 
+  elementFormDefault="qualified">
+  <element name="root">
+    <complexType>
+      <sequence>
+        <element name="a" minOccurs="0">
+          <complexType>
+            <sequence>
+              <element name="c">
+                <complexType>
+  	  	          <sequence>
+                    <element name="d" minOccurs="0" maxOccurs="7"/>
+		          </sequence>
+                </complexType>
+              </element>
+            </sequence>
+          </complexType>
+        </element>
+
+        <element name="b" minOccurs="0">
+          <complexType>
+	        <sequence>
+              <element name="c">
+                <complexType>
+		          <sequence>
+                    <element name="e" minOccurs="0"/>
+		          </sequence>
+                </complexType>
+              </element>
+	        </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+
+<!--  
+  <element name="a">
+    <complexType>
+      <sequence>
+        <element name="WithDocumentElementNamedRootThisShouldNeverHaveEffect" minOccurs="0"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="c">
+    <complexType>
+      <sequence>
+        <element name="WithCElementsAllAsChildrenOfAOrBElementsThisShouldNeverHaveEffect" minOccurs="0"/>
+      </sequence>
+    </complexType>
+  </element>
+-->
+</schema>

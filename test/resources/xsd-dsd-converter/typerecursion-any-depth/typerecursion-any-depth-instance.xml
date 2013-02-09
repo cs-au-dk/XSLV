@@ -1,0 +1,24 @@
+<?sml version="1.0"?>
+<boot xmlns="http://dongfang.dk/testdata">
+  
+  <a>
+    <x/>
+    <r>
+      <x/>
+      <r>
+        <x/>
+      </r>
+    </r>
+  </a>
+  
+  <b>
+    <y/>
+    <r>
+      <y/>
+      <r>
+        <y/>
+      </r>
+    </r>
+  </b>
+  
+</boot>

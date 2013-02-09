@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT BillTo (Address)>
+<!ELEMENT Description (#PCDATA)>
+<!ATTLIST Description
+	lang CDATA #REQUIRED
+>
+<!ELEMENT From (#PCDATA)>
+<!ELEMENT Header (From+, To, Sender)>
+<!ELEMENT ItemDetail (UnitOfMeasure, Description, ManufacturerName, ManufacturerPartID)>
+<!ELEMENT ItemID (SupplierPartID)>
+<!ELEMENT ItemOut (ItemID, ItemDetail, UnitPrice,SubTotal)>
+<!ATTLIST ItemOut
+	quantity CDATA #REQUIRED
+	requestedDeliveryDate CDATA #REQUIRED
+>
+<!ELEMENT ManufacturerName (#PCDATA)>
+<!ELEMENT ManufacturerPartID (#PCDATA)>
+<!ELEMENT Money (#PCDATA)>
+<!ATTLIST Money
+	currency CDATA #REQUIRED
+>
+<!ELEMENT OrderRequest (OrderRequestHeader, ItemOut+)>
+<!ELEMENT OrderRequestHeader (Total, ShipTo, BillTo)>
+<!ATTLIST OrderRequestHeader
+	orderID CDATA #REQUIRED
+	orderDate CDATA #REQUIRED
+>
+<!ELEMENT PurchaseOrder (Header, OrderRequest)>
+<!ELEMENT Sender (#PCDATA)>
+<!ELEMENT ShipTo (Address)>
+<!ELEMENT SupplierPartID (#PCDATA)>
+<!ELEMENT To (#PCDATA)>
+<!ELEMENT Total (Money)>
+<!ELEMENT UnitOfMeasure (#PCDATA)>
+<!ELEMENT UnitPrice (Money)>
+<!ELEMENT SubTotal (Money)>

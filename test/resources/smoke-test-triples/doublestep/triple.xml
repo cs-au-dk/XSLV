@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- test of SG fragment construction with multiple steps in an xpath exp (node()/node()).
+Also general demo + brag of cardinality in content models, colored text types etc. 
+- another AVT name() test
+- colored attribute cleanliness test
+- test of the single-multiplicity [x] feature
+-->
+
+<triple name="doublestep" enabled="true"><input type="XSD" DTDNamespaceURI="">doublestep.xsd</input><output type="DSD" DTDNamespaceURI="">simple.dsd</output><xslt>doublestep.xsl</xslt></triple>

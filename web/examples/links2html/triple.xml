@@ -1,0 +1,11 @@
+<triple name="links2html" enabled="true">
+<!-- Der er nogle morsomme schema-automatfejl her!! - - unreachables? -->
+<!-- Der er en del forskel paa resustat for automat / ingen automat -->
+  <input type="DTD" DTDNamespaceURI="" RootElementName="link-collection">input/links_corrected.dtd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/psicode-links.xsl</xslt>
+  <info>Credits: Unknown</info>
+  <notes>
+The errors are that <tt>table</tt> and <tt>h2</tt> elements are made children of <tt>p</tt> elements.
+  </notes>
+</triple>

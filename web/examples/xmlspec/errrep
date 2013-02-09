@@ -1,0 +1,2253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<errorReport numErrors="450">
+    <error origin="xhtml-schema/xhtml1-transitional:10238:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}span</example>
+        <element name="{http://www.w3.org/1999/xhtml}title" origin="xmlspec/xslt/xmlspec-1.13.xsl:1711:9"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3778:31">
+        <message>invalid attribute</message>
+        <example>diff</example>
+        <element name="{http://www.w3.org/1999/xhtml}table" origin="xmlspec/xslt/xmlspec-1.13.xsl:2037:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3778:31">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}type</example>
+        <element name="{http://www.w3.org/1999/xhtml}table" origin="xmlspec/xslt/xmlspec-1.13.xsl:2037:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3778:31">
+        <message>invalid attribute</message>
+        <example>role</example>
+        <element name="{http://www.w3.org/1999/xhtml}table" origin="xmlspec/xslt/xmlspec-1.13.xsl:2037:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3778:31">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}nil</example>
+        <element name="{http://www.w3.org/1999/xhtml}table" origin="xmlspec/xslt/xmlspec-1.13.xsl:2037:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3501:31">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}nil</example>
+        <element name="{http://www.w3.org/1999/xhtml}thead" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3501:31">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}type</example>
+        <element name="{http://www.w3.org/1999/xhtml}thead" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3501:31">
+        <message>invalid attribute</message>
+        <example>role</example>
+        <element name="{http://www.w3.org/1999/xhtml}thead" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3501:31">
+        <message>invalid attribute</message>
+        <example>diff</example>
+        <element name="{http://www.w3.org/1999/xhtml}thead" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}type</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid attribute</message>
+        <example>diff</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}nil</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid attribute</message>
+        <example>role</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1375:28">
+        <message>invalid attribute</message>
+        <example>role</example>
+        <element name="{http://www.w3.org/1999/xhtml}td" origin="xmlspec/xslt/xmlspec-1.13.xsl:2013:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1375:28">
+        <message>invalid attribute</message>
+        <example>diff</example>
+        <element name="{http://www.w3.org/1999/xhtml}td" origin="xmlspec/xslt/xmlspec-1.13.xsl:2013:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1375:28">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}nil</example>
+        <element name="{http://www.w3.org/1999/xhtml}td" origin="xmlspec/xslt/xmlspec-1.13.xsl:2013:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1375:28">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}type</example>
+        <element name="{http://www.w3.org/1999/xhtml}td" origin="xmlspec/xslt/xmlspec-1.13.xsl:2013:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:792:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}code" origin="xmlspec/xslt/xmlspec-1.13.xsl:694:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8255:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}span" origin="xmlspec/xslt/xmlspec-1.13.xsl:1448:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8255:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}span" origin="xmlspec/xslt/xmlspec-1.13.xsl:1448:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8255:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}span" origin="xmlspec/xslt/xmlspec-1.13.xsl:1448:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8255:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}span" origin="xmlspec/xslt/xmlspec-1.13.xsl:1448:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8255:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}span" origin="xmlspec/xslt/xmlspec-1.13.xsl:1448:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8255:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}span" origin="xmlspec/xslt/xmlspec-1.13.xsl:1448:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8255:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}span" origin="xmlspec/xslt/xmlspec-1.13.xsl:1448:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8255:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}span" origin="xmlspec/xslt/xmlspec-1.13.xsl:1448:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8255:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}span" origin="xmlspec/xslt/xmlspec-1.13.xsl:1448:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8255:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}span" origin="xmlspec/xslt/xmlspec-1.13.xsl:1448:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8255:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}span" origin="xmlspec/xslt/xmlspec-1.13.xsl:1448:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8255:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}span" origin="xmlspec/xslt/xmlspec-1.13.xsl:1448:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8255:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}span" origin="xmlspec/xslt/xmlspec-1.13.xsl:1448:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:792:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}code" origin="xmlspec/xslt/xmlspec-1.13.xsl:460:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:792:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}code" origin="xmlspec/xslt/xmlspec-1.13.xsl:838:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1208:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1095:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}var" origin="xmlspec/xslt/xmlspec-1.13.xsl:2149:47"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7965:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}em" origin="xmlspec/xslt/xmlspec-1.13.xsl:713:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7965:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}em" origin="xmlspec/xslt/xmlspec-1.13.xsl:713:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7965:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}em" origin="xmlspec/xslt/xmlspec-1.13.xsl:713:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7965:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}em" origin="xmlspec/xslt/xmlspec-1.13.xsl:713:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7965:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}em" origin="xmlspec/xslt/xmlspec-1.13.xsl:713:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7965:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}em" origin="xmlspec/xslt/xmlspec-1.13.xsl:713:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7965:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}em" origin="xmlspec/xslt/xmlspec-1.13.xsl:713:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7965:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}em" origin="xmlspec/xslt/xmlspec-1.13.xsl:713:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7965:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}em" origin="xmlspec/xslt/xmlspec-1.13.xsl:713:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7965:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}em" origin="xmlspec/xslt/xmlspec-1.13.xsl:713:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7965:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}em" origin="xmlspec/xslt/xmlspec-1.13.xsl:713:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7965:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}em" origin="xmlspec/xslt/xmlspec-1.13.xsl:713:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7965:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}em" origin="xmlspec/xslt/xmlspec-1.13.xsl:713:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:792:30">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}code" origin="xmlspec/xslt/xmlspec-1.13.xsl:253:48"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>name="FN-ANCH-!"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:820:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>id="FN-ANCH-!"</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:820:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11073:29">
+        <message>required attribute missing</message>
+        <example>alt</example>
+        <element name="{http://www.w3.org/1999/xhtml}img" origin="xmlspec/xslt/xmlspec-1.13.xsl:864:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3778:31">
+        <message>invalid contents</message>
+        <example></example>
+        <element name="{http://www.w3.org/1999/xhtml}table" origin="xmlspec/xslt/xmlspec-1.13.xsl:1661:79"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3778:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}font</example>
+        <element name="{http://www.w3.org/1999/xhtml}table" origin="xmlspec/xslt/xmlspec-1.13.xsl:1661:79"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3778:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}font</example>
+        <element name="{http://www.w3.org/1999/xhtml}table" origin="xmlspec/xslt/xmlspec-1.13.xsl:1661:79"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}td</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1478:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}td</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1478:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}td</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1478:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}i</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1478:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}td</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1478:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}td</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1478:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}i</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1261:64"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1261:64"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1261:64"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1261:64"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1261:64"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1261:64"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1261:64"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}i</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1633:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1633:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1633:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1633:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1633:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1633:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6199:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}tr" origin="xmlspec/xslt/xmlspec-1.13.xsl:1633:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}sub</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}sup</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}td</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}sup</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}img</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:378:11"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}td</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1490:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}td</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1490:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}td</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1490:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}i</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1490:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}td</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1490:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}td</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1490:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:992:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:992:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:992:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:992:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:992:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:992:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:992:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:992:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:992:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:992:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:992:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:992:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:992:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}sub</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}sup</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}td</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}sup</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}img</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:977:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:977:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:977:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:977:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:977:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:977:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:977:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:977:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:977:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:977:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:977:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:977:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:977:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}tr</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}sub</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}sup</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}td</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}sup</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}img</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11332:29">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}pre" origin="xmlspec/xslt/xmlspec-1.13.xsl:775:49"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1001:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1001:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1001:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1001:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1001:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1001:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1001:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1001:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1001:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1001:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1001:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1001:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:1001:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}ol</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}ul</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}ul</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}dl</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}dl</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}blockquote</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1423:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1684:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1684:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1684:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1684:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1684:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1684:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1684:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1684:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1684:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1684:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1684:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1684:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1684:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8395:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}dt" origin="xmlspec/xslt/xmlspec-1.13.xsl:1214:60"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8395:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}dt" origin="xmlspec/xslt/xmlspec-1.13.xsl:1214:60"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8395:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}dt" origin="xmlspec/xslt/xmlspec-1.13.xsl:1214:60"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8395:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}dt" origin="xmlspec/xslt/xmlspec-1.13.xsl:1214:60"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8395:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}dt" origin="xmlspec/xslt/xmlspec-1.13.xsl:1214:60"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8395:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}dt" origin="xmlspec/xslt/xmlspec-1.13.xsl:1214:60"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8395:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}dt" origin="xmlspec/xslt/xmlspec-1.13.xsl:1214:60"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8395:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}dt" origin="xmlspec/xslt/xmlspec-1.13.xsl:1214:60"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8395:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}dt" origin="xmlspec/xslt/xmlspec-1.13.xsl:1214:60"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8395:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}dt" origin="xmlspec/xslt/xmlspec-1.13.xsl:1214:60"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8395:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}dt" origin="xmlspec/xslt/xmlspec-1.13.xsl:1214:60"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8395:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}dt" origin="xmlspec/xslt/xmlspec-1.13.xsl:1214:60"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8395:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}dt" origin="xmlspec/xslt/xmlspec-1.13.xsl:1214:60"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:885:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:885:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:885:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:885:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:885:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:885:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:885:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:885:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:885:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:885:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:885:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:885:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:885:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:757:50"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:757:50"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:757:50"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:757:50"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:757:50"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:757:50"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:757:50"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:757:50"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:757:50"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:757:50"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:757:50"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:757:50"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:757:50"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1692:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1692:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1692:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1692:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1692:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1692:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1692:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1692:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1692:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1692:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1692:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1692:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1692:45"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:970:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:970:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:970:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:970:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:970:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:970:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:970:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:970:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:970:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:970:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:970:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:970:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:6825:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}b" origin="xmlspec/xslt/xmlspec-1.13.xsl:970:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:2384:28">
+        <message>invalid attribute</message>
+        <example>role</example>
+        <element name="{http://www.w3.org/1999/xhtml}th" origin="xmlspec/xslt/xmlspec-1.13.xsl:2013:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:2384:28">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}type</example>
+        <element name="{http://www.w3.org/1999/xhtml}th" origin="xmlspec/xslt/xmlspec-1.13.xsl:2013:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:2384:28">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}nil</example>
+        <element name="{http://www.w3.org/1999/xhtml}th" origin="xmlspec/xslt/xmlspec-1.13.xsl:2013:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:2384:28">
+        <message>invalid attribute</message>
+        <example>diff</example>
+        <element name="{http://www.w3.org/1999/xhtml}th" origin="xmlspec/xslt/xmlspec-1.13.xsl:2013:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10104:29">
+        <message>invalid attribute</message>
+        <example>diff</example>
+        <element name="{http://www.w3.org/1999/xhtml}col" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10104:29">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}type</example>
+        <element name="{http://www.w3.org/1999/xhtml}col" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10104:29">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}nil</example>
+        <element name="{http://www.w3.org/1999/xhtml}col" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10104:29">
+        <message>invalid attribute</message>
+        <example>role</example>
+        <element name="{http://www.w3.org/1999/xhtml}col" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid attribute</message>
+        <example>diff</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid attribute</message>
+        <example>role</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}nil</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}type</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4450:33">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}caption" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}ol</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}ul</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}ul</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}dl</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}dl</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}blockquote</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:2428:68"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2430:9"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2430:9"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid attribute</message>
+        <example>role</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}type</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}nil</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7075:31">
+        <message>invalid attribute</message>
+        <example>diff</example>
+        <element name="{http://www.w3.org/1999/xhtml}tbody" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4961:31">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}nil</example>
+        <element name="{http://www.w3.org/1999/xhtml}tfoot" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4961:31">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}type</example>
+        <element name="{http://www.w3.org/1999/xhtml}tfoot" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4961:31">
+        <message>invalid attribute</message>
+        <example>diff</example>
+        <element name="{http://www.w3.org/1999/xhtml}tfoot" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:4961:31">
+        <message>invalid attribute</message>
+        <example>role</example>
+        <element name="{http://www.w3.org/1999/xhtml}tfoot" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:5559:34">
+        <message>invalid attribute</message>
+        <example>role</example>
+        <element name="{http://www.w3.org/1999/xhtml}colgroup" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:5559:34">
+        <message>invalid attribute</message>
+        <example>diff</example>
+        <element name="{http://www.w3.org/1999/xhtml}colgroup" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:5559:34">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}type</example>
+        <element name="{http://www.w3.org/1999/xhtml}colgroup" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:5559:34">
+        <message>invalid attribute</message>
+        <example>{http://www.w3.org/2001/XMLSchema-instance}nil</example>
+        <element name="{http://www.w3.org/1999/xhtml}colgroup" origin="xmlspec/xslt/xmlspec-1.13.xsl:1988:5"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1784:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h3" origin="xmlspec/xslt/xmlspec-1.13.xsl:905:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1784:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h3" origin="xmlspec/xslt/xmlspec-1.13.xsl:905:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1784:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h3" origin="xmlspec/xslt/xmlspec-1.13.xsl:905:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1784:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h3" origin="xmlspec/xslt/xmlspec-1.13.xsl:905:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1784:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}h3" origin="xmlspec/xslt/xmlspec-1.13.xsl:905:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1784:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h3" origin="xmlspec/xslt/xmlspec-1.13.xsl:905:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1784:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h3" origin="xmlspec/xslt/xmlspec-1.13.xsl:905:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1784:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h3" origin="xmlspec/xslt/xmlspec-1.13.xsl:905:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1784:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h3" origin="xmlspec/xslt/xmlspec-1.13.xsl:905:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1784:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h3" origin="xmlspec/xslt/xmlspec-1.13.xsl:905:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1784:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}h3" origin="xmlspec/xslt/xmlspec-1.13.xsl:905:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1784:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h3" origin="xmlspec/xslt/xmlspec-1.13.xsl:905:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:1784:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h3" origin="xmlspec/xslt/xmlspec-1.13.xsl:905:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11612:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h4" origin="xmlspec/xslt/xmlspec-1.13.xsl:918:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11612:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h4" origin="xmlspec/xslt/xmlspec-1.13.xsl:918:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11612:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h4" origin="xmlspec/xslt/xmlspec-1.13.xsl:918:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11612:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h4" origin="xmlspec/xslt/xmlspec-1.13.xsl:918:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11612:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}h4" origin="xmlspec/xslt/xmlspec-1.13.xsl:918:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11612:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h4" origin="xmlspec/xslt/xmlspec-1.13.xsl:918:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11612:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h4" origin="xmlspec/xslt/xmlspec-1.13.xsl:918:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11612:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h4" origin="xmlspec/xslt/xmlspec-1.13.xsl:918:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11612:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h4" origin="xmlspec/xslt/xmlspec-1.13.xsl:918:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11612:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h4" origin="xmlspec/xslt/xmlspec-1.13.xsl:918:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11612:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}h4" origin="xmlspec/xslt/xmlspec-1.13.xsl:918:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11612:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h4" origin="xmlspec/xslt/xmlspec-1.13.xsl:918:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:11612:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h4" origin="xmlspec/xslt/xmlspec-1.13.xsl:918:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10720:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h6" origin="xmlspec/xslt/xmlspec-1.13.xsl:944:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10720:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h6" origin="xmlspec/xslt/xmlspec-1.13.xsl:944:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10720:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h6" origin="xmlspec/xslt/xmlspec-1.13.xsl:944:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10720:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h6" origin="xmlspec/xslt/xmlspec-1.13.xsl:944:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10720:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}h6" origin="xmlspec/xslt/xmlspec-1.13.xsl:944:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10720:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h6" origin="xmlspec/xslt/xmlspec-1.13.xsl:944:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10720:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h6" origin="xmlspec/xslt/xmlspec-1.13.xsl:944:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10720:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h6" origin="xmlspec/xslt/xmlspec-1.13.xsl:944:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10720:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h6" origin="xmlspec/xslt/xmlspec-1.13.xsl:944:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10720:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h6" origin="xmlspec/xslt/xmlspec-1.13.xsl:944:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10720:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}h6" origin="xmlspec/xslt/xmlspec-1.13.xsl:944:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10720:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h6" origin="xmlspec/xslt/xmlspec-1.13.xsl:944:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:10720:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h6" origin="xmlspec/xslt/xmlspec-1.13.xsl:944:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:931:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:931:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:931:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:931:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:931:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:931:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:931:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:931:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:931:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:931:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:931:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:931:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:3628:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h5" origin="xmlspec/xslt/xmlspec-1.13.xsl:931:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:892:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:892:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:892:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:892:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:892:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:892:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:892:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:892:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:892:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:892:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:892:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:892:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:892:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:957:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:957:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:957:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:957:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:957:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:957:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:957:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:957:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:957:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:957:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:957:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:957:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:8569:28">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}h2" origin="xmlspec/xslt/xmlspec-1.13.xsl:957:46"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}ol</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}ul</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}h5</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}ul</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}dl</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}table</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}p</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}dl</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}blockquote</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:9429:27">
+        <message>invalid child</message>
+        <example>{http://www.w3.org/1999/xhtml}div</example>
+        <element name="{http://www.w3.org/1999/xhtml}p" origin="xmlspec/xslt/xmlspec-1.13.xsl:1147:63"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:35:28">
+        <message>invalid contents</message>
+        <example></example>
+        <element name="{http://www.w3.org/1999/xhtml}dl" origin="xmlspec/xslt/xmlspec-1.13.xsl:1739:13"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2402:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2402:7"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>id=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+    <error origin="xhtml-schema/xhtml1-transitional:7507:27">
+        <message>invalid attribute value</message>
+        <example>name=""</example>
+        <element name="{http://www.w3.org/1999/xhtml}a" origin="xmlspec/xslt/xmlspec-1.13.xsl:2760:70"/>
+    </error>
+</errorReport>

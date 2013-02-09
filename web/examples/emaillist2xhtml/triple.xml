@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<triple name="emaillist2xhtml">
+  <input type="DTD" DTDNamespaceURI="">input/dtdgen.dtd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/email_list_xhtml.xsl</xslt>
+  <info>Credits: Lasse Westh Nielsen, Mads Østerby Olesen</info>
+  <notes>
+This is a rather bad stylesheet, in terms of output validity. Some examples of errors are:
+<ul>
+
+<li>As in the <i>adressebog2xhtml</i> example, there is an attempt to output documents with two roots: <tt>link</tt> and <tt>html</tt>.</li>
+<li>An attempt to make small paragraphs by nesting <tt>p</tt> elements into <tt>small</tt> elements.</li>
+<!--
+<li>Contents of <tt>href</tt> attributes on <tt>a</t> elements are copied from <tt>#PCDATA</tt>-declared elements. DTD has no text type specifying valid email addresses.</li>
+-->
+<li>Stylesheet whitespace ends up in <tt>href</tt> attributes on <tt>a</tt> elements, where it is illegal.</li>
+
+</ul>
+  </notes>
+</triple>

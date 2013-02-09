@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+  <jsp:directive.page language="java" session="true" isThreadSafe="true" info="Main XSLV Page" isELIgnored="false" import=" java.util.*,  dongfang.xsltools.exceptions.*, dongfang.xsltools.context.*, dongfang.xsltools.validation.*, dongfang.xsltools.resolver.*, dongfang.xsltools.configuration.*" contentType="application/xhtml+xml; charset=utf-8"/>
+  <jsp:useBean id="validator" scope="session" class="dongfang.xsltools.context.InteractiveRequestResponseBean"/>
+  <jsp:output doctype-root-element="html" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" doctype-system="http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
+<!--
+key
+-->
+  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xml:lang="en" lang="en">
+    <c:set var="rows">
+      <c:choose>
+        <c:when test="${param.size == 'SMALL'}">
+    8
+    </c:when>
+        <c:when test="${param.size == 'NORMAL'}">
+    16
+    </c:when>
+        <c:when test="${param.size == 'LARGE'}">
+    24
+    </c:when>
+        <c:when test="${param.size == 'HUGE'}">
+    36
+    </c:when>
+        <c:otherwise>
+    16
+    </c:otherwise>
+      </c:choose>
+    </c:set>
+    <c:set var="cols" value="100"/>
+    <c:set var="userkey">
+      <c:choose>
+        <c:when test="${param.key == 'STYLESHEET'}">Simplified stylesheet</c:when>
+        <c:when test="${param.key == 'INPUT_TYPE'}">Input schema diagnostics</c:when>
+        <c:when test="${param.key == 'CONTROL_FLOW_GRAPH'}">Control flow graph diagnostics</c:when>
+        <c:when test="${param.key == 'TRANSFORM_TYPE_XML_GRAPH'}">Tranform XML Graph</c:when>
+        <c:when test="${param.key == 'OUTPUT_TYPE_XML_GRAPH'}">Output type XML Graph</c:when>
+        <c:when test="${param.key == 'PERFORMANCE_REPORT'}">Performance measurements</c:when>
+      </c:choose>
+    </c:set>
+    <head>
+      <title>Generated Resource View - ${userkey}</title>
+    </head>
+    <body>
+      <h2>${userkey}</h2>
+      <p>
+        <textarea editable="false" rows="${rows}" cols="${cols}">
+          <jsp:expression>validator.escapeXML(validator.getGeneratedXMLResourceAsString(request.getParameter("key")))</jsp:expression>
+        </textarea>
+      </p>
+    </body>
+  </html>
+</jsp:root>

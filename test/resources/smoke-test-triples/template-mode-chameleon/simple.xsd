@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+ xmlns:s="http://dongfang.dk/testdata" 
+ targetNamespace="http://dongfang.dk/testdata" 
+ elementFormDefault="qualified">
+
+  <complexType name="yztype">
+    <sequence>
+      <element name="r" minOccurs="1" maxOccurs="1"/>
+      <element name="s" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <element name="root">
+    <complexType>
+      <sequence>
+        <element ref="s:y" minOccurs="1" maxOccurs="1"/>
+        <element ref="s:z" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="y" type="s:yztype"/>
+  <element name="z" type="s:yztype"/>
+</schema>

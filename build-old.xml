@@ -1,0 +1,617 @@
+<?xml version="1.0"?>
+<project name="dongfang.xsltools" default="build-xslvalidator">
+
+  <!--
+    <property name="tomcat.home" value="c:/Program Files/Apache Software Foundation/Tomcat 5.5"/>
+    <property name="dongfang.home" value=".."/>
+    <property name="javac.executable" value="c:/Program Files/Java/jdk1.5.0_03/bin/javac"/>
+    <property name="java.executable" value="c:/Program Files/Java/jdk1.5.0_03/bin/java"/>
+    <property name="java.handler.extension" value="c:/Program Files/Java/jre1.5.0_03/lib/ext/dongfang-handler.jar"/>
+  -->
+
+    <property name="cvsroot" value=":ext:dongfang@fresh-horse.daimi.au.dk:/home/dongfang/.CVSHOME"/>
+    <property name="tomcat.home" value="/opt/tomcat"/>
+    <property name="dongfang.home" value=".."/>
+    <property name="summarygraph.home" value="../../schematools-0.9"/>
+    <property name="javahome" value="/usr/java/jdk1.5.0_06"/>
+    <property name="javac.executable" value="${javahome}/bin/javac"/>
+    <property name="java.executable" value="${javahome}/bin/java"/>
+    <property name="java.handler.extension" value="${javahome}/jre/lib/ext/dongfang-handler.jar"/>
+    <property name="java.jar" value="xsltvalidator.jar"/>
+
+    <property name="build.dir" value="web/WEB-INF/build"/>
+    <property name="tmp.dir" value="tmp"/>
+    <property name="test.build.dir" value="test/build"/>
+  	
+    <property name="libs.dir" value="web/WEB-INF/lib"/>
+    <property name="web.dir" value="web"/>
+    <property name="xslvalidator.src.dir" value="src"/>
+    <property name="test.src.dir" value="test/src"/>
+    <property name="webapp.name" value="speciale-as-webapp"/>
+    <property name="java.source.version" value="1.5"/>
+    <property name="javac.fork" value="false"/>
+    <property name="java.fork" value="true"/>
+    <property name="javac.compiler" value="modern"/>
+    <property name="javac.debug" value="true"/>
+    <property name="javac.optimize" value="true"/>
+    <property name="javacc.dir" value="${libs.dir}/javacc/javacc-3.2"/>
+
+
+    <path id="summarygraph.classpath">
+      <pathelement path="${libs.dir}/schematools.jar"/>
+    </path>
+    <path id="automaton.classpath">
+      <pathelement path="${libs.dir}/automaton.jar"/>
+    </path>
+    <path id="jaxen.classpath">
+      <pathelement path="${libs.dir}/jaxen-1.1-beta-8.jar"/>
+    </path>
+    <path id="jdom.classpath">
+      <pathelement path="${libs.dir}/jdom.jar"/>
+    </path>
+    <path id="dom4j.classpath">
+      <pathelement path="${libs.dir}/dom4j-homebrew.jar"/>
+    </path>
+    <path id="dtdparser.classpath">
+      <pathelement path="${libs.dir}/dtdparser.jar"/>
+    </path>
+    <path id="junit.classpath">
+      <pathelement path="${libs.dir}/junit.jar"/>
+    </path>
+
+    <path id="web.classpath">
+      <pathelement path="${libs.dir}/commons-fileupload-1.1-dev.jar"/>
+      <pathelement path="${libs.dir}/commons-io-1.0.jar"/>
+      <pathelement path="${libs.dir}/servlet-api.jar"/>
+    </path>
+
+    <path id="xslvalidator.classpath">
+      <path refid="summarygraph.classpath"/>
+      <path refid="automaton.classpath"/>
+      <path refid="dom4j.classpath"/>
+      <path refid="web.classpath"/>
+      <path refid="dtdparser.classpath"/>
+      <path refid="junit.classpath"/>
+      <path refid="jdom.classpath"/>
+    </path>
+
+    <path id="xslvalidator.experimental.classpath">
+      <path refid="xslvalidator.classpath"/>
+    </path>
+
+    <path id="xslvalidator.runtime.classpath">
+      <pathelement path="${build.dir}"/>
+      <path refid="jdom.classpath"/>
+      <pathelement path="resources"/>
+      <path refid="jaxen.classpath"/>
+      <path refid="xslvalidator.classpath"/>
+    </path>
+
+<!--
+    <path id="summarygraph.classpath">
+      <pathelement path="${summarygraph.home}/dist/schematools.jar"/>
+    </path>
+    <path id="automaton.classpath">
+      <pathelement path="${summarygraph.home}/lib/automaton.jar"/>
+    </path>
+    <path id="jaxen.classpath">
+      <pathelement path="${summarygraph.home}/lib/jaxen-1.1-beta-8.jar"/>
+    </path>
+    <path id="jdom.classpath">
+      <pathelement path="${summarygraph.home}/lib/jdom.jar"/>
+    </path>
+    <path id="dom4j.classpath">
+      <pathelement path="${libs.dir}/dom4j/dom4j-1.5.2/dom4j-homebrew.jar"/>
+    </path>
+    <path id="dtdparser.classpath">
+      <pathelement path="${libs.dir}/dtdparser/dtdparser.jar"/>
+    </path>
+    <path id="junit.classpath">
+      <pathelement path="${libs.dir}/junit/junit3.8.1/junit.jar"/>
+    </path>
+
+    <path id="web.classpath">
+      <pathelement path="${libs.dir}/apache-fileupload/commons-fileupload-1.1-dev.jar"/>
+      <pathelement path="${libs.dir}/apache-fileupload/commons-io-1.0.jar"/>
+      <pathelement path="${libs.dir}/servletapi/servlet-api.jar"/>
+    </path>
+
+    <path id="xslvalidator.classpath">
+      <path refid="summarygraph.classpath"/>
+      <path refid="automaton.classpath"/>
+      <path refid="dom4j.classpath"/>
+      <path refid="web.classpath"/>
+      <path refid="dtdparser.classpath"/>
+      <path refid="junit.classpath"/>
+      <path refid="jdom.classpath"/>
+    </path>
+-->
+
+    <path id="xslvalidator.experimental.classpath">
+      <path refid="xslvalidator.classpath"/>
+    </path>
+
+    <path id="xslvalidator.runtime.classpath">
+      <pathelement path="${build.dir}"/>
+      <path refid="jdom.classpath"/>
+      <pathelement path="resources"/>
+      <path refid="jaxen.classpath"/>
+      <path refid="xslvalidator.classpath"/>
+    </path>
+
+<!--
+Obsolete target.
+-->
+  <target name="init"></target>
+
+<!-- 
+Delete everything built 
+-->
+  <target name="clean" depends="init">
+    <delete dir="${build.dir}"/>
+    <mkdir dir="${build.dir}"/>
+    <delete dir="${tmp.dir}"/>
+    <mkdir dir="${tmp.dir}"/>
+    <mkdir dir="${tmp.dir}/automatonAlgorithm"/>
+    <mkdir dir="${tmp.dir}/fastAlgorithm"/>
+    <mkdir dir="${tmp.dir}/simplification"/>
+    <mkdir dir="${tmp.dir}/xcfg-sg"/>
+    <mkdir dir="${tmp.dir}/output-schema-sg"/>
+  </target>
+
+<!--
+Wipe out the libs dir, check it back out from cvs, and rebuild it.
+-->
+  <target name="cleanlibs" depends="init">
+    <delete>
+      <fileset dir="${libs.dir}" includes="**/*" excludes="ant/**/*"/>
+    </delete>
+    <mkdir dir="${libs.dir}"/>
+    <cvs command="update" cvsroot="${cvsroot}" cvsRsh="ssh" compression="false" package="lib" quiet="true"/>
+    <ant dir="${libs.dir}"/>
+  </target>
+
+<!--
+Perform CVS update
+-->
+  <target name="update" depends="init">
+    <cvs command="update -d" compression="true" cvsRsh="ssh" quiet="true"/>
+  </target>
+
+<!--
+Build the XPath2 parser using Javacc
+-->
+  <target name="xpathparser" depends="init">
+  <java classname="jjtree" fork="${java.fork}">
+      <classpath path="${javacc.dir}/bin/lib/javacc.jar"/>
+      <arg value="-OUTPUT_DIRECTORY=src/dongfang/xsltools/xpath2"/>
+      <arg value="resources/grammar/XPathParser.jj"/>
+  </java>
+  <java classname="javacc" fork="${java.fork}">
+      <classpath path="${javacc.dir}/bin/lib/javacc.jar"/>
+      <arg value="-OUTPUT_DIRECTORY=src/dongfang/xsltools/xpath2"/>
+      <arg value="src/dongfang/xsltools/xpath2/XPathParser.jj.jj"/>
+  </java>
+  </target>
+
+<!--
+Rebuild the dongfang DTD Parser. 
+Really should not be in this project. 
+We can make do with just using the dongfang DTD Parser as a lib.
+-->
+  <target name="dtdparser" depends="init">
+  <java classname="jjtree" fork="${java.fork}">
+      <classpath path="${javacc.dir}/bin/lib/javacc.jar"/>
+      <arg value="-OUTPUT_DIRECTORY=src/dongfang/xsltools/xmlclass/dtd/temp"/>
+      <arg value="resources/grammar/DTD.jj"/>
+  </java>
+  <java classname="javacc" fork="${java.fork}">
+      <classpath path="${javacc.dir}/bin/lib/javacc.jar"/>
+      <arg value="-OUTPUT_DIRECTORY=src/dongfang/xsltools/xmlclass/dtd/temp"/>
+      <arg value="src/dongfang/xsltools/xmlclass/dtd/temp/DTD.jj.jj"/>
+  </java>
+  </target>
+
+<!--
+Rebuild the declaration parser of the dongfang DTD Parser. 
+Really should not be in this project. 
+We can make do with just using the dongfang DTD Parser as a lib.
+-->
+  <target name="dtddeclparser" depends="init">
+  <java classname="jjtree" fork="${java.fork}">
+      <classpath path="${javacc.dir}/bin/lib/javacc.jar"/>
+      <arg value="-OUTPUT_DIRECTORY=src/dongfang/xsltools/xmlclass/dtd"/>
+      <arg value="resources/grammar/DTDDecl.jj"/>
+  </java>
+  <java classname="javacc" fork="${java.fork}">
+      <classpath path="${javacc.dir}/bin/lib/javacc.jar"/>
+      <arg value="-OUTPUT_DIRECTORY=src/dongfang/xsltools/xmlclass/dtd"/>
+      <arg value="src/dongfang/xsltools/xmlclass/dtd/DTDDecl.jj.jj"/>
+  </java>
+  </target>
+
+<!--
+Build the validator. Experimental and junk code is not included.
+-->
+  <target name="build-xslvalidator" depends="init,xpathparser">
+    <mkdir dir="${tmp.dir}"/>
+    <mkdir dir="${tmp.dir}/simplification"/>
+    <mkdir dir="${tmp.dir}/xcfg-sg"/>
+    <mkdir dir="${tmp.dir}/output-schema-sg"/>
+    <mkdir dir="${tmp.dir}/automatonAlgorithm"/>
+    <mkdir dir="${tmp.dir}/fastAlgorithm"/>
+
+    <mkdir dir="${build.dir}"/>
+    <javac source="${java.source.version}" 
+    	debug="${javac.debug}" 
+    	optimize="${javac.optimize}" 
+    	encoding="UTF-8" 
+    	srcdir="${xslvalidator.src.dir}" 
+    	destdir="${build.dir}" 
+    	compiler="${javac.compiler}" 
+    	fork="${javac.fork}" 
+    	executable="${javac.executable}">
+      <exclude name="dongfang/junkyard/**"/>
+      <exclude name="dongfang/xsltools/experimental/**"/>
+      <classpath refid="xslvalidator.classpath"/>
+    </javac>
+  </target>
+
+<!--
+Build the validator. Junk code is not included.
+-->
+  <target name="build-xslvalidator-experimental" depends="init,xpathparser">
+    <javac source="${java.source.version}" 
+      debug="${javac.debug}"
+      optimize="${javac.optimize}"  
+      encoding="UTF-8" 
+      srcdir="${xslvalidator.src.dir}" 
+      destdir="${build.dir}" 
+      compiler="${javac.compiler}" 
+      fork="${javac.fork}" 
+      executable="${javac.executable}">
+      <include name="dongfang/**"/>
+      <exclude name="dongfang/junkyard/**"/>
+      <classpath refid="xslvalidator.experimental.classpath"/>
+    </javac>
+  </target>
+
+  <target name="jar" depends="build-xslvalidator">
+    <jar destfile="${java.jar}">
+      <fileset dir="${build.dir}">
+        <include name="**/*"/>
+      </fileset>
+    </jar>
+  </target>
+
+<!--
+Build the validator and copy it to the servlet container (no WAR used).
+-->
+  <target name="deploy" depends="build-xslvalidator, webcopy"/>
+
+  <target name="webcopy" depends="init, libcopy, depldesccopy">
+    <copy todir="${tomcat.home}/webapps/${webapp.name}/WEB-INF/classes">
+      <fileset dir="${build.dir}"/>
+      <fileset dir="resources"/>
+    </copy>
+
+    <copy todir="${tomcat.home}/webapps/${webapp.name}">
+      <fileset dir="${web.dir}" includes="**/*.jsp,**/*.jspx,**/*.css,**/*.js"/>
+    </copy>
+
+    <copy todir="${tomcat.home}/webapps/${webapp.name}/examples">
+      <fileset dir="${web.dir}/examples" includes="**/*"/>
+    </copy>
+
+    <copy todir="${tomcat.home}/webapps/${webapp.name}/WEB-INF/classes">
+      <fileset dir="${summarygraph.home}/build" includes="*.aut"/>
+    </copy>
+  </target>
+
+<!--
+pdflatex the project report (nobody ever uses this task).
+-->
+  <target name="report">
+    <exec executable="pdflatex" dir="report">
+      <arg line="xslv.tex"/>
+    </exec>
+  </target>
+
+<!--
+Copy the project report to the web page (nobody ever uses this task).
+-->
+  <target name="reportcopy" depends="init">
+    <copy todir="${dongfang.home}/public_html/mscthesis" file="report/xslv.pdf"/>
+  </target>
+
+<!--
+Copy the necessary libs to the servlet container AND copy the dongfang protocol
+handler extension to the JVM extension directory. If this task fails, it might
+be something with permissions there.
+-->
+  <target name="libcopy" depends="init">
+    <copy todir="${tomcat.home}/webapps/${webapp.name}/WEB-INF/lib">
+      <mapper type="flatten"/>
+      <fileset dir="${libs.dir}">
+        <patternset>
+<!--
+          <include name="dom4j/dom4j-1.5.2/build/dom4j-homebrew.jar"/>
+          <include name="apache-fileupload/commons-fileupload-1.1-dev.jar"/>
+          <include name="apache-fileupload/commons-io-1.0.jar"/>
+          <include name="servletapi/servlet-api.jar"/>
+          <include name="servletapi/jstl.jar"/>
+          <include name="servletapi/standard.jar"/>
+          <include name="junit/junit3.8.1/junit.jar"/>
+          <include name="dtdparser/dtdparser.jar"/>
+-->
+          <include name="dom4j-homebrew.jar"/>
+          <include name="commons-fileupload-1.1-dev.jar"/>
+          <include name="commons-io-1.0.jar"/>
+          <include name="jstl.jar"/>
+          <include name="standard.jar"/>
+          <include name="dtdparser.jar"/>
+          <include name="schematools.jar"/>
+          <include name="automaton.jar"/>
+          <include name="jaxen-1.1-beta-8.jar"/>
+          <include name="jdom.jar"/>
+        </patternset>
+      </fileset>
+    </copy>
+
+<!--
+    <copy todir="${tomcat.home}/webapps/${webapp.name}/WEB-INF/lib">
+      <mapper type="flatten"/>
+      <fileset dir="${summarygraph.home}">
+        <patternset>
+          <include name="dist/schematools.jar"/>
+          <include name="lib/automaton.jar"/>
+          <include name="lib/jaxen-1.1-beta-8.jar"/>
+          <include name="lib/jdom.jar"/>
+        </patternset>
+      </fileset>
+    </copy>
+-->
+    <jar destfile="${java.handler.extension}">
+      <fileset dir="${build.dir}">
+        <include name="dongfang/xsltools/resolver/ResolutionContext.class"/>
+        <include name="dongfang/xsltools/resolver/dongfang/*"/>
+        <include name="dongfang/xsltools/util/UniqueNameGenerator.class"/>
+      </fileset>
+    </jar>
+  </target>
+
+<!--
+Copy the deployment descriptor to the web application.
+-->
+  <target name="depldesccopy" depends="init">
+    <copy todir="${tomcat.home}/webapps/${webapp.name}/WEB-INF" file="${web.dir}/WEB-INF/web.xml"/>
+  </target>
+
+<!--
+Run a triple (stylesheet, input schema, output schema references bundled 
+together in an XML document). Use -Dtriple=.......
+-->
+  <target name="runtriple" depends="init">
+    <echo message="Running Triple Test"/>
+    <java classname="dongfang.xsltools.validation.TestTripleRunner" fork="${java.fork}">
+      <classpath refid="xslvalidator.runtime.classpath"/>
+      <arg value="${triple}"/>
+      <arg value="${automaton-algorithm}"/>
+      <arg value="${num-runs-each}"/>
+      <arg value="${wait-each-triple}"/>
+      <arg value="${only-test-files}"/>
+      <arg value="${only-xcfg}"/>
+      <arg value="${only-sg}"/>
+      <arg value="${dump-lightly}"/>
+      <jvmarg line="-ea"/>
+<!--      <jvmarg line="-verbose:gc"/>-->
+      <jvmarg line="-Xmx2048M"/>
+    </java>
+  </target>
+
+<!--
+Fire up the simple XSLT UI (broken right now).
+-->
+  <target name="editor" depends="init">
+    <java classname="dongfang.xsltools.swingui.SimpleUI" fork="${java.fork}">
+      <classpath refid="xslvalidator.runtime.classpath"/>
+      <arg value="${triple}"/>
+      <jvmarg line="-Xms256M"/>
+      <jvmarg line="-Xmx1024M"/>
+    </java>
+  </target>
+
+<!--
+Test run the dongfang protocol handler. This task was not maintained since 
+the handler started to work reliably.
+-->
+  <target name="handler-test" depends="build-xslvalidator">
+    <java classname="dongfang.xsltools.experimental.general_programming.HandlerExperiment" fork="${java.fork}">      
+      <classpath refid="xslvalidator.runtime.classpath"/>
+      <jvmarg line="-Djava.protocol.handler.pkgs=dongfang.xsltools.context"/>
+      <arg value="test/resources/presentation/simple/transform.xsl"/>
+      <arg value="test/resources/presentation/simple/io.dtd"/>
+      <arg value="test/resources/presentation/simple/io.dsd"/>
+      <arg value="http://dongfang.dk/testdata"/>
+    </java>
+  </target>
+
+<!--
+Test run the dongfang protocol handler. Make sure the handler code is deleted from local classpath.
+This task was not maintained since the handler started to work reliably.
+-->
+  <target name="jvm-extension-handler-test" depends="build-xslvalidator">
+    <delete dir="${build.dir}/dongfang/xsltools/context/dongfang"/>
+    <java classname="dongfang.xsltools.experimental.general_programming.HandlerExperiment" fork="${java.fork}">      
+      <classpath refid="xslvalidator.runtime.classpath"/>
+      <jvmarg line="-Djava.protocol.handler.pkgs=dongfang.xsltools.context"/>
+      <arg value="test/resources/presentation/simple/transform.xsl"/>
+      <arg value="test/resources/presentation/simple/io.dtd"/>
+      <arg value="test/resources/presentation/simple/io.dsd"/>
+      <arg value="http://dongfang.dk/testdata"/>
+    </java>
+  </target>
+
+<!--
+Run hprof on a simple transform. Obsolete.
+-->
+  <target name="hprof" depends="build-xslvalidator">
+    <echo message="Running Profiler"/>
+    <java classname="dongfang.xsltools.validation.XSLTValidatorMain" fork="${java.fork}">
+<!--jvm="${java.executable}"-->
+      <jvmarg line="-Xrunhprof:cpu=times,interval=1,verbose=n"/>
+      <classpath refid="xslvalidator.runtime.classpath"/>
+      <arg value="test/resources/presentation/simple/transform.xsl"/>
+      <arg value="test/resources/presentation/simple/io.dtd"/>
+      <arg value="test/resources/presentation/simple/io.dsd"/>
+      <arg value="http://dongfang.dk/testdata"/>
+    </java>
+  </target> 
+
+<!--
+Validate. Use -Dstylesheet=... -Dinputschema=... -Doutputschema=... -Dinputnamespace=... -Dinputroot=...
+-->
+  <target name="validate" depends="init">
+    <echo message="Validating: ${stylesheet}, input schema: ${inputschema}, output schema: ${outputschema}"/>
+    <java classname="dongfang.xsltools.validation.XSLTValidatorMain" fork="${java.fork}">
+<!--jvm="${java.executable}"-->
+      <jvmarg line="-Xrunhprof:cpu=times,interval=1,verbose=n"/>
+      <classpath refid="xslvalidator.runtime.classpath"/>
+      <arg value="${stylesheet}"/>
+      <arg value="${inputschema}"/>
+      <arg value="${outputschema}"/>
+      <arg value="${inputnamespace}"/>
+      <arg value="${inputroot}"/>
+    </java>
+  </target> 
+
+<!--
+Mail hprof results. These can get really heavy...
+-->
+  <target name="hprof-results" depends="init">
+    <zip destfile="java.hprof.zip">
+      <fileset dir=".">
+        <include name="java.hprof.txt"/>
+      </fileset>
+    </zip>
+    <mail from="profiler@dongfang.dk" tolist="dongfang@dongfang.dk"
+subject="profiler run" message="Latest profiler result">
+<fileset file="java.hprof.zip"/>
+    </mail>
+  </target>
+
+  <target name="rhprof" depends="hprof, hprof-results"/>
+
+<!--
+Run anooooooooooooother profiler. Not maintained.
+-->
+  <target name="ejp" depends="build-xslvalidator">
+    <echo message="Running Profiler"/>
+    <java classname="dongfang.xsltools.validation.XSLTValidatorMain" fork="${java.fork}">
+<!--jvm="${java.executable}"-->
+      <jvmarg line="-Xruntracer"/>
+      <classpath refid="xslvalidator.runtime.classpath"/>
+      <arg value="test/resources/presentation/simple/transform.xsl"/>
+      <arg value="test/resources/presentation/simple/io.dtd"/>
+      <arg value="test/resources/presentation/simple/io.dsd"/>
+      <arg value="http://dongfang.dk/testdata"/>
+    </java>
+  </target>
+
+  <target name="rejp" depends="ejp, ejp-results"/>
+
+  <target name="ejp-results" depends="init">
+    <zip destfile="ejp.zip">
+      <fileset dir=".">
+        <include name="*.ejp"/>
+      </fileset>
+    </zip>
+    <mail from="profiler@dongfang.dk" tolist="dongfang@dongfang.dk"
+subject="profiler run" message="Latest profiler result">
+<fileset file="ejp.zip"/>
+    </mail>
+    <delete>
+      <fileset dir=".">
+        <include name="*.ejp"/>
+      </fileset>
+    </delete>
+  </target>
+
+<!-- 
+Same as the validate task, different command UI. Not maintained.
+-->
+  <target name="run" depends="build-xslvalidator">
+    <echo message="Running class : ${run.class}"/>
+    <java classname="${run.class}" fork="${java.fork}" jvm="${java.executable}">
+<!--<jvmarg line="-Dorg.xml.sax.driver=org.xml.sax.helpers.ParserAdapter"/>-->
+      <classpath refid="xslvalidator.runtime.classpath"/>
+      <arg value="${args.0}"/>
+      <arg value="${args.1}"/>
+      <arg value="${args.2}"/>
+    </java>
+  </target>
+
+<!--
+Update from CVS, update and rebuild libs.
+-->
+  <target name="bigbang" depends="clean, cleanlibs, update"/>
+
+  <target name="smallbang" depends="clean, update, deploy"/>
+
+<!--
+Build unit tests. Currently, they are in a rather bad shape.
+-->
+  <target name="build-tests" depends="build-xslvalidator">
+  	<mkdir dir="${test.build.dir}"/>
+  	<mkdir dir="${tmp.dir}"/>
+    <javac source="${java.source.version}" 
+    	debug="${javac.debug}" 
+    	optimize="${javac.optimize}" 
+      	encoding="UTF-8" 
+      	srcdir="${test.src.dir}" 
+      	destdir="${test.build.dir}" 
+      	compiler="${javac.compiler}" 
+      	fork="${javac.fork}" 
+      	executable="${javac.executable}">
+      <classpath refid="xslvalidator.runtime.classpath"/>
+    </javac>
+    <path id="xslvalidator.test.classpath">
+      <path refid="xslvalidator.runtime.classpath"/>
+      <pathelement path="${test.build.dir}"/>
+    </path>
+  </target>
+
+<!-- 
+Run simplifier unit tests. Currently, they are in a rather bad shape, and they will probably never get fixed.
+-->
+  <target name="test-simplifier" depends="build-tests">
+  	<property name="failures" value="false"/>
+    <junit haltonerror="false" haltonfailure="false" fork="${java.fork}" tempdir="tmp" failureproperty="failures" jvm="${java.executable}" showoutput="true">
+      <formatter type="xml"/>
+      <classpath refid="xslvalidator.test.classpath"/>
+<!--      <test name="dongfang.xsltools.simplification.AllTests"/>-->
+      <batchtest>
+      	<fileset dir="${test.build.dir}">
+      	  <include name="dongfang/xsltools/simplification/**/*Test.class"/>
+      	</fileset>
+      </batchtest>
+    </junit>
+  </target>
+
+<!--
+This is totally obsolete. It is from pre-schematools times, when output schemas were planned to be converted to DSD2.
+-->
+  <target name="test-converter" depends="build-tests">
+  	<property name="failures" value="false"/>
+    <junit haltonerror="false" haltonfailure="false" fork="${java.fork}" tempdir="tmp" failureproperty="failures" jvm="${java.executable}" showoutput="true">
+      <formatter type="xml"/>
+      <classpath refid="xslvalidator.test.classpath"/>
+<!--      <test name="dongfang.xsltools.simplification.AllTests"/>-->
+      <batchtest>
+      	<fileset dir="${test.build.dir}">
+      	  <include name="dongfang/xsltools/xsd_dsd_conversion/**/*Test.class"/>
+      	</fileset>
+      </batchtest>
+    </junit>
+  </target>
+</project>

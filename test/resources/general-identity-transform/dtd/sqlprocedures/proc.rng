@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <element name="procs">
+                <attribute name="date">
+                    <data type="normalizedString"/>
+                </attribute>
+                <zeroOrMore>
+                    <ref name="proc"/>
+                </zeroOrMore>
+            </element>
+    </start>
+    <define name="value">
+        <element name="value">
+            <text/>
+        </element>
+    </define>
+    <define name="output">
+        <element name="output">
+            <zeroOrMore>
+                <ref name="param"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="type">
+        <element name="type">
+            <text/>
+        </element>
+    </define>
+    <define name="code">
+        <element name="code">
+            <ref name="value"/>
+            <optional>
+                <ref name="description"/>
+            </optional>
+        </element>
+    </define>
+    <define name="param">
+        <element name="param">
+            <ref name="name"/>
+            <ref name="type"/>
+            <optional>
+                <ref name="required"/>
+            </optional>
+            <optional>
+                <ref name="description"/>
+            </optional>
+        </element>
+    </define>
+    <define name="execlist">
+        <element name="execlist">
+            <zeroOrMore>
+                <ref name="proc"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="errorcodes">
+        <element name="errorcodes">
+            <zeroOrMore>
+                <ref name="code"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="resultset">
+        <element name="resultset">
+            <optional>
+                <ref name="description"/>
+            </optional>
+            <zeroOrMore>
+                <ref name="param"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="input">
+        <element name="input">
+            <zeroOrMore>
+                <ref name="param"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="proc">
+        <element name="proc">
+            <optional>
+                <attribute name="href">
+                    <data type="IDREF"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="name">
+                    <data type="ID"/>
+                </attribute>
+            </optional>
+            <optional>
+                <choice>
+                    <group>
+                        <ref name="name"/>
+                        <ref name="description"/>
+                        <optional>
+                            <ref name="input"/>
+                        </optional>
+                        <optional>
+                            <ref name="output"/>
+                        </optional>
+                        <zeroOrMore>
+                            <ref name="resultset"/>
+                        </zeroOrMore>
+                        <ref name="errorcodes"/>
+                        <optional>
+                            <ref name="execlist"/>
+                        </optional>
+                    </group>
+                    <ref name="name"/>
+                </choice>
+            </optional>
+        </element>
+    </define>
+    <define name="name">
+        <element name="name">
+            <text/>
+        </element>
+    </define>
+    <define name="description">
+        <element name="description">
+            <text/>
+        </element>
+    </define>
+    <define name="required">
+        <element name="required">
+            <text/>
+        </element>
+    </define>
+</grammar>

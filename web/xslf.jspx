@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+  <jsp:directive.page language="java" session="true" isThreadSafe="true" info="Mail XSLV Page" isELIgnored="false" import=" java.util.*,  dongfang.xsltools.exceptions.*, dongfang.xsltools.context.*, dongfang.xsltools.validation.*, dongfang.xsltools.resolver.*, dongfang.xsltools.configuration.*" contentType="application/xhtml+xml; charset=utf-8"/>
+  <jsp:useBean id="validator" scope="session" class="dongfang.xsltools.context.InteractiveRequestResponseBean"/>
+  <jsp:output doctype-root-element="html" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" doctype-system="http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
+  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xml:lang="en" lang="en">
+    <head>
+      <title>
+      Dongfang Online XSLT Flow-A-Lyzer
+    </title>
+    </head>
+    <body>
+      <h1>
+        <i>Dongfang Online XSLT Flow-A-Lyzer</i>
+      </h1>
+      <jsp:scriptlet>
+
+boolean semerr = false;
+
+try {
+  validator.service(request);
+} catch (Exception ex) {
+  semerr = true;
+  ex.printStackTrace();
+  out.write("Error:" + ex.getClass().getName() + "(" + ex.getMessage() + ")");
+</jsp:scriptlet>
+      <table width="768">
+        <jsp:scriptlet>
+  StackTraceElement[] elms = ex.getStackTrace();
+  for (int i=0; i&lt;elms.length; i++) {
+</jsp:scriptlet>
+        <tr>
+          <td>
+            <jsp:scriptlet>
+  out.write(elms[i].toString());
+</jsp:scriptlet>
+          </td>
+        </tr>
+        <jsp:scriptlet>
+  }
+</jsp:scriptlet>
+      </table>
+      <jsp:scriptlet>
+  
+  session.invalidate();
+  </jsp:scriptlet>
+      <jsp:include page="Resetbutton.jspx">
+        <jsp:param name="backlink" value="./xslf.html"/>
+        <jsp:param name="buttontext" value="Fix it, then try again"/>
+      </jsp:include>
+      <jsp:scriptlet>
+}
+
+if (!semerr) {
+if (!validator.getNonFatalErrors().isEmpty()) {
+</jsp:scriptlet>
+      <h2>There are some semantic errors in the stylesheet</h2>
+      <table border="1" width="768">
+        <tr>
+          <th>Message</th>
+          <th>Module</th>
+          <th>Parse</th>
+        </tr>
+        <c:forEach var="item" items="${validator.nonFatalLocatableErrors}" varStatus="stat">
+          <tr>
+            <td>${item.message}</td>
+            <td>${item.originId}</td>
+            <td>${item.parsePositionAsReadableString}</td>
+          </tr>
+        </c:forEach>
+        <c:forEach var="item" items="${validator.nonFatalNonLocatableErrors}" varStatus="stat">
+          <tr>
+            <td>${item.message}</td>
+          </tr>
+        </c:forEach>
+      </table>
+      <b>
+        <i>Don't trust the validation results until this has been fixed - the bad constructs have simply been removed.</i>
+      </b>
+      <jsp:scriptlet>
+}
+</jsp:scriptlet>
+      <c:if test="${validator.requestingResources}">
+      	<c:url var="uploadURL" value="xslf.html" />
+        <form name="upload" id="upload" method="post" action="${uploadURL}" enctype="multipart/form-data">
+          <h2>Resource(s) requested</h2>
+          <table border="1" width="768">
+            <tr>
+          </tr>
+            <jsp:scriptlet>
+if (validator.getRequestResourceType()==InteractiveRequestResponseBean.STREAM_REQUEST) {
+</jsp:scriptlet>
+            <jsp:include page="ResourceUpload.jspx">
+              <jsp:param name="systemId" value="${validator.requestedFieldName}"/>
+              <jsp:param name="requestMessage" value="${validator.requestMessage}"/>
+              <jsp:param name="requestExplanation" value="${validator.requestedResourceTypeName}"/>
+              <jsp:param name="optional" value="false"/>
+              <jsp:param name="inputReference" value=""/>
+              <jsp:param name="inputMethod" value="FILE"/>
+              <jsp:param name="inputContents" value="ged"/>
+              <jsp:param name="buttons" value="true"/>
+            </jsp:include>
+            <jsp:scriptlet>
+}
+else {
+</jsp:scriptlet>
+            <jsp:include page="StringUpload.jspx">
+              <jsp:param name="systemId" value="${validator.requestedFieldName}"/>
+              <jsp:param name="requestMessage" value="${validator.requestMessage}"/>
+              <jsp:param name="requestExplanation" value="${validator.requestedResourceTypeName}"/>
+              <jsp:param name="someExplanation" value="${validator.stringRequestUserExplanation}"/>
+              <jsp:param name="noneExplanation" value="${validator.stringRequestNoneExplanation}"/>
+              <jsp:param name="optional" value="false"/>
+              <jsp:param name="buttons" value="true"/>
+              <jsp:param name="tablewidth" value="768"/>
+            </jsp:include>
+            <jsp:scriptlet>
+}
+</jsp:scriptlet>
+            <c:forEach var="item" items="${validator.optionalStreamRequests}" varStatus="stat">
+              <jsp:include page="ResourceUpload.jspx">
+                <jsp:param name="systemId" value="${item.systemId}"/>
+                <jsp:param name="requestMessage" value="${item.humanReadable}"/>
+                <jsp:param name="requestExplanation" value="${item.explanation}"/>
+                <jsp:param name="optional" value="true"/>
+                <jsp:param name="inputReference" value=""/>
+                <jsp:param name="inputMethod" value="FILE"/>
+                <jsp:param name="inputContents" value="ged"/>
+                <jsp:param name="buttons" value="${stat.last}"/>
+              </jsp:include>
+            </c:forEach>
+          </table>
+        </form>
+      </c:if>
+      <c:if test="${validator.havingCachedResources}">
+        <h2>Resource(s) already provided</h2>
+        <table border="1" width="768">
+          <c:forEach var="item" items="${validator.cachedResources}" varStatus="stat">
+            <jsp:include page="CachedResource.jspx">
+              <jsp:param name="systemId" value="${item.systemId}"/>
+              <jsp:param name="backlink" value="xslf.html"/>
+            </jsp:include>
+          </c:forEach>
+        </table>
+      </c:if>
+      <c:if test="${validator.flowAnalysisDone}">
+        <h2>Flow Analysis</h2>
+        <table border="1" width="768">
+          <c:forEach var="item" items="${validator.cachedResources}" varStatus="stat">
+            <jsp:include page="FlowAnnotatedResource.jspx">
+              <jsp:param name="systemId" value="${item.systemId}"/>
+              <jsp:param name="backlink" value="xslf.html"/>
+            </jsp:include>
+          </c:forEach>
+        </table>
+      </c:if>
+      <jsp:scriptlet>}</jsp:scriptlet>
+      <c:if test="${validator.displayingSessionButtons}">
+        <jsp:include page="SessionButtons.jspx"/>
+      </c:if>
+    </body>
+  </html>
+</jsp:root>

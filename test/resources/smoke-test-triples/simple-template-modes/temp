@@ -1,0 +1,11 @@
+{element name={http://dongfang.dk/testdata}a=
+
+{<rule match="child::*" mode="[a  b]" priority="-0.5" home="file:/home/dongfang/speciale/test/resources/smoke-test-triples/simple-template-modes/template-modes.xsl" schemaLessContextSet="{[{*}*]}" contextSet="{{a=[element name={http://dongfang.dk/testdata}a, element name={http://dongfang.dk/testdata}c, element name={http://dongfang.dk/testdata}b], b=[element name={http://dongfang.dk/testdata}a, element name={http://dongfang.dk/testdata}c, element name={http://dongfang.dk/testdata}b]}}" '/>=[element name={http://dongfang.dk/testdata}a]}, 
+
+element name={http://dongfang.dk/testdata}c=
+
+{<rule match="child::*" mode="[a  b]" priority="-0.5" home="file:/home/dongfang/speciale/test/resources/smoke-test-triples/simple-template-modes/template-modes.xsl" schemaLessContextSet="{[{*}*]}" contextSet="{{a=[element name={http://dongfang.dk/testdata}a, element name={http://dongfang.dk/testdata}c, element name={http://dongfang.dk/testdata}b], b=[element name={http://dongfang.dk/testdata}a, element name={http://dongfang.dk/testdata}c, element name={http://dongfang.dk/testdata}b]}}" '/>=[element name={http://dongfang.dk/testdata}c]}, 
+
+element name={http://dongfang.dk/testdata}b=
+
+{<rule match="child::*" mode="[a  b]" priority="-0.5" home="file:/home/dongfang/speciale/test/resources/smoke-test-triples/simple-template-modes/template-modes.xsl" schemaLessContextSet="{[{*}*]}" contextSet="{{a=[element name={http://dongfang.dk/testdata}a, element name={http://dongfang.dk/testdata}c, element name={http://dongfang.dk/testdata}b], b=[element name={http://dongfang.dk/testdata}a, element name={http://dongfang.dk/testdata}c, element name={http://dongfang.dk/testdata}b]}}" '/>=[element name={http://dongfang.dk/testdata}b]}}

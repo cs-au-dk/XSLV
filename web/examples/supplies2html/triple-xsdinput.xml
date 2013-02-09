@@ -1,0 +1,5 @@
+<triple name="availablesupplies2html">
+  <input type="XSD">input/Catalog.xsd</input>
+  <output type="DSD">../xhtml-schema/xhtml1-transitional</output>
+  <xslt>xslt/AffordableSupplies_xhtml.xsl</xslt>
+</triple>

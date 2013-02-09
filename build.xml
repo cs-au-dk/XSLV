@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project name="xslv" default="all" basedir=".">
+
+	<property name="project" value="xslv"/>
+	<property name="version" value="0.9"/>
+	<property name="release" value="4"/>
+
+	<property name="optimize" value="on"/>
+	<property name="debug" value="on"/>
+
+	<property name="public" value="${user.home}/public_html/XSLV"/>
+
+	<path id="classpath">
+		<fileset dir="." includes="lib/**/*.jar"/>
+	</path>
+
+	<target name="all" depends="war"/>
+
+	<!--
+	<target name="xpathparser">
+		<java classname="jjtree" fork="true">
+			<classpath refid="classpath"/>
+			<arg value="-OUTPUT_DIRECTORY=src/dongfang/xsltools/xpath2"/>
+			<arg value="src/XPathParser.jj"/>
+		</java>
+		<java classname="javacc" fork="true">
+			<classpath refid="classpath"/>
+			<arg value="-OUTPUT_DIRECTORY=src/dongfang/xsltools/xpath2"/>
+			<arg value="src/dongfang/xsltools/xpath2/XPathParser.jj.jj"/>
+		</java>
+	</target>
+
+	<target name="dtdparser">
+		<java classname="jjtree" fork="true">
+			<classpath refid="classpath"/>
+			<arg value="-OUTPUT_DIRECTORY=src/dongfang/xsltools/xmlclass/dtd/temp"/>
+			<arg value="src/DTD.jj"/>
+		</java>
+		<java classname="javacc" fork="true">
+			<classpath refid="classpath"/>
+			<arg value="-OUTPUT_DIRECTORY=src/dongfang/xsltools/xmlclass/dtd/temp"/>
+			<arg value="src/dongfang/xsltools/xmlclass/dtd/temp/DTD.jj.jj"/>
+		</java>
+	</target>
+
+	<target name="dtddeclparser">
+		<java classname="jjtree" fork="true">
+			<classpath refid="classpath"/>
+			<arg value="-OUTPUT_DIRECTORY=src/dongfang/xsltools/xmlclass/dtd"/>
+			<arg value="src/DTDDecl.jj"/>
+		</java>
+		<java classname="javacc" fork="true">
+			<classpath refid="classpath"/>
+			<arg value="-OUTPUT_DIRECTORY=src/dongfang/xsltools/xmlclass/dtd"/>
+			<arg value="src/dongfang/xsltools/xmlclass/dtd/DTDDecl.jj.jj"/>
+		</java>
+	</target>
+	-->
+
+	<target name="compile">
+		<mkdir dir="build"/>
+		<javac srcdir="src" destdir="build" source="1.5" optimize="${optimize}" debug="${debug}">
+			<classpath refid="classpath"/>
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<mkdir dir="dist"/>
+		<jar jarfile="dist/${project}.jar" basedir="build"/>
+		
+		<!-- 
+		For the web app, there is a special "protocol" used for making URLs that refer to
+		resources used in the current session: dongfang protocol. This is the handler. It 
+		should be endorsed to the JVM running the web app.
+		-->
+	    <jar destfile="dist/endorsed/dongfang-handler.jar">
+	      <fileset dir="build">
+	        <include name="dongfang/xsltools/resolver/ResolutionContext.class"/>
+	        <include name="dongfang/xsltools/resolver/dongfang/*"/>
+	        <include name="dongfang/xsltools/util/UniqueNameGenerator.class"/>
+	      	<include name="dongfang/xsltools/experimental/progresslogging/NullFormatter.class"/>
+	      	<include name="dongfang/xsltools/experimental/progresslogging/ProgressLogger.class"/>
+	      	<include name="dongfang/xsltools/experimental/progresslogging/ProgressLoggerFormatter.class"/>
+	      	<include name="dongfang/xsltools/experimental/progresslogging/StreamHandler.class"/>
+	      </fileset>
+	    </jar>
+	</target>
+
+    <target name="jar-all" depends="jar">
+	  <mkdir dir="temp"/>
+	  <unzip src="lib/automaton.jar" dest="temp"/>
+	  <unzip src="lib/jdom.jar" dest="temp"/>
+	  <unzip src="lib/jaxen-1.1-beta-8.jar" dest="temp"/>
+	  <unzip src="lib/trang.jar" dest="temp"/>
+  	  <unzip src="lib/schematools.jar" dest="temp"/>
+      <unzip src="lib/dom4j-homebrew.jar" dest="temp"/>
+      <unzip src="lib/commons-io-1.0.jar" dest="temp"/>
+      <unzip src="lib/dtdparser.jar" dest="temp"/>
+	  <unzip src="dist/${project}.jar" dest="temp"/>
+	  <jar jarfile="dist/${project}-all.jar" basedir="temp" includes="**/*.class,*.aut"/>
+	  <delete dir="temp"/>
+	</target>
+		         
+	<target name="clean">
+		<delete dir="build"/>
+		<delete dir="temp"/>
+		<delete dir="dist"/>
+	</target>
+
+	<target name="tgz" depends="clean,all">
+		<property name="n" value="${project}-${version}"/>
+		<mkdir dir="${n}"/>
+		<copy todir="${n}">
+			<fileset dir="." includes="build.xml"/>
+		</copy>
+		<copy file="dist/${project}.jar" todir="${n}/dist"/>
+		<mkdir dir="${n}/src"/>
+		<copy todir="${n}/src">
+			<fileset dir="src"/>
+		</copy>
+		<mkdir dir="${n}/lib"/>
+		<copy todir="${n}/lib">
+			<fileset dir="lib"/>
+		</copy>
+		<mkdir dir="${n}/web"/>
+		<copy todir="${n}/web">
+			<fileset dir="web" excludes="experimental"/>
+		</copy>
+		<tar tarfile="${n}-${release}.tar" basedir="." includes="${n}/**"/>
+		<gzip zipfile="${n}-${release}.tar.gz" src="${n}-${release}.tar"/>
+		<delete file="${n}-${release}.tar"/>
+		<delete dir="${n}"/>
+	</target>
+
+	<target name="war" depends="jar">
+		<mkdir dir="temp/WEB-INF/lib"/>
+		<copy todir="temp/WEB-INF/lib">
+			<fileset file="dist/${project}.jar"/>
+			<fileset dir="lib" includes="*.jar"/>
+		</copy>
+		<copy todir="temp">
+			<fileset dir="web"/>
+		</copy>
+		<jar jarfile="dist/${project}.war" basedir="temp"/>
+	</target>
+
+	<target name="publish" depends="tgz,war,jar-all">
+		<mkdir dir="${public}/dist"/>
+		<copy todir="${public}/dist">
+			<fileset dir="dist"/>
+		</copy>
+		<mkdir dir="${public}/lib"/>
+		<copy todir="${public}/lib">
+			<fileset dir="lib"/>
+		</copy>
+		<copy file="${project}-${version}-${release}.tar.gz" todir="${public}"/>
+		<chmod dir="${public}" perm="go+r" includes="dist/**,dist,lib/**,lib,*.tar.gz" type="both"/>
+		<chmod dir="${public}" perm="go+x" includes="dist/**,dist,lib/**,lib" type="dir"/>
+	</target>
+
+</project>

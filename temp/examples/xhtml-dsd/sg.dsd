@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<?dsd href="http://www.brics.dk/DSD/dsd2.dsd"?>
+
+<dsd xmlns="http://www.brics.dk/DSD/2.0"
+     xmlns:m="http://www.brics.dk/DSD/2.0/meta"
+     xmlns:u="http://www.brics.dk/DSD/uri"
+     xmlns:sg="http://www.brics.dk/summarygraph"
+     root="sg:summarygraph">
+
+  <m:doc> DSD2 description of the XML syntax for JWIG Summary Graphs </m:doc>
+
+  <import href="http://www.brics.dk/DSD/uri.dsd"/>
+
+  <if><element name="sg:summarygraph"/>
+    <declare><contents><repeat><union>
+      <element name="sg:node"/>
+      <element name="sg:root"/>
+      <element name="sg:templateedge"/>
+      <element name="sg:stringedge"/>
+      <element name="sg:regdef"/>
+      <element name="sg:gappresence"/>
+    </union></repeat></contents></declare>
+  </if>
+
+  <if><element name="sg:node"/>
+    <declare>
+      <required><attribute name="id"/></required>
+      <contents>
+        <repeat><union><element/><string/></union></repeat>
+      </contents>
+    </declare>
+  </if>
+
+  <if><ancestor><element name="sg:node"/></ancestor>
+    <declare>
+      <attribute/>
+      <contents>
+        <repeat><union><element/><string/></union></repeat>
+      </contents>
+    </declare>
+  </if>
+
+  <if><element name="sg:templateedge"/>
+    <declare><required>
+      <attribute name="src"/>
+      <attribute name="gap"/>
+      <attribute name="dest"/>
+    </required></declare>
+    <pointer>
+      <element name="sg:node"/>
+      <attributefield name="src"/>
+    </pointer>
+    <pointer>
+      <element name="sg:node"/>
+      <attributefield name="dest"/>
+    </pointer>
+  </if>
+
+  <if><element name="sg:stringedge"/>
+    <declare><required>
+      <attribute name="src"/>
+      <attribute name="gap"/>
+      <attribute name="reg"/>
+    </required></declare>
+    <pointer>
+      <element name="sg:node"/>
+      <attributefield name="src"/>
+    </pointer>
+    <pointer>
+      <element name="sg:regdef"/>
+      <attributefield name="reg"/>
+    </pointer>
+  </if>
+
+  <if><element name="sg:regdef"/>
+    <declare>
+      <required><attribute name="id"/></required>
+      <contents><boolexp ref="sg:REG"/></contents>
+    </declare>
+  </if>
+
+  <if><element name="sg:gappresence"/>
+    <declare>
+      <required><attribute name="gap"/></required>
+      <contents><repeat><union>
+        <element name="sg:open"/>
+        <element name="sg:template"/>
+        <element name="sg:attribute"/>
+      </union></repeat></contents>
+    </declare>
+  </if>
+
+  <if>
+    <or>
+      <element name="sg:root"/>
+      <element name="sg:open"/>
+    </or>
+    <declare><required><attribute name="node"/></required></declare>
+    <pointer>
+      <element name="sg:node"/>
+      <attributefield name="node"/>
+    </pointer>
+  </if>
+
+  <if>
+    <or>
+      <element name="sg:template"/>
+      <element name="sg:attribute"/>
+    </or>
+    <declare>
+      <attribute name="open"><stringtype ref="sg:YES_NO"/></attribute>
+      <attribute name="closed"><stringtype ref="sg:YES_NO"/></attribute>
+    </declare>
+  </if>
+
+  <stringtype id="sg:YES_NO">
+    <union>
+      <string value="yes"/>
+      <string value="no"/>
+    </union>
+  </stringtype>
+
+  <boolexp id="sg:REG">
+    <or>
+      <element name="sg:sequence"/>
+      <element name="sg:optional"/>
+      <element name="sg:complement"/>
+      <element name="sg:union"/>
+      <element name="sg:intersection"/>
+      <element name="sg:minus"/>
+      <element name="sg:repeat"/>
+      <element name="sg:string"/>
+      <element name="sg:char"/>
+      <element name="sg:automaton"/>
+    </or>
+  </boolexp>
+
+  <if>
+    <or>
+      <element name="sg:sequence"/>
+      <element name="sg:union"/>
+      <element name="sg:intersection"/>
+    </or>
+    <declare><contents>
+      <repeat><boolexp ref="sg:REG"/></repeat>
+    </contents></declare>
+  </if>
+  
+  <if><element name="sg:minus"/>
+    <declare><contents>
+      <repeat number="2"><boolexp ref="sg:REG"/></repeat>
+    </contents></declare>
+  </if>
+  
+  <if>
+    <or>
+      <element name="sg:optional"/>
+      <element name="sg:complement"/>
+      <element name="sg:repeat"/>
+    </or>
+    <declare><contents><boolexp ref="sg:REG"/></contents></declare>
+    <if><element name="sg:repeat"/>
+      <declare>
+        <attribute name="number"><stringtype ref="sg:NUMERAL"/></attribute>
+        <attribute name="min"><stringtype ref="sg:NUMERAL"/></attribute>
+        <attribute name="max"><stringtype ref="sg:NUMERAL"/></attribute>
+      </declare>
+      <require>
+        <not><and>
+          <attribute name="number"/>
+          <or><attribute name="min"/><attribute name="max"/></or>
+        </and></not>
+      </require>
+    </if>
+  </if>
+     
+  <stringtype id="sg:NUMERAL">
+    <repeat min="1"><char min="0" max="9"/></repeat>
+  </stringtype>
+
+  <if><element name="sg:string"/>
+    <declare><attribute name="value"/></declare>
+  </if>
+  
+  <if><element name="sg:char"/>
+    <declare>
+      <attribute name="set"/>
+      <attribute name="min"><char/></attribute>
+      <attribute name="max"><char/></attribute>
+    </declare>
+    <require>
+      <not><and>
+        <attribute name="set"/>
+        <or><attribute name="min"/><attribute name="max"/></or>
+      </and></not>
+    </require>
+  </if>
+
+  <if><element name="sg:automaton"/>
+    <declare><required>
+      <attribute name="href"><stringtype ref="u:URI"/></attribute>
+    </required></declare>
+  </if>
+
+  <unique>
+    <attribute name="id"/>
+    <attributefield name="id"/>
+  </unique>
+
+</dsd>

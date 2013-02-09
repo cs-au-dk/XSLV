@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<triple name="simple-substitution-group" enabled="true">
+<input type="XSD" DTDNamespaceURI="">simple-substitution-group.xsd</input>
+<output type="DSD" DTDNamespaceURI="">simple.dsd</output>
+<xslt>general-identity-transform.xsl</xslt>
+</triple>

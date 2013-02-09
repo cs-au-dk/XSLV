@@ -1,0 +1,12 @@
+<bootp xmlns="http://dongfang.dk/testdata">
+  <a>
+    <c>
+      <d/>
+    </c>
+  </a>
+  <c>
+    <!-- Any local c declaration should not have any effect here -->
+    <!-- that is, d should not be declared here, only g should -->
+    <d/>
+  </c>
+</boot>

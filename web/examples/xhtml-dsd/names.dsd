@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<?dsd href="http://www.brics.dk/DSD/dsd2.dsd"?>
+
+<dsd xmlns="http://www.brics.dk/DSD/2.0"
+     xmlns:c="http://www.brics.dk/DSD/character-classes"
+     xmlns:n="http://www.brics.dk/DSD/names">
+
+  <m:doc xmlns:m="http://www.brics.dk/DSD/2.0/meta">
+    Translated to DSD 2.0 from 
+    "Extensible Markup Language (XML) 1.0 (Second Edition)"
+  </m:doc>
+
+  <import href="character-classes.dsd"/>
+
+  <stringtype id="n:NAME">
+    <sequence>
+      <union><stringtype ref="c:LETTER"/><char set="_:"/></union>
+      <repeat><stringtype ref="c:NAMECHAR"/></repeat>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="n:NAMES">
+    <sequence>
+      <stringtype ref="n:NAME"/>
+      <repeat>
+        <sequence>
+          <stringtype ref="c:WHITESPACE"/>
+          <stringtype ref="n:NAME"/>
+        </sequence>
+      </repeat>
+    </sequence>
+  </stringtype>
+
+  <stringtype id="n:NMTOKEN">
+    <repeat min="1"><stringtype ref="c:NAMECHAR"/></repeat>
+  </stringtype>
+
+  <stringtype id="n:NMTOKENS">
+    <sequence>
+      <stringtype ref="n:NMTOKEN"/>
+      <repeat>
+        <sequence>
+          <stringtype ref="c:WHITESPACE"/>
+          <stringtype ref="n:NMTOKEN"/>
+        </sequence>
+      </repeat>
+    </sequence>
+  </stringtype>
+
+</dsd>

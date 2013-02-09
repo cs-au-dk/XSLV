@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+ xmlns:s="http://dongfang.dk/testdata" 
+ targetNamespace="http://dongfang.dk/testdata" 
+ elementFormDefault="qualified">
+
+  <complexType name="t1">
+    <sequence>
+      <element ref="s:a" minOccurs="0" maxOccurs="3"/>
+      <element ref="s:b" minOccurs="3" maxOccurs="5"/>
+      <element ref="s:c" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+    <attribute name="a1" type="s:b"/>
+    <attribute name="a2" type="s:c"/>
+  </complexType>
+
+  <element name="a" type="s:t1"/>
+
+  <simpleType name="b">
+    <restriction base="string">
+      <enumeration value="Bravo"/>
+    </restriction>
+  </simpleType>
+
+<!-- b is complex -->   
+  <element name="b">
+    <complexType>
+      <simpleContent>
+        <restriction base="s:b"/>
+      </simpleContent>
+    </complexType>
+  </element>
+
+<!-- c is simple, otherwise prety much like b -->
+  <simpleType name="c">
+    <restriction base="string">
+      <enumeration value="Charlie"/>
+    </restriction>
+  </simpleType>
+
+  <element name="c" type="s:c">
+  </element>
+</schema>

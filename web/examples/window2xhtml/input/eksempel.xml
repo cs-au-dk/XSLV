@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<window>
+  <titlebar>
+    <title><![CDATA[Clemen.dk/sc]]></title>
+    <icon>
+      <path><![CDATA[Home/pics/icons/topicon.gif]]></path>
+    </icon>
+  </titlebar>
+  <pageinfo>
+     <author>
+        <name><![CDATA[Simon Clemen]]></name>
+	<mail><![CDATA[simon@clemen.dk]]></mail>
+     </author>
+     <coauthor>
+        <name><![CDATA[]]></name>
+	<mail><![CDATA[]]></mail>
+     </coauthor>
+     <pagelocation><![CDATA[Home]]></pagelocation>
+     <pageid><![CDATA[100]]></pageid>
+     <pagesubid><![CDATA[]]></pagesubid>
+     <userid><![CDATA[Guest]]></userid>
+     <systembuild><![CDATA[2.2]]></systembuild>
+     <systemyear><![CDATA[2002]]></systemyear>
+     <lastupdate><![CDATA[2003-05-13 12:40:25]]></lastupdate>     
+     <visitcounter><![CDATA[1093]]></visitcounter>     
+  </pageinfo>
+  <helpcontext/>
+  <msgcount><![CDATA[0]]></msgcount>
+  <pagecontent><![CDATA[
+<table style="height:100%;width:100%;" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+      <table style="height:100%;width:100%;" cellspacing="0" cellpadding="0">
+        <tr style="height:15%;">
+          <td style="background:#F7F7F7;padding:5px 0px 5px 0px">
+            <table style="width:auto;font-size:smaller;">
+              <tr>
+                <td rowspan="6" style="height:100%;padding:0px 0px 0px 5px">
+                  <img src="Home/pics/sc.jpg" style="height:100%;border:2px solid black;"/>
+                </td>
+                <td colspan="2" style="font-familiy:sans-serif;font-size:medium;">
+                 <b>
+                  SIMON&nbsp;CLEMEN&nbsp;PEDERSEN</b>
+                </td>
+
+              </tr>
+              <tr>
+                <td>
+                    Bachelor of Science, BSc. 
+                </td>
+                <td style="padding:0px 0px 0px 20px">
+                Office : 535.129
+
+                </td>
+
+              </tr>
+              <tr>
+                <td >
+                    Department of Computer Science, DAIMI.
+                </td>
+                <td style="padding:0px 0px 0px 20px">
+                Phone : (+45) 2871 9295
+                </td>
+
+              </tr>
+              <tr>
+                <td >
+                    University of Aarhus. 
+                </td>
+                <td style="padding:0px 0px 0px 20px">
+                Email : <a href="mailto::simon@clemen.dk">simon@clemen.dk</a>
+                </td>
+
+              </tr>
+              <tr>
+                <td >
+                    Ny Munkegade, Bldg. 540
+                </td>
+                <td style="padding:0px 0px 0px 20px">
+                Web : <a href="http://www.clemen.dk/sc">http://www.clemen.dk/sc</a>
+                </td>
+
+              </tr>
+
+              <tr>
+                <td style="padding:0px 0px 7px 0px">
+                    DK-8000 Aarhus C, Denmark 
+                </td>
+                <td style="padding:0px 0px 0px 20px">
+                Icq : <a onclick="window.showModalDialog('Home/userpages/icq.php','','DialogHeight:5px;Dialogwidth:5px;status:0');" href="#">125137388</a>
+                </td>
+
+              </tr>
+
+            </table>
+  
+          </td>
+        </tr>
+        <tr style="vertical-align:top;">
+          <td>
+            <table style="width:100%;" cellspacing="0" cellpadding="0">
+              <tr style="height:20px;xbackground:blue;color:black;font-weight:bold;">
+                <td style="width:75px;" class="reportHead">Date</td>
+                <td class="reportHead">News</td>
+              </tr>
+            </table>
+
+            <table style="width:100%;" cellspacing="0" cellpadding="0">
+
+              <tr id='new_newsrow'   style='display:none;vertical-align:top;height:1px;'><td class='newsdate' ><input id='new_newsdate' name='new_newsdate' class='userinput' type='text' style='width:100%'/> </td><td class='newsinfo'><textarea id='new_newstext' style='height:100px;width:95%'></textarea></td></tr><tr id='68' style='vertical-align:top;height:1px;' onmouseup='try{newsHit(this);} catch(e){}' onmousemove='try{highNews(this);} catch(e){}' onmouseout='try{unhighNews(this);} catch(e){}' ><td id='dato_68' class='newsdate'>2003-05-13</td><td id='text_68' class='newsinfo'>Schedule and dynamic update done. <input id='textinput_68' type='hidden' value='Schedule and dynamic update done. '/></td></tr><tr id='67' style='vertical-align:top;height:1px;' onmouseup='try{newsHit(this);} catch(e){}' onmousemove='try{highNews(this);} catch(e){}' onmouseout='try{unhighNews(this);} catch(e){}' ><td id='dato_67' class='newsdate'>2003-05-12</td><td id='text_67' class='newsinfo'>Serverside improved. <br/>The system now automatically detects browser. <br/>If browser is IE. ver. 6 or better it trusts the browser to handle the xsl transformation correctly <br/>by utilizing msxml 3.0+. <br/>If browser is IE ver. 5.5 or less the transformation is handled on the serverside to avoid <br/>the errors in the msxml implementation (ref. msdn). <br/>Mozilla should be able to to handle the xsl transformation correct, but Mozilla relies on the<br/>transformiix  processor.<br/>Disable-Output-Escaping(d-o-e) is not supported by Mozilla Transformiix processor, but is supported by Xalan and MSXML. <br/>This system embeds valid xhtml into the remaining xml document, so lacking the support for d-o-e is critical. <br/>The system therefore handles serverside transformation of content when client is using mozilla. <br/><br/> <input id='textinput_67' type='hidden' value='Serverside improved. 
+The system now automatically detects browser. 
+If browser is IE. ver. 6 or better it trusts the browser to handle the xsl transformation correctly 
+by utilizing msxml 3.0+. 
+If browser is IE ver. 5.5 or less the transformation is handled on the serverside to avoid 
+the errors in the msxml implementation (ref. msdn). 
+Mozilla should be able to to handle the xsl transformation correct, but Mozilla relies on the
+transformiix  processor.
+Disable-Output-Escaping(d-o-e) is not supported by Mozilla Transformiix processor, but is supported by Xalan and MSXML. 
+This system embeds valid xhtml into the remaining xml document, so lacking the support for d-o-e is critical. 
+The system therefore handles serverside transformation of content when client is using mozilla. 
+
+ '/></td></tr><tr id='66' style='vertical-align:top;height:1px;' onmouseup='try{newsHit(this);} catch(e){}' onmousemove='try{highNews(this);} catch(e){}' onmouseout='try{unhighNews(this);} catch(e){}' ><td id='dato_66' class='newsdate'>2003-05-11</td><td id='text_66' class='newsinfo'>Gallery completed. <br/>The first pictures are appearing. <br/>Enjoy. <input id='textinput_66' type='hidden' value='Gallery completed. 
+The first pictures are appearing. 
+Enjoy. '/></td></tr><tr id='65' style='vertical-align:top;height:1px;' onmouseup='try{newsHit(this);} catch(e){}' onmousemove='try{highNews(this);} catch(e){}' onmouseout='try{unhighNews(this);} catch(e){}' ><td id='dato_65' class='newsdate'>2003-05-09</td><td id='text_65' class='newsinfo'>Site finally up and running. <br/>Start-page ready, but rest of the site is still under construction. <br/>Now working on gallery. <input id='textinput_65' type='hidden' value='Site finally up and running. 
+Start-page ready, but rest of the site is still under construction. 
+Now working on gallery. '/></td></tr>
+              </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>]]></pagecontent>
+  <loadtime><![CDATA[0.536]]></loadtime>
+<primarymenu><menu><menusection title="Files" style="0"><item id="primary27"><itemtitle>Print</itemtitle><key code=""/><img src=""/><action>javascript:print();</action></item><item id="primary18"><itemtitle>Login</itemtitle><key code=""/><img src=""/><action>builtLogin();</action></item></menusection><menusection title="Pages" style="0"><item id="primary29"><itemtitle>Home</itemtitle><key code=""/><img src=""/><action>openPage(100);</action></item><item id="primary132"><itemtitle>Gallery</itemtitle><key code=""/><img src=""/><action>openPage(117);</action></item></menusection><menusection title="View" style="0"><item id="primary31"><itemtitle>Toolbars</itemtitle><key code=""/><img src=""/><action></action></item><item id="primary111"><itemtitle>Skins</itemtitle><key code=""/><img src=""/><action></action><submenu level="1"><item id="primary112"><itemtitle>Default</itemtitle><action>switchSkin(1);</action></item><item id="primary114"><itemtitle>XML</itemtitle><action>switchSkin(0);</action></item><item id="primary113"><itemtitle>WinSkin</itemtitle><action>switchSkin(4);</action></item></submenu></item></menusection><menusection title="Help" style="0"><item id="primary32"><itemtitle>About...</itemtitle><key code=""/><img src=""/><action>alert(&quot;Copyright:SimonClemen&quot;);</action></item></menusection></menu><toolbar><tbar id="Standard_bar"><toolbarsection id="Login_Logout"><toolbaritem id="primary18item"><itemtitle>Login</itemtitle><img src="Home/pics/icons/login.gif"/></toolbaritem></toolbarsection><toolbarsection id="Print"><toolbaritem id="primary27item"><itemtitle>Print</itemtitle><img src="Home/pics/icons/print.gif"/></toolbaritem></toolbarsection><toolbarsection id="Pages"><toolbaritem id="primary29item"><itemtitle>Home</itemtitle><img src="Home/pics/icons/home2.gif"/></toolbaritem></toolbarsection></tbar></toolbar></primarymenu><secondarymenu><menu><menusection title="Navigator" style="1"><item id="secondary121_948"><itemtitle><![CDATA[Home]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[openPage(100);]]></action></item><item id="secondary121_973"><itemtitle><![CDATA[About Me]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[]]></action></item><item id="secondary121_984"><itemtitle><![CDATA[Calendar]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[]]></action></item><item id="secondary121_992"><itemtitle><![CDATA[Web Logs]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[]]></action></item><item id="secondary121_993"><itemtitle><![CDATA[Discussion Forum]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[]]></action></item><item id="secondary121_974"><itemtitle><![CDATA[University]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dirgif.gif"/><action><![CDATA[]]></action><submenu level="1"><item id="secondary121_974_979"><itemtitle><![CDATA[Schedule]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[openPage(120);]]></action></item><item id="secondary121_974_980"><itemtitle><![CDATA[Scientific Computation]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[]]></action></item><item id="secondary121_974_981"><itemtitle><![CDATA[Raster Graph. Systems]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[]]></action></item><item id="secondary121_974_983"><itemtitle><![CDATA[Passed Courses]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[]]></action></item></submenu></item><item id="secondary121_977"><itemtitle><![CDATA[Work]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dirgif.gif"/><action><![CDATA[]]></action><submenu level="1"><item id="secondary121_977_985"><itemtitle><![CDATA[About]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[]]></action></item><item id="secondary121_977_986"><itemtitle><![CDATA[Danbrew]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[]]></action></item><item id="secondary121_977_987"><itemtitle><![CDATA[Projects]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[]]></action></item></submenu></item><item id="secondary121_978"><itemtitle><![CDATA[Programming]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dirgif.gif"/><action><![CDATA[]]></action><submenu level="1"><item id="secondary121_978_988"><itemtitle><![CDATA[Demos]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[]]></action></item><item id="secondary121_978_989"><itemtitle><![CDATA[Resources]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[]]></action></item></submenu></item><item id="secondary121_976"><itemtitle><![CDATA[Links]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dirgif.gif"/><action><![CDATA[]]></action></item><item id="secondary121_990"><itemtitle><![CDATA[Misc]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dirgif.gif"/><action><![CDATA[]]></action><submenu level="1"><item id="secondary121_990_991"><itemtitle><![CDATA[Laughs]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dot_ikon.gif"/><action><![CDATA[]]></action></item></submenu></item><item id="secondary121_975"><itemtitle><![CDATA[Gallery]]></itemtitle><key code="0"/><active on="0"/><img src="pics/dirgif.gif"/><action><![CDATA[openPage(117)]]></action></item></menusection></menu></secondarymenu></window>

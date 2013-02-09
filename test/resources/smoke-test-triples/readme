@@ -1,0 +1,14 @@
+These test cases are not intended as regression tests, or anything as fancy as that.
+
+They each provide an example of use of specific features of stylesheets or schemas,
+and a short description of what is tested and what result is expected. The result
+is the control flow and summary graphs, intended to be inspected manually (dump all
+relevant structures as .dot, and transform to ps with graphviz, or inspect summary
+and control flow graph xml).
+
+The output schemas specified are NOT tailored for the test, and probably even do not
+exist. It makes no sense to take the processing of these tests beyond summary graph
+construction (although regression test with validation and all sure would be nice).
+
+In many of the test cases, the stylesheet is the general identity transform. The
+expected result is then a summary graph conservatively approximating the input schema.

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <element name="POEM">
+                <ref name="TITLE"/>
+                <ref name="AUTHOR"/>
+                <zeroOrMore>
+                    <ref name="STANZA"/>
+                </zeroOrMore>
+            </element>
+    </start>
+    <define name="AUTHOR">
+        <element name="AUTHOR">
+            <ref name="FIRSTNAME"/>
+            <ref name="LASTNAME"/>
+        </element>
+    </define>
+    <define name="LASTNAME">
+        <element name="LASTNAME">
+            <text/>
+        </element>
+    </define>
+    <define name="TITLE">
+        <element name="TITLE">
+            <text/>
+        </element>
+    </define>
+    <define name="FIRSTNAME">
+        <element name="FIRSTNAME">
+            <text/>
+        </element>
+    </define>
+    <define name="STANZA">
+        <element name="STANZA">
+            <zeroOrMore>
+                <ref name="LINE"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="LINE">
+        <element name="LINE">
+            <attribute name="N">
+                <data type="normalizedString"/>
+            </attribute>
+            <text/>
+        </element>
+    </define>
+</grammar>

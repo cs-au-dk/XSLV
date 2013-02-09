@@ -1,0 +1,5 @@
+<triple name="xmlspec" enabled="true">
+  <input type="XSD">input/xmlspec-2.1.xsd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/xmlspec-1.54.xsl</xslt>
+</triple>

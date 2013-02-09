@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+  <jsp:directive.page language="java" session="true" isThreadSafe="true" info="Launcher for XSLV Demo" contentType="application/xhtml+xml; charset=utf-8"/>
+  <jsp:output doctype-root-element="html" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" doctype-system="http://www.w3c.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <title>XSLV Demo Samples</title>
+      <link href="./tabs.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <jsp:declaration>java.util.Map triples = new java.util.HashMap();</jsp:declaration>
+    <jsp:scriptlet>
+
+/*
+ * This is the master control of which democases are included.
+ */
+    String[] democases = new String[] {
+    "adressebog2xhtml",
+    "agenda2xhtml",
+    "supplies2html",
+    "dsd2html",
+    "emaillist2xhtml",
+    "links2html",
+    //"musicxml",
+    "ontopia2xtm",
+    "order2fo",
+    "poem2xhtml",
+    "purchaseorder2invoice",
+    "salesreport",
+    "searchdialog",
+    "slides2xhtml",
+    "sqlprocedures2xhtml",
+    "staticanalysis2xhtml",
+    "window2xhtml",
+    "bug",
+    "bug2",
+ //   "xhtml2fo",
+ //   "xmlspec"
+    };
+
+    pageContext.setAttribute("democases", democases);
+    </jsp:scriptlet>
+    <body>
+      <jsp:include page="Dongfang.jspx"/>
+      <table>
+        <tr>
+        <th align="left" width="100">Name</th>
+        <th align="left" width="200">Info/Credits</th>
+        <th align="left" width="620">Notes</th>
+        </tr>
+<!--
+        jstl is broken - - again.
+        <c:forEach var="democase" items="${pageScope.democases}" varStatus="stat">
+-->
+		<jsp:scriptlet>for (int i=0; i &lt; democases.length; i++) {
+  		  pageContext.setAttribute("democase", democases[i]);
+		</jsp:scriptlet>
+        <tr><td colspan="3"><hr/></td></tr>
+        <tr>
+          <td valign="top">
+          	<c:url var="caseURL" value="xslv-demo.html?democase=${democase}" />
+            <a href="${caseURL}">${democase}</a>
+          </td>
+          <jsp:scriptlet>
+            dongfang.xsltools.util.TestTriple triple;
+            if ((triple = (dongfang.xsltools.util.TestTriple)triples.get(pageContext.findAttribute("democase")))==null) {
+           	  java.net.URL Url = new java.net.URL("http://localhost:8080" + request.getContextPath() + "/examples/" + pageContext.findAttribute("democase") + "/triple.xml");
+   	          triple = dongfang.xsltools.util.TestTriple.readTriple(Url);
+			  triples.put(pageContext.findAttribute("democase"), triple);
+            }
+            pageContext.setAttribute("triple", triple);
+          </jsp:scriptlet>
+          <td valign="top">${triple.info}</td>
+          <td valign="top">${triple.notes}</td>
+        </tr>
+        <jsp:scriptlet>}</jsp:scriptlet>
+<!--
+	  </c:forEach>
+-->
+      </table>
+    </body>
+  </html>
+</jsp:root>

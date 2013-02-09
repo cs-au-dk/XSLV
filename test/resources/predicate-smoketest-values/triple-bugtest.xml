@@ -1,0 +1,6 @@
+<triple name="predicate-smoketest-bugtest" encoding="utf-8">
+  <input type="DTD" DTDNamespaceURI="">predicate-smoketest-input.dtd</input>
+  <xslt>predicate-bugtest.xsl</xslt>
+  <output>predicate-smoketest-output.dtd</output>
+  <info>Testcase: Do DODs work?</info>
+</triple>

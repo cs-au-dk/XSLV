@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dsd:dsd xmlns:dsd="http://www.brics.dk/DSD/2.0">
+  <dsd:if>
+    <dsd:element xmlns:t="http://dongfang.dk/testdata" name="t:boot"></dsd:element>
+    <dsd:declare>
+      <dsd:contents>
+        <dsd:sequence>
+          <dsd:element xmlns:t="http://dongfang.dk/testdata" name="t:x"></dsd:element>
+          <dsd:element xmlns:t="http://dongfang.dk/testdata" name="t:y"></dsd:element>
+        </dsd:sequence>
+      </dsd:contents>
+    </dsd:declare>
+  </dsd:if>
+  <dsd:if>
+    <dsd:element xmlns:t="http://dongfang.dk/testdata" name="t:x"></dsd:element>
+    <dsd:declare>
+      <dsd:contents>
+        <dsd:element xmlns:t="http://dongfang.dk/testdata" name="t:a"></dsd:element>
+        <dsd:optional>
+          <dsd:element xmlns:t="http://dongfang.dk/testdata" name="t:b"></dsd:element>
+        </dsd:optional>
+      </dsd:contents>
+    </dsd:declare>
+  </dsd:if>
+  <dsd:if>
+    <dsd:element xmlns:t="http://dongfang.dk/testdata" name="t:y"></dsd:element>
+    <dsd:declare>
+      <dsd:contents>
+        <dsd:contenttype xmlns:t="http://dongfang.dk/testdata" id="t:all-group"></dsd:contenttype>
+      </dsd:contents>
+    </dsd:declare>
+  </dsd:if>
+</dsd:dsd>

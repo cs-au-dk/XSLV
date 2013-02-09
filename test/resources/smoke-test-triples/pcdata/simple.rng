@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata"
+    xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+                <element name="root">
+                    <oneOrMore>
+                        <ref name="a"/>
+                    </oneOrMore>
+                    <zeroOrMore>
+                        <ref name="b"/>
+                    </zeroOrMore>
+                    <optional>
+                        <ref name="c"/>
+                    </optional>
+                </element>
+    </start>
+    <define name="b">
+        <choice>
+            <notAllowed/>
+            <element name="b">
+                <zeroOrMore>
+                    <ref name="b"/>
+                </zeroOrMore>
+            </element>
+        </choice>
+    </define>
+    <define name="c">
+        <choice>
+            <notAllowed/>
+            <element name="c">
+                <empty/>
+            </element>
+        </choice>
+    </define>
+    <define name="a">
+        <choice>
+            <notAllowed/>
+            <element name="a">
+                <data type="string"/>
+            </element>
+        </choice>
+    </define>
+</grammar>

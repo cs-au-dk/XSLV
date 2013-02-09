@@ -1,0 +1,22 @@
+<?xml version='1.0'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" blockDefault="#all"
+           elementFormDefault="qualified" xml:lang="EN"
+           targetNamespace="http://www.w3.org/2001/XMLSchema"
+           version="Id: structures.xsd,v 1.2 2004/01/15 11:34:25 ht Exp ">
+
+  <xs:include schemaLocation="mini-datatypes.xsd"/>
+
+  <xs:complexType name="attribute">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+          <xs:element name="simpleType" type="xs:localSimpleType" minOccurs="0"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:element name="attribute" type="xs:attribute"/>
+
+</xs:schema>

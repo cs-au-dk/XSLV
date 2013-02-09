@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Attempt to provoke errors in control flow grap; SG generation -->
+
+<triple name="sg-generation-bug" enabled="true">
+  <input type="DTD" DTDNamespaceURI="">sg-generation-bug.dtd</input>
+  <output type="RNG" DTDNamespaceURI="">simple.rng</output>
+  <xslt>sg-generation-bug.xsl</xslt>
+</triple>

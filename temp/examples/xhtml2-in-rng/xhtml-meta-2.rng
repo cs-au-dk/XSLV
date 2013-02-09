@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         xmlns:x="http://www.w3.org/1999/xhtml">
+
+  <x:h1>Metainformation Module</x:h1>
+
+  <div>
+    <x:h2>The meta element</x:h2>
+
+    <define name="meta">
+      <element name="meta">
+        <ref name="meta.attlist"/>
+        <choice>
+          <ref name="Inline.model"/>
+          <oneOrMore>
+            <ref name="meta"/>
+          </oneOrMore>
+        </choice>
+      </element>
+    </define>
+
+    <define name="meta.attlist">
+      <ref name="Common.attrib"/>
+      <optional>
+        <attribute name="name">
+          <ref name="NMTOKEN.datatype"/>
+        </attribute>
+      </optional>
+    </define>
+  </div>
+
+  <define name="head.content" combine="interleave">
+    <zeroOrMore>
+      <ref name="meta"/>
+    </zeroOrMore>
+  </define>
+
+</grammar>

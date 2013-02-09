@@ -1,0 +1,4 @@
+<!ELEMENT root ( a+, b*, c? ) >
+<!ELEMENT a ( #PCDATA ) >
+<!ELEMENT b ( b* ) >
+<!ELEMENT c EMPTY >

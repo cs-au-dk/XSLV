@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<grammar ns="http://dongfang.dk/testdata" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+            <element name="link-collection">
+                <oneOrMore>
+                    <ref name="section"/>
+                </oneOrMore>
+            </element>
+    </start>
+    <define name="link">
+        <element name="link">
+            <optional>
+                <ref name="name"/>
+            </optional>
+            <optional>
+                <ref name="to"/>
+            </optional>
+            <optional>
+                <ref name="desc"/>
+            </optional>
+        </element>
+    </define>
+    <define name="sup">
+        <element name="sup">
+            <text/>
+        </element>
+    </define>
+    <define name="section">
+        <element name="section">
+            <ref name="name"/>
+            <zeroOrMore>
+                <ref name="link"/>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="desc">
+        <element name="desc">
+            <mixed>
+                <zeroOrMore>
+                    <choice>
+                        <ref name="br"/>
+                        <ref name="sup"/>
+                        <ref name="sub"/>
+                        <ref name="a"/>
+                    </choice>
+                </zeroOrMore>
+            </mixed>
+        </element>
+    </define>
+    <define name="to">
+        <element name="to">
+            <text/>
+        </element>
+    </define>
+    <define name="name">
+        <element name="name">
+            <mixed>
+                <zeroOrMore>
+                    <choice>
+                        <ref name="br"/>
+                        <ref name="sup"/>
+                        <ref name="sub"/>
+                    </choice>
+                </zeroOrMore>
+            </mixed>
+        </element>
+    </define>
+    <define name="br">
+        <element name="br">
+            <empty/>
+        </element>
+    </define>
+    <define name="sub">
+        <element name="sub">
+            <text/>
+        </element>
+    </define>
+    <define name="a">
+        <element name="a">
+            <attribute name="href">
+                <data type="normalizedString"/>
+            </attribute>
+            <mixed>
+                <zeroOrMore>
+                    <choice>
+                        <ref name="br"/>
+                        <ref name="sup"/>
+                        <ref name="sub"/>
+                    </choice>
+                </zeroOrMore>
+            </mixed>
+        </element>
+    </define>
+</grammar>

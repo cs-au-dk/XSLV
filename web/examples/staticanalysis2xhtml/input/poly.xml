@@ -1,0 +1,26 @@
+<tip>
+		  <analysis name="Liveness" ref="0"/>
+		  <program>
+		    <function name="poly" arguments="x" locals="_0">
+		  <stm>
+		  <assignment id="_0"><exp><deref><exp><id name="x"/></exp></deref></exp></assignment>
+		  <analysis ref="0">[x]</analysis>
+		</stm>
+		  <return>
+		    <exp><id name="_0"/></exp>
+		  </return>
+		</function>
+		    <stm>
+		  <assignment id="x"><exp><input/></exp></assignment>
+		  <analysis ref="0">[]</analysis>
+		</stm><stm>
+		  <assignment id="_out"><exp>
+		  <call id="poly">
+		    <exp><id name="x"/></exp>
+		  </call>
+		  
+		</exp></assignment>
+		  
+		</stm><stm><output><exp><id name="_out"/></exp></output><analysis ref="0">[_out]</analysis></stm>
+		  </program>
+		</tip>

@@ -1,0 +1,32 @@
+<!-- ?xml version="1.0" encoding="UTF-8"? -->
+<!ELEMENT Catalog (Supplier, Index, Contract)>
+<!ELEMENT ItemID (SupplierPartID)>
+<!ELEMENT Money (#PCDATA)>
+<!ATTLIST Money
+	currency CDATA #IMPLIED
+>
+<!ELEMENT UnitPrice (Money)>
+<!ELEMENT Supplier (Name?, SupplierID+, Address?)>
+<!ATTLIST Supplier
+	storeFrontURL CDATA #IMPLIED
+>
+<!ELEMENT Index (IndexItem*)>
+<!ELEMENT Contract (ContractItem*)>
+<!ATTLIST Contract
+	effectiveDate CDATA #IMPLIED
+	expirationDate CDATA #IMPLIED
+>
+<!ELEMENT SupplierPartID (#PCDATA)>
+<!ELEMENT Name (#PCDATA)>
+<!ATTLIST Name
+	lang CDATA #REQUIRED
+>
+<!ELEMENT SupplierID (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT IndexItem (ItemID, ItemDetail, UnitPrice)>
+<!ELEMENT ContractItem (ItemID, UnitPrice)>
+<!ELEMENT ItemDetail (UnitOfMeasure, Description+, ManufacturerName, ManufacturerPartID)>
+<!ELEMENT UnitOfMeasure (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT ManufacturerName (#PCDATA)>
+<!ELEMENT ManufacturerPartID (#PCDATA)>

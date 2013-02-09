@@ -1,0 +1,5 @@
+<this:root xmlns:this="http://dongfang.dk/testdata">
+  <a/>
+  <this:b/>
+  <c/>
+</this:root>

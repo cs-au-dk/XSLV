@@ -1,0 +1,92 @@
+<tip>
+		  <analysis name="Liveness" ref="0"/>
+		  <program>
+		    <function name="inc" arguments="i" locals="_0">
+		  <stm>
+		  <assignment id="_0"><exp><binop kind = "+"><exp><id name="i"/></exp><exp><intconst value="1"/></exp></binop></exp></assignment>
+		  <analysis ref="0">[_5, i, _stack-1-f, _7, ide, _8, _stack-1-n, _stack-1-_4, y, _stack-1-_3, _6, x]</analysis>
+		</stm>
+		  <return>
+		    <exp><id name="_0"/></exp>
+		  </return>
+		</function><function name="dec" arguments="j" locals="_1">
+		  <stm>
+		  <assignment id="_1"><exp><binop kind = "-"><exp><id name="j"/></exp><exp><intconst value="1"/></exp></binop></exp></assignment>
+		  <analysis ref="0">[_stack-2-f, _5, _7, ide, _8, _stack-2-n, _stack-2-_4, y, j, _6, _stack-2-_3, x]</analysis>
+		</stm>
+		  <return>
+		    <exp><id name="_1"/></exp>
+		  </return>
+		</function><function name="ide" arguments="k" locals="">
+		  
+		  <return>
+		    <exp><id name="k"/></exp>
+		  </return>
+		</function><function name="foo" arguments="n, f" locals="_3, _4">
+		  <stm><if><exp><binop kind = "=="><exp><id name="n"/></exp><exp><intconst value="0"/></exp></binop><analysis ref="0">[_5, _7, ide, _8, _4, f, y, n, _6, x]</analysis></exp><then><stm>
+		  <assignment id="f"><exp><id name="ide"/></exp></assignment>
+		  <analysis ref="0">[_5, _7, ide, _8, _4, y, n, _6, x]</analysis>
+		</stm></then></if></stm><stm>
+		  <assignment id="_3"><exp><id name="n"/></exp></assignment>
+		  <analysis ref="0">[_5, _7, ide, _8, _4, f, y, _6, n, x]</analysis>
+		</stm><stm>
+		  <assignment id="_4"><exp>
+		  <ptrcall>
+		    <exp><id name="f"/></exp>
+		    <exp><id name="_3"/></exp>
+		  </ptrcall>
+		  
+		</exp></assignment>
+		  
+		</stm>
+		  <return>
+		    <exp><id name="_4"/></exp>
+		  </return>
+		</function><function name="main" arguments="" locals="x, y, _5, _6, _7, _8">
+		  <stm>
+		  <assignment id="x"><exp><input/></exp></assignment>
+		  <analysis ref="0">[_5, _7, ide, dec, _8, y, inc, _6]</analysis>
+		</stm><stm><if><exp><binop kind = "&gt;"><exp><id name="x"/></exp><exp><intconst value="0"/></exp></binop><analysis ref="0">[_5, ide, _7, _8, dec, inc, y, _6, x]</analysis></exp><then><stm>
+		  <assignment id="_5"><exp><id name="x"/></exp></assignment>
+		  <analysis ref="0">[ide, _7, _8, inc, y, x]</analysis>
+		</stm><stm>
+		  <assignment id="_6"><exp><id name="inc"/></exp></assignment>
+		  <analysis ref="0">[_5, _7, ide, _8, y, inc, x]</analysis>
+		</stm><stm>
+		  <assignment id="y"><exp>
+		  <call id="foo">
+		    <exp><id name="_5"/></exp><exp><id name="_6"/></exp>
+		  </call>
+		  
+		</exp></assignment>
+		  
+		</stm></then><else><stm>
+		  <assignment id="_7"><exp><id name="x"/></exp></assignment>
+		  <analysis ref="0">[_5, ide, dec, y, _6, x]</analysis>
+		</stm><stm>
+		  <assignment id="_8"><exp><id name="dec"/></exp></assignment>
+		  <analysis ref="0">[_5, _7, ide, dec, y, _6, x]</analysis>
+		</stm><stm>
+		  <assignment id="y"><exp>
+		  <call id="foo">
+		    <exp><id name="_7"/></exp><exp><id name="_8"/></exp>
+		  </call>
+		  
+		</exp></assignment>
+		  
+		</stm></else></if></stm>
+		  <return>
+		    <exp><id name="y"/></exp>
+		  </return>
+		</function>
+		    <stm>
+		  <assignment id="_out"><exp>
+		  <call id="main">
+		    
+		  </call>
+		  
+		</exp></assignment>
+		  
+		</stm><stm><output><exp><id name="_out"/></exp></output></stm>
+		  </program>
+		</tip>

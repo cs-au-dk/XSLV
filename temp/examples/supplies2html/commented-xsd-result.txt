@@ -1,0 +1,46 @@
+Buildfile: build.xml
+
+init:
+
+runtriple:
+     [echo] Running Triple Test
+     [java] arg: use-fast-algorithm
+     [java] arg: ${num-runs-each}
+     [java] arg: ${wait-each-triple}
+     [java] arg: ${only-test-files}
+     [java] arg: ${only-xcfg}
+     [java] Using fast algorithm
+     [java] Run # 0
+     [java] Running availablesupplies2html
+     [java] Loaded resource: xslt1.0.defaults
+     [java] Loaded resource: file:/home/dongfang/speciale/test/resources/triples/availablesupplies2html/xslt/AffordableSupplies_xhtml.xsl
+     [java] Stylesheet simplification done
+     [java] Loaded resource: file:/home/dongfang/speciale/test/resources/triples/availablesupplies2html/input/Catalog.xsd
+     [java] Loaded resource: xsd-builtins
+     [java] Content model processed, document element is: Catalog-->XSDSchema
+     [java] Input type construction done
+     [java] Control flow algorithm done
+     [java] SG contruction done
+     [java] Output type construction done
+     [java] Validation done
+     [java] <?xml version="1.0" encoding="utf-8"?>
+     [java] <errorReport numErrors="2">
+     [java]   <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:5:34">
+     [java]     <message>invalid contents</message>
+     [java]     <example>&lt;{http://www.w3.org/1999/xhtml}body/&gt;</example>
+     [java]     <element name="{http://www.w3.org/1999/xhtml}html" origin="file:/home/dongfang/speciale/test/resources/triples/availablesupplies2html/xslt/AffordableSupplies_xhtml.xsl:4:48"/>
+     [java]   </error>
+     [java]   <error origin="file:/home/dongfang/speciale/test/resources/triples/xhtml-schema/xhtml1-transitional:11073:29">
+     [java]     <message>required attribute missing</message>
+     [java]     <example>alt</example>
+     [java]     <element name="{http://www.w3.org/1999/xhtml}img" origin="file:/home/dongfang/speciale/test/resources/triples/availablesupplies2html/xslt/AffordableSupplies_xhtml.xsl:33:11"/>
+     [java]   </error>
+     [java] </errorReport>
+     [java] With CG and input schema
+     [java] With input schema alone
+     [java] Without input schema
+     [java]   Test availablesupplies2html completed w/o casualties
+
+
+BUILD SUCCESSFUL
+Total time: 14 seconds

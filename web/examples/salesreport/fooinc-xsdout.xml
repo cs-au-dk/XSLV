@@ -1,0 +1,5 @@
+<triple name="fooinc">
+  <input type="XSD">input/fooinc1.xsd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/fooinc1.xsl</xslt>
+</triple>

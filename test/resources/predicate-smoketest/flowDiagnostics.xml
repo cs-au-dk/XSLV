@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<control-flow-graph template-rule-count="11">
+    <root-selection>
+        <selection original-path="/" downward-path-part="" wayward-path-part="">
+            <schema-context-flows>
+                <under-mode mode="#default">
+                    <under-context-type type="[root]">
+                        <target-template-rule index="6" mode="#all" match="/" priority="-0.5" hasLocalOutput="false">
+                            <node type="[root]"/>
+                        </target-template-rule>
+                    </under-context-type>
+                </under-mode>
+            </schema-context-flows>
+        </selection>
+    </root-selection>
+    <template-rules>
+        <template-rule index="0" mode="#default" match="child::foo" priority="0.0" hasLocalOutput="true">
+            <contextSet>
+                <under-mode mode="#default">
+                    <DTDElementDecl name="foo"/>
+                </under-mode>
+            </contextSet>
+            <instructions>
+                <element-inst nameAVT="r" namespaceAVT="">
+                    <apply-templates-inst mode="#default" containsSorts="false">
+                        <selection original-path="child::node()" downward-path-part="child::node()" wayward-path-part="">
+                            <schema-context-flows>
+                                <under-mode mode="#default">
+                                    <under-context-type type="foo">
+                                        <target-template-rule index="1" mode="#default" match="child::bar[attribute::a]" priority="0.5" hasLocalOutput="true">
+                                            <DTDElementDecl name="bar"/>
+                                        </target-template-rule>
+                                        <target-template-rule index="2" mode="#default" match="child::bar[not(attribute::a)]" priority="0.5" hasLocalOutput="true">
+                                            <DTDElementDecl name="bar"/>
+                                        </target-template-rule>
+                                        <target-template-rule index="5" mode="#all" match="child::*" priority="-0.5" hasLocalOutput="false">
+                                            <DTDElementDecl name="bar"/>
+                                        </target-template-rule>
+                                    </under-context-type>
+                                </under-mode>
+                            </schema-context-flows>
+                        </selection>
+                        <with-params/>
+                    </apply-templates-inst>
+                </element-inst>
+            </instructions>
+        </template-rule>
+        <template-rule index="1" mode="#default" match="child::bar[attribute::a]" priority="0.5" hasLocalOutput="true">
+            <contextSet>
+                <under-mode mode="#default">
+                    <DTDElementDecl name="bar"/>
+                </under-mode>
+            </contextSet>
+            <instructions>
+                <element-inst nameAVT="s" namespaceAVT="">
+                    <apply-templates-inst mode="afterburner" containsSorts="false">
+                        <selection original-path="self::node()" downward-path-part="self::node()" wayward-path-part="">
+                            <schema-context-flows>
+                                <under-mode mode="#default">
+                                    <under-context-type type="bar">
+                                        <target-template-rule index="3" mode="afterburner" match="child::bar[attribute::a]" priority="0.5" hasLocalOutput="true">
+                                            <DTDElementDecl name="bar"/>
+                                        </target-template-rule>
+                                        <target-template-rule index="4" mode="afterburner" match="child::bar" priority="0.0" hasLocalOutput="true">
+                                            <DTDElementDecl name="bar"/>
+                                        </target-template-rule>
+                                    </under-context-type>
+                                </under-mode>
+                            </schema-context-flows>
+                        </selection>
+                        <with-params/>
+                    </apply-templates-inst>
+                </element-inst>
+            </instructions>
+        </template-rule>
+        <template-rule index="2" mode="#default" match="child::bar[not(attribute::a)]" priority="0.5" hasLocalOutput="true">
+            <contextSet>
+                <under-mode mode="#default">
+                    <DTDElementDecl name="bar"/>
+                </under-mode>
+            </contextSet>
+            <instructions>
+                <element-inst nameAVT="t" namespaceAVT="">
+                    <apply-templates-inst mode="afterburner" containsSorts="false">
+                        <selection original-path="self::node()" downward-path-part="self::node()" wayward-path-part="">
+                            <schema-context-flows>
+                                <under-mode mode="#default">
+                                    <under-context-type type="bar">
+                                        <target-template-rule index="3" mode="afterburner" match="child::bar[attribute::a]" priority="0.5" hasLocalOutput="true">
+                                            <DTDElementDecl name="bar"/>
+                                        </target-template-rule>
+                                        <target-template-rule index="4" mode="afterburner" match="child::bar" priority="0.0" hasLocalOutput="true">
+                                            <DTDElementDecl name="bar"/>
+                                        </target-template-rule>
+                                    </under-context-type>
+                                </under-mode>
+                            </schema-context-flows>
+                        </selection>
+                        <with-params/>
+                    </apply-templates-inst>
+                </element-inst>
+            </instructions>
+        </template-rule>
+        <template-rule index="3" mode="afterburner" match="child::bar[attribute::a]" priority="0.5" hasLocalOutput="true">
+            <contextSet>
+                <under-mode mode="afterburner">
+                    <DTDElementDecl name="bar"/>
+                </under-mode>
+            </contextSet>
+            <instructions>
+                <element-inst nameAVT="x" namespaceAVT=""/>
+            </instructions>
+        </template-rule>
+        <template-rule index="4" mode="afterburner" match="child::bar" priority="0.0" hasLocalOutput="true">
+            <contextSet>
+                <under-mode mode="afterburner">
+                    <DTDElementDecl name="bar"/>
+                </under-mode>
+            </contextSet>
+            <instructions>
+                <choose-inst>
+                    <whens-and-otherwise>
+                        <when-inst>
+                            <element-inst nameAVT="y" namespaceAVT=""/>
+                        </when-inst>
+                        <otherwise-inst/>
+                    </whens-and-otherwise>
+                </choose-inst>
+            </instructions>
+        </template-rule>
+        <template-rule index="5" mode="#all" match="child::*" priority="-0.5" hasLocalOutput="false">
+            <contextSet>
+                <under-mode mode="#default">
+                    <DTDElementDecl name="bar"/>
+                </under-mode>
+            </contextSet>
+            <instructions>
+                <apply-templates-inst mode="#current" containsSorts="false">
+                    <selection original-path="child::node()" downward-path-part="child::node()" wayward-path-part="">
+                        <schema-context-flows/>
+                    </selection>
+                    <with-params/>
+                </apply-templates-inst>
+            </instructions>
+        </template-rule>
+        <template-rule index="6" mode="#all" match="/" priority="-0.5" hasLocalOutput="false">
+            <contextSet>
+                <under-mode mode="#default">
+                    <node type="[root]"/>
+                </under-mode>
+            </contextSet>
+            <instructions>
+                <apply-templates-inst mode="#current" containsSorts="false">
+                    <selection original-path="child::node()" downward-path-part="child::node()" wayward-path-part="">
+                        <schema-context-flows>
+                            <under-mode mode="#default">
+                                <under-context-type type="[root]">
+                                    <target-template-rule index="0" mode="#default" match="child::foo" priority="0.0" hasLocalOutput="true">
+                                        <DTDElementDecl name="foo"/>
+                                    </target-template-rule>
+                                    <target-template-rule index="9" mode="#all" match="child::processing-instruction()" priority="-0.5" hasLocalOutput="false">
+                                        <node type="[pi]"/>
+                                    </target-template-rule>
+                                    <target-template-rule index="10" mode="#all" match="child::comment()" priority="-0.5" hasLocalOutput="false">
+                                        <node type="[comment]"/>
+                                    </target-template-rule>
+                                </under-context-type>
+                            </under-mode>
+                        </schema-context-flows>
+                    </selection>
+                    <with-params/>
+                </apply-templates-inst>
+            </instructions>
+        </template-rule>
+        <template-rule index="7" mode="#all" match="child::text()" priority="-0.5" hasLocalOutput="true">
+            <contextSet/>
+            <instructions>
+                <value-of-inst select="self::node()"/>
+            </instructions>
+        </template-rule>
+        <template-rule index="8" mode="#all" match="attribute::*" priority="-0.5" hasLocalOutput="true">
+            <pronouncedDead/>
+        </template-rule>
+        <template-rule index="9" mode="#all" match="child::processing-instruction()" priority="-0.5" hasLocalOutput="false">
+            <contextSet>
+                <under-mode mode="#default">
+                    <node type="[pi]"/>
+                </under-mode>
+            </contextSet>
+            <instructions/>
+        </template-rule>
+        <template-rule index="10" mode="#all" match="child::comment()" priority="-0.5" hasLocalOutput="false">
+            <contextSet>
+                <under-mode mode="#default">
+                    <node type="[comment]"/>
+                </under-mode>
+            </contextSet>
+            <instructions/>
+        </template-rule>
+    </template-rules>
+</control-flow-graph>

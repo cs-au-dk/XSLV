@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+ xmlns:s="http://dongfang.dk/testdata" 
+ targetNamespace="http://dongfang.dk/testdata" 
+ elementFormDefault="qualified">
+
+  <complexType name="t1">
+    <sequence>
+      <element ref="s:a" minOccurs="0" maxOccurs="1"/>
+      <element ref="s:b" minOccurs="0" maxOccurs="unbounded"/>
+      <element ref="s:c" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+    <attribute name="a1" type="s:b"/>
+    <attribute name="a2" type="s:c"/>
+  </complexType>
+
+<!--  <element name="root" type="s:t1"/>-->
+
+  <element name="a" type="s:t1"/>
+
+  <simpleType name="b">
+    <restriction base="string">
+      <enumeration value="gedefims"/>
+    </restriction>
+  </simpleType>
+   
+  <element name="b">
+    <complexType>
+      <simpleContent>
+        <restriction base="s:b"/>
+      </simpleContent>
+    </complexType>
+  </element>
+
+  <simpleType name="c">
+    <restriction base="string">
+      <enumeration value="HundePrutt"/>
+    </restriction>
+  </simpleType>
+
+  <element name="c" type="s:c">
+<!--    <complexType>
+      <sequence>
+        <element ref="s:b" minOccurs="0" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+-->
+  </element>
+</schema>

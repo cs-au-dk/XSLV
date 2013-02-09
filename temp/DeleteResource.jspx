@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+  <jsp:directive.page language="java" session="true" isThreadSafe="true" info="Delete resource page; outputs nothing" isELIgnored="false"/>
+  <jsp:useBean id="validator" scope="session" class="dongfang.xsltools.context.InteractiveRequestResponseBean"/>
+  <jsp:scriptlet>
+validator.uncacheResource(request.getParameter("systemId"));
+</jsp:scriptlet>
+  <jsp:forward page="${param.mainjspx}"/>
+</jsp:root>

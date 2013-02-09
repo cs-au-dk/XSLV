@@ -1,0 +1,10 @@
+<triple name="staticanalysis2xhtml" enabled="true">
+  <input type="DTD" DTDNamespaceURI="">input/dtdgen.dtd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/tip.xsl</xslt>
+  <info>Credits: Torben Ruby et. al. (ex-DAIMI)</info>
+  <notes>
+The transform is almost valid; there is only a problem with the
+attributes on a <tt>form</tt> element.
+  </notes>
+</triple>

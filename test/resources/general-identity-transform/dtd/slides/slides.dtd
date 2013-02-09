@@ -1,0 +1,26 @@
+<!ELEMENT show (title,slide*)>
+
+<!ELEMENT slide (title,(h1|h2|ul|screenshot|figure|link)*)>
+
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT h1 (#PCDATA)>
+<!ELEMENT h2 (#PCDATA)>
+
+<!ELEMENT ul (li*)>
+
+<!ELEMENT li (#PCDATA)>
+
+<!ELEMENT link (#PCDATA)>
+<!ATTLIST link target CDATA #REQUIRED>
+
+<!ELEMENT figure EMPTY>
+<!ATTLIST figure src CDATA #REQUIRED>
+
+<!ELEMENT screenshot ((userinput|systemresponse)*)>
+
+<!ELEMENT userinput (#PCDATA)>
+
+<!ELEMENT systemresponse ANY>
+
+<!ELEMENT elide EMPTY>

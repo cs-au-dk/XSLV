@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+<!--
+Params: 
+twidth
+evt. mainpage
+-->
+  <jsp:directive.page language="java" session="true" isThreadSafe="true" isELIgnored="false" pageEncoding="utf-8"/>
+  <jsp:useBean id="validator" scope="session" class="dongfang.xsltools.context.InteractiveRequestResponseBean"/>
+          <table border="1" width="${twidth}">
+            <tr>
+            <c:forEach var="item" items="${validator.messages}" varStatus="stat">
+              <tr>
+                <td>
+                  <c:out value="${item}" escapeXml="yes"/>
+                </td>
+              </tr>
+            </c:forEach>
+          </table>
+</jsp:root>

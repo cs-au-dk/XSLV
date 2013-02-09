@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         xmlns:x="http://www.w3.org/1999/xhtml">
+
+  <x:h1>Structure Module</x:h1>
+
+  <start>
+    <ref name="html"/>
+  </start>
+
+  <div>
+    <x:h2>The html element</x:h2>
+
+    <define name="html">
+      <element name="html">
+        <ref name="html.attlist"/>
+        <ref name="head"/>
+        <ref name="body"/>
+      </element>
+    </define>
+
+    <define name="html.attlist">
+      <ref name="Common.attrib"/>
+      <ref name="profile.attlist"/>
+    </define>
+
+    <define name="profile.attlist">
+      <optional>
+        <attribute name="profile">
+          <ref name="URIs.datatype"/>
+        </attribute>     
+      </optional>
+    </define>
+  </div>
+
+  <div>
+    <x:h2>The head element</x:h2>
+
+    <define name="head">
+      <element name="head">
+        <ref name="head.attlist"/>
+        <ref name="head.content"/>
+      </element>
+    </define>
+
+    <define name="head.attlist">
+      <ref name="Common.attrib"/>
+    </define>
+
+    <define name="head.content">
+      <ref name="title"/>
+    </define>
+  </div>
+
+  <div>
+    <x:h2>The title element</x:h2>
+
+    <define name="title">
+      <element name="title">
+        <ref name="title.attlist"/>
+        <ref name="Inline.model"/>
+      </element>
+    </define>
+
+    <define name="title.attlist">
+      <ref name="Common.attrib"/>
+    </define>
+  </div>
+
+  <div>
+    <x:h2>The body element</x:h2>
+
+    <define name="body">
+      <element name="body">
+        <ref name="body.attlist"/>
+        <ref name="Block.model"/>
+      </element>
+    </define>
+
+    <define name="body.attlist">
+      <ref name="Common.attrib"/>
+    </define>
+  </div>
+
+</grammar>

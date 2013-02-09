@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE PurchaseOrder SYSTEM "PurchaseOrder.dtd">
+<PurchaseOrder>
+  <Header>
+    <From>XYZ Co.</From>
+    <To>Affordable Supplies</To>
+    <Sender>ECommerce Application</Sender>
+  </Header>
+  <OrderRequest>
+    <OrderRequestHeader orderID="XYZ027781" orderDate="10-20-2001">
+      <Total>
+        <Money currency="USD">5468.1</Money>
+      </Total>
+      <ShipTo>
+        <Address>ECommerce Buyers, 20 Penn Av, Washington DC</Address>
+      </ShipTo>
+      <BillTo>
+        <Address>ECommerce Buyers, 20 Penn Av, Washington DC</Address>
+      </BillTo>
+    </OrderRequestHeader>
+    <ItemOut quantity="22" requestedDeliveryDate="10-30-2001">
+      <ItemID>
+        <SupplierPartID>as-c4129x</SupplierPartID>
+      </ItemID>
+      <ItemDetail>
+        <UnitOfMeasure>cartridge</UnitOfMeasure>
+        <Description lang="en-US">High Performance LaserJet Cartridge</Description>
+        <ManufacturerName>Hewlett Packard</ManufacturerName>
+        <ManufacturerPartID>hp-c4129x</ManufacturerPartID>
+      </ItemDetail>
+      <UnitPrice>
+        <Money currency="USD">248.55</Money>
+      </UnitPrice>
+      <SubTotal>
+        <Money currency="USD">5468.1</Money>
+      </SubTotal>
+    </ItemOut>
+  </OrderRequest>
+</PurchaseOrder>

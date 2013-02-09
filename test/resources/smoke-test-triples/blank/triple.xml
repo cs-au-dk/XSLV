@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- basis for test runs: Blank stylesheet, simple example schema -->
+
+<triple name="blank" enabled="true">
+<input type="XSD" DTDNamespaceURI="">simple.xsd</input>
+<output type="RNG" DTDNamespaceURI="">simple.rng</output>
+<xslt>blank.xsl</xslt>
+</triple>

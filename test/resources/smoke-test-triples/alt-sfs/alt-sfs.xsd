@@ -1,0 +1,516 @@
+<?xml version='1.0'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" blockDefault="#all"
+           elementFormDefault="qualified" xml:lang="EN"
+           targetNamespace="http://www.w3.org/2001/XMLSchema"
+           version="Id: structures.xsd,v 1.2 2004/01/15 11:34:25 ht Exp ">
+  <xs:annotation>
+    <xs:documentation source="../structures/structures-with-errata.html.html">
+   The schema corresponding to this document is normative,
+   with respect to the syntactic constraints it expresses in the
+   XML Schema language.  The documentation (within &lt;documentation> elements)
+   below, is not normative, but rather highlights important aspects of
+   the W3C Recommendation of which this is a part</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>
+   The simpleType element and all of its members are defined
+   in datatypes.xsd</xs:documentation>
+  </xs:annotation>
+
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+             schemaLocation="http://www.w3.org/2001/xml.xsd">
+  </xs:import>
+
+<xs:simpleType name="derivationControl">
+  <xs:restriction/>
+</xs:simpleType>
+
+  <xs:complexType name="openAttrs">
+    <xs:annotation>
+      <xs:documentation>
+       This type is extended by almost all schema types
+       to allow attributes from other namespaces to be
+       added to user schemas.
+     </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:anyAttribute namespace="##other" processContents="lax"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="annotated">
+    <xs:annotation>
+      <xs:documentation>
+       This type is extended by all types which allow annotation
+       other than &lt;schema> itself
+     </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="xs:openAttrs">
+        <xs:sequence>
+          <xs:element ref="xs:annotation" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:group name="schemaTop">
+    <xs:annotation>
+      <xs:documentation>
+   This group is for the
+   elements which occur freely at the top level of schemas.
+   All of their types are based on the "annotated" type by extension.</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="redefinable">
+    <xs:annotation>
+      <xs:documentation>
+   This group is for the
+   elements which can self-redefine (see &lt;redefine> below).</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+    </xs:choice>
+  </xs:group>
+
+  <xs:simpleType name="formChoice">
+    <xs:annotation>
+      <xs:documentation>
+   A utility type, not for public use</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:enumeration value="qualified"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="reducedDerivationControl">
+    <xs:annotation>
+      <xs:documentation>
+   A utility type, not for public use</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:derivationControl">
+      <xs:enumeration value="restriction"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="derivationSet">
+    <xs:annotation>
+      <xs:documentation>
+   A utility type, not for public use</xs:documentation>
+      <xs:documentation>
+   #all or (possibly empty) subset of {extension, restriction}</xs:documentation>
+    </xs:annotation>
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:lilleged"/>
+      </xs:simpleType>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="#all"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+      <xs:simpleType name = "ged">
+        <xs:list itemType="xs:reducedDerivationControl"/>
+      </xs:simpleType>
+
+<xs:simpleType name="lilleged">
+<xs:restriction base="xs:ged">
+<xs:maxLength value="3"/>
+</xs:restriction>
+</xs:simpleType>
+
+
+  <xs:simpleType name="typeDerivationControl">
+    <xs:annotation>
+      <xs:documentation>
+   A utility type, not for public use</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:derivationControl">
+      <xs:enumeration value="extension"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="fullDerivationSet">
+    <xs:annotation>
+      <xs:documentation>
+   A utility type, not for public use</xs:documentation>
+      <xs:documentation>
+   #all or (possibly empty) subset of {extension, restriction, list, union}</xs:documentation>
+    </xs:annotation>
+    <xs:union>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:element name="schema" id="schema">
+    <xs:annotation>
+      <xs:documentation
+           source="http://www.w3.org/TR/xmlschema-1/#element-schema"/>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="xs:openAttrs">
+          <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="xs:include"/>
+              <xs:element ref="xs:annotation"/>
+            </xs:choice>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:group ref="xs:schemaTop"/>
+              <xs:element ref="xs:annotation" minOccurs="0"
+                          maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:sequence>
+          <xs:attribute name="targetNamespace" type="xs:anyURI"/>
+          <xs:attribute ref="xml:lang"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="allNNI">
+    <xs:annotation>
+      <xs:documentation>
+   for maxOccurs</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="xs:nonNegativeInteger">
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:attributeGroup name="occurs">
+    <xs:annotation>
+      <xs:documentation>
+   for all particles</xs:documentation>
+    </xs:annotation>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="defRef">
+    <xs:annotation>
+      <xs:documentation>
+   for element, group and attributeGroup,
+   which both define and reference</xs:documentation>
+    </xs:annotation>
+  </xs:attributeGroup>
+
+  <xs:group name="typeDefParticle">
+    <xs:annotation>
+      <xs:documentation>
+   'complexType' uses this</xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+    </xs:choice>
+  </xs:group>
+
+  <xs:group name="nestedParticle">
+    <xs:choice>
+    </xs:choice>
+  </xs:group>
+
+  <xs:group name="particle">
+    <xs:choice>
+    </xs:choice>
+  </xs:group>
+
+  <xs:complexType name="attribute">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="topLevelAttribute">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:group name="attrDecls">
+    <xs:sequence>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:group name="complexTypeModel">
+    <xs:choice>
+    </xs:choice>
+  </xs:group>
+
+  <xs:complexType name="complexType" abstract="true">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+    <xs:choice>
+    </xs:choice>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="restrictionType">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="complexRestrictionType">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="extensionType">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="simpleRestrictionType">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="simpleExtensionType">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:simpleType name="blockSet">
+    <xs:annotation>
+      <xs:documentation>
+    A utility type, not for public use</xs:documentation>
+      <xs:documentation>
+    #all or (possibly empty) subset of {substitution, extension,
+    restriction}</xs:documentation>
+    </xs:annotation>
+    <xs:union>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:complexType name="element" abstract="true">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="topLevelElement">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="localElement">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+          <xs:element ref="xs:annotation" minOccurs="0"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="group" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+   group type for explicit groups, named top-level groups and
+   group references</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+<xs:sequence/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="realGroup">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="namedGroup">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="groupRef">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="explicitGroup">
+    <xs:annotation>
+      <xs:documentation>
+   group type for the three kinds of group</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="simpleExplicitGroup">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:group name="allModel">
+    <xs:sequence>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:complexType name="narrowMaxMin">
+    <xs:annotation>
+      <xs:documentation>restricted max/min</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="all">
+    <xs:annotation>
+      <xs:documentation>
+   Only elements allowed inside</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="wildcard">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:annotation>
+    <xs:documentation>
+   simple type for the value of the 'namespace' attr of
+   'any' and 'anyAttribute'</xs:documentation>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:documentation>
+   Value is
+              ##any      - - any non-conflicting WFXML/attribute at all
+
+              ##other    - - any non-conflicting WFXML/attribute from
+                              namespace other than targetNS
+
+              ##local    - - any unqualified non-conflicting WFXML/attribute 
+
+              one or     - - any non-conflicting WFXML/attribute from
+              more URI        the listed namespaces
+              references
+              (space separated)
+
+    ##targetNamespace or ##local may appear in the above list, to
+        refer to the targetNamespace of the enclosing
+        schema or an absent targetNamespace respectively</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="namespaceList">
+    <xs:annotation>
+      <xs:documentation>
+   A utility type, not for public use</xs:documentation>
+    </xs:annotation>
+    <xs:union>
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="##any"/>
+          <xs:enumeration value="##other"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:union>
+  </xs:simpleType>
+
+  <xs:complexType name="attributeGroup" abstract="true">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="namedAttributeGroup">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="attributeGroupRef">
+    <xs:complexContent>
+      <xs:restriction base="xs:anyType">
+        <xs:sequence>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="keybase">
+    <xs:complexContent>
+<xs:restriction base="xs:anyType"/>
+<!--
+      <xs:extension base="xs:annotated">
+        <xs:sequence>
+          <xs:element ref="xs:selector"/>
+          <xs:element ref="xs:field" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:NCName" use="required"/>
+      </xs:extension>
+-->
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:group name="identityConstraint">
+    <xs:choice>
+    </xs:choice>
+  </xs:group>
+
+  <xs:element name="include"/>
+  <xs:element name="annotation"/>
+
+</xs:schema>

@@ -1,0 +1,7 @@
+<triple name="order2fo">
+  <input type="DTD" DTDNamespaceURI="">input/order.dtd</input>
+  <output type="RNG">output/fo_alternative.rng</output>
+  <xslt>xslt/order.xsl</xslt>
+  <info>Credits: Unknown.</info>
+  <notes>The transform is valid.</notes>
+</triple>

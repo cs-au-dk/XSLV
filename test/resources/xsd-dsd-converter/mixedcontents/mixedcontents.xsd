@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  targetNamespace="http://dongfang.dk/testdata" 
+  xmlns:d="http://dongfang.dk/testdata"
+  elementFormDefault="qualified">
+  
+  <complexType name="nonmixed" mixed="false">
+    <sequence>
+      <element name="a"/>
+    </sequence>
+  </complexType>
+  
+  <complexType name="mixed" mixed="true">
+    <sequence>
+      <element name="a"/>
+    </sequence>
+  </complexType>
+
+<!-- ixwt p. 128: the mixed=... attribute may be placed here -->
+  <complexType name="extended_nonmixed_1" mixed="false">
+    <complexContent>
+      <extension base="d:nonmixed"/>
+    </complexContent>
+  </complexType>
+
+<!-- ixwt p. 128: the mixed=... attribute may be placed here -->
+  <complexType name="extended_nonmixed_2">
+    <complexContent mixed="false">
+      <extension base="d:nonmixed"/>
+    </complexContent>
+  </complexType>
+
+<!-- ixwt p. 128: the mixed=... attribute may be placed here -->
+<!-- jaxp validator says: cos-ct-extends.1.4.3.2.2.1.b: The content type of a derived type and that of its base must both be mixed or both be element-only. 
+-->
+<!-- Modifying base to the mixed type, then.. -->
+  <complexType name="extended_mixed_1" mixed="true">
+    <complexContent>
+      <extension base="d:mixed"/>
+    </complexContent>
+  </complexType>
+
+<!-- ixwt p. 128: the mixed=... attribute may be placed here -->
+<!-- jaxp (SAX parser) validator says: cos-ct-extends.1.4.3.2.2.1.b: The content type of a derived type and that of its base must both be mixed or both be element-only. 
+-->
+<!-- Modifying base to the mixed type, then.. -->
+  <complexType name="extended_mixed_2">
+    <complexContent mixed="true">
+      <extension base="d:mixed"/>
+    </complexContent>
+  </complexType>
+  
+  <element name="boot">
+    <complexType>
+      <sequence>
+        <element name="nonmixed" type="d:nonmixed"/>
+        <element name="mixed" type="d:mixed"/>
+        <element name="extended_nonmixed_1" type="d:extended_nonmixed_1"/>
+        <element name="extended_nonmixed_2" type="d:extended_nonmixed_2"/>
+        <element name="extended_mixed_1" type="d:extended_mixed_1"/>
+        <element name="extended_mixed_2" type="d:extended_mixed_2"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>

@@ -1,0 +1,72 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  targetNamespace="http://www.example.com" 
+  xmlns:foo="http://www.example.com" 
+  elementFormDefault="qualified" 
+  attributeFormDefault="unqualified">
+
+  <element name="sales">
+    <complexType>
+      <sequence>
+        <element name="spersons">
+          <complexType>
+            <sequence>
+              <element name="sperson" 
+	        type="foo:SPerson" minOccurs="1"/>
+            </sequence>
+          </complexType>
+        </element>
+        <element name="customers">
+          <complexType>
+            <sequence>
+              <element ref="foo:customer" minOccurs="0"/>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+
+  <element name="customer">
+    <complexType>
+      <all>
+        <element name="name" type="string"/>
+        <element name="homepage" type="anyURI"/>
+        <element name="contact" type="foo:Person"/>
+      </all>
+    </complexType>
+  </element>
+
+  <complexType name="Person">
+    <sequence>
+      <element name="name" type="string"/>
+      <element name="email" type="anyURI"/>
+    </sequence>
+  </complexType>
+
+  <simpleType name="TeamColor">
+    <restriction base="string">
+      <enumeration value="ff1010"/><!--red  -->
+      <enumeration value="10ff10"/><!--green-->
+      <enumeration value="1010ff"/><!--blue -->
+    </restriction>
+  </simpleType>
+
+  <complexType name="SPerson">
+    <complexContent>
+      <extension base="foo:Person">
+        <sequence>
+          <element name="sales" minOccurs="1" maxOccurs="1">
+            <complexType>
+              <sequence minOccurs="1" maxOccurs="unbounded">
+                <element name="customer" type="string"/>
+                <element name="amount" type="integer"/>
+<!-- currency?? -->
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+        <attribute name="teamcolor" use="required" type="foo:TeamColor"/>
+      </extension>
+    </complexContent>
+  </complexType>
+</schema>

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ elementFormDefault="unqualified">
+
+  <xsd:element name="company">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="manager" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="mfgteam" minOccurs="1" maxOccurs="unbounded"/>
+        <xsd:element ref="qcteam" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="manager">
+    <xsd:complexType>
+      <xsd:sequence>
+ <!-- Contents shold be modelled, but we leave it as just a string -->
+        <xsd:element name="personinfo" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="worker">
+    <xsd:complexType>
+      <xsd:sequence>
+ <!-- Contents shold be modelled, but we leave it as just a string -->
+        <xsd:element name="personinfo" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+   
+  <xsd:element name="mfgteam">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="manager"/>
+        <xsd:element ref="worker" minOccurs="1" maxOccurs="10"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="qcteam">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="manager" minOccurs="1" maxOccurs="2"/>
+        <xsd:element ref="worker" minOccurs="0" maxOccurs="5"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

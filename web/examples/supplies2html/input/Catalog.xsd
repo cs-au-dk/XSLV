@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:element name="Catalog">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Supplier">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Name" minOccurs="0">
+								<xsd:complexType mixed="true">
+									<xsd:attribute name="lang" type="xsd:string" use="required"/>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="SupplierID" type="xsd:string" maxOccurs="unbounded"/>
+							<xsd:element name="Address" type="xsd:string" minOccurs="0"/>
+						</xsd:sequence>
+						<xsd:attribute name="storeFrontURL" type="xsd:anyURI" use="optional"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Index">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="IndexItem" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element ref="ItemID"/>
+										<xsd:element name="ItemDetail">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="UnitOfMeasure" type="xsd:string"/>
+													<xsd:element name="Description" type="xsd:string" maxOccurs="unbounded"/>
+													<xsd:element name="ManufacturerName" type="xsd:string"/>
+													<xsd:element name="ManufacturerPartID" type="xsd:string"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element ref="UnitPrice"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Contract">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="ContractItem" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element ref="ItemID"/>
+										<xsd:element ref="UnitPrice"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="effectiveDate" type="xsd:string" use="optional"/>
+						<xsd:attribute name="expirationDate" type="xsd:string" use="optional"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ItemID">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="SupplierPartID" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Money">
+		<xsd:complexType mixed="true">
+			<xsd:attribute name="currency" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UnitPrice">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Money"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

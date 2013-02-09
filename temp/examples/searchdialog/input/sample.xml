@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<SearchDialog id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search" name="DSBSTog">
+  <ComponentView id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl0" type="Tab" name="Intranet" displayName="S-cuben" url="/DSBSTogSearch.aspx" active="False">
+    <LinkButton id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl0__ctl0" url="__doPostBack('Body$g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b$Search$_ctl0$_ctl0','')">S-cuben</LinkButton>
+  </ComponentView>
+  <ComponentView id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1" type="SubPage" name="IntranetAdvanced" displayName="S-cuben - Avanceret s&#xF8;gning" url="/DSBSTogAdvancedSearch.aspx" active="True">
+    <ComponentGroup id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl0" name="Keywords" displayName="N&#xF8;gleord" state="Expanded">
+      <Component id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl0__ctl0" type="MultiLineKeywords">
+        <TextBox id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl0__ctl0_AllKeywords" name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl0:_ctl0:AllKeywords" class="" visible="True"/>
+        <TextBox id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl0__ctl0_Phrase" name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl0:_ctl0:Phrase" class="" visible="True"/>
+        <TextBox id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl0__ctl0_OneOfKeywords" name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl0:_ctl0:OneOfKeywords" class="" visible="True"/>
+        <TextBox id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl0__ctl0_NoKeywords" name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl0:_ctl0:NoKeywords" class="" visible="True"/>
+      </Component>
+      <Component id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl0__ctl1" type="Settings">
+        <ValidSettings name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl0:_ctl1:_ctl0" value=""/>
+        <MaxRows name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl0:_ctl1:_ctl1" value="40"/>
+        <DetailLevel name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl0:_ctl1:_ctl2" value=""/>
+        <OpenLinksInNewWindow name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl0:_ctl1:_ctl3" checked="False"/>
+        <EnableWordBreaker name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl0:_ctl1:_ctl4" checked="False"/>
+      </Component>
+      <Component id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl0__ctl2" type="Buttons">
+        <Button id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl0__ctl2_Search" name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl0:_ctl2:Search" type="Search">Search</Button>
+        <Button id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl0__ctl2_NewSearch" name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl0:_ctl2:NewSearch" type="NewSearch">New Search</Button>
+        <Button id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl0__ctl2_SaveSettings" name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl0:_ctl2:SaveSettings" type="SaveSettings">Save Settings</Button>
+      </Component>
+      <TextBox id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl0_ComponentGroupState" name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl0:ComponentGroupState" class="" visible="False">Expanded</TextBox>
+    </ComponentGroup>
+    <ComponentGroup id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl1" name="Sources" displayName="Kilder" state="Expanded">
+      <Component id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl1__ctl0" type="MultiSource">
+        <PostBackName>Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl1:_ctl0:_ctl0</PostBackName>
+      </Component>
+      <TextBox id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl1_ComponentGroupState" name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl1:ComponentGroupState" class="" visible="False">Expanded</TextBox>
+    </ComponentGroup>
+    <ComponentGroup id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl2" name="Properties" displayName="Egenskaber" state="Expanded">
+      <Component id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl2__ctl0" type="MultiLineProperties">
+        <Properties>
+          <Property id="Forfatter" type="String">
+            <Name>urn:schemas-microsoft-com:office:office#ows_STOG_Forfatter</Name>
+            <DisplayName>Forfatter</DisplayName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:ForfatterOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:ForfatterValue"/>
+          </Property>
+          <Property id="Modtager" type="String">
+            <Name>urn:schemas-microsoft-com:office:office#ows_STOG_Modtager</Name>
+            <DisplayName>Modtager</DisplayName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:ModtagerOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:ModtagerValue"/>
+          </Property>
+          <Property id="Title" type="String">
+            <Name>Title</Name>
+            <DisplayName>Titel</DisplayName>
+            <AlternativeName>t</AlternativeName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:TitleOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+              <Operator>EqualTo</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:TitleValue"/>
+          </Property>
+          <Property id="Dato" type="Date">
+            <Name>urn:schemas-microsoft-com:office:office#ows_STOG_BrevDato</Name>
+            <DisplayName>Dato</DisplayName>
+            <Description>Enter date as M/d/yyyy</Description>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:DatoOperator"/>
+            <Operators>
+              <Operator>LessThan</Operator>
+              <Operator>LessThanOrEqualTo</Operator>
+              <Operator>GreaterThan</Operator>
+              <Operator>GreaterThanOrEqualTo</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:DatoValue"/>
+          </Property>
+          <Property id="ContentType" type="String">
+            <Name>ContentClass</Name>
+            <DisplayName>Indholdstype</DisplayName>
+            <AlternativeName>type</AlternativeName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:ContentTypeOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:ContentTypeValue"/>
+            <Values>
+              <Value selected="False">Omr&#xE5;de</Value>
+              <Value selected="False">Dokument</Value>
+              <Value selected="False">Dokumentbibliotek</Value>
+              <Value selected="False">Liste</Value>
+              <Value selected="False">Listing</Value>
+              <Value selected="False">Person</Value>
+              <Value selected="False">Billede</Value>
+              <Value selected="False">Billedbibliotek</Value>
+              <Value selected="False">Cube</Value>
+            </Values>
+          </Property>
+          <Property id="FileType" type="String">
+            <Name>FileType</Name>
+            <DisplayName>Filtype</DisplayName>
+            <AlternativeName>filetype</AlternativeName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:FileTypeOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:FileTypeValue"/>
+            <Values>
+              <Value selected="False">Html</Value>
+              <Value selected="False">MS Excel</Value>
+              <Value selected="False">MS PowerPoint</Value>
+              <Value selected="False">MS Word</Value>
+              <Value selected="False">PDF</Value>
+              <Value selected="False">Text</Value>
+              <Value selected="False">Mail</Value>
+              <Value selected="False">Indskannet dokument</Value>
+            </Values>
+          </Property>
+          <Property id="Status" type="String">
+            <Name>urn:schemas-microsoft-com:office:office#ows_Status</Name>
+            <DisplayName>Status</DisplayName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:StatusOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:StatusValue"/>
+            <Values>
+              <Value selected="False">Blank</Value>
+              <Value selected="False">Hans</Value>
+            </Values>
+          </Property>
+          <Property id="Dokumenttype" type="String">
+            <Name>urn:schemas-microsoft-com:office:office#ows_STOG_Type</Name>
+            <DisplayName>Dokumenttype</DisplayName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:DokumenttypeOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:DokumenttypeValue"/>
+            <Values>
+              <Value selected="False">Brev</Value>
+              <Value selected="False">Dagsorden</Value>
+              <Value selected="False">Dokument</Value>
+              <Value selected="False">Havarirapport</Value>
+              <Value selected="False">Ikke tildelt</Value>
+              <Value selected="False">Indstilling</Value>
+              <Value selected="False">Kommissorium</Value>
+              <Value selected="False">Kontrakt</Value>
+              <Value selected="False">Notat</Value>
+              <Value selected="False">Referat</Value>
+              <Value selected="False">Statusrapport</Value>
+              <Value selected="False">Teknisk ordre</Value>
+            </Values>
+          </Property>
+          <Property id="Retning" type="String">
+            <Name>urn:schemas-microsoft-com:office:office#ows_STOG_Retning</Name>
+            <DisplayName>Retning</DisplayName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:RetningOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:RetningValue"/>
+            <Values>
+              <Value selected="False">Ind</Value>
+              <Value selected="False">Udg&#xE5;ende</Value>
+              <Value selected="False">Intern</Value>
+            </Values>
+          </Property>
+          <Property id="Identifikation" type="String">
+            <Name>urn:schemas-microsoft-com:office:office#ows_STOG_Identifikation</Name>
+            <DisplayName>Identifikation</DisplayName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:IdentifikationOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:IdentifikationValue"/>
+          </Property>
+          <Property id="Emnegrupper" type="String">
+            <Name>urn:schemas-microsoft-com:office:office#ows_STOG_EmneGruppeNR</Name>
+            <DisplayName>Emnegrupper</DisplayName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:EmnegrupperOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:EmnegrupperValue"/>
+          </Property>
+          <Property id="Cuber" type="String">
+            <Name>urn:schemas-microsoft-com:office:office#ows_STOG_Cuber</Name>
+            <DisplayName>Cuber</DisplayName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:CuberOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:CuberValue"/>
+          </Property>
+          <Property id="Category" type="String">
+            <Name>urn:schemas-microsoft-com:office:office#ows_Category0</Name>
+            <DisplayName>Category</DisplayName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:CategoryOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+              <Operator>EqualTo</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:CategoryValue"/>
+          </Property>
+          <Property id="URL" type="URL">
+            <Name>URL</Name>
+            <DisplayName>URL</DisplayName>
+            <AlternativeName>u</AlternativeName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:URLOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+              <Operator>EqualTo</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:URLValue"/>
+          </Property>
+          <Property id="IFCSUBCODE" type="String">
+            <Name>urn:schemas.microsoft.com:htmlinfo:metainfo:IL.SUBCODE.IFC</Name>
+            <DisplayName>IFC Subject Code</DisplayName>
+            <Operator name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:IFCSUBCODEOperator"/>
+            <Operators>
+              <Operator>Contains</Operator>
+              <Operator>EqualTo</Operator>
+            </Operators>
+            <Value name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:_ctl0:IFCSUBCODEValue"/>
+          </Property>
+        </Properties>
+      </Component>
+      <TextBox id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl2_ComponentGroupState" name="Body:g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b:Search:_ctl1:_ctl2:ComponentGroupState" class="" visible="False">Expanded</TextBox>
+    </ComponentGroup>
+    <LinkButton id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl1__ctl3" url="__doPostBack('Body$g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b$Search$_ctl1$_ctl3','')">S-cuben - Avanceret s&#xF8;gning</LinkButton>
+  </ComponentView>
+  <ComponentView id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl2" type="Tab" name="People" displayName="Personer" url="/DSBSTogPeopleSearch.aspx" icon="/_layouts/images/imnhdr.gif" active="False">
+    <LinkButton id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl2__ctl0" url="__doPostBack('Body$g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b$Search$_ctl2$_ctl0','')">Personer</LinkButton>
+  </ComponentView>
+  <ComponentView id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl3" type="SubPage" name="Settings" displayName="Indstillinger" url="/DSBSTogSearchSettings.aspx" active="False">
+    <LinkButton id="Body_g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b_Search__ctl3__ctl0" url="__doPostBack('Body$g_7789f6a2_1c59_4b0f_87ac_d48edd2bd52b$Search$_ctl3$_ctl0','')">Indstillinger</LinkButton>
+  </ComponentView>
+</SearchDialog>

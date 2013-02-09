@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<triple name="text-context-bug" enabled="true"><input type="XSD" DTDNamespaceURI="">text-context-bug.xsd</input><output type="DSD" DTDNamespaceURI="">simple.dsd</output><xslt>text-context-bug.xsl</xslt></triple>

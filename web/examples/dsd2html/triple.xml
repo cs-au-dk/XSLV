@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<triple name="dsd2html" enabled="true">
+  <input type="DTD" DTDNamespaceURI="" RootElementName="dsd">input/dsd2.dtd</input>
+<!--  <input type="DTD" DTDNamespaceURI="http://www.brics.dk/DSD/2.0" RootElementName="dsd">input/dsd2.dtd</input>-->
+<!--  <input type="XSD">input/Catalog.xsd</input> -->
+    <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/dsd2-html_xhtml.xsl</xslt>
+  <info>Hugh Field-Richards.</info>
+  <notes>
+This is a rather large example, and it takes some time to validate. Control flow graph and transform XML Graph construction still take only a few seconds, though.
+<br/>
+There are no errors in the transform.
+  </notes>
+</triple>

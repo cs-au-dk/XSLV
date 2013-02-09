@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<bugs date="7.2.2007">
+  <bug>
+    <title>
+Too many template conflict / competition messages
+</title>
+    <severity>Medium</severity>
+    <status>Open</status>
+    <reproducability>
+Reproduceable
+</reproducability>
+    <description>
+There are too many messages about competition between templates.
+<ul><li>Each competing pair is reported twice (x with y and y with z)</li><li>Competing pairs that are a consequence of stylesheet simplification (does that exist??) should not be reported.</li></ul>
+A proper fix requires a better framework for competition analysis
+than just logging each case as it is discovered.
+</description>
+    <research-log>
+      <log-entry>Blah</log-entry>
+    </research-log>
+  </bug>
+  <bug>
+    <title>
+Does NS URI work for DTD?
+</title>
+    <severity>High</severity>
+    <status>Closed</status>
+    <reproducability>
+ObservedIncident
+</reproducability>
+    <description>
+In the purchaseorder2invoice democase, try using the DTD instead of the RNG on the output side.
+Specify the correct namespace URI, 'invoice'.
+The validator seems not to get the namespace right.
+</description>
+    <research-log>
+      <log-entry>It might have been the radio button gone forgotten. The value comes through OK _when_ the
+      radio button is selected.</log-entry>
+    </research-log>
+  </bug>
+  <bug>
+    <title>
+JS bugs in BRICS production - edit page
+</title>
+    <severity>Medium</severity>
+    <status>Closed</status>
+    <reproducability>
+Reproduceable
+</reproducability>
+    <environment>
+MSIE 6
+</environment>
+    <description>
+The line and column number computation or display JS on the edit pages does not work.
+Seems OK in Mozilla.
+</description>
+  </bug>
+  <bug>
+    <title>
+Too many options appear in input schema diagnostics view
+</title>
+    <severity>Low</severity>
+    <status>Open</status>
+    <reproducability>
+Reproduceable
+</reproducability>
+    <environment>
+Any
+</environment>
+    <description>
+After clicking update in the input diagnostics view, FOUR checkboxes
+appear. The three of them are irrelevant and should not appear.
+</description>
+  </bug>
+  <bug>
+    <title>
+Download of input schema diagnostics fails
+</title>
+    <severity>Low</severity>
+    <status>Closed</status>
+    <reproducability>
+Reproduceable
+</reproducability>
+    <environment>
+Any
+</environment>
+    <description>
+Clicking download in the input schema diagnostics causes a JSP exception.
+
+org.apache.jasper.JasperException: /XMLDownload.jspx(7,77) According to TLD or attribute directive in tag file, attribute items does not accept any expressions
+	org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:510)
+	org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:375)
+	org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:314)
+	org.apache.jasper.servlet.JspServlet.service(JspServlet.java:264)
+	javax.servlet.http.HttpServlet.service(HttpServlet.java:802)
+
+</description>
+  </bug>
+  <bug>
+    <title>
+Validator / session threads get into a messy state when users browse among democases
+</title>
+    <severity>Critical</severity>
+    <status>Open</status>
+    <reproducability>
+Reproduceable
+</reproducability>
+    <environment>
+Any
+</environment>
+    <description>
+When the user browses back and forth between democases, all
+sorts of strange things happen to the session state.
+That is not good for confidence.
+An immediate solution is to ask users to shut down their browser
+between each democase. A better solution hopefully is found.
+</description>
+  </bug>
+  <bug>
+    <title>
+Missing JS auto-selection of string input radio button
+</title>
+    <severity>Low</severity>
+    <status>Closed</status>
+    <reproducability>
+Reproduceable
+</reproducability>
+    <environment>
+Any
+</environment>
+    <description>
+When a stylesheet module or a schema is uploaded, there is JS functionality
+that automatically switches to the BrowseFile / URL / TEXT input type
+used by the user.
+This functionality is missing for text inputs (namespace URI and root
+element name).
+</description>
+  </bug>
+  <bug>
+    <title>
+Gateway timeout message
+</title>
+    <severity>Medium</severity>
+    <status>Open</status>
+    <reproducability>
+Reproduceable
+</reproducability>
+    <environment>
+Any
+</environment>
+    <description>
+When a large / heavy validation case is run, the
+BRICS apache server comes up with some kind of gateway
+timeout message, even though the validator is still running.
+Could the server timeout be extended?
+</description>
+  </bug>
+  <bug>
+    <title>
+Output schema root element for XSD must be manually
+inputtable also when using Schematools-style output
+schema construction
+</title>
+    <severity>Medium</severity>
+    <status>Closed</status>
+    <reproducability>
+Reproduceable
+</reproducability>
+    <environment>
+Any
+</environment>
+    <description>
+The format of the output schema root element name (given by the user / environment)
+is different in Schematools from in the XSLV: Schematools uses
+Clark form, while the dongfang stuff uses plain names.
+<br/>
+A feature must be provided for the user to give a root element name
+manually when Schematools constructs the output schema (see .......).
+Right now that is only possible when the output schema is constructed
+in the dongfang identity-transform-input way.
+</description>
+  </bug>
+  <bug>
+    <title>
+The enabled=true/false attribute in the triple element should be respected 
+in the on-line democase code
+</title>
+    <severity>Low</severity>
+    <status>Open</status>
+    <reproducability>
+Reproduceable
+</reproducability>
+    <environment>
+Any
+</environment>
+    <description>
+Instead of having to edit jsp's to enable or disable demo cases,
+the already existing enabled attribute on the triple.xml's triple
+element should be used.
+</description>
+  </bug>
+  <bug>
+    <title>
+Schematools could use some kind of settable resolution context...
+</title>
+    <severity>Low</severity>
+    <status>Open</status>
+    <reproducability>
+Reproduceable
+</reproducability>
+    <environment>
+Any
+</environment>
+    <description>
+...for pulling in included or imported resources referred by URIs in another way than just resolving the URI.
+Without that, includes in xsds won't work so well.
+</description>
+  </bug>
+  <bug>
+    <title>
+What ever happened to schema validation...
+</title>
+    <severity>High</severity>
+    <status>Open</status>
+    <reproducability>
+Reproduceable
+</reproducability>
+    <environment>
+Any
+</environment>
+    <description>
+... of the provided XSLT stylesheets and schemas?
+If enabling it right now (ModelConfiguration.java), XSLV goes dead in some mysterious way.
+</description>
+  </bug>
+  <bug>
+    <title>
+Validation dies in some large cases
+</title>
+    <severity>High</severity>
+    <status>Open</status>
+    <reproducability>
+Reproduceable
+</reproducability>
+    <environment>
+Any
+</environment>
+    <description>
+Validation terminates in some funny way with for example the dsd2xhtml case, without a result.
+Is that really a feature (time out)?
+</description>
+  </bug>
+</bugs>

@@ -1,0 +1,15 @@
+<!-- link-collection.dtd by Sebastian Hauer <hauer@psicode.com> -->
+<!ELEMENT link-collection (section+)>
+<!ELEMENT section (name, link*)>
+<!ELEMENT name (#PCDATA|br|sup|sub)*>
+<!ELEMENT link (name?, to?, desc?)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT desc (#PCDATA|br|sup|sub|a)*>
+<!ELEMENT sup (#PCDATA)>
+<!ELEMENT sub (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT br EMPTY>
+<!ELEMENT a (#PCDATA|br|sup|sub)*>
+<!ATTLIST a href CDATA #REQUIRED>
+

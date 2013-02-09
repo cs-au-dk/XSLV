@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<triple name="double-gap" enabled="true"><input type="XSD" DTDNamespaceURI="">doublegap.xsd</input><output type="DSD" DTDNamespaceURI="">simple.dsd</output><xslt>general-identity-transform.xsl</xslt></triple>

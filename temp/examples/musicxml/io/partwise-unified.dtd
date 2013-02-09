@@ -1,0 +1,3488 @@
+<!--
+	MusicXML Partwise DTD
+
+	Version 1.1 - 20 May 2005
+	
+	Copyright © 2004-2005 Recordare LLC.
+	http://www.recordare.com/
+	
+	This MusicXML work is being provided by the copyright
+	holder under the MusicXML Document Type Definition 
+	Public License Version 1.02, available from:
+	
+		http://www.recordare.com/dtds/license.html
+-->
+
+<!--
+	MusicXML is designed to represent musical scores,
+	specifically common western musical notation from the
+	17th century onwards. It is designed as an interchange
+	format for notation, analysis, retrieval, and performance
+	applications. Therefore it is intended to be sufficient,
+	not optimal, for these applications.
+	
+	MusicXML is based on the MuseData and Humdrum formats.
+	Humdrum explicitly represents the two-dimensional nature
+	of musical scores by a 2-D layout notation. Since XML
+	is a hierarchical format, we cannot do this explicitly.
+	Instead, there are two top-level formats:
+	
+	partwise.dtd   Represents scores by part/instrument
+	timewise.dtd   Represents scores by time/measure
+	
+	Thus partwise.dtd contains measures within each part,
+	while timewise.dtd contains parts within each measure.
+	XSLT stylesheets are provided to convert between the
+	two formats.
+	
+	The partwise and timewise score DTDs represent a single 
+	movement of music. Multiple movements or other musical 
+	collections are presented using opus.dtd. An opus
+	document contains XLinks to individual scores.
+	
+	Suggested use:
+	
+	<!DOCTYPE score-partwise PUBLIC
+		"-//Recordare//DTD MusicXML 1.1 Partwise//EN"
+		"http://www.musicxml.org/dtds/partwise.dtd">
+	
+	This DTD is made up of a series of component DTDs, all
+	of which are included here.
+-->
+
+<!-- Entities -->
+
+<!--
+	The partwise and timewise entities are used with
+	conditional sections to control the differences between
+	the partwise and timewise DTDs. The values for these
+	entities are what distinguish the partwise and timewise
+	DTD files.
+--> 
+<!ENTITY % partwise "INCLUDE">
+<!ENTITY % timewise "IGNORE">
+
+<!-- Component DTDs -->
+
+<!--
+	The common DTD contains the entities and elements that
+	are shared among multiple component DTDs.
+-->
+<!ENTITY % common PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.1 Common//EN"
+	"common.dtd">
+<!--
+	MusicXML common.dtd
+
+	Version 1.1 - 20 May 2005
+	
+	Copyright © 2004-2005 Recordare LLC.
+	http://www.recordare.com/
+	
+	This MusicXML work is being provided by the copyright
+	holder under the MusicXML Document Type Definition 
+	Public License Version 1.02, available from:
+	
+		http://www.recordare.com/dtds/license.html
+-->
+
+<!--
+	This file contains entities and elements that are common
+	across multiple component DTDs. In particular, several
+	elements here are common across both notes and measures.
+-->
+
+<!-- Entities -->
+
+<!--
+	If greater ASCII compatibility is desired, entity
+	references may be used instead of the direct Unicode
+	characters. Currently we include ISO Latin-1 for Western
+	European characters and ISO Latin-2 for Central European
+	characters. 
+-->
+<!ENTITY % ISOlat1 PUBLIC 
+    "ISO 8879:1986//ENTITIES Added Latin 1//EN//XML"
+    "ISOlat1.pen">
+%ISOlat1;
+<!ENTITY % ISOlat2 PUBLIC 
+    "ISO 8879:1986//ENTITIES Added Latin 2//EN//XML"
+    "ISOlat2.pen">
+%ISOlat2;
+
+<!--
+	Data types. These nearly all resolve to strings but
+	show intent for how data is formatted and used.
+-->
+
+<!--
+	Calendar dates are represented yyyy-mm-dd format,
+	following ISO 8601.
+-->
+<!ENTITY % yyyy-mm-dd "(#PCDATA)">
+
+<!--
+	The tenths entity is a number representing tenths of 
+	interline space (positive or negative) for use in 
+	attributes. The layout-tenths entity is the same for
+	use in elements. Both integer and decimal values are 
+	allowed, such as 5 for a half space and 2.5 for a 
+	quarter space.
+-->
+<!ENTITY % tenths "CDATA">
+<!ENTITY % layout-tenths "(#PCDATA)">
+
+<!--
+	Common structures between element and attribute definitions. 
+-->
+
+<!--
+	Two entities for editorial information in notes. These
+	entities, and their elements defined below, are used
+	across all the different component DTDs.
+-->
+<!ENTITY % editorial "(footnote?, level?)">
+<!ENTITY % editorial-voice "(footnote?, level?, voice?)">
+
+<!--
+	The start-stop and start-stop-continue entities are used 
+	for musical elements that can either start or stop, such 
+	as slurs, tuplets, and wedges. The start-stop-continue
+	entity is used when there is a need to refer to an
+	intermediate point in the symbol, as for complex slurs.
+-->
+<!ENTITY % start-stop "(start | stop)">
+<!ENTITY % start-stop-continue "(start | stop | continue)">
+
+<!--
+	The yes-no entity is used for boolean-like attributes.
+-->
+<!ENTITY % yes-no "(yes | no)">
+
+<!--
+	The symbol-size entity is used to indicate full vs.
+	cue-sized vs. oversized symbols. The large value
+	for oversized symbols was added in version 1.1.
+-->
+<!ENTITY % symbol-size "(full | cue | large)">
+
+<!--
+	The up-down entity is used for arrow direction,
+	indicating which way the tip is pointing.
+-->
+<!ENTITY % up-down "(up | down)">
+
+<!--
+	The top-bottom entity is used to indicate the top or
+	bottom part of a vertical shape like non-arpeggiate.
+-->
+<!ENTITY % top-bottom "(top | bottom)">
+
+
+<!--
+	The position attributes are based on MuseData print
+	suggestions. For most elements, any program will compute
+	a default x and y position. The position attributes let
+	this be changed two ways. 
+
+	The default-x and default-y attributes change the 
+	computation of the default position. For most elements,
+	the origin is changed relative to the left-hand side of
+	the note or the musical position within the bar (x) and
+	the top line of the staff (y).
+
+	For the following elements, the default-x value changes
+	the origin relative to the start of the current measure:
+
+		- note
+		- figured-bass
+		- harmony
+		- link
+		- directive
+		- all descendants of the part-list element
+		- all children of the direction-type element
+
+	For the note, figured-bass, and harmony elements, the 
+	default-x value is considered to have adjusted the 
+	musical position within the bar for its descendant 
+	elements.
+
+	Since the <credit-words> element is not related to a
+	measure, in this case the default-x and default-y 
+	attributes adjust the origin relative to the bottom 
+	left-hand corner of the first page.
+
+	The relative-x and relative-y attributes change the 
+	position relative to the default position, either as 
+	computed by the individual program, or as overridden by 
+	the default-x and default-y attributes.
+	
+	Positive x is right, negative x is left; positive y
+	is up, negative y is down. All units are in tenths of
+	interline space. For stems, positive relative-y 
+	lengthens a stem while negative relative-y shortens it.
+
+	As elsewhere in MusicXML, tenths are the global tenths 
+	defined by the <scaling> element, not the local tenths
+	of a staff resized by the <staff-size> element.
+
+-->
+<!ENTITY % position
+	"default-x     %tenths;    #IMPLIED
+	 default-y     %tenths;    #IMPLIED
+	 relative-x    %tenths;    #IMPLIED
+	 relative-y    %tenths;    #IMPLIED">
+
+<!--
+	The placement attribute indicates whether something is
+	above or below another element, such as a note or a
+	notation.
+-->
+<!ENTITY % placement
+	"placement (above | below) #IMPLIED">
+
+<!--
+	The orientation attribute indicates whether slurs and
+	ties are overhand (tips down) or underhand (tips up).
+	This is distinct from the placement entity used by any
+	notation type.
+-->
+<!ENTITY % orientation
+	"orientation (over | under) #IMPLIED">
+
+<!--
+	The bezier entity is used to indicate the curvature of
+	slurs and ties, representing the control points for a 
+	cubic bezier curve. For ties, the bezier entity is 
+	used with the tied element.
+
+	Normal slurs, S-shaped slurs, and ties need only two 
+	bezier points: one associated with the start of the slur 
+	or tie, the other with the stop. Complex slurs and slurs 
+	divided over system breaks can specify additional 
+	bezier data at slur elements with a continue type.
+	
+	The bezier-offset, bezier-x, and bezier-y attributes
+	describe the outgoing bezier point for slurs and ties 
+	with a start type, and the incoming bezier point for
+	slurs and ties with types of stop or continue. The 
+	attributes bezier-offset2, bezier-x2, and bezier-y2 
+	are only valid with slurs of type continue, and 
+	describe the outgoing bezier point.
+	
+	The bezier-offset and bezier-offset2 attributes are
+	measured in terms of musical divisions, like the offset
+	element. These are the recommended attributes for
+	specifying horizontal position. The other attributes
+	are specified in tenths, relative to any position 
+	settings associated with the slur or tied element.
+-->
+<!ENTITY % bezier
+	"bezier-offset  CDATA     #IMPLIED
+	 bezier-offset2 CDATA     #IMPLIED
+	 bezier-x       %tenths;  #IMPLIED
+	 bezier-y       %tenths;  #IMPLIED
+	 bezier-x2      %tenths;  #IMPLIED
+	 bezier-y2      %tenths;  #IMPLIED">
+
+<!--
+	Slurs, tuplets, and many other features can be
+	concurrent and overlapping within a single musical
+	part. The number-level attribute distinguishes up to
+	six concurrent objects of the same type. A reading
+	program should be prepared to handle cases where
+	the number-levels stop in an arbitrary order.
+	Different numbers are needed when the features
+	overlap in MusicXML file order.
+-->
+<!ENTITY % number-level "(1 | 2 | 3 | 4 | 5 | 6)">
+
+<!--
+	MusicXML supports six levels of beaming, up to 256th 
+	notes. Unlike the number-level attribute, the beam-level
+	identifies concurrent beams in a beam group. It does not
+	distinguish overlapping beams such as grace notes within
+	regular notes, or beams used in different voices.
+-->
+<!ENTITY % beam-level "(1 | 2 | 3 | 4 | 5 | 6)">
+
+<!--
+	The font entity gathers together attributes for
+	determining the font within a directive or direction.
+	They are based on the text styles for Cascading
+	Style Sheets. The font-family is a comma-separated list
+	of font names. These can be specific font styles such
+	as Maestro or Opus, or one of three generic font styles:
+	music, serif, or sans-serif. The font-style can be 
+	normal or italic. The font-size can be one of the CSS 
+	sizes (xx-small, x-small, small, medium, large, x-large,
+	xx-large) or a numeric point size. The font-weight can 
+	be normal or bold. The default is application-dependent,
+	but is a text font vs. a music font.
+-->
+
+<!ENTITY % font
+	"font-family  CDATA  #IMPLIED
+	 font-style   CDATA  #IMPLIED
+	 font-size    CDATA  #IMPLIED
+	 font-weight  CDATA  #IMPLIED">
+	
+<!--
+	The color entity indicates the color of an element.
+	Color may be represented as hexadecimal RGB triples,
+	as in HTML, or as hexadecimal ARGB tuples, with the
+	A indicating alpha of transparency. An alpha value
+	of 00 is totally transparent; FF is totally opaque.
+	If RGB is used, the A value is assumed to be FF. 
+
+	For instance, the RGB value "#800080" represents
+	purple. An ARGB value of "#40800080" would be a
+	transparent purple.
+
+	As in SVG 1.1, colors are defined in terms of the
+	sRGB color space (IEC 61966).
+-->
+<!ENTITY % color
+	"color CDATA #IMPLIED">
+
+<!--
+	The justify entity is used to indicate left, center,
+	or right justification. The default value varies for
+	different elements.
+-->
+<!ENTITY % justify
+	"justify (left | center | right) #IMPLIED">
+
+<!--
+	In cases where text extends over more than one line, 
+	horizontal alignment and justify values can be 
+	different. The most typical case is for credits, 
+	such as:
+
+		Words and music by
+		  Pat Songwriter
+
+	Typically this type of credit is aligned to the right,
+	so that the position information refers to the right-
+	most part of the text. But in this example, the text 
+	is center-justified, not right-justified.
+
+	The halign attribute is used in these situations. If it 
+	is not present, its value is the same as for the justify
+	attribute.
+-->
+<!ENTITY % halign
+	"halign (left | center | right) #IMPLIED">
+
+<!--
+	The valign entity is used to indicate vertical
+	alignment to the top, middle, bottom, or baseline 
+	of the text. Defaults are implementation-dependent.
+-->
+<!ENTITY % valign
+	"valign (top | middle | bottom | baseline) #IMPLIED">
+
+<!--
+	The most popular combination of printing attributes
+	is position, font, and color.
+-->
+<!ENTITY % print-style
+	"%position;
+	 %font;
+	 %color;">
+
+<!--
+	The line-shape entity is used to distinguish between
+	straight and curved lines. The line-type entity
+	distinguishes between solid, dashed, dotted, and
+	wavy lines.
+-->
+<!ENTITY % line-shape
+	"line-shape (straight | curved) #IMPLIED">
+
+<!ENTITY % line-type
+	"line-type (solid | dashed | dotted | wavy) #IMPLIED">
+
+<!--
+	The printout entity is based on MuseData print
+	suggestions. They allow a way to specify not to print
+	print an object (e.g. note or rest), its augmentation
+	dots, or its lyrics. This is especially useful for notes 
+	that overlap in different voices, or for chord sheets
+	that contain lyrics and chords but no melody. For wholly
+	invisible notes, such as those providing sound-only data,
+	the attribute for print-spacing may be set to no so that
+	no space is left for this note. The print-spacing value
+	is only used if no note, dot, or lyric is being printed.
+
+	By default, all these attributes are set to yes. If 
+	print-object is set to no, print-dot and print-lyric are
+	interpreted to also be set to no if they are not present.
+-->
+<!ENTITY % print-object
+	"print-object  %yes-no;  #IMPLIED">
+
+<!ENTITY % print-spacing
+	"print-spacing %yes-no;  #IMPLIED">
+
+<!ENTITY % printout
+	"%print-object;
+	 print-dot     %yes-no;  #IMPLIED
+	 %print-spacing;
+	 print-lyric   %yes-no;  #IMPLIED">
+
+<!--
+	The trill-sound entity includes attributes used to guide
+	the sound of trills, mordents, turns, shakes, and wavy
+	lines, based on MuseData sound suggestions. The default
+	choices are:
+	
+		start-note = "upper"
+		trill-step = "whole"
+		two-note-turn = "none"
+		accelerate = "no"
+		beats = "4" (minimum of "2").
+	
+	Second-beat and last-beat are percentages for landing
+	on the indicated beat, with defaults of 25 and 75
+	respectively.
+	
+	For mordent and inverted-mordent elements, the defaults
+	are different:
+	
+		The default start-note is "main", not "upper".
+		The default for beats is "3", not "4".
+		The default for second-beat is "12", not "25".
+		The default for last-beat is "24", not "75".
+-->
+<!ENTITY % trill-sound
+	"start-note    (upper | main | below)  #IMPLIED
+	 trill-step    (whole | half | unison) #IMPLIED
+	 two-note-turn (whole | half | none)   #IMPLIED
+	 accelerate    %yes-no; #IMPLIED
+	 beats         CDATA    #IMPLIED
+	 second-beat   CDATA    #IMPLIED
+	 last-beat     CDATA    #IMPLIED">
+
+<!--
+	The bend-sound entity is used for bend and slide
+	elements, and is similar to the trill-sound. Here the
+	beats element refers to the number of discrete elements
+	(like MIDI pitch bends) used to represent a continuous
+	bend or slide. The first-beat indicates the percentage
+	of the direction for starting a bend; the last-beat the
+	percentage for ending it. The default choices are:
+	
+		accelerate = "no"
+		beats = "4" (minimum of "2")
+		first-beat = "25"
+		last-beat = "75"
+-->
+<!ENTITY % bend-sound
+	"accelerate    %yes-no; #IMPLIED
+	 beats         CDATA    #IMPLIED
+	 first-beat    CDATA    #IMPLIED
+	 last-beat     CDATA    #IMPLIED">
+
+<!--
+	The level-display entity allows specification of 
+	three common ways to indicate editorial indications:
+	putting parentheses or square brackets around a 
+	symbol, or making the symbol a different size. If 
+	not specified, they are left to application defaults.
+	It is used by the level and accidental elements.
+-->
+<!ENTITY % level-display
+   "parentheses %yes-no;       #IMPLIED
+    bracket     %yes-no;       #IMPLIED
+    size        %symbol-size;  #IMPLIED">
+
+<!-- Elements -->
+
+<!--
+	Footnote and level are used to specify editorial
+	information, while voice is used to distinguish
+	between multiple voices (what MuseData calls tracks)
+	in individual parts. These elements are used
+	throughout the component MusicXML DTDs. If the 
+	reference attribute for the level element is yes,
+	this indicates editorial information that is for 
+	display only and should not affect playback. For 
+	instance, a modern edition of older music may set 
+	reference="yes" on the attributes containing the 
+	music's original clef, key, and time signature. 
+	It is no by default.
+-->
+<!ELEMENT footnote (#PCDATA)>
+<!ATTLIST footnote
+    %justify;
+    %halign;
+    %valign;
+    %print-style;
+>
+<!ELEMENT level (#PCDATA)>
+<!ATTLIST level
+	reference %yes-no; #IMPLIED
+    %level-display;
+>
+<!ELEMENT voice (#PCDATA)>
+
+<!--
+	Fermata and wavy-line elements can be applied both to
+	notes and to measures, so they are defined here. Wavy
+	lines are one way to indicate trills; when used with a
+	measure element, they should always have type="continue"
+	set. The fermata type is upright if not specified.
+-->
+<!ELEMENT fermata EMPTY>
+<!ATTLIST fermata
+    type (upright | inverted) #IMPLIED
+    %print-style;
+>
+<!ELEMENT wavy-line EMPTY>
+<!ATTLIST wavy-line
+    type %start-stop-continue; #REQUIRED
+    number %beam-level; #IMPLIED
+    %position;
+    %placement; 
+    %color;
+    %trill-sound; 
+>
+
+<!--
+	Staff assignment is only needed for music notated on
+	multiple staves. Used by both notes and directions.
+	Staff values are numbers, with 1 referring to the
+	top-most staff in a part.
+-->
+<!ELEMENT staff (#PCDATA)>
+
+<!--
+	Segno and coda signs can be associated with a measure
+	or a general musical direction. These are visual 
+	indicators only; a sound element is needed to guide
+	playback applications reliably.
+-->
+<!ELEMENT segno EMPTY>
+<!ATTLIST segno
+    %print-style; 
+>
+
+<!ELEMENT coda EMPTY>
+<!ATTLIST coda
+    %print-style; 
+>
+
+<!--
+	Dynamics can be associated either with a note or a
+	general musical direction. To avoid inconsistencies
+	between and amongst the letter abbreviations for
+	dynamics (what is sf vs. sfz, standing alone or with a
+	trailing dynamic that is not always piano), we use the
+	actual letters as the names of these dynamic elements.
+	The element other-dynamics allows other dynamic marks
+	that are not covered here, but many of those should
+	perhaps be included in a more general musical
+	direction element. Dynamics may also be combined as
+	in <sf/><mp/>.
+	
+	These letter dynamic symbols are separated from
+	crescendo, decrescendo, and wedge indications. Dynamic
+	representation is basically inconsistent in scores
+	(lots of things are assumed by the composer and left out,
+	such as returns to original dynamics), and is quite
+	complex to do systematically. Humdrum for instance has
+	at least 3 representation formats related to dynamics.
+	MusicXML captures what is in the score, but does not try
+	to be optimal for analysis or synthesis of dynamics.
+-->
+<!ELEMENT dynamics ((p | pp | ppp | pppp | ppppp | pppppp |
+	f | ff | fff | ffff | fffff | ffffff | mp | mf | sf |
+	sfp | sfpp | fp | rf | rfz | sfz | sffz | fz | 
+	other-dynamics)*)>
+<!ATTLIST dynamics
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT p EMPTY>
+<!ELEMENT pp EMPTY>
+<!ELEMENT ppp EMPTY>
+<!ELEMENT pppp EMPTY>
+<!ELEMENT ppppp EMPTY>
+<!ELEMENT pppppp EMPTY>
+<!ELEMENT f EMPTY>
+<!ELEMENT ff EMPTY>
+<!ELEMENT fff EMPTY>
+<!ELEMENT ffff EMPTY>
+<!ELEMENT fffff EMPTY>
+<!ELEMENT ffffff EMPTY>
+<!ELEMENT mp EMPTY>
+<!ELEMENT mf EMPTY>
+<!ELEMENT sf EMPTY>
+<!ELEMENT sfp EMPTY>
+<!ELEMENT sfpp EMPTY>
+<!ELEMENT fp EMPTY>
+<!ELEMENT rf EMPTY>
+<!ELEMENT rfz EMPTY>
+<!ELEMENT sfz EMPTY>
+<!ELEMENT sffz EMPTY>
+<!ELEMENT fz EMPTY>
+<!ELEMENT other-dynamics (#PCDATA)>
+
+<!--
+	The fret, string, and fingering elements can be
+	used either in a technical element for a note
+	or in a frame element as part of a chord symbol.
+-->
+
+<!--
+	Fingering is typically indicated 1,2,3,4,5. Multiple
+	fingerings may be given, typically to substitute
+	fingerings in the middle of a note. The substitution
+	and alternate values are "no" if the attribute is 
+	not present. For guitar and other fretted instruments,
+	the fingering element represents the fretting finger;
+	the pluck element represents the plucking finger.
+-->
+<!ELEMENT fingering (#PCDATA)>
+<!ATTLIST fingering
+    substitution %yes-no; #IMPLIED
+    alternate %yes-no; #IMPLIED
+    %print-style; 
+    %placement;
+>
+
+<!--
+	Fret and string are used with tablature notation 
+	and chord symbols. Fret numbers start with 0 for 
+	an open string and 1 for the first fret. String
+	numbers start with 1 for the highest string. 
+	String can also be used in regular notation.
+-->
+<!ELEMENT fret (#PCDATA)>
+<!ATTLIST fret
+    %font;
+    %color; 
+>
+<!ELEMENT string (#PCDATA)>
+<!ATTLIST string
+	%print-style;
+	%placement;
+>
+
+<!--
+	The tuning-step, tuning-alter, and tuning-octave
+	elements are represented like the step, alter, and
+	octave elements, with different names to reflect their
+	different function. They are used in the staff-tuning
+	and accord elements.
+-->
+<!ELEMENT tuning-step (#PCDATA)>
+<!ELEMENT tuning-alter (#PCDATA)>
+<!ELEMENT tuning-octave (#PCDATA)>
+
+<!--
+	The midi-instrument element can be a part of either
+	the score-instrument element at the start of a part,
+	or the sound element within a part. The id attribute
+	refers to the score-instrument affected by the change.
+-->
+<!ELEMENT midi-instrument
+	(midi-channel?, midi-name?, midi-bank?, midi-program?,
+	 midi-unpitched?)>
+<!ATTLIST midi-instrument
+    id IDREF #REQUIRED
+>
+
+<!-- MIDI channel numbers range from 1 to 16. -->
+<!ELEMENT midi-channel (#PCDATA)>
+
+<!--
+	MIDI names correspond to ProgramName meta-events within
+	a Standard MIDI File.
+-->
+<!ELEMENT midi-name (#PCDATA)>
+
+<!-- MIDI bank numbers range from 1 to 16,384. -->
+<!ELEMENT midi-bank (#PCDATA)>
+
+<!-- MIDI program numbers range from 1 to 128. -->
+<!ELEMENT midi-program (#PCDATA)>
+
+<!--
+	For unpitched instruments, specify a MIDI note number
+	ranging from 1 to 128. Usually used with MIDI banks
+	for percussion.
+-->
+<!ELEMENT midi-unpitched (#PCDATA)>
+
+
+<!--
+	The layout DTD contains formatting information for
+	pages, systems, staves, and measures.
+-->
+<!ENTITY % layout PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.1 Layout//EN"
+	"layout.dtd">
+<!--
+	MusicXML layout.dtd
+
+	Version 1.1 - 20 May 2005
+	
+	Copyright © 2004-2005 Recordare LLC.
+	http://www.recordare.com/
+	
+	This MusicXML work is being provided by the copyright
+	holder under the MusicXML Document Type Definition 
+	Public License Version 1.02, available from:
+	
+		http://www.recordare.com/dtds/license.html
+-->
+
+<!--
+	MusicXML 1.1 adds layout information for pages,
+	systems, staffs, and measures. These layout elements 
+	join the print and sound elements in providing 
+	formatting data as elements rather than attributes.
+
+	Everything is measured in tenths of staff space.
+	Tenths are then scaled to millimeters within the
+	scaling element, used in the defaults element at
+	the start of a score. Individual staves can apply
+	a scaling factor to adjust staff size. When a
+	MusicXML element or attribute refers to tenths,
+	it means the global tenths defined by the scaling
+	element, not the local tenths as adjusted by the
+	staff-size element.
+-->
+
+<!-- Elements -->
+
+<!--
+	Margins, page sizes, and distances are all measured in
+	tenths to keep MusicXML data in a consistent coordinate
+	system as much as possible. The translation to absolute
+	units is done in the scaling element, which specifies
+	how many millimeters are equal to how many tenths. For
+	a staff height of 7 mm, millimeters would be set to 7
+	while tenths is set to 40. The ability to set a formula
+	rather than a single scaling factor helps avoid roundoff
+	errors.
+-->
+<!ELEMENT scaling (millimeters, tenths)>
+<!ELEMENT millimeters (#PCDATA)>
+<!ELEMENT tenths %layout-tenths;>
+
+<!-- 
+	Margin elements are included within many of the
+	larger layout elements.
+-->
+<!ELEMENT left-margin %layout-tenths;>
+<!ELEMENT right-margin %layout-tenths;>
+<!ELEMENT top-margin %layout-tenths;>
+<!ELEMENT bottom-margin %layout-tenths;>
+
+<!--
+	Page layout can be defined both in score-wide
+	defaults and in the print element. Page margins
+	are specified either for both even and odd pages,
+	or via separate odd and even page number values.
+	The type is not needed when used in as part of
+	a print element. If omitted when used in the
+	defaults element, "both" is the default.
+-->
+<!ELEMENT page-layout (page-height, page-width, 
+	page-margins?, page-margins?)>
+<!ELEMENT page-height %layout-tenths;>
+<!ELEMENT page-width %layout-tenths;>
+<!ELEMENT page-margins (left-margin, right-margin, 
+	top-margin, bottom-margin)>
+<!ATTLIST page-margins
+    type (odd | even | both) #IMPLIED
+>
+
+<!--
+	System layout includes left and right margins and the
+	vertical distance from the previous system. Margins 
+	are relative to the page margins. Positive values 
+	indent and negative values reduce the margin size.
+	The system distance is measured from the bottom line
+	of the previous system to the top line of the current
+	system. It is ignored for the first system on a page.
+	The top system distance is measured from the page's
+	top margin to the top line of the first system. It is 
+	ignored for all but the first system on a page.
+-->
+<!ELEMENT system-layout
+	(system-margins?, system-distance?, top-system-distance?)>
+<!ELEMENT system-margins (left-margin, right-margin)>
+<!ELEMENT system-distance %layout-tenths;>
+<!ELEMENT top-system-distance %layout-tenths;>
+
+<!--
+	Staff layout includes the vertical distance from
+	the bottom line of the previous staff in this system
+	to the top line of the staff specified by the number
+	attribute. The first staff of the part is used if
+	the number attribute is missing. When used in the
+	defaults element, the values apply to all parts.
+	This value is ignored for the first staff in a system.
+-->
+<!ELEMENT staff-layout (staff-distance?)>
+<!ELEMENT staff-distance %layout-tenths;>
+<!ATTLIST staff-layout
+    number CDATA #IMPLIED
+>
+
+<!--
+	Measure layout includes the horizontal distance 
+	from the previous measure. This value is only used
+	for systems where there is horizontal whitespace 
+	in the middle of a system, as in systems with codas.
+	To specify the measure width, use the width attribute
+	of the measure element.
+-->
+<!ELEMENT measure-layout (measure-distance?)>
+<!ELEMENT measure-distance %layout-tenths;>
+
+
+<!-- 
+	The identity DTD contains identification and metadata
+	elements.
+-->
+<!ENTITY % identity PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.1 Identity//EN"
+	"identity.dtd">
+
+<!--
+	MusicXML identity.dtd
+
+	Version 1.1 - 20 May 2005
+	
+	Copyright © 2004-2005 Recordare LLC.
+	http://www.recordare.com/
+	
+	This MusicXML work is being provided by the copyright
+	holder under the MusicXML Document Type Definition 
+	Public License Version 1.02, available from:
+	
+		http://www.recordare.com/dtds/license.html
+-->
+
+<!--
+	The identify component DTD contains the identification
+	element and its children, containing metadata about a
+	score.
+-->
+
+<!-- Elements -->
+
+<!--
+	Identification contains basic metadata about the score.
+	It includes the information in MuseData headers that
+	may apply at a score-wide, movement-wide, or part-wide
+	level. The creator and rights elements are based on
+	Dublin Core.
+-->
+<!ELEMENT identification (creator*, rights*, encoding?,
+	source?, miscellaneous?)>
+
+<!--
+	Creator is borrowed from Dublin Core. It is the composer
+	of the score (the artist field in NIFF). The type
+	attribute can be used to distinguish words and music so
+	as to represent lyricists and librettists as well as
+	composers. Thus, there can be multiple creators in an
+	identification. We do not use the creator / contributor
+	distinction from Dublin Core.
+-->
+<!ELEMENT creator (#PCDATA)>
+<!ATTLIST creator
+    type CDATA #IMPLIED
+>
+
+<!--
+	Rights is borrowed from Dublin Core. It contains
+	copyright and other intellectual property notices.
+	Words, music, and derivatives can have different types,
+	so multiple rights tags with different type attributes
+	are supported.
+-->
+<!ELEMENT rights (#PCDATA)>
+<!ATTLIST rights
+    type CDATA #IMPLIED
+>
+
+<!--
+	Encoding contains information about who did the digital
+	encoding, when, with what software, and in what aspects.
+	The supports element indicates if the encoding supports
+	a particular MusicXML element. This is recommended for
+	elements like beam, stem, and accidental, where the
+	absence of an element is ambiguous if you do not know
+	if the encoding supports that element.
+-->
+<!ELEMENT encoding ((encoding-date | encoder | software |
+	encoding-description | supports)*)>
+<!ELEMENT encoding-date %yyyy-mm-dd;>
+<!ELEMENT encoder (#PCDATA)>
+<!ATTLIST encoder
+    type CDATA #IMPLIED
+>
+<!ELEMENT software (#PCDATA)>
+<!ELEMENT encoding-description (#PCDATA)>
+<!ELEMENT supports EMPTY>
+<!ATTLIST supports
+    type %yes-no; #REQUIRED
+    element CDATA #REQUIRED
+>
+
+<!--
+	The source for the music that is encoded. This is not
+	quite the same as the Dublin Core publisher (or source)
+	element, so we keep the MuseData terminology.
+-->
+<!ELEMENT source (#PCDATA)>
+
+<!--
+	If a program has other metadata not yet supported
+	in MusicXML, it can go in the miscellaneous area. 
+-->
+<!ELEMENT miscellaneous (miscellaneous-field*)>
+<!ELEMENT miscellaneous-field (#PCDATA)>
+<!ATTLIST miscellaneous-field
+    name CDATA #REQUIRED
+>
+
+
+<!--
+	The attributes DTD includes elements that usually
+	change at the start of a measure, such as key
+	signatures, time signatures, and clefs.
+-->
+<!ENTITY % attributes PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.1 Attributes//EN"
+	"attributes.dtd">
+
+<!--
+	MusicXML attributes.dtd
+
+	Version 1.1 - 20 May 2005
+	
+	Copyright © 2004-2005 Recordare LLC.
+	http://www.recordare.com/
+	
+	This MusicXML work is being provided by the copyright
+	holder under the MusicXML Document Type Definition 
+	Public License Version 1.02, available from:
+	
+		http://www.recordare.com/dtds/license.html
+-->
+
+<!--
+	The attributes component DTD contains the attributes
+	element and its children, such as key and time
+	signatures.
+-->
+
+<!-- Elements -->
+
+<!--
+	The attributes element contains musical information
+	that typically changes on measure boundaries. This
+	includes key and time signatures, clefs, transpositions,
+	and staving.
+-->
+<!ELEMENT attributes (%editorial;, divisions?, key?, time?,
+	staves?, instruments?, clef*, staff-details*, transpose?,
+	directive*, measure-style*)>
+
+<!--	
+	Traditional key signatures are represented by the number
+	of flats and sharps, plus an optional mode for major/
+	minor/mode distinctions. Negative numbers are used for
+	flats and positive numbers for sharps, reflecting the
+	key's placement within the circle of fifths (hence the
+	element name). A cancel element indicates that the old
+	key signature should be cancelled before the new one
+	appears. This will always happen when changing to C major
+	or A minor and need not be specified then. The cancel
+	value matches the fifths value of the cancelled key
+	signature (e.g., a cancel of -2 will provide an explicit
+	cancellation for changing from B flat major to F major).
+	
+	Non-traditional key signatures can be represented using
+	the Humdrum/Scot concept of a list of altered tones.
+	The key-step and key-alter elements are represented the
+	same way as the step and alter elements are in the pitch
+	element in note.dtd. The different element names indicate
+	the different meaning of altering notes in a scale versus
+	altering a sounding pitch.
+	
+	Valid mode values include major, minor, dorian, phrygian,
+	lydian, mixolydian, aeolian, ionian, and locrian.
+
+	The optional number attribute refers to staff numbers, 
+	from top to bottom on the system. If absent, the key
+	signature applies to all staves in the part.
+-->
+<!ELEMENT key ((cancel?, fifths, mode?) |
+	((key-step, key-alter)*))>
+<!ATTLIST key
+    number CDATA #IMPLIED
+    %color;
+>
+<!ELEMENT cancel (#PCDATA)>
+<!ELEMENT fifths (#PCDATA)>
+<!ELEMENT mode (#PCDATA)>
+<!ELEMENT key-step (#PCDATA)>
+<!ELEMENT key-alter (#PCDATA)>
+
+<!--
+	Musical notation duration is commonly represented as
+	fractions. The divisions element indicates how many 
+	divisions per quarter note are used to indicate a note's
+	duration. For example, if duration = 1 and divisions = 2,
+	this is an eighth note duration. Duration and divisions
+	are used directly for generating sound output, so they
+	must be chosen to take tuplets into account. Using a
+	divisions element lets us use just one number to 
+	represent a duration for each note in the score, while
+	retaining the full power of a fractional representation.
+	For maximum compatibility with Standard MIDI Files, the
+	divisions value should not exceed 16383.
+-->
+<!ELEMENT divisions (#PCDATA)>
+
+<!--
+	Time signatures are represented by two elements. The
+	beats element indicates the number of beats, as found in
+	the numerator of a time signature. The beat-type element
+	indicates the beat unit, as found in the denominator of
+	a time signature. The symbol attribute is used to
+	indicate another notation beyond a fraction: the common 
+	and cut time symbols, as well as a single number with an
+	implied denominator. Normal (a fraction) is the implied
+	symbol type if none is specified. Multiple pairs of
+	beat and beat-type elements are used for composite
+	time signatures with multiple denominators, such as
+	2/4 + 3/8. A composite such as 3+2/8 requires only one
+	beat/beat-type pair. A senza-misura element explicitly
+	indicates that no time signature is present. 
+
+	The print-object attribute allows a time signature to be
+	specified but not printed, as is the case for excerpts
+	from the middle of a score. The value is "yes" if
+	not present. The optional number attribute refers to staff
+	numbers, from top to bottom on the system. If absent, the 
+	time signature applies to all staves in the part.
+-->
+<!ELEMENT time ((beats, beat-type)+ | senza-misura)>
+<!ATTLIST time
+    number CDATA #IMPLIED
+    symbol (common | cut | single-number | normal) #IMPLIED
+    %print-object;
+    %color;
+>
+<!ELEMENT beats (#PCDATA)>
+<!ELEMENT beat-type (#PCDATA)>
+<!ELEMENT senza-misura EMPTY>
+
+<!--
+	Staves are used if there is more than one staff
+	represented in the given part (e.g., 2 staves for
+	typical piano parts). If absent, a value of 1 is assumed.
+	Staves are ordered from top to bottom in a part in
+	numerical order, with staff 1 above staff 2.
+-->
+<!ELEMENT staves (#PCDATA)>
+
+<!--
+	Instruments are only used if more than one instrument is
+	represented in the part (e.g., oboe I and II where they
+	play together most of the time). If absent, a value of 1
+	is assumed.
+-->
+<!ELEMENT instruments (#PCDATA)>
+
+<!--
+	Clefs are represented by the sign, line, and
+	clef-octave-change elements. Sign values include G, F, C,
+	percussion, TAB, and none. Line numbers are counted from
+	the bottom of the staff. Standard values are 2 for the
+	G sign (treble clef), 4 for the F sign (bass clef), 3 
+	for the C sign (alto clef) and 5 for TAB (on a 6-line
+	staff). The clef-octave-change element is used for
+	transposing clefs (e.g., a treble clef for tenors would
+	have a clef-octave-change value of -1). The optional 
+	number attribute refers to staff numbers, from top to
+	bottom on the system. A value of 1 is assumed if not
+	present.
+-->
+<!ELEMENT clef (sign, line?, clef-octave-change?)>
+<!ATTLIST clef
+    number CDATA #IMPLIED
+    %color;
+>
+<!ELEMENT sign (#PCDATA)>
+<!ELEMENT line (#PCDATA)>
+<!ELEMENT clef-octave-change (#PCDATA)>
+
+<!--
+	The staff-details element is used to indicate different
+	types of staves. The staff-type element can be ossia,
+	cue, editorial, regular, or alternate. An alternate
+	staff indicates one that shares the same musical data
+	as the prior staff, but displayed differently (e.g.,
+	treble and bass clef, standard notation and tab).
+	The staff-lines element specifies the number of lines for
+	non 5-line staffs. The staff-tuning and capo elements are
+	used to specify tuning when using tablature notation.
+	The optional number attribute specifies the staff number
+	from top to bottom on the system, as with clef. The
+	optional show-frets attribute indicates whether to show
+	tablature frets as numbers (0, 1, 2) or letters (a, b, c).
+	The default choice is numbers. The print-object attribute
+	is used to indicate when a staff is not printed in a part,
+	usually in large scores where empty parts are omitted.
+	It is yes by default. If print-spacing is yes while
+	print-object is no, the score is printed in cutaway
+	format where vertical space is left for the empty part.
+-->
+<!ELEMENT staff-details (staff-type?, staff-lines?, 
+	staff-tuning*, capo?, staff-size?)>
+<!ATTLIST staff-details
+    number         CDATA                #IMPLIED
+    show-frets     (numbers | letters)  #IMPLIED
+    %print-object;
+    %print-spacing;
+>
+<!ELEMENT staff-type (#PCDATA)>
+<!ELEMENT staff-lines (#PCDATA)>
+
+<!--
+	The tuning-step, tuning-alter, and tuning-octave
+	elements are defined in the common.dtd file. Staff
+	lines are numbered from bottom to top.
+-->
+<!ELEMENT staff-tuning
+	(tuning-step, tuning-alter?, tuning-octave)>
+<!ATTLIST staff-tuning
+    line CDATA #REQUIRED
+>
+
+<!--
+	The capo element indicates at which fret a capo should
+	be placed on a fretted instrument. This changes the
+	open tuning of the strings specified by staff-tuning
+	by the specified number of half-steps.
+-->
+<!ELEMENT capo (#PCDATA)>
+
+<!--
+	The staff-size element indicates how large a staff
+	space is on this staff, expressed as a percentage of 
+	the work's default scaling. Values less than 100 make
+	the staff space smaller while values over 100 make the
+	staff space larger. A staff-type of cue, ossia, or 
+	editorial implies a staff-size of less than 100, but
+	the exact value is implementation-dependent unless
+	specified here. Staff size affects staff height only,
+	not the relationship of the staff to the left and
+	right margins.
+-->
+<!ELEMENT staff-size (#PCDATA)>
+
+<!--
+	If the part is being encoded for a transposing instrument
+	in written vs. concert pitch, the transposition must be
+	encoded in the transpose element. The transposition is
+	represented by chromatic steps (required) and three
+	optional elements: diatonic pitch steps, octave changes,
+	and doubling an octave down. The chromatic and
+	octave-change elements are numeric values added to the
+	encoded pitch data to create the sounding pitch. The
+	diatonic element is also numeric and allows for correct
+	spelling of enharmonic transpositions.
+-->
+<!ELEMENT transpose (diatonic?, chromatic, octave-change?,
+	double?)>
+<!ELEMENT diatonic (#PCDATA)>
+<!ELEMENT chromatic (#PCDATA)>
+<!ELEMENT octave-change (#PCDATA)>
+<!ELEMENT double EMPTY>
+
+<!--
+	Directives are like directions, but can be grouped 
+	together with attributes for convenience. This is
+	typically used for tempo markings at the beginning
+	of a piece of music. The language is Italian ("it")
+	by default. Language names come from ISO 639, with
+	optional country subcodes from ISO 3166.
+-->
+<!ELEMENT directive (#PCDATA)>
+<!ATTLIST directive
+    %print-style;
+    xml:lang NMTOKEN #IMPLIED
+>
+
+<!--
+	A measure-style indicates a special way to print
+	partial to multiple measures within a part. This 
+	includes multiple rests over several measures,
+	repeats of betas, single, or multiple measures,
+	and use of slash notation.
+	
+	The multiple-rest and measure-repeat symbols
+	indicate the number of measures covered in the
+	element content. The beat-repeat and slash 
+	elements can cover partial measures. All but the
+	multiple-rest element use a type attribute to 
+	indicate starting and stopping the use of the
+	style. The optional number attribute specifies 
+	the staff number from top to bottom on the system,
+	as with clef.
+-->
+<!ELEMENT measure-style (multiple-rest | 
+	measure-repeat | beat-repeat | slash)>
+<!ATTLIST measure-style
+    number CDATA #IMPLIED
+    %font;
+    %color;
+>
+
+<!--
+	The text of the multiple-rest element indicates the
+	number of measures in the multiple rest. Multiple
+	rests may use the 1-bar / 2-bar / 4-bar rest
+	symbols, or a single shape. The use-symbols
+	attribute indicates which to use; it is no
+	if not specified.
+-->
+<!ELEMENT multiple-rest (#PCDATA)>
+<!ATTLIST multiple-rest
+    use-symbols %yes-no; #IMPLIED
+>
+
+<!--
+	The measure-repeat and beat-repeat element specify
+	a notation style for repetitions. The actual music
+	being repeated needs to be repeated within the
+	MusicXML file. These elements indicate to use the
+	appropriate notation to indicate the repeat. 
+-->
+
+<!--
+	The measure-repeat element is used for both
+	single and multiple measure repeats. The text
+	of the element indicates the number of measures
+	to be repeated in a single pattern. The slashes
+	attribute specifies the number of slashes to
+	use in the repeat sign. It is 1 if not specified.
+	Both the start and the stop of the measure-repeat
+	must be specified.
+-->
+<!ELEMENT measure-repeat (#PCDATA)>
+<!ATTLIST measure-repeat
+    type %start-stop; #REQUIRED
+    slashes NMTOKEN #IMPLIED
+>
+
+<!--
+	The beat-repeat element is used to indicate
+	that a single beat (but possibly many notes)
+	is repeated. Both the start and stop of the
+	beat being repeated should be specified. The
+	slashes attribute specifies the number of
+	slashes to use in the symbol. The use-dots
+	attribute indicates whether or not to use
+	dots as well (for instance, with mixed
+	rhythm patterns). By default, the value for
+	slashes is 1 and the value for use-dots
+	is no.
+-->
+<!ELEMENT beat-repeat EMPTY>
+<!ATTLIST beat-repeat
+    type %start-stop; #REQUIRED
+    slashes NMTOKEN #IMPLIED
+    use-dots %yes-no; #IMPLIED
+>
+
+<!--
+	The slash element is used to indicate that
+	slash notation is to be used. If the slash is
+	on every beat, use-stems is no (the default). 
+	To indicate rhythms but not pitches, use-stems
+	is set to yes. The type attribute indicates
+	whether this is the start or stop of a slash 
+	notation style. The use-dots attribute works 
+	as for the beat-repeat element, and only 
+	has effect if use-stems is no.
+-->
+<!ELEMENT slash EMPTY>
+<!ATTLIST slash
+    type %start-stop; #REQUIRED
+    use-dots %yes-no; #IMPLIED
+    use-stems %yes-no; #IMPLIED
+>
+
+
+<!--
+	The link DTD contains XLink attributes.
+-->
+<!ENTITY % link PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.1 Link//EN"
+	"link.dtd">
+
+<!--
+	MusicXML link.dtd
+
+	Version 1.1 - 20 May 2005
+	
+	Copyright © 2004-2005 Recordare LLC.
+	http://www.recordare.com/
+	
+	This MusicXML work is being provided by the copyright
+	holder under the MusicXML Document Type Definition 
+	Public License Version 1.02, available from:
+	
+		http://www.recordare.com/dtds/license.html
+-->
+
+<!--
+	This DTD describes the entity and elements used for
+	simple XLink support. The link element serves as an
+	outgoing XLink. The bookmark element serves as a well-
+	defined target for an incoming XLink. The entity for
+	link-attributes is also used to connect a MusicXML
+	score with a MusicXML opus.
+-->
+
+<!-- Entities -->
+
+<!--
+	Namespace entity for the XLink recommendation.
+-->
+<!ENTITY % xlink.ns "http://www.w3.org/1999/xlink">
+
+<!--
+	The link-attributes entity includes all the
+	simple XLink attributes supported in MusicXML.
+-->
+<!ENTITY % link-attributes
+	"xmlns:xlink  CDATA    #FIXED     '%xlink.ns;'
+	 xlink:href   CDATA    #REQUIRED
+	 xlink:type   (simple) #FIXED     'simple'
+	 xlink:role   CDATA    #IMPLIED
+	 xlink:title  CDATA    #IMPLIED
+	 xlink:show   (new | replace | embed | other | none)
+		'replace'
+	 xlink:actuate	(onRequest | onLoad | other | none)
+		'onRequest'">
+
+<!-- Elements -->
+
+<!ELEMENT link EMPTY>
+<!ATTLIST link
+    %link-attributes;
+    name  CDATA  #IMPLIED
+	%position;
+>
+	
+<!ELEMENT bookmark EMPTY>
+<!ATTLIST bookmark
+    id    ID     #REQUIRED
+    name  CDATA  #IMPLIED
+>
+
+
+<!--
+	The note DTD contains the bulk of the elements and 
+	attributes for a musical scores relating to individual
+	notes and rests.
+ -->
+<!ENTITY % note PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.1 Note//EN"
+	"note.dtd">
+
+<!--
+	MusicXML note.dtd
+
+	Version 1.1 - 20 May 2005
+	
+	Copyright © 2004-2005 Recordare LLC.
+	http://www.recordare.com/
+	
+	This MusicXML work is being provided by the copyright
+	holder under the MusicXML Document Type Definition 
+	Public License Version 1.02, available from:
+	
+		http://www.recordare.com/dtds/license.html
+-->
+
+<!--
+	The note component DTD contains the note representations
+	for MusicXML. This section of the DTD can then be used
+	within a partwise or timewise MusicXML score. This DTD
+	contains the note element, all its children elements,
+	and related entities.
+-->
+
+<!-- Entities -->
+
+<!-- Structures -->
+
+<!--
+	The common note elements between cue/grace notes and
+	regular (full) notes: pitch, chord, and rest information,
+	but not duration (cue and grace notes do not have
+	duration encoded here). Unpitched elements are used for
+	unpitched percussion, speaking voice, and other musical
+	elements lacking determinate pitch.
+-->
+<!ENTITY % full-note "(chord?, (pitch | unpitched | rest))">
+
+<!-- Elements -->
+<!--
+	Notes are the most common type of MusicXML data. MusicXML
+	keeps the MuseData distinction between elements used for
+	sound information and element used for notation
+	information (e.g., tie is used for sound, tied for
+	notation). Thus grace notes do not have a duration
+	element. Cue notes have a duration element, as do forward
+	elements, but no tie elements. Having these two types of
+	information available can make interchange considerably
+	easier, as some programs handle one type of information
+	much more readily than the other. 
+-->
+<!ELEMENT note 
+   (((grace, %full-note;, (tie, tie?)?) |
+    (cue, %full-note;, duration) |
+	 (%full-note;, duration, (tie, tie?)?)),
+	instrument?, %editorial-voice;, type?, dot*,
+	accidental?, time-modification?, stem?, notehead?,
+	staff?, beam*, notations*, lyric*)>
+
+<!--
+	The position and printout entities for printing
+	suggestions are defined in common.dtd.
+	
+	The dynamics and end-dynamics attributes reflect MIDI's
+	Note On and Note Off velocities, respectively. They are
+	expressed in terms of percentages of a standard MIDI
+	forte volume of 90. The attack and release attributes
+	are used to alter the staring and stopping time of the
+	note from when it would otherwise occur based on the 
+	flow of durations - information that is specific to a
+	performance. They are expressed in terms of divisions,
+	either positive or negative. If a note is played only
+	one time through a repeat, the time-only attribute
+	shows which time to play the note. The pizzicato 
+	attribute is used when just this note is sounded
+	pizzicato, vs. the pizzicato and arco elements.
+-->
+<!ATTLIST note
+    %print-style; 
+    %printout;
+    dynamics CDATA #IMPLIED
+    end-dynamics CDATA #IMPLIED
+    attack CDATA #IMPLIED
+    release CDATA #IMPLIED
+    time-only CDATA #IMPLIED
+    pizzicato %yes-no; #IMPLIED
+>
+
+<!--
+	Pitch is represented as a combination of the step of the
+	diatonic scale, the chromatic alteration, and the octave.
+	The step element uses the English letters A through G. 
+	The alter element represents chromatic alteration in
+	number of semitones (e.g., -1 for flat, 1 for sharp).
+	Decimal values like 0.5 (quarter tone sharp) may be 
+	used for microtones. The octave element is represented
+	by the numbers 0 to 9, where 4 indicates the octave
+	started by middle C.
+-->
+<!ELEMENT pitch (step, alter?, octave)>
+<!ELEMENT step (#PCDATA)>
+<!ELEMENT alter (#PCDATA)>
+<!ELEMENT octave (#PCDATA)>
+
+<!--
+	The cue and grace elements indicate the presence of
+	cue and grace notes. The slash attribute for a grace
+	note is yes for slashed eighth notes. The other grace
+	note attributes come from MuseData sound suggestions.
+	Steal-time-previous indicates the percentage of time
+	to steal from the previous note for the grace note.
+	Steal-time-following indicates the percentage of time
+	to steal from the following note for the grace note.
+	Make-time indicates to make time, not steal time; the
+	units are in real-time divisions for the grace note. 
+-->
+<!ELEMENT cue EMPTY>
+<!ELEMENT grace EMPTY>
+<!ATTLIST grace
+    steal-time-previous CDATA #IMPLIED
+    steal-time-following CDATA #IMPLIED
+    make-time CDATA #IMPLIED
+    slash %yes-no; #IMPLIED
+>
+
+<!--
+	The chord element indicates that this note is an
+	additional chord tone with the preceding note. The
+	duration of this note can be no longer than the preceding
+	note. In MuseData, a missing duration indicates the same
+	length as the preceding note, but here we require the 
+	duration for chord records too.
+-->
+<!ELEMENT chord EMPTY>
+
+<!--
+	The unpitched element indicates musical elements that are
+	notated on the staff but lack definite pitch, such as
+	unpitched percussion and speaking voice. Like notes, it
+	uses step and octave elements to indicate placement on
+	the staff, following the current clef. If percussion clef
+	is used, the display-step and display-octave are
+	interpreted as if in treble clef, with a G in octave 4 
+	on line 2. If not present, the note is placed on the 
+	middle line of the staff, generally used for one-line
+	staffs.
+-->
+<!ELEMENT unpitched ((display-step, display-octave)?)>
+<!ELEMENT display-step (#PCDATA)>
+<!ELEMENT display-octave (#PCDATA)>
+
+<!--
+	The rest element indicates notated rests or silences.
+	Rest are usually empty, but placement on the staff can
+	be specified using display-step and display-octave
+	elements.
+-->
+<!ELEMENT rest ((display-step, display-octave)?)>
+
+<!--
+	Duration is specified in division units. This is the
+	intended duration vs. notated duration (for instance,
+	swing eighths vs. even eighths, or differences in dotted
+	notes in Baroque-era music). Differences in duration 
+	specific to an interpretation or performance should use
+	the note element's attack and release attributes. The 
+	tie element indicates that a tie begins or ends with 
+	this note. The tie element indicates sound; the tied 
+	element indicates notation.
+-->
+<!ELEMENT duration (#PCDATA)>
+<!ELEMENT tie EMPTY>
+<!ATTLIST tie
+    type %start-stop; #REQUIRED
+>
+
+<!--
+	If multiple score-instruments are specified on a
+	score-part, there should be an instrument element for
+	each note in the part. The id attribute is an IDREF back
+	to the score-instrument ID.
+-->
+<!ELEMENT instrument EMPTY>
+<!ATTLIST instrument
+    id IDREF #REQUIRED
+>
+<!--
+	Type indicates the graphic note type, Valid values (from
+	shortest to longest) are 256th, 128th, 64th, 32nd, 16th,
+	eighth, quarter, half, whole, breve, and long. The size
+	attribute indicates full-size or cue-size, with full the
+	default for regular notes and cue the default for cue
+	and grace notes.
+-->
+<!ELEMENT type (#PCDATA)>
+<!ATTLIST type
+    size %symbol-size; #IMPLIED
+>
+
+<!--
+	One dot element is used for each dot of prolongation.
+-->
+<!ELEMENT dot EMPTY>
+<!ATTLIST dot
+    %print-style;
+>
+
+<!--
+	Actual notated accidentals. Valid values include: sharp,
+	natural, flat, double-sharp, sharp-sharp, flat-flat,
+	natural-sharp, natural-flat, quarter-flat, quarter-sharp,
+	three-quarters-flat, and three-quarters-sharp. Editorial
+	and cautionary indications are indicated by attributes.
+	Values for these attributes are "no" if not present.
+	Specific graphic display such as parentheses, brackets,
+	and size are controlled by the level-display entity 
+	defined in the common.dtd file.
+-->
+<!ELEMENT accidental (#PCDATA)>
+<!ATTLIST accidental
+    cautionary %yes-no; #IMPLIED
+    editorial %yes-no; #IMPLIED
+    %level-display;
+    %print-style;
+>
+
+<!--
+	Time modification indicates tuplets and other
+	durational changes. The actual-notes element describes
+	how many notes are played in the time usually occupied
+	by the number of normal-notes. If the normal-notes type
+	is different than the current note type (e.g., a 
+	quarter note within an eighth note triplet), then the
+	normal-notes type (e.g. eighth) is specified in the
+	normal-type and normal-dot elements.
+-->
+<!ELEMENT time-modification
+	(actual-notes, normal-notes, 
+	(normal-type, normal-dot*)?)>
+<!ELEMENT actual-notes (#PCDATA)>
+<!ELEMENT normal-notes (#PCDATA)>
+<!ELEMENT normal-type (#PCDATA)>
+<!ELEMENT normal-dot EMPTY>
+
+<!--
+	Stems can be down, up, none, or double. For down and up
+	stems, the position attributes can be used to specify
+	stem length. The relative values specify the end of the
+	stem relative to the program default. Default values
+	specify an absolute end stem position. Negative values of
+	relative-y that would flip a stem instead of shortening
+	it are ignored.
+-->
+<!ELEMENT stem (#PCDATA)>
+<!ATTLIST stem
+    %position;
+    %color;
+>
+
+<!--
+	The notehead element indicates shapes other than the open
+	and closed ovals associated with note durations. The element
+	value can be slash, triangle, diamond, square, cross, x,
+	circle-x, inverted triangle, arrow down, arrow up, slashed,
+	back slashed, normal, or none. For shape note music, the 
+	element values do, re, mi, fa, so, la, and ti are used, 
+	corresponding to Aikin's 7-shape system.
+
+	The arrow shapes differ from triangle and inverted triangle
+	by being centered on the stem. Slashed and back slashed 
+	notes include both the normal notehead and a slash. The 
+	triangle shape has the tip of the triangle pointing up;
+	the inverted triangle shape has the tip of the triangle 
+	pointing down.
+	
+	For the enclosed shapes, the default is to be hollow for
+	half notes and longer, and filled otherwise. The filled
+	attribute can be set to change this if needed.
+	
+	If the parentheses attribute is set to yes, the notehead
+	is parenthesized. It is no by default.
+-->
+<!ELEMENT notehead (#PCDATA)>
+<!ATTLIST notehead
+    filled %yes-no; #IMPLIED
+    parentheses %yes-no; #IMPLIED
+    %font;
+    %color;
+>
+
+<!--
+	Beam types include begin, continue, end, forward hook,
+	and backward hook. In MuseData, up to six concurrent
+	beams are available to cover up to 256th notes. This
+	seems sufficient so we use an enumerated type defined
+	in common.dtd. The repeater attribute, used for tremolos,
+	needs to be specified with a "yes" value for each beam 
+	using it. Beams that have a begin value can also have 
+	a fan attribute to indicate accelerandos and ritardandos 
+	using fanned beams. The fan attribute may also be used
+	with a continue value if the fanning direction changes
+	on that note. The value is "none" if not specified.
+	
+	Note that the beam number does not distinguish sets
+	of beams that overlap, as it does for slur and other
+	elements. Beaming groups are distinguished by
+	being in different voices and/or the presence or
+	absence of grace and cue elements.
+-->
+<!ELEMENT beam (#PCDATA)>
+<!ATTLIST beam
+    number %beam-level; "1"
+    repeater %yes-no; #IMPLIED
+    fan (accel | rit | none) #IMPLIED
+    %color;
+>
+
+<!--
+	Notations are musical notations, not XML notations.
+	Multiple notations are allowed in order to represent
+	multiple editorial levels. The set of notations will be
+	refined and expanded over time, especially to handle
+	more instrument-specific technical notations.
+-->
+<!ELEMENT notations
+	(%editorial;, 
+	 (tied | slur | tuplet | glissando | slide | 
+	  ornaments | technical | articulations | dynamics |
+	  fermata | arpeggiate | non-arpeggiate | 
+	  accidental-mark | other-notation)*)>
+
+<!ELEMENT tied EMPTY>
+<!ATTLIST tied
+    type %start-stop; #REQUIRED
+    number %number-level; #IMPLIED
+    %line-type;
+    %position;
+    %placement;
+    %orientation;
+    %bezier;
+    %color;
+>
+
+<!--
+	Slur elements are empty. Most slurs are represented
+	with two elements: one with a start type, and one
+	with a stop type. Very complex slurs can add more
+	elements using a continue type.
+-->
+<!ELEMENT slur EMPTY>
+<!ATTLIST slur
+    type %start-stop-continue; #REQUIRED
+    number %number-level; "1"
+    %line-type;
+    %position;
+    %placement;
+    %orientation;
+    %bezier;
+    %color;
+>
+
+<!--
+	A tuplet element is present when a tuplet is to be
+	displayed graphically, in addition to the sound data
+	provided by the time-modification elements. The number
+	attribute is used to distinguish nested tuplets. The
+	bracket attribute is used to indicate the presence of a
+	bracket. If unspecified, the results are implementation-
+	dependent. The line-shape attribute is used to specify
+	whether the bracket is straight or in the older curved
+	or slurred style. It is straight by default.
+	
+	Whereas a time-modification element shows how the
+	cumulative, sounding effect of tuplets compare to
+	the written note type, the tuplet element describes
+	how this is displayed. The tuplet-actual and
+	tuplet-normal elements provide optional full control
+	over tuplet specifications. Each allows the number
+	and note type (including dots) describing a single
+	tuplet. If any of these elements are absent, their
+	values are based on the time-modification element.
+	
+	The show-number attribute is used to display either
+	the number of actual notes, the number of both actual
+	and normal notes, or neither. It is actual by default.
+	The show-type attribute is used to display either the
+	actual type, both the actual and normal types, or
+	neither. It is none by default.
+-->
+<!ELEMENT tuplet (tuplet-actual?, tuplet-normal?)>
+<!ATTLIST tuplet
+    type %start-stop; #REQUIRED
+    number %number-level; #IMPLIED
+    bracket %yes-no; #IMPLIED
+    show-number (actual | both | none) #IMPLIED
+    show-type (actual | both | none) #IMPLIED
+    %line-shape;
+    %position;
+    %placement;
+>
+<!ELEMENT tuplet-actual (tuplet-number?,
+	tuplet-type?, tuplet-dot*)>
+<!ELEMENT tuplet-normal (tuplet-number?,
+	tuplet-type?, tuplet-dot*)>
+<!ELEMENT tuplet-number (#PCDATA)>
+<!ATTLIST tuplet-number
+    %font;
+    %color;
+>
+<!ELEMENT tuplet-type (#PCDATA)>
+<!ATTLIST tuplet-type
+    %font;
+    %color;
+>
+<!ELEMENT tuplet-dot EMPTY>
+<!ATTLIST tuplet-dot
+    %font;
+    %color;
+>
+
+<!--
+	Glissando and slide elements both indicate rapidly
+	moving from one pitch to the other so that individual
+	notes are not discerned. The distinction is similar
+	to that between NIFF's glissando and portamento 
+	elements. A glissando sounds the half notes in
+	between the slide and defaults to a wavy line. A
+	slide is continuous between two notes and defaults
+	to a solid line. The optional text for a glissando
+	or slide is printed alongside the line.
+-->
+<!ELEMENT glissando (#PCDATA)>
+<!ATTLIST glissando
+    type %start-stop; #REQUIRED
+    number %number-level; "1"
+    %line-type; 
+    %print-style; 
+>
+<!ELEMENT slide (#PCDATA)>
+<!ATTLIST slide
+    type %start-stop; #REQUIRED
+    number %number-level; "1"
+    %line-type; 
+    %print-style; 
+    %bend-sound;
+>
+
+<!--
+	The other-notation element is used to define
+	any notations not yet in MusicXML. This allows 
+	extended representation, though without application
+	interoperability. It handles notations where more 
+	specific extension elements such as other-dynamics 
+	and other-technical are not appropriate.
+-->
+<!ELEMENT other-notation (#PCDATA)>
+<!ATTLIST other-notation
+    type %start-stop; #REQUIRED
+    number %number-level; "1"
+    %print-style; 
+    %placement;
+>
+
+<!--
+	Ornaments can be any of several types, followed
+	optionally by accidentals. The accidental-mark
+	element's content is represented the same as an
+	accidental element, but with a different name to
+	reflect the different musical meaning.
+-->
+<!ELEMENT ornaments
+	(((trill-mark | turn | delayed-turn | shake |
+	   wavy-line | mordent | inverted-mordent | 
+	   schleifer | tremolo | other-ornament), 
+	   accidental-mark*)*)>
+<!ELEMENT trill-mark EMPTY>
+<!ATTLIST trill-mark
+    %print-style; 
+    %placement; 
+    %trill-sound; 
+>
+<!ELEMENT turn EMPTY>
+<!ATTLIST turn
+    %print-style; 
+    %placement; 
+    %trill-sound; 
+>
+<!ELEMENT delayed-turn EMPTY>
+<!ATTLIST delayed-turn
+    %print-style; 
+    %placement; 
+    %trill-sound; 
+>
+<!ELEMENT shake EMPTY>
+<!ATTLIST shake
+    %print-style; 
+    %placement; 
+    %trill-sound; 
+>
+
+<!-- 
+	The long attribute for the mordent and inverted-mordent
+	elements is "no" by default. The mordent element 
+	represents the sign with the vertical line; the
+	inverted-mordent represent the sign without the
+	vertical line.
+-->
+<!ELEMENT mordent EMPTY>
+<!ATTLIST mordent
+    long %yes-no; #IMPLIED
+    %print-style; 
+    %placement; 
+    %trill-sound; 
+>
+<!ELEMENT inverted-mordent EMPTY>
+<!ATTLIST inverted-mordent
+    long %yes-no; #IMPLIED
+    %print-style; 
+    %placement; 
+    %trill-sound; 
+>
+
+<!--
+	The name for this ornament is based on the
+	German, to avoid confusion with the more common 
+	slide element defined earlier.
+-->
+<!ELEMENT schleifer EMPTY>
+<!ATTLIST schleifer
+    %print-style; 
+    %placement; 
+>
+
+<!--
+	While using repeater beams is the preferred
+	method for indicating tremolos, often playback
+	and display are not well-enough integrated in
+	an application to make that feasible, especially
+	for single-note tremolos. The tremolo ornament 
+	can be used to indicate tremolo marks on a single
+	note. The text of the element indicates the 
+	number of marks, usually 1, 2, or 3.
+-->
+<!ELEMENT tremolo (#PCDATA)>
+<!ATTLIST tremolo
+    %print-style; 
+    %placement; 
+>
+
+<!--
+	The other-ornament element is used to define
+	any ornaments not yet in MusicXML. This allows 
+	extended representation, though without application 
+	interoperability.
+-->
+<!ELEMENT other-ornament (#PCDATA)>
+<!ATTLIST other-ornament
+    %print-style; 
+    %placement; 
+>
+
+<!--
+	An accidental-mark can be used as a separate
+	notation or as part of an ornament. When used in
+	an ornament, position and placement are relative
+	to the ornament, not relative to the note.
+-->
+<!ELEMENT accidental-mark (#PCDATA)>
+<!ATTLIST accidental-mark
+    %print-style; 
+    %placement; 
+>
+
+<!--
+	Technical indications give performance information for
+	individual instruments. The current elements are
+	weighted towards keyboard and string instruments.
+	Woodwind, brass, and percussion will be treated
+	more thoroughly in later revisions.
+-->
+<!ELEMENT technical
+	((up-bow | down-bow | harmonic | open-string |
+	  thumb-position | fingering | pluck | double-tongue |
+	  triple-tongue | stopped | snap-pizzicato | fret |
+	  string | hammer-on | pull-off | bend | tap | heel |
+	  toe | fingernails | other-technical)*)>
+
+<!--
+	The up-bow and down-bow elements represent the symbol 
+	that is used both for bowing indications on bowed
+	instruments, and up-stroke / down-stoke indications
+	on plucked instruments.
+-->
+<!ELEMENT up-bow EMPTY>
+<!ATTLIST up-bow
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT down-bow EMPTY>
+<!ATTLIST down-bow
+    %print-style; 
+    %placement; 
+>
+
+<!--
+	The harmonic element indicates natural and artificial
+	harmonics. Natural harmonics usually notate the
+	base pitch rather than the sounding pitch. Allowing
+	the type of pitch to be specified, combined with
+	MusicXML's controls for appearance/playback 
+	differences, allows both the notation and the sound
+	to be represented. Artificial harmonics can add a 
+	notated touching-pitch; the pitch or fret at which
+	the string is touched lightly to produce the harmonic.
+	Artificial pinch harmonics will usually not notate
+	a touching pitch.
+-->
+<!ELEMENT harmonic
+	((natural | artificial)?, 
+	 (base-pitch | touching-pitch | sounding-pitch)?)>
+<!ATTLIST harmonic
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT natural EMPTY>
+<!ELEMENT artificial EMPTY>
+<!ELEMENT base-pitch EMPTY>
+<!ELEMENT touching-pitch EMPTY>
+<!ELEMENT sounding-pitch EMPTY>
+
+<!ELEMENT open-string EMPTY>
+<!ATTLIST open-string
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT thumb-position EMPTY>
+<!ATTLIST thumb-position
+    %print-style; 
+    %placement; 
+>
+
+<!--
+	Pluck is used to specify the plucking fingering
+	on a fretted instrument, where the fingering
+	element refers to the fretting fingering.
+	Typical values are p, i, m, a for pulgar/thumb,
+	indicio/index, medio/middle, and anular/ring
+	fingers.
+-->
+<!ELEMENT pluck EMPTY>
+<!ATTLIST pluck
+    %print-style; 
+    %placement; 
+>
+
+<!ELEMENT double-tongue EMPTY>
+<!ATTLIST double-tongue
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT triple-tongue EMPTY>
+<!ATTLIST triple-tongue
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT stopped EMPTY>
+<!ATTLIST stopped
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT snap-pizzicato EMPTY>
+<!ATTLIST snap-pizzicato
+    %print-style; 
+    %placement; 
+>
+
+<!--
+	The hammer-on and pull-off elements are used in
+	guitar and fretted instrument notation. Since
+	a single slur can be marked over many notes,
+	the hammer-on and pull-off elements are 
+	separate so the individual pair of notes
+	can be specified. The element content can be
+	used to specify how the hammer-on or pull-off
+	should be notated. An empty element leaves
+	this choice to the program defaults.
+-->
+<!ELEMENT hammer-on (#PCDATA)>
+<!ATTLIST hammer-on
+    type %start-stop; #REQUIRED
+    number %number-level; "1"
+    %print-style;
+    %placement;
+>
+<!ELEMENT pull-off (#PCDATA)>
+<!ATTLIST pull-off
+    type %start-stop; #REQUIRED
+    number %number-level; "1"
+    %print-style;
+    %placement;
+>
+
+<!--
+	The bend element is used in guitar and tablature.
+	The bend-alter element indicates the number of
+	steps in the bend, similar to the alter element.
+	As with the alter element, numbers like 0.5 can
+	be used to indicate microtones. Negative numbers
+	indicate pre-bends or releases; the pre-bend and
+	release elements are used to distinguish what
+	is intended. A with-bar element indicates that
+	the bend is to be done at the bridge with a
+	whammy or vibrato bar. The content of the
+	element indicates how this should be notated.
+-->
+<!ELEMENT bend
+	(bend-alter, (pre-bend | release)?, with-bar?)>
+<!ATTLIST bend
+    %print-style; 
+    %bend-sound;
+>
+<!ELEMENT bend-alter (#PCDATA)>
+<!ELEMENT pre-bend EMPTY>
+<!ELEMENT release EMPTY>
+<!ELEMENT with-bar (#PCDATA)>
+<!ATTLIST with-bar
+    %print-style; 
+    %placement; 
+>
+
+<!--
+	The tap element indicates a tap on the fretboard.
+	The element content allows specification of the
+	notation; + and T are common choices. If empty,
+	the program default is used.
+-->
+<!ELEMENT tap (#PCDATA)>
+<!ATTLIST tap
+    %print-style; 
+    %placement; 
+>
+
+<!-- 
+	Heel and toe are used with organ pedals. The
+	substitution value is "no" if the attribute is not 
+	present.
+-->
+<!ELEMENT heel EMPTY>
+<!ATTLIST heel
+    substitution %yes-no; #IMPLIED
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT toe EMPTY>
+<!ATTLIST toe
+    substitution %yes-no; #IMPLIED
+    %print-style; 
+    %placement; 
+>
+
+<!-- Fingernails is used in harp notation. -->
+<!ELEMENT fingernails EMPTY>
+<!ATTLIST fingernails
+    %print-style; 
+    %placement; 
+>
+
+<!--
+	The other-technical element is used to define
+	any technical indications not yet in MusicXML.
+	This allows extended representation, though 
+	without application interoperability.
+-->
+<!ELEMENT other-technical (#PCDATA)>
+<!ATTLIST other-technical
+    %print-style; 
+    %placement; 
+>
+
+<!--
+	Articulations and accents are grouped together here.
+-->
+<!ELEMENT articulations
+	((accent | strong-accent | staccato | tenuto |
+	  detached-legato | staccatissimo | spiccato |
+	  scoop | plop | doit | falloff | breath-mark | 
+	  caesura | other-articulation)*)>
+
+<!ELEMENT accent EMPTY>
+<!ATTLIST accent
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT strong-accent EMPTY>
+<!ATTLIST strong-accent
+    %print-style; 
+    %placement; 
+    type %up-down; "up"
+>
+<!ELEMENT staccato EMPTY>
+<!ATTLIST staccato
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT tenuto EMPTY>
+<!ATTLIST tenuto
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT detached-legato EMPTY>
+<!ATTLIST detached-legato
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT staccatissimo EMPTY>
+<!ATTLIST staccatissimo
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT spiccato EMPTY>
+<!ATTLIST spiccato
+    %print-style; 
+    %placement; 
+>
+
+<!-- 
+	The scoop, plop, doit, and falloff elements are
+	indeterminate slides attached to a single note.
+	Scoops and plops come before the main note, coming
+	from below and above the pitch, respectively. Doits
+	and falloffs come after the main note, going above
+	and below the pitch, respectively.
+-->
+<!ELEMENT scoop EMPTY>
+<!ATTLIST scoop
+    %line-shape;
+    %line-type;
+    %print-style; 
+    %placement;
+>
+<!ELEMENT plop EMPTY>
+<!ATTLIST plop
+    %line-shape;
+    %line-type;
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT doit EMPTY>
+<!ATTLIST doit
+    %line-shape;
+    %line-type;
+    %print-style; 
+    %placement;
+>
+<!ELEMENT falloff EMPTY>
+<!ATTLIST falloff
+    %line-shape;
+    %line-type;
+    %print-style; 
+    %placement; 
+>
+
+<!ELEMENT breath-mark EMPTY>
+<!ATTLIST breath-mark
+    %print-style; 
+    %placement; 
+>
+<!ELEMENT caesura EMPTY>
+<!ATTLIST caesura
+    %print-style; 
+    %placement; 
+>
+
+<!--
+	The other-articulation element is used to define
+	any articulations not yet in MusicXML. This 
+	allows extended representation, though without 
+	application interoperability.
+-->
+<!ELEMENT other-articulation (#PCDATA)>
+<!ATTLIST other-articulation
+    %print-style; 
+    %placement; 
+>
+
+<!--
+	Dynamics and fermata elements are found in common.dtd 
+	as they apply to more than just note elements.
+-->
+
+<!--
+	Indicates that this note is part of an arpeggiated chord.
+	The number attribute can be used to distinguish between
+	two simultaneous chords arpeggiated separately (different
+	numbers) or together (same number). The up-down attribute
+	is used if there is an arrow on the arpeggio sign. By
+	default, arpeggios go from the lowest to highest note.
+-->
+<!ELEMENT arpeggiate EMPTY>
+<!ATTLIST arpeggiate
+    number %number-level; #IMPLIED
+    direction %up-down; #IMPLIED
+    %position; 
+    %placement;
+    %color; 
+>
+
+<!-- 
+	Indicates that this note is at the top or bottom of
+	a bracket indicating to not arpeggiate these notes.
+	Since this does not involve playback, it is only
+	used on the top or bottom notes, not on each note
+	as for the arpeggiate element.
+-->
+<!ELEMENT non-arpeggiate EMPTY>
+<!ATTLIST non-arpeggiate
+    type %top-bottom; #REQUIRED
+    number %number-level; #IMPLIED
+    %position; 
+    %placement;
+    %color; 
+>
+
+<!--
+	Text underlays for lyrics, based on Humdrum with support
+	for other formats. The lyric number indicates multiple
+	lines, though a name can be used as well (as in Finale's
+	verse/chorus/section specification). Word extensions are
+	represented using the extend element. Hyphenation is 
+	indicated by the syllabic element, which can be single, 
+	begin, end, or middle. These represent single-syllable
+	words, word-beginning syllables, word-ending syllables,
+	and mid-word syllables. Multiple syllables on a single
+	note are separated by elision elements. A hyphen in the
+	text element should only be used for an actual hyphenated
+	word. Humming and laughing representations are taken from
+	Humdrum. The end-line and end-paragraph elements come
+	from RP-017 for Standard MIDI File Lyric meta-events;
+	they help facilitate lyric display for Karaoke and
+	similar applications. Language names for text elements
+	come from ISO 639, with optional country subcodes from
+	ISO 3166. Justification is center by default; placement is
+	below by default.
+-->
+<!ELEMENT lyric
+	((((syllabic?, text),
+	   (elision, syllabic?, text)*, extend?) |
+	   extend | laughing | humming),
+	  end-line?, end-paragraph?, %editorial;)>
+<!ATTLIST lyric
+    number NMTOKEN #IMPLIED
+    name CDATA #IMPLIED
+    %justify;
+    %position;
+    %placement;
+    %color;
+>
+
+<!ELEMENT text (#PCDATA)>
+<!ATTLIST text
+    %font;
+    %color;
+    xml:lang NMTOKEN #IMPLIED
+>
+<!ELEMENT syllabic (#PCDATA)>
+<!ELEMENT elision EMPTY>
+<!ATTLIST elision
+    %font;
+    %color;
+>
+<!ELEMENT extend EMPTY>
+<!ATTLIST extend
+    %font;
+    %color;
+>
+<!ELEMENT laughing EMPTY>
+<!ELEMENT humming EMPTY>
+<!ELEMENT end-line EMPTY>
+<!ELEMENT end-paragraph EMPTY>
+
+<!--
+	Figured bass elements take their position from the first
+	regular note that follows. Figures are ordered from top to
+	bottom. A figure-number is a number. Values for prefix and
+	suffix include the accidental values sharp, flat, natural,
+	double-sharp, flat-flat, and sharp-sharp. Suffixes include
+	both symbols that come after the figure number and those 
+	that overstrike the figure number. The suffix value slash
+	is used for slashed numbers indicating chromatic alteration.
+	The orientation and display of the slash usually depends on
+	the figure number. The prefix and suffix elements may 
+	contain additional values for symbols specific to particular
+	figured bass styles. The value of parentheses is "no" if not
+	present.
+-->
+<!ELEMENT figured-bass (figure+, duration?, %editorial;)>
+<!ATTLIST figured-bass
+    %print-style; 
+    %printout;
+    parentheses %yes-no; #IMPLIED
+>
+<!ELEMENT figure (prefix?, figure-number?, suffix?, extend?)>
+<!ELEMENT prefix (#PCDATA)>
+<!ATTLIST prefix
+    %print-style;
+>
+<!ELEMENT figure-number (#PCDATA)>
+<!ATTLIST figure-number
+    %print-style;
+>
+<!ELEMENT suffix (#PCDATA)>
+<!ATTLIST suffix
+    %print-style;
+>
+
+<!--
+	Backup and forward are required to coordinate multiple
+	voices in one part, including music on multiple staves.
+	Forward is generally used within voices and staves,
+	while backup to move between voices and staves. Thus
+	the backup element does not include voice or staff
+	elements. Duration values should always be positive,
+	and should not cross measure boundaries.
+-->
+<!ELEMENT backup (duration, %editorial;)>
+<!ELEMENT forward
+	(duration, %editorial-voice;, staff?)>
+
+
+<!--
+	The barline DTD contains elements regarding
+	barline style, repeats, and multiple endings.
+-->
+<!ENTITY % barline PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.1 Barline//EN"
+	"barline.dtd">
+
+<!--
+	MusicXML barline.dtd
+
+	Version 1.1 - 20 May 2005
+	
+	Copyright © 2004-2005 Recordare LLC.
+	http://www.recordare.com/
+	
+	This MusicXML work is being provided by the copyright
+	holder under the MusicXML Document Type Definition 
+	Public License Version 1.02, available from:
+	
+		http://www.recordare.com/dtds/license.html
+-->
+
+<!--
+	If a barline is other than a normal single barline, it
+	should be represented by a barline element that describes
+	it. This includes information about repeats and multiple
+	endings, as well as line style. Barline data is on the
+	same level as the other musical data in a score - a child
+	of a measure in a partwise score, or a part in a timewise
+	score. This allows for barlines within measures, as in
+	dotted barlines that subdivide measures in complex
+	meters. The two fermata elements allow for fermatas
+	on both sides of the barline (the lower one inverted).
+	
+	Barlines have a location attribute to make it easier to
+	process barlines independently of the other musical data
+	in a score. It is often easier to set up measures
+	separately from entering notes. The location attribute
+	must match where the barline element occurs within the
+	rest of the musical data in the score. If location is
+	left, it should be the first element in the measure; if
+	location is right, it should be the last element. If no
+	location is specified, the right barline is the default.
+-->
+
+<!-- Elements -->
+
+<!ELEMENT barline (bar-style?, %editorial;, wavy-line?, 
+	segno?, coda?, (fermata, fermata?)?, ending?, repeat?)>
+<!ATTLIST barline
+    location (right | left | middle) "right"
+>
+
+<!--
+	Bar-style contains style information. Choices are
+	regular, dotted, dashed, heavy, light-light, 
+	light-heavy, heavy-light, heavy-heavy, and none.
+-->
+<!ELEMENT bar-style (#PCDATA)>
+<!ATTLIST bar-style
+	%color;
+>
+
+<!--
+	The voice entity and the wavy-line, segno, and fermata
+	elements are defined in the common.dtd file. They can
+	apply to both notes and barlines.
+-->
+
+<!--
+	Endings refers to multiple (e.g. first and second)
+	endings. Typically, the start type is associated with
+	the left barline of the first measure in an ending. The
+	stop and discontinue types are associated with the right
+	barline of the last measure in an ending. Stop is used
+	when the ending mark concludes with a downward jog, as
+	is the case for first endings. Discontinue is used when
+	there is no downward jog, as in the final ending. The 
+	length of the jog can be specified using the end-length
+	attribute. The number attribute reflects what is under 
+	the ending line. Single endings such as "1" or multiple
+	endings such as "1, 2" may be used. The ending element 
+	text is used when the text displayed in the ending is
+	different than what appears in the number attribute.
+-->
+<!ELEMENT ending (#PCDATA)>
+<!ATTLIST ending
+    number CDATA #REQUIRED
+    type (start | stop | discontinue) #REQUIRED
+    %print-style;
+    end-length %tenths; #IMPLIED
+>
+
+<!--
+	Repeat marks. The start of the repeat has a forward
+	direction while the end of the repeat has a backward
+	direction. Backward repeats that are not part of an
+	ending can use the times attribute to indicate the
+	number of times the repeated section is played.
+-->
+<!ELEMENT repeat EMPTY>
+<!ATTLIST repeat
+    direction (backward | forward) #REQUIRED
+    times CDATA #IMPLIED
+>
+
+
+<!-- 
+	The direction DTD contains elements for musical 
+	directions not tied to individual notes. This
+	includes harmony and chord symbol elements.
+-->
+<!ENTITY % direction PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.1 Direction//EN"
+	"direction.dtd">
+
+<!--
+	MusicXML direction.dtd
+
+	Version 1.1 - 20 May 2005
+	
+	Copyright © 2004-2005 Recordare LLC.
+	http://www.recordare.com/
+	
+	This MusicXML work is being provided by the copyright
+	holder under the MusicXML Document Type Definition 
+	Public License Version 1.02, available from:
+	
+		http://www.recordare.com/dtds/license.html
+-->
+
+<!--
+	This direction component DTD contains the direction
+	element and its children. Directions are not note-
+	specific, and therefore might attach to a part or the
+	overall score. Hence its separate location in this DTD
+	to allow multiple compositions of these basic elements.
+	
+	Harmony indications and general print and sound
+	suggestions are likewise not necessarily attached to
+	particular note elements, and are included here as well.
+-->
+
+<!-- Elements -->
+
+<!--
+	A direction is a musical indication that is not attached
+	to a specific note. Two or more may be combined to
+	indicate starts and stops of wedges, dashes, etc.
+-->
+<!ELEMENT direction (direction-type+, offset?,
+	%editorial-voice;, staff?, sound?)>
+<!ATTLIST direction
+    %placement; 
+>
+
+<!--
+	Textual direction types may have more than 1 component
+	due to multiple font numbers.
+-->
+<!ELEMENT direction-type (rehearsal+ | segno+ | words+ |
+	coda+ | wedge | dynamics+ | dashes | bracket | pedal | 
+	metronome | octave-shift | harp-pedals | damp | 
+	damp-all | eyeglasses | scordatura | other-direction)>
+
+<!--
+	Print style entities apply to the individual
+	direction-type, not to the overall direction.
+-->
+
+<!--
+	Language is Italian ("it") by default. Enclosure is
+	square by default.
+-->
+<!ELEMENT rehearsal (#PCDATA)>
+<!ATTLIST rehearsal
+    %print-style;
+    xml:lang NMTOKEN #IMPLIED
+    enclosure (square | circle | none) #IMPLIED
+>
+
+<!ELEMENT words (#PCDATA)>
+<!--
+	Left justification is assumed if not specified. 
+	Language is Italian ("it") by default. Enclosure
+	is none by default.
+-->
+<!ATTLIST words
+	%justify;
+	%halign;
+	%valign;
+    %print-style;
+    xml:lang NMTOKEN #IMPLIED
+    enclosure (rectangle | oval | none) #IMPLIED
+>
+
+<!--
+	Wedge spread is measured in tenths of staff line space.
+	The type is crescendo for the start of a wedge that is
+	closed at the left side, and diminuendo for the start
+	of a wedge that is closed on the right side. Spread 
+	values at the start of a crescendo wedge or end of a
+	diminuendo wedge are ignored.
+-->
+<!ELEMENT wedge EMPTY>
+<!ATTLIST wedge
+    type (crescendo | diminuendo | stop) #REQUIRED
+    number %number-level; #IMPLIED
+    spread CDATA #IMPLIED
+    %position;
+    %color;
+>
+
+<!--
+	Dashes, used for instance with cresc. and dim. marks.
+-->
+<!ELEMENT dashes EMPTY>
+<!ATTLIST dashes
+    type %start-stop; #REQUIRED
+    number %number-level; #IMPLIED
+    %position;
+    %color;
+>
+
+<!--
+	Brackets are combined with words in a variety of
+	modern directions. The line-end attribute specifies
+	if there is a jog up or down (or both), an arrow,
+	or nothing at the start or end of the bracket. If
+	the line-end is up or down, the length of the jog
+	can be specified using the end-length attribute.
+	The line-type is solid by default.
+-->
+<!ELEMENT bracket EMPTY>
+<!ATTLIST bracket
+    type %start-stop; #REQUIRED
+    number %number-level; #IMPLIED
+    line-end (up | down | both | arrow | none) #REQUIRED
+    end-length %tenths; #IMPLIED
+    %line-type;
+    %position;
+    %color;
+>
+
+<!-- 
+	Piano pedal marks. The line attribute is yes if pedal
+	lines are used, no if Ped and * signs are used. The
+	change type is used with line set to yes.
+-->
+<!ELEMENT pedal EMPTY>
+<!ATTLIST pedal
+    type (start | stop | change) #REQUIRED
+    line %yes-no;	#IMPLIED
+    %print-style; 
+>
+
+<!--
+	Standard metronome marks. The beat-unit values are the
+	same as for a type element, and the beat-unit-dot works
+	like the dot element. The per-minute element can
+	be a number, or a text description including numbers.
+	The parentheses attribute indicates whether or not
+	to put the metronome mark in parentheses; its value
+	is no if not specified.
+-->
+<!ELEMENT metronome (beat-unit, beat-unit-dot*, 
+	(per-minute | (beat-unit, beat-unit-dot*)))>
+<!ATTLIST metronome
+    %print-style;
+    parentheses %yes-no; #IMPLIED
+>
+<!ELEMENT beat-unit (#PCDATA)>
+<!ELEMENT beat-unit-dot EMPTY>
+<!ELEMENT per-minute (#PCDATA)> 
+
+<!--
+	Octave shifts indicate where notes are shifted up or down
+	from their true pitched values because of printing
+	difficulty. Thus a treble clef line noted with 8va will
+	be indicated with an octave-shift down from the pitch
+	data indicated in the notes. A size of 8 indicates one
+	octave; a size of 15 indicates two octaves.
+-->
+<!ELEMENT octave-shift EMPTY>
+<!ATTLIST octave-shift
+    type (up | down | stop) #REQUIRED
+    number %number-level; #IMPLIED
+    size CDATA "8"
+    %print-style; 
+>
+
+<!-- 
+	The harp-pedals element is used to create harp
+	pedal diagrams. The pedal-step and pedal-alter
+	elements use the same values as the step and alter
+	elements. For easiest reading, the pedal-tuning 
+	elements show follow standard harp pedal order,
+	with pedal-step values of D, C, B, E, F, G, and A.
+-->
+<!ELEMENT harp-pedals (pedal-tuning)+>
+<!ATTLIST harp-pedals
+    %print-style; 
+>
+<!ELEMENT pedal-tuning (pedal-step, pedal-alter)>
+<!ELEMENT pedal-step (#PCDATA)>
+<!ELEMENT pedal-alter (#PCDATA)>
+
+<!-- Harp damping marks -->
+<!ELEMENT damp EMPTY>
+<!ATTLIST damp
+    %print-style; 
+>
+<!ELEMENT damp-all EMPTY>
+<!ATTLIST damp-all
+    %print-style; 
+>
+
+<!-- Eyeglasses, common in commercial music. -->
+<!ELEMENT eyeglasses EMPTY>
+<!ATTLIST eyeglasses
+    %print-style; 
+>
+
+<!-- 
+	Scordatura string tunings are represented by a series
+	of accord elements. The tuning-step, tuning-alter, 
+	and tuning-octave elements are also used with the 
+	staff-tuning element, and are defined in the common.dtd
+	file. Strings are numbered from high to low.
+-->
+<!ELEMENT scordatura (accord+)>
+<!ELEMENT accord
+	(tuning-step, tuning-alter?, tuning-octave)>
+<!ATTLIST accord
+    string CDATA #REQUIRED
+>
+
+<!--
+	The other-direction element is used to define
+	any direction symbols not yet in the current version
+	of MusicXML. This allows extended representation,
+	though without application interoperability.
+-->
+<!ELEMENT other-direction (#PCDATA)>
+<!ATTLIST other-direction
+    %print-style; 
+>
+
+<!--
+	An offset is represented in terms of divisions, and
+	indicates where the direction will appear relative
+	to the current musical location. This is for visual
+	appearance only; any sound associated with the
+	direction takes effect at the current location.
+	If an element within a direction includes a default-x
+	attribute, the offset value will be ignored for that
+	element.
+-->
+<!ELEMENT offset (#PCDATA)>
+
+<!-- Harmony -->
+<!--
+	The harmony elements are based on Humdrum's **harm
+	encoding, extended to support chord symbols in popular
+	music as well as functional harmony analysis in classical
+	music.
+-->
+<!--
+	A harmony element can contain many stacked chords (e.g.
+	V of II). A sequence of harmony-chord entities is used
+	for this type of secondary function, where V of II would
+	be represented by a harmony-chord with a V function
+	followed by a harmony-chord with a II function.
+-->
+<!ENTITY % harmony-chord "((root | function), kind,
+	inversion?, bass?, degree*)">
+
+<!--
+	A root is a pitch name like C, D, E, where a function is
+	an indication like I, II, III. Root is generally used
+	with pop chord symbols, function with classical
+	functional harmony. It is an either/or choice to avoid
+	data inconsistency. Function requires that the key be
+	specified in the encoding. The root element has a
+	root-step and optional root-alter similar to the step
+	and alter elements in a pitch, but renamed to 
+	distinguish the different musical meanings.
+-->
+<!ELEMENT root (root-step, root-alter?)>
+<!ELEMENT root-step (#PCDATA)>
+<!ELEMENT root-alter (#PCDATA)>
+<!ELEMENT function (#PCDATA)>
+
+<!--
+	Kind indicates the type of chord. Degree elements
+	can then add, subtract, or alter from these
+	starting points. Values include:
+	
+	Triads:
+	    major (major third, perfect fifth)
+	    minor (minor third, perfect fifth)
+	    augmented (major third, augmented fifth)
+	    diminished (minor third, diminished fifth)
+	Sevenths:
+	    dominant (major triad, minor seventh)
+	    major-seventh (major triad, major seventh)
+	    minor-seventh (minor triad, minor seventh)
+	    diminished-seventh
+	        (diminished triad, diminished seventh)
+	    augmented-seventh
+	        (augmented triad, minor seventh)
+	    half-diminished
+	        (diminished triad, minor seventh)
+	    major-minor
+	        (minor triad, major seventh)
+	Sixths:
+	    major-sixth (major triad, added sixth)
+	    minor-sixth (minor triad, added sixth)
+	Ninths:
+	    dominant-ninth (dominant-seventh, major ninth)
+	    major-ninth (major-seventh, major ninth)
+	    minor-ninth (minor-seventh, minor ninth)
+	11ths (usually as the basis for alteration):
+	    dominant-11th (dominant-ninth, perfect 11th)
+	    major-11th (major-ninth, perfect 11th)
+	    minor-11th (minor-ninth, perfect 11th)
+	13ths (usually as the basis for alteration):
+	    dominant-13th (dominant-11th, major 13th)
+	    major-13th (major-11th, major 13th)
+	    minor-13th (minor-11th, major 13th)
+	Suspended:
+	    suspended-second (major second, perfect fifth)
+	    suspended-fourth (perfect fourth, perfect fifth)
+	Functional sixths:
+	    Neapolitan
+	    Italian
+	    French
+	    German
+	Other:
+	    pedal (pedal-point bass)
+	    Tristan
+	
+	The "other" kind is used when the harmony is entirely
+	composed of add elements. The "none" kind is used to
+	explicitly encode absence of chords or functional
+	harmony.
+
+	The attributes are used to indicate the formatting
+	of the symbol. Since the kind element is the constant
+	in all the harmony-chord entities that can make up
+	a polychord, many formatting attributes are here.
+
+	The use-symbols attribute is yes if the kind should be
+	represented when possible with harmony symbols rather
+	than letters and numbers. These symbols include:
+
+	    major: a triangle, like Unicode 25B3
+	    minor: -, like Unicode 002D
+	    augmented: +, like Unicode 002B
+	    diminished: °, like Unicode 00B0
+	    half-diminished: ø, like Unicode 00F8
+
+	The text attribute describes how the kind should be 
+	spelled if not using symbols; it is ignored if use-symbols
+	is yes. The stack-degrees attribute is yes if the degree 
+	elements should be stacked above each other. The 
+	parentheses-degrees attribute is yes if all the degrees 
+	should be in parentheses. The bracket-degrees attribute
+	is yes if all the degrees should be in a bracket. If not 
+	specified, these values are implementation-specific.
+-->
+<!ELEMENT kind (#PCDATA)>
+<!ATTLIST kind
+    use-symbols          %yes-no;   #IMPLIED
+    text                 CDATA      #IMPLIED
+    stack-degrees        %yes-no;   #IMPLIED
+    parentheses-degrees  %yes-no;   #IMPLIED
+    bracket-degrees      %yes-no;   #IMPLIED
+>
+
+<!--
+	Inversion is a number indicating which inversion is used:
+	0 for root position, 1 for first inversion, etc.
+-->
+<!ELEMENT inversion (#PCDATA)>
+
+<!--
+	Bass is used to indicate a bass note in popular music
+	chord symbols, e.g. G/C. It is generally not used in
+	functional harmony, as inversion is generally not used
+	in pop chord symbols. As with root, it is divided into
+	step and alter elements, similar to pitches.
+-->
+<!ELEMENT bass (bass-step, bass-alter?)>
+<!ELEMENT bass-step (#PCDATA)>
+<!ELEMENT bass-alter (#PCDATA)>
+
+<!--
+	The degree element is used to add, alter, or subtract
+	individual notes in the chord. The degree-value element
+	is a number indicating the degree of the chord (1 for
+	the root, 3 for third, etc). The degree-alter element
+	is like the alter element in notes: 1 for sharp, -1 for
+	flat, etc. The degree-type element can be add, alter, or
+	subtract. If the degree-type is alter or subtract, the
+	degree-alter is relative to the degree already in the
+	chord based on its kind element. If the degree-type is
+	add, the degree-alter is relative to a dominant chord
+	(major and perfect intervals except for a minor 
+	seventh). The print-object attribute can be used to
+	keep the degree from printing separately when it has
+	already taken into account in the text attribute of
+	the kind element.
+	
+	A harmony of kind "other" can be spelled explicitly by
+	using a series of degree elements together with a root.
+-->
+<!ELEMENT degree (degree-value, degree-alter, degree-type)>
+<!ATTLIST degree
+    %print-object;
+>
+<!ELEMENT degree-value (#PCDATA)>
+<!ELEMENT degree-alter (#PCDATA)>
+<!ELEMENT degree-type (#PCDATA)>
+
+<!--
+	The frame element represents a frame or fretboard
+	diagram used together with a chord symbol. The
+	representation is based on the NIFF guitar grid
+	with additional information. The frame-strings and
+	frame-frets elements give the overall size of the
+	frame in vertical lines (strings) and horizontal
+	spaces (frets). The first-fret indicates which fret
+	is shown in the top space of the frame; it is fret 1 
+	if the element is not present. The frame-note element 
+	represents each note included in the frame. The
+	definitions for string, fret, and fingering are found
+	in common.dtd.
+-->
+<!ELEMENT frame 
+	(frame-strings, frame-frets, first-fret?, frame-note+)>
+<!ATTLIST frame 
+    %position;
+    %color;
+    height  %tenths;  #IMPLIED
+    width   %tenths;  #IMPLIED
+>
+<!ELEMENT frame-strings (#PCDATA)>
+<!ELEMENT frame-frets (#PCDATA)>
+<!ELEMENT first-fret (#PCDATA)>
+<!ELEMENT frame-note (string, fret, fingering?, barre?)>
+
+<!-- 
+	The barre element indicates placing a finger over 
+	multiple strings on a single fret. The type is "start" 
+	for the lowest pitched string (e.g., the string with 
+	the highest MusicXML number) and is "stop" for the 
+	highest pitched string.
+-->
+<!ELEMENT barre EMPTY>
+<!ATTLIST barre
+    type %start-stop; #REQUIRED
+    %color;
+>
+
+<!--
+	If there are alternate harmonies possible, this can be
+	specified using multiple harmony elements differentiated
+	by type. Explicit harmonies have all note present in the
+	music; implied have some notes missing but implied;
+	alternate represents alternate analyses. 
+	
+	The harmony object may be used for analysis or for
+	chord symbols. The print-object attribute controls
+	whether or not anything is printed due to the harmony
+	element. The print-frame attribute controls printing
+	of a frame or fretboard diagram.
+-->
+<!ELEMENT harmony ((%harmony-chord;)+, frame?, 
+	offset?, %editorial;, staff?)>
+<!ATTLIST harmony
+    type (explicit | implied | alternate) #IMPLIED
+    %print-object;
+    print-frame  %yes-no; #IMPLIED
+    %print-style;
+    %placement;
+>
+
+<!--
+	The grouping element is used for musical analysis. When
+	the element type is "start", it usually contains one or
+	more feature elements. The number attribute is used for
+	distinguishing between overlapping and hierarchical
+	groupings. The member-of attribute allows for easy
+	distinguishing of what grouping elements are in what
+	hierarchy. Feature elements contained within a "stop"
+	type of grouping may be ignored.
+	
+	This element is flexible to allow for non-standard
+	analyses. Future versions of MusicXML may add elements
+	that can represent more standardized categories of
+	analysis data, allowing for easier data sharing.
+-->
+<!ELEMENT grouping ((feature)*)>
+<!ATTLIST grouping
+    type %start-stop; #REQUIRED
+    number CDATA "1"
+    member-of CDATA #IMPLIED
+>
+<!ELEMENT feature (#PCDATA)>
+<!ATTLIST feature
+    type CDATA #IMPLIED
+>
+
+<!--
+	The print element contains general printing parameters,
+	including the layout elements defined in layout.dtd.
+	
+	The new-system and new-page attributes indicate whether
+	to force a system or page break, or to force the current
+	music onto the same system or page as the preceding 
+	music. Normally this is the first music data within a
+	measure. If used in multi-part music, they should be 
+	placed in the same positions within each part, or the
+	results are undefined. The page-number attribute sets
+	the number of a new page; it is ignored if new-page
+	is not "yes".
+
+	Staff spacing between multiple staves is measured in
+	tenths of staff lines (e.g. 100 = 10 staff lines).
+	This is deprecated in MusicXML 1.1; the staff-layout
+	element should be used instead. If both are present,
+	the staff-layout values take priority.
+
+	Layout elements in a print statement only apply to
+	the current page, system, staff, or measure. Music
+	that follows continues to take the default values 
+	from the layout included in the <defaults> element.
+-->
+<!ELEMENT print (page-layout?, system-layout?, 
+	staff-layout*, measure-layout?)>
+<!ATTLIST print
+	staff-spacing %tenths; #IMPLIED
+	new-system %yes-no; #IMPLIED
+	new-page %yes-no; #IMPLIED
+	page-number CDATA #IMPLIED	
+>
+
+<!-- 
+	The sound element contains general playback parameters.
+	They can stand alone within a part/measure, or be a
+	component element within a direction.
+	
+	Tempo is expressed in quarter notes per minute. If 0,
+	the sound-generating program must prompt the user at the
+	time of compiling a sound (MIDI) file.
+	
+	Dynamics (or MIDI velocity) are expressed as a percentage
+	of the default forte value (90 for MIDI).
+	
+	Dacapo indicates to go back to the beginning of the
+	movement. When used it always has the value "yes".
+	
+	Segno and dalsegno are used for backwards jumps to a
+	segno sign; coda and tocoda are used for forward jumps
+	to a coda sign. If there are multiple jumps, the value
+	of these parameters can be used to name and distinguish
+	them. If segno or coda is used, the divisions attribute
+	can also be used to indicate the number of divisions
+	per quarter note. Otherwise sound and MIDI generating
+	programs may have to recompute this.
+	
+	A dalsegno or dacapo attribute indicates that the
+	jump should occur the first time through; a tocoda
+	attribute indicates the jump should occur the second
+	time through.
+	
+	Forward-repeat is used when a forward repeat sign is
+	implied, and usually follows a bar line. When used it
+	always has the value of "yes".
+	
+	The fine attribute follows the final note or rest in a
+	movement with a da capo direction. If numeric, the value
+	represents the actual duration of the final note or rest,
+	which can be ambiguous in written notation and different
+	among parts and voices. The value may also be "yes" to
+	indicate no change to the final duration.
+	
+	If the sound element applies only one time through a
+	repeat, the time-only attribute indicates which time
+	to apply the sound element.
+	
+	Pizzicato in a sound element effects all following notes.
+	Yes indicates pizzicato, no indicates arco.
+	
+	Pan and elevation allow placing of sound in a 3-D space
+	relative to the listener. Both are expressed in degrees
+	ranging from -180 to 180. For pan, 0 is straight ahead,
+	-90 is hard left, 90 is hard right, and -180 and 180
+	are directly behind the listener. For elevation, 0 is
+	level with the listener, 90 is directly above, and -90
+	is directly below.
+	
+	The damper-pedal, soft-pedal, and sostenuto-pedal 
+	attributes effect playback of the three common piano
+	pedals and their MIDI controller equivalents. Yes
+	indicates the pedal is depressed; no indicates the 
+	pedal is released.
+	
+	MIDI instruments are changed using the midi-instrument
+	element defined in common.dtd.
+-->
+<!ELEMENT sound (midi-instrument*)>
+<!ATTLIST sound
+	tempo CDATA #IMPLIED
+	dynamics CDATA #IMPLIED
+	dacapo %yes-no; #IMPLIED
+	segno CDATA #IMPLIED
+	dalsegno CDATA #IMPLIED
+	coda CDATA #IMPLIED
+	tocoda CDATA #IMPLIED
+	divisions CDATA #IMPLIED
+	forward-repeat %yes-no; #IMPLIED
+	fine CDATA #IMPLIED
+	time-only CDATA #IMPLIED
+	pizzicato %yes-no; #IMPLIED
+	pan CDATA #IMPLIED
+	elevation CDATA #IMPLIED
+	damper-pedal %yes-no; #IMPLIED
+	soft-pedal %yes-no; #IMPLIED
+	sostenuto-pedal %yes-no; #IMPLIED
+>
+
+<!--
+	The score DTD contains the top-level elements
+	for musical scores, including the root document
+	elements.
+-->
+<!ENTITY % score PUBLIC
+	"-//Recordare//ELEMENTS MusicXML 1.1 Score//EN"
+	"score.dtd">
+
+<!--
+	MusicXML score.dtd
+
+	Version 1.1 - 20 May 2005
+	
+	Copyright © 2004-2005 Recordare LLC.
+	http://www.recordare.com/
+	
+	This MusicXML work is being provided by the copyright
+	holder under the MusicXML Document Type Definition 
+	Public License Version 1.02, available from:
+	
+		http://www.recordare.com/dtds/license.html
+-->
+
+<!--
+	Works and movements are optionally identified by number
+	and title. The work element also may indicate a link
+	to the opus document that composes multiple movements
+	into a collection.
+-->
+<!ELEMENT work (work-number?, work-title?, opus?)>
+<!ELEMENT work-number (#PCDATA)>
+<!ELEMENT work-title (#PCDATA)>
+
+<!ELEMENT opus EMPTY>
+<!ATTLIST opus
+    %link-attributes; 
+>
+
+<!ELEMENT movement-number (#PCDATA)>
+<!ELEMENT movement-title (#PCDATA)>
+
+<!--
+	Collect score-wide defaults. This includes scaling
+	and layout, defined in layout.dtd, and default values
+	for the music font, word font, lyric font, and 
+	lyric language. The number and name attributes in
+	lyric-font and lyric-language elements are typically
+	used when lyrics are provided in multiple languages.
+	If the number and name attributes are omitted, the 
+	lyric-font and lyric-language values apply to all 
+	numbers and names.
+-->
+<!ELEMENT defaults (scaling?, page-layout?,
+	system-layout?, staff-layout*, music-font?, 
+	word-font?, lyric-font*, lyric-language*)>
+
+<!ELEMENT music-font EMPTY>
+<!ATTLIST music-font
+	%font;
+>
+<!ELEMENT word-font EMPTY>
+<!ATTLIST word-font
+	%font;
+>
+<!ELEMENT lyric-font EMPTY>
+<!ATTLIST lyric-font
+    number NMTOKEN #IMPLIED
+    name CDATA #IMPLIED
+	%font;
+>
+<!ELEMENT lyric-language EMPTY>
+<!ATTLIST lyric-language
+    number NMTOKEN #IMPLIED
+    name CDATA #IMPLIED
+	xml:lang NMTOKEN #REQUIRED
+>
+
+<!--
+	Credit elements refer to the title, composer, arranger,
+	lyricist, copyright, dedication, and other text that
+	appears on the first page of a score. The credit-words
+	element is similar to the words element for directions.
+	However, since the credit is not part of a measure,
+	the default-x and default-y attributes adjust the
+	origin relative to the bottom left-hand corner of
+	the first page. The enclosure is none by default.
+-->
+<!ELEMENT credit (credit-words+)>
+<!ELEMENT credit-words (#PCDATA)>
+<!ATTLIST credit-words
+    %justify;
+    %halign;
+    %valign;
+    %print-style;
+    xml:lang NMTOKEN #IMPLIED
+    enclosure (rectangle | oval | none) #IMPLIED
+>
+
+<!--
+	The part-list identifies the different musical parts in
+	this movement. Each part has an ID that is used later
+	within the musical data. Since parts may be encoded
+	separately and combined later, identification elements
+	are present at both the score and score-part levels.
+	There must be at least one score-part, combined as
+	desired with part-group elements that indicate braces
+	and brackets. Parts are ordered from top to bottom in
+	a score based on the order in which they appear in the
+	part-list.
+	
+	Each MusicXML part corresponds to a track in a Standard
+	MIDI Format 1 file. The score-instrument elements are
+	used when there are multiple instruments per track.
+	The midi-device element is used to make a MIDI device
+	or port assignment for the given track. Initial
+	midi-instrument assignments may be made here as well.
+-->
+<!ELEMENT part-list (part-group*, score-part,
+	(part-group | score-part)*)>
+<!ELEMENT score-part (identification?, part-name,
+	part-abbreviation?, group*, score-instrument*,
+	midi-device?, midi-instrument*)>
+<!ATTLIST score-part
+    id ID #REQUIRED
+>
+
+<!--
+	The part-name indicates the full name of the musical 
+	part. The part-abbreviation indicates the abbreviated
+	version of the name of the musical part. The part-name
+	will often precede the first system, while the 
+	part-abbreviation will precede the other systems.
+-->
+<!ELEMENT part-name (#PCDATA)>
+<!ATTLIST part-name
+    %print-style;
+    %print-object;
+    %justify;
+>
+<!ELEMENT part-abbreviation (#PCDATA)>
+<!ATTLIST part-abbreviation
+    %print-style;
+    %print-object;
+    %justify;
+>
+
+<!--
+	The part-group element indicates groupings of parts in
+	the score, usually indicated by braces and brackets.
+	The number attribute is used to distinguish overlapping
+	and nested part-groups, not the sequence of groups. As
+	with parts, groups can have a name and abbreviation.
+	The group-symbol element indicates how the group is 
+	indicated on the score. Values include none (default),
+	brace, line, and bracket. Values for the child elements
+	are ignored at the stop of a group. The group-barline
+	element indicates if the group should have common
+	barlines. Values can be yes, no, or Mensurstrich.
+-->
+<!ELEMENT part-group (group-name?, group-abbreviation?,
+	group-symbol?, group-barline?, %editorial;)>
+<!ATTLIST part-group
+    type %start-stop; #REQUIRED
+    number CDATA "1"
+>
+<!ELEMENT group-name (#PCDATA)>
+<!ATTLIST group-name
+    %print-style;
+    %justify;
+>
+<!ELEMENT group-abbreviation (#PCDATA)>
+<!ATTLIST group-abbreviation
+    %print-style;
+    %justify;
+>
+<!ELEMENT group-symbol (#PCDATA)>
+<!ATTLIST group-symbol
+    %position;
+    %color;
+>
+<!ELEMENT group-barline (#PCDATA)>
+<!ATTLIST group-barline
+    %color;
+>
+
+<!--
+	The score-instrument element allows for multiple
+	instruments per score-part. As with the score-part
+	element, each score-instrument has a required ID
+	attribute, a name, and an optional abbreviation.
+	A score-instrument element is also required if the
+	score specifies MIDI channels, banks, or programs.
+	An initial midi-instrument assignment can also
+	be made here. MusicXML software should be able to
+	automatically assign reasonable channels and 
+	instruments without these elements in simple cases,
+	such as where part names match General MIDI
+	instrument names.
+	
+	The midi-instrument element is defined in common.dtd,
+	as it can be used within both the score-part and
+	sound elements.
+-->
+<!ELEMENT score-instrument
+	(instrument-name, instrument-abbreviation?)>
+<!ATTLIST score-instrument
+    id ID #REQUIRED
+>
+<!ELEMENT instrument-name (#PCDATA)>
+<!ELEMENT instrument-abbreviation (#PCDATA)>
+
+<!--
+	The midi-device content corresponds to the DeviceName
+	meta event in Standard MIDI Files. The optional port
+	attribute is a number from 1 to 16 that can be used
+	with the unofficial MIDI port (or cable) meta event.
+-->
+<!ELEMENT midi-device (#PCDATA)>
+<!ATTLIST midi-device
+    port CDATA #IMPLIED
+>
+
+<!--
+	The group element allows the use of different versions
+	of the part for different purposes. Typical values
+	include score, parts, sound, and data. Ordering 
+	information that is directly encoded in MuseData can
+	be derived from the ordering within a score or opus
+	in MusicXML.
+-->
+<!ELEMENT group (#PCDATA)>
+
+<!--
+	Here is the basic musical data that is either associated
+	with a part or a measure, depending on whether partwise
+	or timewise hierarchy is used.
+-->
+<!ENTITY % music-data
+    "(note | backup | forward | direction | attributes |
+      harmony | figured-bass | print | sound | barline | 
+      grouping | link | bookmark)*">
+
+<!--
+	The score-header entity contains basic score metadata
+	about the work and movement, score-wide defaults for
+	layout and fonts, credits that appear on the first page,
+	and the part list. 
+-->
+<!ENTITY % score-header
+    "(work?, movement-number?, movement-title?,
+      identification?, defaults?, credit*, part-list)">
+
+<!--
+	The score is the root element for the DTD. It includes
+	the score-header entity, followed either by a series of
+	parts with measures inside (score-partwise) or a series
+	of measures with parts inside (score-timewise). Having
+	distinct top-level elements for partwise and timewise
+	scores makes it easy to ensure that an XSLT stylesheet
+	does not try to transform a document already in the
+	desired format.
+
+	The version attribute is new to MusicXML 1.1. It provides
+	an easier way to get version information than through the
+	MusicXML public ID. The default value is 1.0 to make it 
+	possible for programs that handle version 1.1 to 
+	distinguish version 1.0 files reliably. Programs that
+	write MusicXML 1.1 files should set this attribute.
+-->
+<![ %partwise; [
+<!ELEMENT score-partwise (%score-header;, part+)>
+<!ATTLIST score-partwise
+    version  CDATA  "1.0"
+>	
+<!ELEMENT part (measure+)>
+<!ELEMENT measure (%music-data;)>
+]]>
+<![ %timewise; [
+<!ELEMENT score-timewise (%score-header;, measure+)>
+<!ATTLIST score-timewise
+    version  CDATA  "1.0"
+>	
+<!ELEMENT measure (part+)>
+<!ELEMENT part (%music-data;)>
+]]>
+<!--
+	In either format, the part element has an id attribute
+	that is an IDREF back to a score-part in the part-list.
+	Measures have a required number attribute (going from
+	partwise to timewise, measures are grouped via the
+	number).
+-->
+<!ATTLIST part
+    id IDREF #REQUIRED
+>
+<!--
+	The implicit attribute is set to "yes" for measures where
+	the measure number should never appear, such as pickup
+	measures and the last half of mid-measure repeats. The
+	value is "no" if not specified.
+	
+	The non-controlling attribute indicates that this measure
+	in this part does not necessarily synchronize with other
+	measures in other parts. This is intended for use in
+	multimetric music like the Don Giovanni minuet. The
+	value is "no" if not specified.
+
+	Measure width is specified in tenths. These are the
+	global tenths specified in the scaling element, not
+	local tenths as modified by the staff-size element.
+-->
+<!ATTLIST measure
+    number CDATA #REQUIRED
+    implicit %yes-no; #IMPLIED
+    non-controlling %yes-no; #IMPLIED
+    width %tenths; #IMPLIED
+>
+

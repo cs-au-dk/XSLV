@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+<!--
+Params: 
+twidth
+evt. mainpage
+-->
+  <jsp:directive.page language="java" session="true" isThreadSafe="true" isELIgnored="false" pageEncoding="utf-8"/>
+  <jsp:useBean id="validator" scope="session" class="dongfang.xsltools.context.InteractiveRequestResponseBean"/>
+  <p>
+          <table border="1" width="${param.twidth}">
+            <tr>
+              <th>Message</th>
+              <th>Module</th>
+              <th>Location</th>
+            </tr>
+            <c:forEach var="item" items="${validator.nonFatalLocatableErrors}" varStatus="stat">
+              <tr>
+                <td width="400">
+                  <c:out value="${item.message}" escapeXml="yes"/>
+                </td>
+                <td width="280">
+                  <c:out value="${item.originId}" escapeXml="yes"/>
+                </td>
+                <td>
+                  <c:out value="${item.parsePositionAsReadableString}" escapeXml="yes"/>
+                </td>
+              </tr>
+            </c:forEach>
+            <c:forEach var="item" items="${validator.nonFatalNonLocatableErrors}" varStatus="stat">
+              <tr>
+                <td>
+                  <c:out value="${item.message}" escapeXml="yes"/>
+                </td>
+              </tr>
+            </c:forEach>
+          </table>
+          </p>
+          <p>
+          <em>
+            Don't trust the validation results until this has been fixed - the bad content has simply been removed.
+          </em>
+          </p>
+</jsp:root>

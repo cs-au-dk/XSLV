@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Same child name appearing twice in a content model (with same type of course). Must work. Does work. -->
+
+<triple name="doublegap" enabled="true"><input type="XSD" DTDNamespaceURI="">doublegap.xsd</input><output type="DSD" DTDNamespaceURI="">simple.dsd</output><xslt>general-identity-transform.xsl</xslt></triple>

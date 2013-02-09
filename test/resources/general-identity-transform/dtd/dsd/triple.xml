@@ -1,0 +1,5 @@
+<triple name="dsd2">
+  <input type="DTD" DTDNamespaceURI="http://dongfang.dk/testdata">dsd2.dtd</input>
+  <output type="RNG">dsd2.rng</output>
+  <xslt>../../general-identity-transform.xsl</xslt>
+</triple>

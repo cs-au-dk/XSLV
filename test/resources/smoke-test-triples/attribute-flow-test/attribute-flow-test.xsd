@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+ xmlns:s="http://dongfang.dk/testdata" 
+ targetNamespace="http://dongfang.dk/testdata" 
+ elementFormDefault="qualified">
+
+<!-- the use=required is only for preventing clutter in the summary graph..
+  We know that the associated transform is doomed to infloop if ever executed -->
+
+  <complexType name="root">
+    <choice>  
+      <sequence>
+        <element ref="s:a"/>
+        <element ref="s:b"/>
+      </sequence>
+      <sequence>
+        <element ref="s:a"/>
+        <element ref="s:b"/>
+      </sequence>
+    </choice>
+  </complexType>
+
+ <element name="root" type="s:root"/>
+
+  <element name="a">
+    <complexType>
+      <simpleContent>
+        <restriction base="string">
+          <attribute name="a1" use="required" fixed="a1-under-a"/>
+          <attribute name="a2" use="required" fixed="a2-under-a"/>
+        </restriction>
+      </simpleContent>
+    </complexType>
+  </element>
+
+  <element name="b">
+    <complexType>
+      <simpleContent>
+        <restriction base="string">
+          <attribute name="a1" use="required" fixed="a1-under-b"/>
+          <attribute name="a2" use="required" fixed="a2-under-b"/>
+        </restriction>
+      </simpleContent>
+    </complexType>
+  </element>
+</schema>

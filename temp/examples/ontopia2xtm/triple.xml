@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<triple name="ontopia2xtm">
+  <input type="DTD" DTDNamespaceURI="">input/tmstrict.dtd</input>
+  <output type="RNG">output/xtm.rng</output>
+  <xslt>xslt/ontopia2xtm.xsl</xslt>
+  <info>From: <a href="http://www.cogx.com/xslt4tm2xtm/cogx2xtm.xsl">
+Cognitive Technologies</a>.</info>
+  <notes>
+7 of the 87 errors reported are spurious (non-real errors, reported because the
+analysis performed is approximate). 
+<br/>
+Some errors are caused by the validator´s
+current, rather crude analysis of control flow through XSLT <tt>if</tt> and 
+<tt>choose</tt> expressions. 
+<!--For example, there is a complaint that the
+<tt>{http://www.topicmaps.org/xtm/1.0/}scope</tt> element may be output
+without any content - a close look at the stylesheet will tell that 
+Nøø det er er ringe eksempel; der ER faktisk en rigtig fejl.
+-->
+For example, the <tt>generate-id()</tt> function is approximated to
+generate any string at all, including an empty string. This causes
+a complaint about a possibly empty <tt>ID</tt>-typed attribute in
+the output.
+<br/>
+Another example is the recursive template <tt>topicRefSplit</tt> which
+will always output something (recursion with a truncated argument string when
+<tt>&lt;xsl:when test="contains($n_topicRefs,' ')"&gt;</tt> and
+output at <tt>&lt;xsl:if test="$n_topicRefs != ''"&gt;</tt>), but the
+validator is not able to detect that.
+<br/>
+The real error is a complaint that that the <tt>ID</tt> attribute type
+in DTD may have ":" in its value; copying that to output is not allowed.
+  </notes>
+</triple>

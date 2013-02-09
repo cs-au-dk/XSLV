@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- reveals a problem: Automata only initialized in IMMEDIATE substitutes of something
+  reachable from root (so it seems).
+  UPDATE - no problem
+-->
+
+<triple name="subst-experiment" enabled="true"><input type="XSD" DTDNamespaceURI="">subst-experiment.xsd</input><output type="DSD" DTDNamespaceURI="">simple.dsd</output><xslt>blank.xsl</xslt></triple>

@@ -1,0 +1,3332 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?dsd href="http://www.brics.dk/DSD/dsd2.dsd"?>
+<dsd xmlns="http://www.brics.dk/DSD/2.0" xmlns:x="http://www.w3.org/2002/xmlspec/dtd/2.4/xmlspec.dtd" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:n="http://www.brics.dk/DSD/names">
+  <xi:include href="http://www.brics.dk/DSD/names.dsd" />
+  <rule id="x:R0">
+    <rule ref="x:R39" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R1">
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:div1" />
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R2">
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:head" />
+          <repeat>
+            <union>
+              <element name="x:p" />
+              <element name="x:ulist" />
+              <element name="x:olist" />
+              <element name="x:slist" />
+              <element name="x:glist" />
+              <element name="x:orglist" />
+              <element name="x:blist" />
+              <element name="x:note" />
+              <element name="x:issue" />
+              <element name="x:wfcnote" />
+              <element name="x:vcnote" />
+              <element name="x:constraintnote" />
+              <element name="x:eg" />
+              <element name="x:graphic" />
+              <element name="x:scrap" />
+              <element name="x:table" />
+              <element name="x:definitions" />
+              <element name="x:proto" />
+              <element name="x:example" />
+              <element name="x:ednote" />
+            </union>
+          </repeat>
+          <repeat>
+            <element name="x:div2" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R3">
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:phrase" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R4">
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <union>
+            <element name="x:p" />
+            <element name="x:ulist" />
+            <element name="x:olist" />
+            <element name="x:slist" />
+            <element name="x:glist" />
+            <element name="x:ednote" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R5">
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:termdef" />
+            <element name="x:term" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:bibref" />
+            <element name="x:specref" />
+            <element name="x:termref" />
+            <element name="x:titleref" />
+            <element name="x:xspecref" />
+            <element name="x:xtermref" />
+            <element name="x:kw" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:code" />
+            <element name="x:function" />
+            <element name="x:var" />
+            <element name="x:el" />
+            <element name="x:att" />
+            <element name="x:attval" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R6">
+    <rule ref="x:R0" />
+    <declare>
+      <required>
+        <attribute name="href" />
+      </required>
+    </declare>
+  </rule>
+  <rule id="x:R8">
+    <rule ref="x:R3" />
+    <declare>
+      <required>
+        <attribute name="href" />
+      </required>
+    </declare>
+  </rule>
+  <rule id="x:R9">
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <union>
+            <element name="x:p" />
+            <element name="x:ulist" />
+            <element name="x:olist" />
+            <element name="x:slist" />
+            <element name="x:glist" />
+            <element name="x:orglist" />
+            <element name="x:blist" />
+            <element name="x:note" />
+            <element name="x:issue" />
+            <element name="x:wfcnote" />
+            <element name="x:vcnote" />
+            <element name="x:constraintnote" />
+            <element name="x:eg" />
+            <element name="x:graphic" />
+            <element name="x:scrap" />
+            <element name="x:table" />
+            <element name="x:definitions" />
+            <element name="x:proto" />
+            <element name="x:example" />
+            <element name="x:ednote" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R11">
+    <rule ref="x:R0" />
+    <declare>
+      <attribute name="spacing">
+        <union>
+          <string value="normal" />
+          <string value="compact" />
+        </union>
+      </attribute>
+      <contents>
+        <repeat min="1">
+          <element name="x:item" />
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R13">
+    <rule ref="x:R39" />
+    <declare>
+      <required>
+        <attribute name="id">
+          <normalize whitespace="trim" />
+          <stringtype ref="n:NAME" />
+        </attribute>
+      </required>
+    </declare>
+  </rule>
+  <rule id="x:R14">
+    <rule ref="x:R39" />
+    <declare>
+      <required>
+        <attribute name="id">
+          <normalize whitespace="trim" />
+          <stringtype ref="n:NAME" />
+        </attribute>
+      </required>
+      <contents>
+        <sequence>
+          <element name="x:head" />
+          <repeat min="1">
+            <union>
+              <element name="x:p" />
+              <element name="x:ulist" />
+              <element name="x:olist" />
+              <element name="x:slist" />
+              <element name="x:glist" />
+              <element name="x:orglist" />
+              <element name="x:blist" />
+              <element name="x:note" />
+              <element name="x:issue" />
+              <element name="x:wfcnote" />
+              <element name="x:vcnote" />
+              <element name="x:constraintnote" />
+              <element name="x:eg" />
+              <element name="x:graphic" />
+              <element name="x:scrap" />
+              <element name="x:table" />
+              <element name="x:definitions" />
+              <element name="x:proto" />
+              <element name="x:example" />
+              <element name="x:ednote" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R15">
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+            <element name="x:constraint" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R16">
+    <rule ref="x:R0" />
+    <declare>
+      <required>
+        <attribute name="def">
+          <normalize whitespace="trim" />
+          <stringtype ref="n:NAME" />
+        </attribute>
+      </required>
+    </declare>
+  </rule>
+  <rule id="x:R17">
+    <rule ref="x:R0" />
+    <declare>
+      <required>
+        <attribute name="ref">
+          <normalize whitespace="trim" />
+          <stringtype ref="n:NAME" />
+        </attribute>
+      </required>
+    </declare>
+  </rule>
+  <rule id="x:R20">
+    <rule ref="x:R0" />
+    <rule ref="x:R46" />
+    <declare>
+      <attribute name="width" />
+      <attribute name="span">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+        <default value="1" />
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R21">
+    <rule ref="x:R0" />
+    <rule ref="x:R46" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:tr" />
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R23">
+    <rule ref="x:R46" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:termdef" />
+            <element name="x:term" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:bibref" />
+            <element name="x:specref" />
+            <element name="x:termref" />
+            <element name="x:titleref" />
+            <element name="x:xspecref" />
+            <element name="x:xtermref" />
+            <element name="x:kw" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:code" />
+            <element name="x:function" />
+            <element name="x:var" />
+            <element name="x:el" />
+            <element name="x:att" />
+            <element name="x:attval" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+            <element name="x:ulist" />
+            <element name="x:olist" />
+            <element name="x:slist" />
+            <element name="x:glist" />
+            <element name="x:orglist" />
+            <element name="x:blist" />
+            <element name="x:note" />
+            <element name="x:issue" />
+            <element name="x:wfcnote" />
+            <element name="x:vcnote" />
+            <element name="x:constraintnote" />
+            <element name="x:eg" />
+            <element name="x:graphic" />
+            <element name="x:scrap" />
+            <element name="x:table" />
+            <element name="x:definitions" />
+            <element name="x:proto" />
+            <element name="x:example" />
+          </union>
+        </repeat>
+      </contents>
+      <attribute name="colspan">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+        <default value="1" />
+      </attribute>
+      <attribute name="axis" />
+      <attribute name="scope">
+        <union>
+          <string value="row" />
+          <string value="col" />
+          <string value="rowgroup" />
+          <string value="colgroup" />
+        </union>
+      </attribute>
+      <attribute name="headers">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAMES" />
+      </attribute>
+      <attribute name="rowspan">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+        <default value="1" />
+      </attribute>
+      <attribute name="abbr" />
+    </declare>
+  </rule>
+  <rule id="x:R24">
+    <rule ref="x:R0" />
+    <declare>
+      <required>
+        <attribute name="name" />
+      </required>
+    </declare>
+  </rule>
+  <rule id="x:R28">
+    <rule ref="x:R48" />
+    <declare>
+      <required>
+        <attribute name="type" />
+      </required>
+      <required>
+        <attribute name="name" />
+      </required>
+    </declare>
+  </rule>
+  <rule id="x:R30">
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R31">
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:phrase" />
+          </union>
+        </repeat>
+      </contents>
+      <required>
+        <attribute name="def">
+          <normalize whitespace="trim" />
+          <stringtype ref="n:NAME" />
+        </attribute>
+      </required>
+    </declare>
+  </rule>
+  <rule id="x:R39">
+    <declare>
+      <attribute name="diff">
+        <union>
+          <string value="chg" />
+          <string value="add" />
+          <string value="del" />
+          <string value="off" />
+        </union>
+      </attribute>
+      <attribute name="role">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R46">
+    <declare>
+      <attribute name="align">
+        <union>
+          <string value="left" />
+          <string value="center" />
+          <string value="right" />
+          <string value="justify" />
+          <string value="char" />
+        </union>
+      </attribute>
+      <attribute name="valign">
+        <union>
+          <string value="top" />
+          <string value="middle" />
+          <string value="bottom" />
+          <string value="baseline" />
+        </union>
+      </attribute>
+      <attribute name="charoff" />
+      <attribute name="char" />
+    </declare>
+  </rule>
+  <rule id="x:R48">
+    <rule ref="x:R39" />
+    <declare>
+      <attribute name="id">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <element name="x:descr" />
+      </contents>
+    </declare>
+  </rule>
+  <if>
+    <element name="x:head" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:kw" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:code" />
+            <element name="x:function" />
+            <element name="x:var" />
+            <element name="x:el" />
+            <element name="x:att" />
+            <element name="x:attval" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:spec" />
+    <rule ref="x:R0" />
+    <declare>
+      <attribute name="status">
+        <union>
+          <string value="int-review" />
+          <string value="ext-review" />
+          <string value="final" />
+        </union>
+      </attribute>
+      <attribute name="w3c-doctype">
+        <union>
+          <string value="cr" />
+          <string value="dispcmts" />
+          <string value="issues" />
+          <string value="note" />
+          <string value="other" />
+          <string value="pr" />
+          <string value="rec" />
+          <string value="wd" />
+        </union>
+      </attribute>
+      <attribute name="other-doctype" />
+      <contents>
+        <sequence>
+          <element name="x:header" />
+          <optional>
+            <element name="x:front" />
+          </optional>
+          <element name="x:body" />
+          <optional>
+            <element name="x:back" />
+          </optional>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:front" />
+    <rule ref="x:R1" />
+  </if>
+  <if>
+    <element name="x:body" />
+    <rule ref="x:R1" />
+  </if>
+  <if>
+    <element name="x:back" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <union>
+          <sequence>
+            <repeat min="1">
+              <element name="x:div1" />
+            </repeat>
+            <repeat>
+              <element name="x:inform-div1" />
+            </repeat>
+          </sequence>
+          <repeat min="1">
+            <element name="x:inform-div1" />
+          </repeat>
+        </union>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:div1" />
+    <rule ref="x:R2" />
+  </if>
+  <if>
+    <element name="x:inform-div1" />
+    <rule ref="x:R2" />
+  </if>
+  <if>
+    <element name="x:div2" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:head" />
+          <repeat>
+            <union>
+              <element name="x:p" />
+              <element name="x:ulist" />
+              <element name="x:olist" />
+              <element name="x:slist" />
+              <element name="x:glist" />
+              <element name="x:orglist" />
+              <element name="x:blist" />
+              <element name="x:note" />
+              <element name="x:issue" />
+              <element name="x:wfcnote" />
+              <element name="x:vcnote" />
+              <element name="x:constraintnote" />
+              <element name="x:eg" />
+              <element name="x:graphic" />
+              <element name="x:scrap" />
+              <element name="x:table" />
+              <element name="x:definitions" />
+              <element name="x:proto" />
+              <element name="x:example" />
+              <element name="x:ednote" />
+            </union>
+          </repeat>
+          <repeat>
+            <element name="x:div3" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:div3" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:head" />
+          <repeat>
+            <union>
+              <element name="x:p" />
+              <element name="x:ulist" />
+              <element name="x:olist" />
+              <element name="x:slist" />
+              <element name="x:glist" />
+              <element name="x:orglist" />
+              <element name="x:blist" />
+              <element name="x:note" />
+              <element name="x:issue" />
+              <element name="x:wfcnote" />
+              <element name="x:vcnote" />
+              <element name="x:constraintnote" />
+              <element name="x:eg" />
+              <element name="x:graphic" />
+              <element name="x:scrap" />
+              <element name="x:table" />
+              <element name="x:definitions" />
+              <element name="x:proto" />
+              <element name="x:example" />
+              <element name="x:ednote" />
+            </union>
+          </repeat>
+          <repeat>
+            <element name="x:div4" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:div4" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:head" />
+          <repeat>
+            <union>
+              <element name="x:p" />
+              <element name="x:ulist" />
+              <element name="x:olist" />
+              <element name="x:slist" />
+              <element name="x:glist" />
+              <element name="x:orglist" />
+              <element name="x:blist" />
+              <element name="x:note" />
+              <element name="x:issue" />
+              <element name="x:wfcnote" />
+              <element name="x:vcnote" />
+              <element name="x:constraintnote" />
+              <element name="x:eg" />
+              <element name="x:graphic" />
+              <element name="x:scrap" />
+              <element name="x:table" />
+              <element name="x:definitions" />
+              <element name="x:proto" />
+              <element name="x:example" />
+              <element name="x:ednote" />
+            </union>
+          </repeat>
+          <repeat>
+            <element name="x:div5" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:div5" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:head" />
+          <repeat>
+            <union>
+              <element name="x:p" />
+              <element name="x:ulist" />
+              <element name="x:olist" />
+              <element name="x:slist" />
+              <element name="x:glist" />
+              <element name="x:orglist" />
+              <element name="x:blist" />
+              <element name="x:note" />
+              <element name="x:issue" />
+              <element name="x:wfcnote" />
+              <element name="x:vcnote" />
+              <element name="x:constraintnote" />
+              <element name="x:eg" />
+              <element name="x:graphic" />
+              <element name="x:scrap" />
+              <element name="x:table" />
+              <element name="x:definitions" />
+              <element name="x:proto" />
+              <element name="x:example" />
+              <element name="x:ednote" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:header" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:title" />
+          <optional>
+            <element name="x:subtitle" />
+          </optional>
+          <optional>
+            <element name="x:version" />
+          </optional>
+          <element name="x:w3c-designation" />
+          <element name="x:w3c-doctype" />
+          <element name="x:pubdate" />
+          <repeat>
+            <element name="x:notice" />
+          </repeat>
+          <element name="x:publoc" />
+          <optional>
+            <element name="x:altlocs" />
+          </optional>
+          <optional>
+            <union>
+              <sequence>
+                <element name="x:prevlocs" />
+                <optional>
+                  <element name="x:latestloc" />
+                </optional>
+              </sequence>
+              <sequence>
+                <element name="x:latestloc" />
+                <optional>
+                  <element name="x:prevlocs" />
+                </optional>
+              </sequence>
+            </union>
+          </optional>
+          <element name="x:authlist" />
+          <optional>
+            <element name="x:errataloc" />
+          </optional>
+          <optional>
+            <element name="x:preverrataloc" />
+          </optional>
+          <optional>
+            <element name="x:translationloc" />
+          </optional>
+          <optional>
+            <element name="x:copyright" />
+          </optional>
+          <union>
+            <sequence>
+              <element name="x:status" />
+              <element name="x:abstract" />
+            </sequence>
+            <sequence>
+              <element name="x:abstract" />
+              <element name="x:status" />
+            </sequence>
+          </union>
+          <optional>
+            <element name="x:pubstmt" />
+          </optional>
+          <optional>
+            <element name="x:sourcedesc" />
+          </optional>
+          <element name="x:langusage" />
+          <element name="x:revisiondesc" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:title" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:subtitle" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:version" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:w3c-designation" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:w3c-doctype" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:pubdate" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:day" />
+          </optional>
+          <element name="x:month" />
+          <element name="x:year" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:day" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:month" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:year" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:copyright" />
+    <rule ref="x:R4" />
+  </if>
+  <if>
+    <element name="x:notice" />
+    <rule ref="x:R4" />
+  </if>
+  <if>
+    <element name="x:publoc" />
+    <rule ref="x:R5" />
+  </if>
+  <if>
+    <element name="x:altlocs" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:loc" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:prevlocs" />
+    <rule ref="x:R5" />
+  </if>
+  <if>
+    <element name="x:latestloc" />
+    <rule ref="x:R5" />
+  </if>
+  <if>
+    <element name="x:errataloc" />
+    <rule ref="x:R6" />
+  </if>
+  <if>
+    <element name="x:preverrataloc" />
+    <rule ref="x:R6" />
+  </if>
+  <if>
+    <element name="x:translationloc" />
+    <rule ref="x:R6" />
+  </if>
+  <if>
+    <element name="x:authlist" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:author" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:author" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:name" />
+          <optional>
+            <element name="x:affiliation" />
+          </optional>
+          <optional>
+            <element name="x:email" />
+          </optional>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:name" />
+    <rule ref="x:R3" />
+    <declare>
+      <attribute name="key" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:affiliation" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:email" />
+    <rule ref="x:R8" />
+  </if>
+  <if>
+    <element name="x:status" />
+    <rule ref="x:R9" />
+  </if>
+  <if>
+    <element name="x:abstract" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:p" />
+            <element name="x:ulist" />
+            <element name="x:olist" />
+            <element name="x:slist" />
+            <element name="x:glist" />
+            <element name="x:ednote" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:pubstmt" />
+    <rule ref="x:R4" />
+  </if>
+  <if>
+    <element name="x:sourcedesc" />
+    <rule ref="x:R4" />
+  </if>
+  <if>
+    <element name="x:langusage" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:language" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:language" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:revisiondesc" />
+    <rule ref="x:R4" />
+  </if>
+  <if>
+    <element name="x:p" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:termdef" />
+            <element name="x:term" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:bibref" />
+            <element name="x:specref" />
+            <element name="x:termref" />
+            <element name="x:titleref" />
+            <element name="x:xspecref" />
+            <element name="x:xtermref" />
+            <element name="x:kw" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:code" />
+            <element name="x:function" />
+            <element name="x:var" />
+            <element name="x:el" />
+            <element name="x:att" />
+            <element name="x:attval" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+            <element name="x:ulist" />
+            <element name="x:olist" />
+            <element name="x:slist" />
+            <element name="x:glist" />
+            <element name="x:orglist" />
+            <element name="x:blist" />
+            <element name="x:note" />
+            <element name="x:issue" />
+            <element name="x:wfcnote" />
+            <element name="x:vcnote" />
+            <element name="x:constraintnote" />
+            <element name="x:eg" />
+            <element name="x:graphic" />
+            <element name="x:scrap" />
+            <element name="x:table" />
+            <element name="x:definitions" />
+            <element name="x:proto" />
+            <element name="x:example" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:ulist" />
+    <rule ref="x:R11" />
+  </if>
+  <if>
+    <element name="x:olist" />
+    <rule ref="x:R11" />
+  </if>
+  <if>
+    <element name="x:item" />
+    <rule ref="x:R9" />
+  </if>
+  <if>
+    <element name="x:slist" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:sitem" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:sitem" />
+    <rule ref="x:R5" />
+  </if>
+  <if>
+    <element name="x:glist" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:gitem" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:gitem" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:label" />
+          <element name="x:def" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:label" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:termdef" />
+            <element name="x:term" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:kw" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:code" />
+            <element name="x:function" />
+            <element name="x:var" />
+            <element name="x:el" />
+            <element name="x:att" />
+            <element name="x:attval" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:def" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:p" />
+            <element name="x:ulist" />
+            <element name="x:olist" />
+            <element name="x:slist" />
+            <element name="x:glist" />
+            <element name="x:orglist" />
+            <element name="x:blist" />
+            <element name="x:note" />
+            <element name="x:issue" />
+            <element name="x:wfcnote" />
+            <element name="x:vcnote" />
+            <element name="x:constraintnote" />
+            <element name="x:eg" />
+            <element name="x:graphic" />
+            <element name="x:scrap" />
+            <element name="x:table" />
+            <element name="x:definitions" />
+            <element name="x:proto" />
+            <element name="x:example" />
+            <element name="x:ednote" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:blist" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:bibl" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:bibl" />
+    <rule ref="x:R0" />
+    <declare>
+      <attribute name="href" />
+      <attribute name="key" />
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:bibref" />
+            <element name="x:specref" />
+            <element name="x:termref" />
+            <element name="x:titleref" />
+            <element name="x:xspecref" />
+            <element name="x:xtermref" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:orglist" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:member" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:member" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:name" />
+          <optional>
+            <element name="x:affiliation" />
+          </optional>
+          <optional>
+            <element name="x:role" />
+          </optional>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:role" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:note" />
+    <rule ref="x:R9" />
+  </if>
+  <if>
+    <element name="x:issue" />
+    <rule ref="x:R13" />
+    <declare>
+      <attribute name="status">
+        <union>
+          <string value="open" />
+          <string value="closed" />
+        </union>
+        <default value="open" />
+      </attribute>
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:head" />
+          </optional>
+          <repeat>
+            <element name="x:source" />
+          </repeat>
+          <repeat min="1">
+            <union>
+              <element name="x:p" />
+              <element name="x:ulist" />
+              <element name="x:olist" />
+              <element name="x:slist" />
+              <element name="x:glist" />
+              <element name="x:orglist" />
+              <element name="x:blist" />
+              <element name="x:note" />
+              <element name="x:issue" />
+              <element name="x:wfcnote" />
+              <element name="x:vcnote" />
+              <element name="x:constraintnote" />
+              <element name="x:eg" />
+              <element name="x:graphic" />
+              <element name="x:scrap" />
+              <element name="x:table" />
+              <element name="x:definitions" />
+              <element name="x:proto" />
+              <element name="x:example" />
+              <element name="x:ednote" />
+            </union>
+          </repeat>
+          <optional>
+            <element name="x:resolution" />
+          </optional>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:source" />
+    <rule ref="x:R5" />
+  </if>
+  <if>
+    <element name="x:resolution" />
+    <rule ref="x:R9" />
+  </if>
+  <if>
+    <element name="x:wfcnote" />
+    <rule ref="x:R14" />
+  </if>
+  <if>
+    <element name="x:vcnote" />
+    <rule ref="x:R14" />
+  </if>
+  <if>
+    <element name="x:constraintnote" />
+    <rule ref="x:R14" />
+    <declare>
+      <required>
+        <attribute name="type">
+          <normalize whitespace="trim" />
+          <stringtype ref="n:NMTOKEN" />
+        </attribute>
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:eg" />
+    <rule ref="x:R15" />
+  </if>
+  <if>
+    <element name="x:graphic" />
+    <rule ref="x:R0" />
+    <declare>
+      <required>
+        <attribute name="source" />
+      </required>
+      <attribute name="alt" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:proto" />
+    <rule ref="x:R0" />
+    <declare>
+      <required>
+        <attribute name="return-type">
+          <union>
+            <string value="boolean" />
+            <string value="expression" />
+            <string value="location-set" />
+            <string value="node-set" />
+            <string value="number" />
+            <string value="object" />
+            <string value="point" />
+            <string value="range" />
+            <string value="string" />
+          </union>
+        </attribute>
+      </required>
+      <required>
+        <attribute name="name">
+          <normalize whitespace="trim" />
+          <stringtype ref="n:NMTOKEN" />
+        </attribute>
+      </required>
+      <contents>
+        <repeat>
+          <element name="x:arg" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:arg" />
+    <rule ref="x:R0" />
+    <declare>
+      <attribute name="occur">
+        <union>
+          <string value="opt" />
+          <string value="req" />
+        </union>
+      </attribute>
+      <required>
+        <attribute name="type">
+          <union>
+            <string value="boolean" />
+            <string value="expression" />
+            <string value="location-set" />
+            <string value="node-set" />
+            <string value="number" />
+            <string value="object" />
+            <string value="point" />
+            <string value="range" />
+            <string value="string" />
+          </union>
+        </attribute>
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:example" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:head" />
+          </optional>
+          <repeat min="1">
+            <union>
+              <element name="x:p" />
+              <element name="x:ulist" />
+              <element name="x:olist" />
+              <element name="x:slist" />
+              <element name="x:glist" />
+              <element name="x:orglist" />
+              <element name="x:blist" />
+              <element name="x:note" />
+              <element name="x:issue" />
+              <element name="x:wfcnote" />
+              <element name="x:vcnote" />
+              <element name="x:constraintnote" />
+              <element name="x:eg" />
+              <element name="x:graphic" />
+              <element name="x:scrap" />
+              <element name="x:table" />
+              <element name="x:definitions" />
+              <element name="x:proto" />
+              <element name="x:example" />
+              <element name="x:ednote" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:scrap" />
+    <if>
+      <attribute name="lang" />
+      <pointer>
+        <attributefield name="lang" />
+      </pointer>
+    </if>
+    <rule ref="x:R0" />
+    <declare>
+      <attribute name="headstyle">
+        <union>
+          <string value="show" />
+          <string value="suppress" />
+        </union>
+        <default value="show" />
+      </attribute>
+      <attribute name="lang">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NAME" />
+      </attribute>
+      <contents>
+        <sequence>
+          <element name="x:head" />
+          <repeat min="1">
+            <union>
+              <element name="x:prodgroup" />
+              <element name="x:prod" />
+              <element name="x:bnf" />
+              <element name="x:prodrecap" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:prodgroup" />
+    <rule ref="x:R0" />
+    <declare>
+      <attribute name="pcw5" />
+      <attribute name="pcw4" />
+      <attribute name="pcw3" />
+      <attribute name="pcw2" />
+      <attribute name="pcw1" />
+      <contents>
+        <repeat min="1">
+          <element name="x:prod" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:prod" />
+    <rule ref="x:R13" />
+    <declare>
+      <attribute name="num" />
+      <contents>
+        <sequence>
+          <element name="x:lhs" />
+          <repeat min="1">
+            <sequence>
+              <element name="x:rhs" />
+              <repeat>
+                <union>
+                  <element name="x:com" />
+                  <element name="x:wfc" />
+                  <element name="x:vc" />
+                  <element name="x:constraint" />
+                </union>
+              </repeat>
+            </sequence>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:lhs" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:rhs" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:phrase" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:com" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:com" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:phrase" />
+            <element name="x:loc" />
+            <element name="x:bibref" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:wfc" />
+    <if>
+      <attribute name="def" />
+      <pointer>
+        <attributefield name="def" />
+      </pointer>
+    </if>
+    <rule ref="x:R16" />
+  </if>
+  <if>
+    <element name="x:vc" />
+    <if>
+      <attribute name="def" />
+      <pointer>
+        <attributefield name="def" />
+      </pointer>
+    </if>
+    <rule ref="x:R16" />
+  </if>
+  <if>
+    <element name="x:constraint" />
+    <if>
+      <attribute name="def" />
+      <pointer>
+        <attributefield name="def" />
+      </pointer>
+    </if>
+    <rule ref="x:R16" />
+  </if>
+  <if>
+    <element name="x:bnf" />
+    <rule ref="x:R15" />
+  </if>
+  <if>
+    <element name="x:prodrecap" />
+    <if>
+      <attribute name="ref" />
+      <pointer>
+        <attributefield name="ref" />
+      </pointer>
+    </if>
+    <rule ref="x:R17" />
+  </if>
+  <if>
+    <element name="x:table" />
+    <rule ref="x:R0" />
+    <declare>
+      <attribute name="width" />
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:caption" />
+          </optional>
+          <union>
+            <repeat>
+              <element name="x:col" />
+            </repeat>
+            <repeat>
+              <element name="x:colgroup" />
+            </repeat>
+          </union>
+          <optional>
+            <element name="x:thead" />
+          </optional>
+          <optional>
+            <element name="x:tfoot" />
+          </optional>
+          <repeat min="1">
+            <element name="x:tbody" />
+          </repeat>
+        </sequence>
+      </contents>
+      <attribute name="frame">
+        <union>
+          <string value="void" />
+          <string value="above" />
+          <string value="below" />
+          <string value="hsides" />
+          <string value="lhs" />
+          <string value="rhs" />
+          <string value="vsides" />
+          <string value="box" />
+          <string value="border" />
+        </union>
+      </attribute>
+      <attribute name="border" />
+      <attribute name="cellspacing" />
+      <attribute name="summary" />
+      <attribute name="cellpadding" />
+      <attribute name="rules">
+        <union>
+          <string value="none" />
+          <string value="groups" />
+          <string value="rows" />
+          <string value="cols" />
+          <string value="all" />
+        </union>
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:caption" />
+    <rule ref="x:R5" />
+  </if>
+  <if>
+    <element name="x:col" />
+    <rule ref="x:R20" />
+  </if>
+  <if>
+    <element name="x:colgroup" />
+    <rule ref="x:R20" />
+    <declare>
+      <contents>
+        <repeat>
+          <element name="x:col" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:thead" />
+    <rule ref="x:R21" />
+  </if>
+  <if>
+    <element name="x:tfoot" />
+    <rule ref="x:R21" />
+  </if>
+  <if>
+    <element name="x:tbody" />
+    <rule ref="x:R21" />
+  </if>
+  <if>
+    <element name="x:tr" />
+    <rule ref="x:R0" />
+    <rule ref="x:R46" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <union>
+            <element name="x:th" />
+            <element name="x:td" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:th" />
+    <rule ref="x:R23" />
+  </if>
+  <if>
+    <element name="x:td" />
+    <rule ref="x:R23" />
+  </if>
+  <if>
+    <element name="x:descr" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:p" />
+            <element name="x:ulist" />
+            <element name="x:olist" />
+            <element name="x:slist" />
+            <element name="x:glist" />
+            <element name="x:orglist" />
+            <element name="x:blist" />
+            <element name="x:note" />
+            <element name="x:issue" />
+            <element name="x:wfcnote" />
+            <element name="x:vcnote" />
+            <element name="x:constraintnote" />
+            <element name="x:eg" />
+            <element name="x:graphic" />
+            <element name="x:scrap" />
+            <element name="x:table" />
+            <element name="x:definitions" />
+            <element name="x:proto" />
+            <element name="x:example" />
+            <element name="x:ednote" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:definitions" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <union>
+            <element name="x:p" />
+            <element name="x:note" />
+            <element name="x:typedef" />
+            <element name="x:constant" />
+            <element name="x:exception" />
+            <element name="x:reference" />
+            <element name="x:group" />
+            <element name="x:module" />
+            <element name="x:interface" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:group" />
+    <rule ref="x:R24" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:descr" />
+          <repeat>
+            <union>
+              <element name="x:p" />
+              <element name="x:note" />
+              <element name="x:typedef" />
+              <element name="x:constant" />
+              <element name="x:exception" />
+              <element name="x:reference" />
+              <element name="x:group" />
+              <element name="x:module" />
+              <element name="x:interface" />
+              <element name="x:struct" />
+              <element name="x:enum" />
+              <element name="x:sequence" />
+              <element name="x:union" />
+              <element name="x:typename" />
+              <element name="x:method" />
+              <element name="x:attribute" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:interface" />
+    <rule ref="x:R24" />
+    <declare>
+      <attribute name="inherits" />
+      <contents>
+        <sequence>
+          <element name="x:descr" />
+          <repeat>
+            <union>
+              <element name="x:p" />
+              <element name="x:note" />
+              <element name="x:typedef" />
+              <element name="x:constant" />
+              <element name="x:exception" />
+              <element name="x:reference" />
+              <element name="x:group" />
+              <element name="x:method" />
+              <element name="x:attribute" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:module" />
+    <rule ref="x:R24" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:descr" />
+          <repeat>
+            <union>
+              <element name="x:p" />
+              <element name="x:note" />
+              <element name="x:typedef" />
+              <element name="x:constant" />
+              <element name="x:exception" />
+              <element name="x:reference" />
+              <element name="x:group" />
+              <element name="x:module" />
+              <element name="x:interface" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:reference" />
+    <if>
+      <attribute name="declaration" />
+      <pointer>
+        <attributefield name="declaration" />
+      </pointer>
+    </if>
+    <rule ref="x:R0" />
+    <declare>
+      <required>
+        <attribute name="declaration">
+          <normalize whitespace="trim" />
+          <stringtype ref="n:NAME" />
+        </attribute>
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:typedef" />
+    <rule ref="x:R24" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:descr" />
+          <union>
+            <element name="x:struct" />
+            <element name="x:enum" />
+            <element name="x:sequence" />
+            <element name="x:union" />
+            <element name="x:typename" />
+          </union>
+        </sequence>
+      </contents>
+      <attribute name="array.size">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:struct" />
+    <rule ref="x:R24" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:descr" />
+          <repeat min="1">
+            <element name="x:component" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:component" />
+    <rule ref="x:R24" />
+    <declare>
+      <contents>
+        <union>
+          <element name="x:struct" />
+          <element name="x:enum" />
+          <element name="x:sequence" />
+          <element name="x:union" />
+          <element name="x:typename" />
+        </union>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:union" />
+    <rule ref="x:R24" />
+    <declare>
+      <required>
+        <attribute name="switch.type" />
+      </required>
+      <contents>
+        <sequence>
+          <element name="x:descr" />
+          <repeat min="1">
+            <element name="x:case" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:case" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:descr" />
+          <union>
+            <element name="x:struct" />
+            <element name="x:enum" />
+            <element name="x:sequence" />
+            <element name="x:union" />
+            <element name="x:typename" />
+          </union>
+        </sequence>
+      </contents>
+      <required>
+        <attribute name="labels" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:enum" />
+    <rule ref="x:R24" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:descr" />
+          <repeat min="1">
+            <element name="x:enumerator" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:enumerator" />
+    <rule ref="x:R48" />
+    <declare>
+      <required>
+        <attribute name="name" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:sequence" />
+    <rule ref="x:R0" />
+    <declare>
+      <required>
+        <attribute name="type" />
+      </required>
+      <attribute name="size">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKEN" />
+      </attribute>
+      <contents>
+        <repeat>
+          <element name="x:sequence" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:constant" />
+    <rule ref="x:R28" />
+    <declare>
+      <required>
+        <attribute name="value" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:exception" />
+    <rule ref="x:R24" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:descr" />
+          <repeat>
+            <element name="x:component" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:attribute" />
+    <rule ref="x:R28" />
+    <declare>
+      <attribute name="readonly">
+        <union>
+          <string value="yes" />
+          <string value="no" />
+        </union>
+        <default value="no" />
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:method" />
+    <rule ref="x:R24" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:descr" />
+          <element name="x:parameters" />
+          <element name="x:returns" />
+          <element name="x:raises" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:parameters" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <repeat>
+          <element name="x:param" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:param" />
+    <rule ref="x:R28" />
+    <declare>
+      <attribute name="attr">
+        <union>
+          <string value="in" />
+          <string value="out" />
+          <string value="inout" />
+        </union>
+        <default value="inout" />
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:returns" />
+    <rule ref="x:R48" />
+    <declare>
+      <required>
+        <attribute name="type" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:raises" />
+    <declare>
+      <contents>
+        <repeat>
+          <element name="x:exception" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:typename" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:att" />
+    <rule ref="x:R30" />
+  </if>
+  <if>
+    <element name="x:attval" />
+    <rule ref="x:R30" />
+  </if>
+  <if>
+    <element name="x:bibref" />
+    <if>
+      <attribute name="ref" />
+      <pointer>
+        <attributefield name="ref" />
+      </pointer>
+    </if>
+    <rule ref="x:R17" />
+  </if>
+  <if>
+    <element name="x:code" />
+    <rule ref="x:R30" />
+  </if>
+  <if>
+    <element name="x:ednote" />
+    <rule ref="x:R0" />
+    <declare>
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:name" />
+          </optional>
+          <optional>
+            <element name="x:date" />
+          </optional>
+          <element name="x:edtext" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:date" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:edtext" />
+    <rule ref="x:R5" />
+  </if>
+  <if>
+    <element name="x:el" />
+    <rule ref="x:R30" />
+  </if>
+  <if>
+    <element name="x:emph" />
+    <rule ref="x:R5" />
+  </if>
+  <if>
+    <element name="x:footnote" />
+    <rule ref="x:R9" />
+  </if>
+  <if>
+    <element name="x:function" />
+    <rule ref="x:R30" />
+  </if>
+  <if>
+    <element name="x:kw" />
+    <rule ref="x:R30" />
+  </if>
+  <if>
+    <element name="x:loc" />
+    <rule ref="x:R8" />
+  </if>
+  <if>
+    <element name="x:nt" />
+    <if>
+      <attribute name="def" />
+      <pointer>
+        <attributefield name="def" />
+      </pointer>
+    </if>
+    <rule ref="x:R31" />
+  </if>
+  <if>
+    <element name="x:phrase" />
+    <rule ref="x:R5" />
+  </if>
+  <if>
+    <element name="x:rfc2119" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:quote" />
+    <rule ref="x:R5" />
+  </if>
+  <if>
+    <element name="x:specref" />
+    <if>
+      <attribute name="ref" />
+      <pointer>
+        <attributefield name="ref" />
+      </pointer>
+    </if>
+    <rule ref="x:R17" />
+  </if>
+  <if>
+    <element name="x:sub" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:sup" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:term" />
+    <rule ref="x:R3" />
+  </if>
+  <if>
+    <element name="x:termdef" />
+    <rule ref="x:R13" />
+    <declare>
+      <required>
+        <attribute name="term" />
+      </required>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:term" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:bibref" />
+            <element name="x:specref" />
+            <element name="x:termref" />
+            <element name="x:titleref" />
+            <element name="x:xspecref" />
+            <element name="x:xtermref" />
+            <element name="x:kw" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:code" />
+            <element name="x:function" />
+            <element name="x:var" />
+            <element name="x:el" />
+            <element name="x:att" />
+            <element name="x:attval" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+            <element name="x:note" />
+            <element name="x:issue" />
+            <element name="x:wfcnote" />
+            <element name="x:vcnote" />
+            <element name="x:constraintnote" />
+            <element name="x:eg" />
+            <element name="x:graphic" />
+            <element name="x:scrap" />
+            <element name="x:table" />
+            <element name="x:definitions" />
+            <element name="x:proto" />
+            <element name="x:example" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:termref" />
+    <if>
+      <attribute name="def" />
+      <pointer>
+        <attributefield name="def" />
+      </pointer>
+    </if>
+    <rule ref="x:R31" />
+  </if>
+  <if>
+    <element name="x:titleref" />
+    <rule ref="x:R3" />
+    <declare>
+      <attribute name="href" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:var" />
+    <rule ref="x:R30" />
+  </if>
+  <if>
+    <element name="x:xnt" />
+    <rule ref="x:R8" />
+  </if>
+  <if>
+    <element name="x:xspecref" />
+    <rule ref="x:R8" />
+  </if>
+  <if>
+    <element name="x:xtermref" />
+    <rule ref="x:R8" />
+  </if>
+  <if>
+    <element name="x:div" />
+    <declare>
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:head" />
+          </optional>
+          <repeat>
+            <union>
+              <element name="x:p" />
+              <element name="x:ulist" />
+              <element name="x:olist" />
+              <element name="x:slist" />
+              <element name="x:glist" />
+              <element name="x:orglist" />
+              <element name="x:blist" />
+              <element name="x:note" />
+              <element name="x:issue" />
+              <element name="x:wfcnote" />
+              <element name="x:vcnote" />
+              <element name="x:constraintnote" />
+              <element name="x:eg" />
+              <element name="x:graphic" />
+              <element name="x:scrap" />
+              <element name="x:table" />
+              <element name="x:definitions" />
+              <element name="x:proto" />
+              <element name="x:example" />
+              <element name="x:ednote" />
+              <element name="x:ul" />
+              <element name="x:ol" />
+              <element name="x:h1" />
+              <element name="x:h2" />
+              <element name="x:h3" />
+              <element name="x:h4" />
+              <element name="x:h5" />
+              <element name="x:h6" />
+              <element name="x:div" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:h1" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:kw" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:code" />
+            <element name="x:function" />
+            <element name="x:var" />
+            <element name="x:el" />
+            <element name="x:att" />
+            <element name="x:attval" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+            <element name="x:em" />
+            <element name="x:a" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:h2" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:kw" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:code" />
+            <element name="x:function" />
+            <element name="x:var" />
+            <element name="x:el" />
+            <element name="x:att" />
+            <element name="x:attval" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+            <element name="x:em" />
+            <element name="x:a" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:h3" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:kw" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:code" />
+            <element name="x:function" />
+            <element name="x:var" />
+            <element name="x:el" />
+            <element name="x:att" />
+            <element name="x:attval" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+            <element name="x:em" />
+            <element name="x:a" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:h4" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:kw" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:code" />
+            <element name="x:function" />
+            <element name="x:var" />
+            <element name="x:el" />
+            <element name="x:att" />
+            <element name="x:attval" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+            <element name="x:em" />
+            <element name="x:a" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:h5" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:kw" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:code" />
+            <element name="x:function" />
+            <element name="x:var" />
+            <element name="x:el" />
+            <element name="x:att" />
+            <element name="x:attval" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+            <element name="x:em" />
+            <element name="x:a" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:h6" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:kw" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:code" />
+            <element name="x:function" />
+            <element name="x:var" />
+            <element name="x:el" />
+            <element name="x:att" />
+            <element name="x:attval" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+            <element name="x:em" />
+            <element name="x:a" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:pre" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+            <element name="x:constraint" />
+            <element name="x:em" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:ul" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:item" />
+            <element name="x:li" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:ol" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:item" />
+            <element name="x:li" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:li" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:p" />
+            <element name="x:ulist" />
+            <element name="x:olist" />
+            <element name="x:slist" />
+            <element name="x:glist" />
+            <element name="x:orglist" />
+            <element name="x:blist" />
+            <element name="x:note" />
+            <element name="x:issue" />
+            <element name="x:wfcnote" />
+            <element name="x:vcnote" />
+            <element name="x:constraintnote" />
+            <element name="x:eg" />
+            <element name="x:graphic" />
+            <element name="x:scrap" />
+            <element name="x:table" />
+            <element name="x:definitions" />
+            <element name="x:proto" />
+            <element name="x:example" />
+            <element name="x:ednote" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:em" />
+    <declare>
+      <contents>
+        <string />
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:a" />
+    <declare>
+      <contents>
+        <string />
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:key-term" />
+    <declare>
+      <contents>
+        <string />
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:htable" />
+    <declare>
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:caption" />
+          </optional>
+          <union>
+            <repeat>
+              <element name="x:col" />
+            </repeat>
+            <repeat>
+              <element name="x:colgroup" />
+            </repeat>
+          </union>
+          <optional>
+            <element name="x:thead" />
+          </optional>
+          <optional>
+            <element name="x:tfoot" />
+          </optional>
+          <repeat min="1">
+            <element name="x:tbody" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:htbody" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:tr" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:statusp" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:footnote" />
+            <element name="x:termdef" />
+            <element name="x:term" />
+            <element name="x:emph" />
+            <element name="x:phrase" />
+            <element name="x:rfc2119" />
+            <element name="x:quote" />
+            <element name="x:sub" />
+            <element name="x:sup" />
+            <element name="x:bibref" />
+            <element name="x:specref" />
+            <element name="x:termref" />
+            <element name="x:titleref" />
+            <element name="x:xspecref" />
+            <element name="x:xtermref" />
+            <element name="x:kw" />
+            <element name="x:nt" />
+            <element name="x:xnt" />
+            <element name="x:code" />
+            <element name="x:function" />
+            <element name="x:var" />
+            <element name="x:el" />
+            <element name="x:att" />
+            <element name="x:attval" />
+            <element name="x:loc" />
+            <element name="x:ednote" />
+            <element name="x:ulist" />
+            <element name="x:olist" />
+            <element name="x:slist" />
+            <element name="x:glist" />
+            <element name="x:orglist" />
+            <element name="x:blist" />
+            <element name="x:note" />
+            <element name="x:issue" />
+            <element name="x:wfcnote" />
+            <element name="x:vcnote" />
+            <element name="x:constraintnote" />
+            <element name="x:eg" />
+            <element name="x:graphic" />
+            <element name="x:scrap" />
+            <element name="x:table" />
+            <element name="x:definitions" />
+            <element name="x:proto" />
+            <element name="x:example" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:itemizedlist" />
+    <declare>
+      <contents>
+        <repeat>
+          <element name="x:listitem" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:orderedlist" />
+    <declare>
+      <contents>
+        <repeat>
+          <element name="x:listitem" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:listitem" />
+    <declare>
+      <contents>
+        <repeat>
+          <element name="x:para" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:para" />
+    <declare>
+      <contents>
+        <string />
+      </contents>
+    </declare>
+  </if>
+  <unique>
+    <or>
+      <and>
+        <element name="x:colgroup" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:olist" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:vc" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:definitions" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:col" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:tr" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:tfoot" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:eg" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:footnote" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:prodgroup" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:term" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:interface" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:bnf" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:vcnote" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:body" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:copyright" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:var" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:day" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:header" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:spec" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:prevlocs" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:typedef" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:version" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:quote" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:glist" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:div4" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:publoc" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:descr" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:abstract" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:wfc" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:langusage" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:method" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:module" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:case" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:attribute" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:struct" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:att" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:constraintnote" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:function" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:altlocs" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:resolution" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:ednote" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:member" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:attval" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:pubstmt" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:prodrecap" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:w3c-doctype" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:termref" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:authlist" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:phrase" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:exception" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:el" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:role" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:rhs" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:typename" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:name" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:tbody" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:parameters" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:pubdate" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:com" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:edtext" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:back" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:note" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:issue" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:head" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:preverrataloc" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:bibref" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:emph" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:scrap" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:table" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:arg" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:wfcnote" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:xnt" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:loc" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:p" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:caption" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:date" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:sequence" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:th" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:code" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:gitem" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:td" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:inform-div1" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:front" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:w3c-designation" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:graphic" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:enumerator" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:month" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:group" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:errataloc" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:div1" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:prod" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:enum" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:bibl" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:language" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:slist" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:latestloc" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:xtermref" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:source" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:author" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:thead" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:item" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:rfc2119" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:title" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:div3" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:sub" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:def" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:constraint" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:ulist" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:returns" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:notice" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:kw" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:revisiondesc" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:lhs" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:blist" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:specref" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:div5" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:div2" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:nt" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:component" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:sup" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:sourcedesc" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:example" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:xspecref" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:titleref" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:status" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:orglist" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:year" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:proto" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:label" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:termdef" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:translationloc" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:param" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:sitem" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:email" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:affiliation" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:union" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:subtitle" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:constant" />
+        <attribute name="id" />
+      </and>
+      <and>
+        <element name="x:reference" />
+        <attribute name="id" />
+      </and>
+    </or>
+    <attributefield name="id" />
+  </unique>
+</dsd>
+

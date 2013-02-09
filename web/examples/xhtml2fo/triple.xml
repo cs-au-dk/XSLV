@@ -1,0 +1,11 @@
+<triple enabled="false" name="xhtml2fo">
+  <input type="DTD" DTDNamespaceURI="">input/xhtml1-transitional.dtd</input>
+  <output>../fo-schema/fo_alternative.rng</output>
+  <xslt>xslt/xhtml2fo.xsl</xslt>
+  <info></info>
+  <notes>What the hell is wrong w this one??? Seems
+to simply quit validation with no result and no
+exception in the web demonstrator.
+Keep disabled until solved.
+</notes>
+</triple>

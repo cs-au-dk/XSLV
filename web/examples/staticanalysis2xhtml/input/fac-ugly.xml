@@ -1,0 +1,81 @@
+<tip>
+		  <analysis name="Liveness" ref="0"/>
+		  <program>
+		    <function name="foo" arguments="p, x" locals="f, q, _0, _1, _2, _3, _5, _6, _7">
+		  <stm>
+		  <assignment id="_0"><exp><deref><exp><id name="p"/></exp></deref></exp></assignment>
+		  <analysis ref="0">[_stack-1-f, _10, _stack-1-p, p, _stack-1-_0, _9, _stack-1-_5, _stack-1-_2, _stack-1-_7, _stack-1-q, _7, _8, _stack-1-_1, _stack-1-_6, f, _11, _stack-1-x, _stack-1-_3, n, x]</analysis>
+		</stm><stm><if><exp><binop kind = "=="><exp><id name="_0"/></exp><exp><intconst value="0"/></exp></binop><analysis ref="0">[_0, _stack-1-f, _10, _stack-1-p, p, _stack-1-_0, _9, _stack-1-_5, _stack-1-q, _stack-1-_7, _stack-1-_2, _7, _8, _stack-1-_1, _stack-1-_6, f, _11, _stack-1-_3, _stack-1-x, n, x]</analysis></exp><then><stm>
+		  <assignment id="f"><exp><intconst value="1"/></exp></assignment>
+		  <analysis ref="0">[_stack-1-q, _stack-1-_7, _stack-1-_2, _stack-1-f, _10, _8, _stack-1-_1, _stack-1-_6, _stack-1-p, _11, _stack-1-x, _stack-1-_3, n, _stack-1-_0, _9, _stack-1-_5]</analysis>
+		</stm></then><else><stm>
+		  <assignment id="q"><exp><malloc/></exp></assignment>
+		  <analysis ref="0">[_0, _7, _10, _8, f, _11, p, n, _9, x]</analysis>
+		</stm><stm>
+		  <assignment id="_1"><exp><deref><exp><id name="p"/></exp></deref></exp></assignment>
+		  <analysis ref="0">[_0, _10, _7, _8, f, _11, p, n, x, _9]</analysis>
+		</stm><stm>
+		  <assignment id="_2"><exp><binop kind = "-"><exp><id name="_1"/></exp><exp><intconst value="1"/></exp></binop></exp></assignment>
+		  <analysis ref="0">[_0, _7, _10, _8, f, _11, p, _1, n, _9, x]</analysis>
+		</stm><exp><ptrassign id="q"/><exp><id name="_2"/></exp><analysis ref="0">[_0, _2, _10, _7, _8, f, _11, p, _1, n, x, _9]</analysis></exp><stm>
+		  <assignment id="_3"><exp><deref><exp><id name="p"/></exp></deref></exp></assignment>
+		  <analysis ref="0">[_0, _2, _7, _10, _8, f, _11, _1, p, n, q, _9, x]</analysis>
+		</stm><stm>
+		  <assignment id="_5"><exp><id name="q"/></exp></assignment>
+		  <analysis ref="0">[_0, _2, _10, _7, _8, f, _11, _3, _1, p, n, q, x, _9]</analysis>
+		</stm><stm>
+		  <assignment id="_6"><exp><id name="x"/></exp></assignment>
+		  <analysis ref="0">[_0, _5, _2, _7, _10, _8, f, _11, _3, p, _1, n, q, _9, x]</analysis>
+		</stm><stm>
+		  <assignment id="_7"><exp>
+		  <ptrcall>
+		    <exp><id name="x"/></exp>
+		    <exp><id name="_5"/></exp><exp><id name="_6"/></exp>
+		  </ptrcall>
+		  
+		</exp></assignment>
+		  
+		</stm><stm>
+		  <assignment id="f"><exp><binop kind = "*"><exp><id name="_3"/></exp><exp><id name="_7"/></exp></binop></exp></assignment>
+		  <analysis ref="0">[_stack-1-f, _10, _stack-1-p, _stack-1-_0, _9, _stack-1-_5, _stack-1-_2, _stack-1-_7, _stack-1-q, _7, _8, _stack-1-_1, _stack-1-_6, _11, _3, _stack-1-_3, _stack-1-x, n]</analysis>
+		</stm></else></if></stm>
+		  <return>
+		    <exp><id name="f"/></exp>
+		  </return>
+		</function><function name="main" arguments="" locals="n, _8, _9, _10, _11">
+		  <stm>
+		  <assignment id="n"><exp><input/></exp></assignment>
+		  <analysis ref="0">[foo, _stack-1-q, _stack-1-_7, _stack-1-_2, _stack-1-f, _stack-1-_1, _stack-1-p, _stack-1-_6, _11, _stack-1-x, _stack-1-_3, _stack-1-_0, _stack-1-_5]</analysis>
+		</stm><stm>
+		  <assignment id="_8"><exp><ptr id="n"/></exp></assignment>
+		  <analysis ref="0">[_stack-1-_2, _stack-1-_7, _stack-1-q, foo, _stack-1-f, _stack-1-_1, _stack-1-_6, _stack-1-p, _11, _stack-1-_3, _stack-1-x, n, _stack-1-_0, _stack-1-_5]</analysis>
+		</stm><stm>
+		  <assignment id="_9"><exp><id name="_8"/></exp></assignment>
+		  <analysis ref="0">[foo, _stack-1-q, _stack-1-_7, _stack-1-_2, _stack-1-f, _8, _stack-1-_1, _stack-1-p, _stack-1-_6, _11, _stack-1-x, _stack-1-_3, n, _stack-1-_0, _stack-1-_5]</analysis>
+		</stm><stm>
+		  <assignment id="_10"><exp><id name="foo"/></exp></assignment>
+		  <analysis ref="0">[_stack-1-_2, _stack-1-_7, _stack-1-q, foo, _stack-1-f, _8, _stack-1-_1, _stack-1-_6, _stack-1-p, _11, _stack-1-_3, _stack-1-x, n, _stack-1-_0, _9, _stack-1-_5]</analysis>
+		</stm><stm>
+		  <assignment id="_11"><exp>
+		  <call id="foo">
+		    <exp><id name="_9"/></exp><exp><id name="_10"/></exp>
+		  </call>
+		  
+		</exp></assignment>
+		  
+		</stm>
+		  <return>
+		    <exp><id name="_11"/></exp>
+		  </return>
+		</function>
+		    <stm>
+		  <assignment id="_out"><exp>
+		  <call id="main">
+		    
+		  </call>
+		  
+		</exp></assignment>
+		  
+		</stm><stm><output><exp><id name="_out"/></exp></output></stm>
+		  </program>
+		</tip>

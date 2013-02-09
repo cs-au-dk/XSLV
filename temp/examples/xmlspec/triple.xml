@@ -1,0 +1,6 @@
+<triple name="xmlspec" enabled="true">
+<!-- XPath parsefejl -->
+  <input type="XSD">input/xmlspec-2.10.xsd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/xmlspec-1.13.xsl</xslt>
+</triple>

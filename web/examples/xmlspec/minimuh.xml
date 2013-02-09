@@ -1,0 +1,6 @@
+<triple name="xmlspec" enabled="true">
+<!-- XPath parsefejl -->
+  <input type="DTD" DTDNamespaceURI="">input/minimuh.dtd</input>
+  <output>../xhtml-schema//xhtml1-transitional</output>
+  <xslt>xslt/minimuh.xsl</xslt>
+</triple>

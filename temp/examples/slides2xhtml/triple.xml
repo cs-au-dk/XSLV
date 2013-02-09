@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<triple name="slides2xhtml">
+  <input type="DTD" DTDNamespaceURI="" RootElementName="show">input/slides_corrected.dtd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/slideshow.xsl</xslt>
+<info>Credits: Peter von der Ahe, via Mads Østerby Olesen.</info>
+<notes>
+Some typical HTML errors appear, such as <tt>img</tt> elements without an
+<tt>alt</tt> attribute, and URL attributes that may get non-URL strings.
+<br/>
+The <tt>ANY</tt>-declared <tt>systemresponse</tt> element forces the 
+validator to report that an <tt>html</tt> is maybe being nested inside
+a <tt>div</tt> element. This could be solved by using a more precise
+input schema (maybe avoiding ANY completely), breaking the cycle
+back to the root element.
+</notes>
+</triple>

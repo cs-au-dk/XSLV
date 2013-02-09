@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  targetNamespace="http://dongfang.dk/testdata" 
+  xmlns:d="http://dongfang.dk/testdata"
+  elementFormDefault="qualified">
+  
+  <group name="g1">
+    <sequence>
+      <!-- try an element/ref within group -->
+      <element ref="d:a"/>
+      
+      <!-- try a type-ref withion group -->
+      <element name="b" type="d:some_type" minOccurs="0"/>
+      
+      <!-- try an anon typedef within group -->
+	  <element name="c">
+        <complexType>
+          <!-- try a group-ref within group -->
+          <sequence>
+            <group ref="d:g1" minOccurs="0"/>
+            <element name="d" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+    </sequence>
+  </group>
+  
+  <element name="a" type="string"/>
+  
+  <complexType name="some_type">
+    <!-- try a group ref -->
+    <group ref="d:g1" minOccurs="0"/>
+  </complexType>
+  
+  <element name="boot" type="d:some_type"/>
+  
+</schema>

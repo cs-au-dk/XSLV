@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<triple name="window2xhtml">
+  <input type="DTD" DTDNamespaceURI="">input/dtdgen.dtd</input>
+  <output>../xhtml-from-xsd/xhtml1-transitional.xsd</output>
+  <xslt>xslt/window.xsl</xslt>
+  <info>Credits: Simon Clemen, Mads Østerby Olesen (both ex-DAIMI).</info>
+  <notes>Most of the 27 errors found are caused by DTD´s primitive
+string type system: The transform takes strings from the DTD-specified
+input document, and puts them in <tt>id</tt>, <tt>href</tt> etc. 
+attributes in the output. An XML Schema or Reduced Relax NG input schema
+with a better string type system could solve this.</notes>
+</triple>

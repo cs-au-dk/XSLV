@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:attribute name="name" type="xs:string"/>
+  <xs:simpleType name="boolean">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="True"/>
+      <xs:enumeration value="False"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tt">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Settings"/>
+      <xs:enumeration value="Buttons"/>
+      <xs:enumeration value="MultiLineProperties"/>
+      <xs:enumeration value="Search"/>
+      <xs:enumeration value="NewSearch"/>
+      <xs:enumeration value="SaveSettings"/>
+      <xs:enumeration value="MultiSource"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SearchDialog">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="unbounded">
+        <xs:element ref="ComponentView"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComponentView">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:choice>
+          <xs:element ref="ComponentGroup"/>
+          <xs:element ref="LinkButton"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID"/>
+      <xs:attribute xmlns="" name="type" type="tt"/>
+      <xs:attribute xmlns="" ref="name"/>
+      <xs:attribute name="displayName" type="xs:string"/>
+      <xs:attribute name="url" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LinkButton">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="id" type="xs:ID"/>
+          <xs:attribute name="url" type="xs:anyURI"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComponentGroup">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:choice>
+          <xs:element ref="Component"/>
+          <xs:element ref="TextBox"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Component">
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:choice>
+          <xs:element ref="Button"/>
+          <xs:element ref="ValidSettings"/>
+          <xs:element ref="MaxRows"/>
+          <xs:element ref="OpenLinksInNewWindow"/>
+          <xs:element ref="EnableWordBreaker"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Button">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="id" type="xs:ID"/>
+          <xs:attribute ref="name"/>
+          <xs:attribute name="type" type="tt"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidSettings">
+    <xs:complexType>
+      <xs:sequence/>
+      <xs:attribute ref="name"/>
+      <xs:attribute name="value" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MaxRows">
+    <xs:complexType>
+      <xs:sequence/>
+      <xs:attribute ref="name"/>
+      <xs:attribute name="value" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OpenLinksInNewWindow">
+    <xs:complexType>
+      <xs:sequence/>
+      <xs:attribute xmlns="" ref="name"/>
+      <xs:attribute name="checked" type="boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnableWordBreaker">
+    <xs:complexType>
+      <xs:sequence/>
+      <xs:attribute ref="name"/>
+      <xs:attribute name="checked" type="boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TextBox">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="id" type="xs:ID"/>
+          <xs:attribute ref="name"/>
+          <xs:attribute name="class" type="xs:string"/>
+          <xs:attribute name="visible" type="boolean"/>
+          <xs:attribute name="url" type="xs:anyURI"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

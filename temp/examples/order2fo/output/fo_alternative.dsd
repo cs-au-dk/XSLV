@@ -1,0 +1,1943 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?dsd href="http://www.brics.dk/DSD/dsd2.dsd"?>
+<dsd xmlns="http://www.brics.dk/DSD/2.0" xmlns:x="http://www.w3.org/1999/XSL/Format"
+xmlns:xi="http://www.w3.org/2001/XInclude"
+xmlns:n="http://www.brics.dk/DSD/names" root="x:root">
+
+  <xi:include href="http://www.brics.dk/DSD/names.dsd" />
+  <rule id="x:R7">
+    <rule ref="x:R34" />
+    <rule ref="x:R35" />
+    <rule ref="x:R22" />
+    <declare>
+      <attribute name="clip" />
+      <attribute name="region-name" />
+      <attribute name="precedence">
+        <union>
+          <string value="true" />
+          <string value="false" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <required>
+        <attribute name="extent" />
+      </required>
+    </declare>
+  </rule>
+  <rule id="x:R8">
+    <rule ref="x:R29" />
+    <rule ref="x:R30" />
+    <rule ref="x:R20" />
+    <declare>
+      <attribute name="id" />
+    </declare>
+  </rule>
+  <rule id="x:R9">
+    <rule ref="x:R10" />
+    <declare>
+      <required>
+        <attribute name="flow-name" />
+      </required>
+    </declare>
+  </rule>
+  <rule id="x:R10">
+    <rule ref="x:R8" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <union>
+            <element name="x:block" />
+            <element name="x:block-container" />
+            <element name="x:table-and-caption" />
+            <element name="x:table" />
+            <element name="x:list-block" />
+            <element name="x:footnote" />
+            <element name="x:float" />
+            <element name="x:multi-switch" />
+            <element name="x:multi-properties" />
+            <element name="x:wrapper" />
+            <element name="x:marker" />
+            <element name="x:retrieve-marker" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R11">
+    <rule ref="x:R8" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:bidi-override" />
+            <element name="x:character" />
+            <element name="x:external-graphic" />
+            <element name="x:instream-foreign-object" />
+            <element name="x:inline" />
+            <element name="x:inline-container" />
+            <element name="x:leader" />
+            <element name="x:page-number" />
+            <element name="x:page-number-citation" />
+            <element name="x:basic-link" />
+            <element name="x:multi-toggle" />
+            <element name="x:footnote" />
+            <element name="x:float" />
+            <element name="x:multi-switch" />
+            <element name="x:multi-properties" />
+            <element name="x:wrapper" />
+            <element name="x:marker" />
+            <element name="x:retrieve-marker" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R12">
+    <rule ref="x:R29" />
+    <rule ref="x:R31" />
+    <declare>
+      <attribute name="id" />
+    </declare>
+  </rule>
+  <rule id="x:R13">
+    <rule ref="x:R29" />
+    <rule ref="x:R30" />
+    <declare>
+      <attribute name="id" />
+      <attribute name="scaling-method">
+        <union>
+          <string value="auto" />
+          <string value="integer-pixels" />
+          <string value="resample-any-method" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="content-width" />
+      <attribute name="scaling">
+        <union>
+          <string value="uniform" />
+          <string value="non-uniform" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="content-type" />
+      <attribute name="content-height" />
+    </declare>
+  </rule>
+  <rule id="x:R14">
+    <rule ref="x:R8" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:bidi-override" />
+            <element name="x:character" />
+            <element name="x:external-graphic" />
+            <element name="x:instream-foreign-object" />
+            <element name="x:inline" />
+            <element name="x:inline-container" />
+            <element name="x:leader" />
+            <element name="x:page-number" />
+            <element name="x:page-number-citation" />
+            <element name="x:basic-link" />
+            <element name="x:multi-toggle" />
+            <element name="x:block" />
+            <element name="x:block-container" />
+            <element name="x:table-and-caption" />
+            <element name="x:table" />
+            <element name="x:list-block" />
+            <element name="x:footnote" />
+            <element name="x:float" />
+            <element name="x:multi-switch" />
+            <element name="x:multi-properties" />
+            <element name="x:wrapper" />
+            <element name="x:marker" />
+            <element name="x:retrieve-marker" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R16">
+    <rule ref="x:R29" />
+    <rule ref="x:R30" />
+    <rule ref="x:R20" />
+    <declare>
+      <attribute name="id" />
+      <contents>
+        <union>
+          <repeat min="1">
+            <element name="x:table-row" />
+          </repeat>
+          <repeat min="1">
+            <element name="x:table-cell" />
+          </repeat>
+        </union>
+      </contents>
+    </declare>
+  </rule>
+  <rule id="x:R17">
+    <declare>
+      <attribute name="column-number" />
+      <attribute name="number-columns-spanned" />
+    </declare>
+  </rule>
+  <rule id="x:R20">
+    <rule ref="x:R31" />
+    <rule ref="x:R22" />
+    <declare>
+      <attribute name="clip" />
+      <attribute name="border-before-precedence" />
+      <attribute name="border-end-precedence" />
+      <attribute name="leader-pattern">
+        <union>
+          <string value="space" />
+          <string value="rule" />
+          <string value="dots" />
+          <string value="use-content" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-separation.inline-progression-direction" />
+      <attribute name="page-break-inside">
+        <union>
+          <string value="avoid" />
+          <string value="auto" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="white-space">
+        <union>
+          <string value="normal" />
+          <string value="pre" />
+          <string value="nowrap" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="table-omit-header-at-break">
+        <union>
+          <string value="true" />
+          <string value="false" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="clear">
+        <union>
+          <string value="start" />
+          <string value="end" />
+          <string value="left" />
+          <string value="right" />
+          <string value="both" />
+          <string value="none" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="leader-length.maximum" />
+      <attribute name="unicode-bidi">
+        <union>
+          <string value="normal" />
+          <string value="embed" />
+          <string value="bidi-override" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="provisional-label-separation" />
+      <attribute name="keep-together" />
+      <attribute name="keep-together.within-line" />
+      <attribute name="border-separation.block-progression-direction" />
+      <attribute name="direction">
+        <union>
+          <string value="ltr" />
+          <string value="rtl" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-after-precedence" />
+      <attribute name="leader-length" />
+      <attribute name="rule-style">
+        <union>
+          <string value="none" />
+          <string value="dotted" />
+          <string value="dashed" />
+          <string value="solid" />
+          <string value="double" />
+          <string value="groove" />
+          <string value="ridge" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="span">
+        <union>
+          <string value="none" />
+          <string value="all" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-separation" />
+      <attribute name="wrap-option">
+        <union>
+          <string value="no-wrap" />
+          <string value="wrap" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-collapse">
+        <union>
+          <string value="collapse" />
+          <string value="collapse-with-precedence" />
+          <string value="separate" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="linefeed-treatment">
+        <union>
+          <string value="ignore" />
+          <string value="preserve" />
+          <string value="treat-as-space" />
+          <string value="treat-as-zero-width-space" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="orphans" />
+      <attribute name="provisional-distance-between-starts" />
+      <attribute name="hyphenation-ladder-count" />
+      <attribute name="last-line-end-indent" />
+      <attribute name="line-stacking-strategy">
+        <union>
+          <string value="line-height" />
+          <string value="font-height" />
+          <string value="max-height" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="intrusion-displace">
+        <union>
+          <string value="auto" />
+          <string value="none" />
+          <string value="line" />
+          <string value="indent" />
+          <string value="block" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="white-space-treatment">
+        <union>
+          <string value="ignore" />
+          <string value="preserve" />
+          <string value="ignore-if-before-linefeed" />
+          <string value="ignore-if-after-linefeed" />
+          <string value="ignore-if-surrounding-linefeed" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="hyphenation-keep">
+        <union>
+          <string value="auto" />
+          <string value="column" />
+          <string value="page" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-spacing" />
+      <attribute name="empty-cells">
+        <union>
+          <string value="show" />
+          <string value="hide" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="relative-align">
+        <union>
+          <string value="before" />
+          <string value="baseline" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-start-precedence" />
+      <attribute name="leader-pattern-width" />
+      <attribute name="leader-alignment">
+        <union>
+          <string value="none" />
+          <string value="reference-area" />
+          <string value="page" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="widows" />
+      <attribute name="table-omit-footer-at-break">
+        <union>
+          <string value="true" />
+          <string value="false" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="table-layout">
+        <union>
+          <string value="auto" />
+          <string value="fixed" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="leader-length.optimum" />
+      <attribute name="keep-together.within-page" />
+      <attribute name="text-indent" />
+      <attribute name="float">
+        <union>
+          <string value="before" />
+          <string value="start" />
+          <string value="end" />
+          <string value="left" />
+          <string value="right" />
+          <string value="none" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="text-align-last">
+        <union>
+          <string value="relative" />
+          <string value="start" />
+          <string value="center" />
+          <string value="end" />
+          <string value="justify" />
+          <string value="inside" />
+          <string value="outside" />
+          <string value="left" />
+          <string value="right" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="leader-length.minimum" />
+      <attribute name="absolute-position">
+        <union>
+          <string value="auto" />
+          <string value="absolute" />
+          <string value="fixed" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="caption-side">
+        <union>
+          <string value="before" />
+          <string value="after" />
+          <string value="start" />
+          <string value="end" />
+          <string value="top" />
+          <string value="bottom" />
+          <string value="left" />
+          <string value="right" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="rule-thickness" />
+      <attribute name="white-space-collapse">
+        <union>
+          <string value="false" />
+          <string value="true" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="keep-together.within-column" />
+    </declare>
+  </rule>
+  <rule id="x:R21">
+    <declare>
+      <attribute name="margin" />
+      <attribute name="margin-left" />
+      <attribute name="margin-top" />
+      <attribute name="margin-right" />
+      <attribute name="margin-bottom" />
+    </declare>
+  </rule>
+  <rule id="x:R22">
+    <declare>
+      <attribute name="writing-mode">
+        <union>
+          <string value="lr-tb" />
+          <string value="rl-tb" />
+          <string value="tb-rl" />
+          <string value="lr" />
+          <string value="rl" />
+          <string value="tb" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="reference-orientation">
+        <union>
+          <string value="0" />
+          <string value="90" />
+          <string value="180" />
+          <string value="270" />
+          <string value="-90" />
+          <string value="-180" />
+          <string value="-270" />
+          <string value="0deg" />
+          <string value="90deg" />
+          <string value="180deg" />
+          <string value="270deg" />
+          <string value="-90deg" />
+          <string value="-180deg" />
+          <string value="-270deg" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R29">
+    <rule ref="x:R34" />
+    <declare>
+      <attribute name="speech-rate" />
+      <attribute name="cue-before" />
+      <attribute name="voice-family" />
+      <attribute name="font" />
+      <attribute name="stress" />
+      <attribute name="relative-position">
+        <union>
+          <string value="auto" />
+          <string value="static" />
+          <string value="relative" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="bottom" />
+      <attribute name="vertical-align" />
+      <attribute name="pause-after" />
+      <attribute name="position">
+        <union>
+          <string value="static" />
+          <string value="relative" />
+          <string value="absolute" />
+          <string value="fixed" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="richness" />
+      <attribute name="cue-after" />
+      <attribute name="font-selection-strategy">
+        <union>
+          <string value="auto" />
+          <string value="character-by-character" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="line-height.conditionality">
+        <union>
+          <string value="retain" />
+          <string value="discard" />
+        </union>
+      </attribute>
+      <attribute name="dominant-baseline">
+        <union>
+          <string value="auto" />
+          <string value="use-script" />
+          <string value="no-change" />
+          <string value="reset-size" />
+          <string value="ideographic" />
+          <string value="alphabetic" />
+          <string value="hanging" />
+          <string value="mathematical" />
+          <string value="central" />
+          <string value="middle" />
+          <string value="text-after-edge" />
+          <string value="text-before-edge" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="font-stretch">
+        <union>
+          <string value="normal" />
+          <string value="wider" />
+          <string value="narrower" />
+          <string value="ultra-condensed" />
+          <string value="extra-condensed" />
+          <string value="condensed" />
+          <string value="semi-condensed" />
+          <string value="semi-expanded" />
+          <string value="expanded" />
+          <string value="extra-expanded" />
+          <string value="ultra-expanded" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="cue" />
+      <attribute name="font-variant">
+        <union>
+          <string value="normal" />
+          <string value="small-caps" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="alignment-adjust" />
+      <attribute name="pitch" />
+      <attribute name="line-height.maximum" />
+      <attribute name="font-size-adjust" />
+      <attribute name="top" />
+      <attribute name="alignment-baseline">
+        <union>
+          <string value="auto" />
+          <string value="baseline" />
+          <string value="before-edge" />
+          <string value="text-before-edge" />
+          <string value="middle" />
+          <string value="central" />
+          <string value="after-edge" />
+          <string value="text-after-edge" />
+          <string value="top" />
+          <string value="text-top" />
+          <string value="bottom" />
+          <string value="text-bottom" />
+          <string value="ideographic" />
+          <string value="alphabetic" />
+          <string value="hanging" />
+          <string value="mathematical" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="right" />
+      <attribute name="font-size" />
+      <attribute name="role" />
+      <attribute name="play-during" />
+      <attribute name="font-weight">
+        <union>
+          <string value="normal" />
+          <string value="bold" />
+          <string value="bolder" />
+          <string value="lighter" />
+          <string value="inherit" />
+          <string value="100" />
+          <string value="200" />
+          <string value="300" />
+          <string value="400" />
+          <string value="500" />
+          <string value="600" />
+          <string value="700" />
+          <string value="800" />
+          <string value="900" />
+        </union>
+      </attribute>
+      <attribute name="line-height" />
+      <attribute name="speak-header">
+        <union>
+          <string value="once" />
+          <string value="always" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="azimuth" />
+      <attribute name="speak-punctuation">
+        <union>
+          <string value="code" />
+          <string value="none" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="font-family" />
+      <attribute name="line-height-shift-adjustment" />
+      <attribute name="line-height.minimum" />
+      <attribute name="baseline-shift" />
+      <attribute name="pause" />
+      <attribute name="pause-before" />
+      <attribute name="font-style">
+        <union>
+          <string value="normal" />
+          <string value="italic" />
+          <string value="oblique" />
+          <string value="backslant" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="source-document" />
+      <attribute name="line-height.optimum" />
+      <attribute name="volume" />
+      <attribute name="line-height.precedence" />
+      <attribute name="left" />
+      <attribute name="pitch-range" />
+      <attribute name="speak">
+        <union>
+          <string value="normal" />
+          <string value="none" />
+          <string value="spell-out" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="speak-numeral">
+        <union>
+          <string value="digits" />
+          <string value="continuous" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="elevation" />
+    </declare>
+  </rule>
+  <rule id="x:R30">
+    <rule ref="x:R21" />
+    <rule ref="x:R35" />
+    <declare>
+      <attribute name="space-before.precedence" />
+      <attribute name="space-before.minimum" />
+      <attribute name="break-after">
+        <union>
+          <string value="auto" />
+          <string value="column" />
+          <string value="page" />
+          <string value="even-page" />
+          <string value="odd-page" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="space-end" />
+      <attribute name="keep-with-next.within-page" />
+      <attribute name="end-indent" />
+      <attribute name="keep-with-previous.within-page" />
+      <attribute name="keep-with-next.within-column" />
+      <attribute name="space-end.maximum" />
+      <attribute name="block-progression-dimension.maximum" />
+      <attribute name="keep-with-next.within-line" />
+      <attribute name="height" />
+      <attribute name="inline-progression-dimension.maximum" />
+      <attribute name="space-after.minimum" />
+      <attribute name="keep-with-previous" />
+      <attribute name="max-width" />
+      <attribute name="inline-progression-dimension" />
+      <attribute name="block-progression-dimension.minimum" />
+      <attribute name="space-after.maximum" />
+      <attribute name="space-start.conditionality">
+        <union>
+          <string value="retain" />
+          <string value="discard" />
+        </union>
+      </attribute>
+      <attribute name="keep-with-next" />
+      <attribute name="block-progression-dimension.optimum" />
+      <attribute name="max-height" />
+      <attribute name="keep-with-previous.within-line" />
+      <attribute name="space-after" />
+      <attribute name="space-end.minimum" />
+      <attribute name="block-progression-dimension" />
+      <attribute name="text-align">
+        <union>
+          <string value="start" />
+          <string value="center" />
+          <string value="end" />
+          <string value="justify" />
+          <string value="inside" />
+          <string value="outside" />
+          <string value="left" />
+          <string value="right" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="min-width" />
+      <attribute name="space-start" />
+      <attribute name="page-break-after">
+        <union>
+          <string value="auto" />
+          <string value="always" />
+          <string value="avoid" />
+          <string value="left" />
+          <string value="right" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="space-after.optimum" />
+      <attribute name="space-start.maximum" />
+      <attribute name="inline-progression-dimension.minimum" />
+      <attribute name="space-before.optimum" />
+      <attribute name="space-end.conditionality">
+        <union>
+          <string value="retain" />
+          <string value="discard" />
+        </union>
+      </attribute>
+      <attribute name="inline-progression-dimension.optimum" />
+      <attribute name="space-before.conditionality">
+        <union>
+          <string value="retain" />
+          <string value="discard" />
+        </union>
+      </attribute>
+      <attribute name="min-height" />
+      <attribute name="space-after.precedence" />
+      <attribute name="width" />
+      <attribute name="space-before.maximum" />
+      <attribute name="keep-with-previous.within-column" />
+      <attribute name="space-end.precedence" />
+      <attribute name="space-end.optimum" />
+      <attribute name="space-start.minimum" />
+      <attribute name="break-before">
+        <union>
+          <string value="auto" />
+          <string value="column" />
+          <string value="page" />
+          <string value="even-page" />
+          <string value="odd-page" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="start-indent" />
+      <attribute name="space-after.conditionality">
+        <union>
+          <string value="retain" />
+          <string value="discard" />
+        </union>
+      </attribute>
+      <attribute name="space-before" />
+      <attribute name="space-start.optimum" />
+      <attribute name="space-start.precedence" />
+      <attribute name="page-break-before">
+        <union>
+          <string value="auto" />
+          <string value="always" />
+          <string value="avoid" />
+          <string value="left" />
+          <string value="right" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+    </declare>
+  </rule>
+  <rule id="x:R31">
+    <declare>
+      <attribute name="suppress-at-line-break">
+        <union>
+          <string value="auto" />
+          <string value="suppress" />
+          <string value="retain" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="word-spacing.precedence" />
+      <attribute name="letter-spacing" />
+      <attribute name="word-spacing.maximum" />
+      <attribute name="hyphenation-remain-character-count" />
+      <attribute name="country" />
+      <attribute name="glyph-orientation-vertical">
+        <union>
+          <string value="0" />
+          <string value="90" />
+          <string value="180" />
+          <string value="270" />
+          <string value="-90" />
+          <string value="-180" />
+          <string value="-270" />
+          <string value="0deg" />
+          <string value="90deg" />
+          <string value="180deg" />
+          <string value="270deg" />
+          <string value="-90deg" />
+          <string value="-180deg" />
+          <string value="-270deg" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="treat-as-word-space">
+        <union>
+          <string value="auto" />
+          <string value="true" />
+          <string value="false" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="word-spacing.optimum" />
+      <attribute name="hyphenate">
+        <union>
+          <string value="false" />
+          <string value="true" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="letter-spacing.precedence" />
+      <attribute name="hyphenation-push-character-count" />
+      <attribute name="language" />
+      <attribute name="letter-spacing.minimum" />
+      <attribute name="letter-spacing.conditionality">
+        <union>
+          <string value="retain" />
+          <string value="discard" />
+        </union>
+      </attribute>
+      <attribute name="color" />
+      <attribute name="z-index" />
+      <attribute name="visibility">
+        <union>
+          <string value="visible" />
+          <string value="hidden" />
+          <string value="collapse" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="text-depth" />
+      <attribute name="text-shadow" />
+      <attribute name="script" />
+      <attribute name="text-transform">
+        <union>
+          <string value="capitalize" />
+          <string value="uppercase" />
+          <string value="lowercase" />
+          <string value="none" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="word-spacing" />
+      <attribute name="word-spacing.conditionality">
+        <union>
+          <string value="retain" />
+          <string value="discard" />
+        </union>
+      </attribute>
+      <attribute name="letter-spacing.optimum" />
+      <attribute name="hyphenation-character" />
+      <attribute name="letter-spacing.maximum" />
+      <attribute name="text-altitude" />
+      <attribute name="text-decoration">
+        <normalize whitespace="trim" />
+        <stringtype ref="n:NMTOKENS" />
+      </attribute>
+      <attribute name="glyph-orientation-horizontal">
+        <union>
+          <string value="0" />
+          <string value="90" />
+          <string value="180" />
+          <string value="270" />
+          <string value="-90" />
+          <string value="-180" />
+          <string value="-270" />
+          <string value="0deg" />
+          <string value="90deg" />
+          <string value="180deg" />
+          <string value="270deg" />
+          <string value="-90deg" />
+          <string value="-180deg" />
+          <string value="-270deg" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="score-spaces">
+        <union>
+          <string value="true" />
+          <string value="false" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="word-spacing.minimum" />
+    </declare>
+  </rule>
+  <rule id="x:R34">
+    <declare>
+      <attribute name="border-before-style">
+        <union>
+          <string value="none" />
+          <string value="hidden" />
+          <string value="dotted" />
+          <string value="dashed" />
+          <string value="solid" />
+          <string value="double" />
+          <string value="groove" />
+          <string value="ridge" />
+          <string value="inset" />
+          <string value="outset" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-end-style">
+        <union>
+          <string value="none" />
+          <string value="hidden" />
+          <string value="dotted" />
+          <string value="dashed" />
+          <string value="solid" />
+          <string value="double" />
+          <string value="groove" />
+          <string value="ridge" />
+          <string value="inset" />
+          <string value="outset" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-left-style">
+        <union>
+          <string value="none" />
+          <string value="hidden" />
+          <string value="dotted" />
+          <string value="dashed" />
+          <string value="solid" />
+          <string value="double" />
+          <string value="groove" />
+          <string value="ridge" />
+          <string value="inset" />
+          <string value="outset" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-top-color" />
+      <attribute name="border-width" />
+      <attribute name="border-start-style">
+        <union>
+          <string value="none" />
+          <string value="hidden" />
+          <string value="dotted" />
+          <string value="dashed" />
+          <string value="solid" />
+          <string value="double" />
+          <string value="groove" />
+          <string value="ridge" />
+          <string value="inset" />
+          <string value="outset" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-bottom-width.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="padding-top.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="border-top-width.length" />
+      <attribute name="background-position-horizontal" />
+      <attribute name="border-top" />
+      <attribute name="padding-right" />
+      <attribute name="border-after-width.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="padding-bottom" />
+      <attribute name="border-after-width.length" />
+      <attribute name="background-repeat">
+        <union>
+          <string value="repeat" />
+          <string value="repeat-x" />
+          <string value="repeat-y" />
+          <string value="no-repeat" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-end-color" />
+      <attribute name="border-color" />
+      <attribute name="background-image" />
+      <attribute name="padding-bottom.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="padding-after.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="padding-before.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="border-right-style">
+        <union>
+          <string value="none" />
+          <string value="hidden" />
+          <string value="dotted" />
+          <string value="dashed" />
+          <string value="solid" />
+          <string value="double" />
+          <string value="groove" />
+          <string value="ridge" />
+          <string value="inset" />
+          <string value="outset" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-right" />
+      <attribute name="border" />
+      <attribute name="border-style" />
+      <attribute name="border-start-width.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="padding-top.length" />
+      <attribute name="padding-end" />
+      <attribute name="padding-before" />
+      <attribute name="border-right-color" />
+      <attribute name="border-top-style">
+        <union>
+          <string value="none" />
+          <string value="hidden" />
+          <string value="dotted" />
+          <string value="dashed" />
+          <string value="solid" />
+          <string value="double" />
+          <string value="groove" />
+          <string value="ridge" />
+          <string value="inset" />
+          <string value="outset" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-top-width" />
+      <attribute name="padding-start" />
+      <attribute name="border-left-width" />
+      <attribute name="padding-end.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="padding-left" />
+      <attribute name="padding-right.length" />
+      <attribute name="background-color" />
+      <attribute name="border-end-width.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="border-left-width.length" />
+      <attribute name="padding-before.length" />
+      <attribute name="padding-bottom.length" />
+      <attribute name="padding-start.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="border-before-width.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="border-bottom-style">
+        <union>
+          <string value="none" />
+          <string value="hidden" />
+          <string value="dotted" />
+          <string value="dashed" />
+          <string value="solid" />
+          <string value="double" />
+          <string value="groove" />
+          <string value="ridge" />
+          <string value="inset" />
+          <string value="outset" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-bottom-color" />
+      <attribute name="padding-left.length" />
+      <attribute name="padding" />
+      <attribute name="border-before-width.length" />
+      <attribute name="background-position-vertical" />
+      <attribute name="background-attachment">
+        <union>
+          <string value="scroll" />
+          <string value="fixed" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-end-width" />
+      <attribute name="border-bottom-width" />
+      <attribute name="padding-after" />
+      <attribute name="padding-start.length" />
+      <attribute name="padding-end.length" />
+      <attribute name="border-right-width" />
+      <attribute name="border-right-width.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="background-position" />
+      <attribute name="border-bottom" />
+      <attribute name="background" />
+      <attribute name="border-top-width.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="border-after-style">
+        <union>
+          <string value="none" />
+          <string value="hidden" />
+          <string value="dotted" />
+          <string value="dashed" />
+          <string value="solid" />
+          <string value="double" />
+          <string value="groove" />
+          <string value="ridge" />
+          <string value="inset" />
+          <string value="outset" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="border-after-color" />
+      <attribute name="border-before-color" />
+      <attribute name="border-end-width.length" />
+      <attribute name="border-left-color" />
+      <attribute name="border-left" />
+      <attribute name="padding-right.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="border-start-color" />
+      <attribute name="padding-top" />
+      <attribute name="border-before-width" />
+      <attribute name="border-bottom-width.length" />
+      <attribute name="border-right-width.length" />
+      <attribute name="padding-left.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="border-after-width" />
+      <attribute name="border-start-width" />
+      <attribute name="border-start-width.length" />
+      <attribute name="border-left-width.conditionality">
+        <union>
+          <string value="discard" />
+          <string value="retain" />
+        </union>
+      </attribute>
+      <attribute name="padding-after.length" />
+    </declare>
+  </rule>
+  <rule id="x:R35">
+    <declare>
+      <attribute name="display-align">
+        <union>
+          <string value="auto" />
+          <string value="before" />
+          <string value="center" />
+          <string value="after" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="overflow">
+        <union>
+          <string value="visible" />
+          <string value="hidden" />
+          <string value="scroll" />
+          <string value="auto" />
+          <string value="error-if-overflow" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+    </declare>
+  </rule>
+  <if>
+    <element name="x:root" />
+    <rule ref="x:R29" />
+    <rule ref="x:R30" />
+    <rule ref="x:R20" />
+    <declare>
+      <attribute name="media-usage">
+        <union>
+          <string value="auto" />
+          <string value="paginate" />
+          <string value="bounded-in-one-dimension" />
+          <string value="unbounded" />
+        </union>
+      </attribute>
+      <contents>
+        <sequence>
+          <element name="x:layout-master-set" />
+          <optional>
+            <element name="x:declarations" />
+          </optional>
+          <repeat min="1">
+            <element name="x:page-sequence" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:declarations" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:color-profile" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:color-profile" />
+    <declare>
+      <attribute name="rendering-intent" />
+      <required>
+        <attribute name="color-profile-name" />
+      </required>
+      <required>
+        <attribute name="src" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:layout-master-set" />
+    <declare>
+      <contents>
+        <sequence>
+          <repeat>
+            <element name="x:page-sequence-master" />
+          </repeat>
+          <element name="x:simple-page-master" />
+          <repeat>
+            <union>
+              <element name="x:simple-page-master" />
+              <element name="x:page-sequence-master" />
+            </union>
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:page-sequence-master" />
+    <declare>
+      <required>
+        <attribute name="master-name" />
+      </required>
+      <contents>
+        <repeat min="1">
+          <union>
+            <element name="x:single-page-master-reference" />
+            <element name="x:repeatable-page-master-reference" />
+            <element name="x:repeatable-page-master-alternatives" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:single-page-master-reference" />
+    <declare>
+      <required>
+        <attribute name="master-reference" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:repeatable-page-master-reference" />
+    <declare>
+      <attribute name="maximum-repeats" />
+      <required>
+        <attribute name="master-reference" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:repeatable-page-master-alternatives" />
+    <declare>
+      <attribute name="maximum-repeats" />
+      <contents>
+        <repeat min="1">
+          <element name="x:conditional-page-master-reference" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:conditional-page-master-reference" />
+    <declare>
+      <required>
+        <attribute name="master-reference" />
+      </required>
+      <attribute name="page-position">
+        <union>
+          <string value="first" />
+          <string value="last" />
+          <string value="rest" />
+          <string value="any" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="blank-or-not-blank">
+        <union>
+          <string value="blank" />
+          <string value="not-blank" />
+          <string value="any" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="odd-or-even">
+        <union>
+          <string value="odd" />
+          <string value="even" />
+          <string value="any" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:simple-page-master" />
+    <rule ref="x:R21" />
+    <rule ref="x:R22" />
+    <declare>
+      <required>
+        <attribute name="master-name" />
+      </required>
+      <attribute name="page-height" />
+      <attribute name="page-width" />
+      <attribute name="size" />
+      <contents>
+        <sequence>
+          <element name="x:region-body" />
+          <optional>
+            <element name="x:region-before" />
+          </optional>
+          <optional>
+            <element name="x:region-after" />
+          </optional>
+          <optional>
+            <element name="x:region-start" />
+          </optional>
+          <optional>
+            <element name="x:region-end" />
+          </optional>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:region-body" />
+    <rule ref="x:R34" />
+    <rule ref="x:R35" />
+    <rule ref="x:R21" />
+    <rule ref="x:R22" />
+    <declare>
+      <attribute name="clip" />
+      <attribute name="region-name" />
+      <attribute name="column-gap" />
+      <attribute name="column-count" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:region-before" />
+    <rule ref="x:R7" />
+  </if>
+  <if>
+    <element name="x:region-after" />
+    <rule ref="x:R7" />
+  </if>
+  <if>
+    <element name="x:region-start" />
+    <rule ref="x:R7" />
+  </if>
+  <if>
+    <element name="x:region-end" />
+    <rule ref="x:R7" />
+  </if>
+  <if>
+    <element name="x:page-sequence" />
+    <rule ref="x:R8" />
+    <declare>
+      <required>
+        <attribute name="master-reference" />
+      </required>
+      <attribute name="format" />
+      <attribute name="grouping-separator" />
+      <attribute name="force-page-count">
+        <union>
+          <string value="auto" />
+          <string value="even" />
+          <string value="odd" />
+          <string value="end-on-even" />
+          <string value="end-on-odd" />
+          <string value="no-force" />
+          <string value="inherit" />
+        </union>
+      </attribute>
+      <attribute name="letter-value">
+        <union>
+          <string value="auto" />
+          <string value="alphabetic" />
+          <string value="traditional" />
+        </union>
+      </attribute>
+      <attribute name="initial-page-number" />
+      <attribute name="grouping-size" />
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:title" />
+          </optional>
+          <repeat>
+            <element name="x:static-content" />
+          </repeat>
+          <element name="x:flow" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:title" />
+    <rule ref="x:R29" />
+    <rule ref="x:R30" />
+    <rule ref="x:R20" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:bidi-override" />
+            <element name="x:character" />
+            <element name="x:external-graphic" />
+            <element name="x:instream-foreign-object" />
+            <element name="x:inline" />
+            <element name="x:inline-container" />
+            <element name="x:leader" />
+            <element name="x:page-number" />
+            <element name="x:page-number-citation" />
+            <element name="x:basic-link" />
+            <element name="x:multi-toggle" />
+            <element name="x:multi-switch" />
+            <element name="x:multi-properties" />
+            <element name="x:wrapper" />
+            <element name="x:marker" />
+            <element name="x:retrieve-marker" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:static-content" />
+    <rule ref="x:R9" />
+  </if>
+  <if>
+    <element name="x:flow" />
+    <rule ref="x:R9" />
+  </if>
+  <if>
+    <element name="x:block" />
+    <rule ref="x:R8" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:initial-property-set" />
+            <element name="x:bidi-override" />
+            <element name="x:character" />
+            <element name="x:external-graphic" />
+            <element name="x:instream-foreign-object" />
+            <element name="x:inline" />
+            <element name="x:inline-container" />
+            <element name="x:leader" />
+            <element name="x:page-number" />
+            <element name="x:page-number-citation" />
+            <element name="x:basic-link" />
+            <element name="x:multi-toggle" />
+            <element name="x:block" />
+            <element name="x:block-container" />
+            <element name="x:table-and-caption" />
+            <element name="x:table" />
+            <element name="x:list-block" />
+            <element name="x:footnote" />
+            <element name="x:float" />
+            <element name="x:multi-switch" />
+            <element name="x:multi-properties" />
+            <element name="x:wrapper" />
+            <element name="x:marker" />
+            <element name="x:retrieve-marker" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:block-container" />
+    <rule ref="x:R10" />
+  </if>
+  <if>
+    <element name="x:bidi-override" />
+    <rule ref="x:R11" />
+  </if>
+  <if>
+    <element name="x:character" />
+    <rule ref="x:R12" />
+    <declare>
+      <required>
+        <attribute name="character" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:initial-property-set" />
+    <rule ref="x:R12" />
+  </if>
+  <if>
+    <element name="x:external-graphic" />
+    <rule ref="x:R13" />
+    <declare>
+      <attribute name="src" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:instream-foreign-object" />
+    <rule ref="x:R13" />
+    <declare>
+      <contents>
+        <repeat>
+          <element />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:inline" />
+    <rule ref="x:R14" />
+  </if>
+  <if>
+    <element name="x:inline-container" />
+    <rule ref="x:R8" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <element name="x:block" />
+            <element name="x:block-container" />
+            <element name="x:table-and-caption" />
+            <element name="x:table" />
+            <element name="x:list-block" />
+            <element name="x:footnote" />
+            <element name="x:float" />
+            <element name="x:multi-switch" />
+            <element name="x:multi-properties" />
+            <element name="x:wrapper" />
+            <element name="x:marker" />
+            <element name="x:retrieve-marker" />
+          </union>
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:leader" />
+    <rule ref="x:R11" />
+  </if>
+  <if>
+    <element name="x:page-number" />
+    <rule ref="x:R12" />
+  </if>
+  <if>
+    <element name="x:page-number-citation" />
+    <rule ref="x:R12" />
+    <declare>
+      <required>
+        <attribute name="ref-id" />
+      </required>
+    </declare>
+  </if>
+  <if>
+    <element name="x:table-and-caption" />
+    <rule ref="x:R8" />
+    <declare>
+      <contents>
+        <sequence>
+          <optional>
+            <element name="x:table-caption" />
+          </optional>
+          <element name="x:table" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:table-caption" />
+    <rule ref="x:R10" />
+  </if>
+  <if>
+    <element name="x:table" />
+    <rule ref="x:R8" />
+    <declare>
+      <contents>
+        <sequence>
+          <repeat>
+            <element name="x:table-column" />
+          </repeat>
+          <optional>
+            <element name="x:table-header" />
+          </optional>
+          <optional>
+            <element name="x:table-footer" />
+          </optional>
+          <repeat min="1">
+            <element name="x:table-body" />
+          </repeat>
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:table-column" />
+    <rule ref="x:R29" />
+    <rule ref="x:R30" />
+    <rule ref="x:R20" />
+    <rule ref="x:R17" />
+    <declare>
+      <attribute name="number-columns-repeated" />
+      <attribute name="column-width" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:table-header" />
+    <rule ref="x:R16" />
+  </if>
+  <if>
+    <element name="x:table-footer" />
+    <rule ref="x:R16" />
+  </if>
+  <if>
+    <element name="x:table-body" />
+    <rule ref="x:R16" />
+  </if>
+  <if>
+    <element name="x:table-row" />
+    <rule ref="x:R8" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:table-cell" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:table-cell" />
+    <rule ref="x:R10" />
+    <rule ref="x:R17" />
+    <declare>
+      <attribute name="starts-row">
+        <union>
+          <string value="true" />
+          <string value="false" />
+        </union>
+      </attribute>
+      <attribute name="ends-row">
+        <union>
+          <string value="true" />
+          <string value="false" />
+        </union>
+      </attribute>
+      <attribute name="number-rows-spanned" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:list-block" />
+    <rule ref="x:R8" />
+    <declare>
+      <contents>
+        <repeat min="1">
+          <element name="x:list-item" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:list-item" />
+    <rule ref="x:R8" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:list-item-label" />
+          <element name="x:list-item-body" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:list-item-label" />
+    <rule ref="x:R10" />
+  </if>
+  <if>
+    <element name="x:list-item-body" />
+    <rule ref="x:R10" />
+  </if>
+  <if>
+    <element name="x:float" />
+    <rule ref="x:R10" />
+  </if>
+  <if>
+    <element name="x:footnote" />
+    <rule ref="x:R8" />
+    <declare>
+      <contents>
+        <sequence>
+          <element name="x:inline" />
+          <element name="x:footnote-body" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:footnote-body" />
+    <rule ref="x:R10" />
+  </if>
+  <if>
+    <element name="x:basic-link" />
+    <rule ref="x:R14" />
+    <declare>
+      <attribute name="external-destination" />
+      <attribute name="target-presentation-context" />
+      <attribute name="indicate-destination">
+        <union>
+          <string value="true" />
+          <string value="false" />
+        </union>
+      </attribute>
+      <attribute name="show-destination">
+        <union>
+          <string value="replace" />
+          <string value="new" />
+        </union>
+      </attribute>
+      <attribute name="target-stylesheet" />
+      <attribute name="destination-placement-offset" />
+      <attribute name="internal-destination" />
+      <attribute name="target-processing-context" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:wrapper" />
+    <rule ref="x:R14" />
+  </if>
+  <if>
+    <element name="x:marker" />
+    <declare>
+      <contents>
+        <repeat>
+          <union>
+            <string />
+            <element name="x:bidi-override" />
+            <element name="x:character" />
+            <element name="x:external-graphic" />
+            <element name="x:instream-foreign-object" />
+            <element name="x:inline" />
+            <element name="x:inline-container" />
+            <element name="x:leader" />
+            <element name="x:page-number" />
+            <element name="x:page-number-citation" />
+            <element name="x:basic-link" />
+            <element name="x:multi-toggle" />
+            <element name="x:block" />
+            <element name="x:block-container" />
+            <element name="x:table-and-caption" />
+            <element name="x:table" />
+            <element name="x:list-block" />
+            <element name="x:footnote" />
+            <element name="x:float" />
+            <element name="x:multi-switch" />
+            <element name="x:multi-properties" />
+            <element name="x:wrapper" />
+            <element name="x:marker" />
+            <element name="x:retrieve-marker" />
+          </union>
+        </repeat>
+      </contents>
+      <attribute name="marker-class-name" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:retrieve-marker" />
+    <declare>
+      <attribute name="retrieve-position">
+        <union>
+          <string value="first-starting-within-page" />
+          <string value="first-including-carryover" />
+          <string value="last-starting-within-page" />
+          <string value="last-ending-within-page" />
+        </union>
+      </attribute>
+      <attribute name="retrieve-class-name" />
+      <attribute name="retrieve-boundary">
+        <union>
+          <string value="page" />
+          <string value="page-sequence" />
+          <string value="document" />
+        </union>
+      </attribute>
+    </declare>
+  </if>
+  <if>
+    <element name="x:multi-switch" />
+    <rule ref="x:R8" />
+    <declare>
+      <attribute name="auto-restore">
+        <union>
+          <string value="true" />
+          <string value="false" />
+        </union>
+      </attribute>
+      <contents>
+        <repeat min="1">
+          <element name="x:multi-case" />
+        </repeat>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:multi-case" />
+    <rule ref="x:R14" />
+    <declare>
+      <attribute name="case-title" />
+      <attribute name="case-name" />
+      <attribute name="starting-state" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:multi-toggle" />
+    <rule ref="x:R11" />
+    <declare>
+      <attribute name="switch-to" />
+    </declare>
+  </if>
+  <if>
+    <element name="x:multi-properties" />
+    <rule ref="x:R8" />
+    <declare>
+      <contents>
+        <sequence>
+          <repeat min="1">
+            <element name="x:multi-property-set" />
+          </repeat>
+          <element name="x:wrapper" />
+        </sequence>
+      </contents>
+    </declare>
+  </if>
+  <if>
+    <element name="x:multi-property-set" />
+    <rule ref="x:R8" />
+    <declare>
+      <required>
+        <attribute name="active-state">
+          <union>
+            <string value="link" />
+            <string value="visited" />
+            <string value="active" />
+            <string value="hover" />
+            <string value="focus" />
+          </union>
+        </attribute>
+      </required>
+    </declare>
+  </if>
+</dsd>
+

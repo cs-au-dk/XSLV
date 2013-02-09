@@ -1,0 +1,104 @@
+<!ENTITY % RULE "declare | require | if | pointer | unique | rule">
+<!ENTITY % BOOLEXP "and | or | not | imply | equiv | one | parent | 
+                    ancestor | child | descendant | this | element | 
+                    attribute | contents | boolexp">
+<!ENTITY % REGEXP "sequence | optional | complement | union | 
+                   intersection | minus | repeat | string | char | 
+                   stringtype | contenttype | %BOOLEXP;">
+<!ENTITY % DEFINITION "rule | boolexp | stringtype | contenttype">
+
+<!ELEMENT dsd (%RULE; | %DEFINITION; | dsd | include | doc)*>
+<!ATTLIST dsd root CDATA #IMPLIED
+              meta CDATA #IMPLIED>
+
+<!ELEMENT declare (attribute | required | contents)*>
+<!ATTLIST declare meta CDATA #IMPLIED>
+
+<!ELEMENT require (%BOOLEXP;)*>
+<!ATTLIST require meta CDATA #IMPLIED>
+
+<!ELEMENT if ((%BOOLEXP;),(%RULE;)*)>
+<!ELEMENT required (attribute)*>
+<!ELEMENT contents (%REGEXP; | normalize | default)*>
+
+<!ELEMENT and (%BOOLEXP;)*>
+<!ELEMENT or (%BOOLEXP;)*>
+<!ELEMENT not (%BOOLEXP;)>
+<!ELEMENT imply ((%BOOLEXP;),(%BOOLEXP;))>
+<!ELEMENT equiv (%BOOLEXP;)*>
+<!ELEMENT one (%BOOLEXP;)*>
+<!ELEMENT parent (%BOOLEXP;)>
+<!ELEMENT ancestor (%BOOLEXP;)>
+<!ELEMENT child (%BOOLEXP;)>
+<!ELEMENT descendant (%BOOLEXP;)>
+<!ELEMENT this EMPTY>
+
+<!ELEMENT element EMPTY>
+<!ATTLIST element name CDATA #IMPLIED
+                  meta CDATA #IMPLIED>
+
+<!ELEMENT attribute (%REGEXP; | normalize | default)*>
+<!ATTLIST attribute name CDATA #IMPLIED
+                    meta CDATA #IMPLIED>
+
+<!ELEMENT sequence (%REGEXP;)*>
+<!ELEMENT optional (%REGEXP;)>
+<!ELEMENT complement (%REGEXP;)>
+<!ELEMENT union (%REGEXP;)*>
+<!ELEMENT intersection (%REGEXP;)*>
+<!ELEMENT minus ((%REGEXP;),(%REGEXP;))>
+
+<!ELEMENT repeat (%REGEXP;)>
+<!ATTLIST repeat number CDATA #IMPLIED
+                 min CDATA #IMPLIED
+                 max CDATA #IMPLIED>
+
+<!ELEMENT string EMPTY>
+<!ATTLIST string value CDATA #IMPLIED>
+
+<!ELEMENT char EMPTY>
+<!ATTLIST char set CDATA #IMPLIED
+               min CDATA #IMPLIED
+               max CDATA #IMPLIED>
+
+<!ELEMENT rule (%RULE;)*>
+<!ATTLIST rule id CDATA #IMPLIED
+               ref CDATA #IMPLIED>
+
+<!ELEMENT boolexp (%BOOLEXP;)?>
+<!ATTLIST boolexp id CDATA #IMPLIED
+                  ref CDATA #IMPLIED>
+
+<!ELEMENT stringtype (%REGEXP;)?>
+<!ATTLIST stringtype id CDATA #IMPLIED
+                     ref CDATA #IMPLIED
+                     meta CDATA #IMPLIED>
+
+<!ELEMENT contenttype (%REGEXP;)?>
+<!ATTLIST contenttype id CDATA #IMPLIED
+                      ref CDATA #IMPLIED>
+
+<!ELEMENT normalize EMPTY>
+<!ATTLIST normalize whitespace (preserve|compress|trim) #IMPLIED
+                    case (preserve|upper|lower) #IMPLIED>
+
+<!ELEMENT default ANY>
+<!ATTLIST default value CDATA #IMPLIED
+                  meta CDATA #IMPLIED>
+
+<!ELEMENT unique ((%BOOLEXP;),(attributefield|chardatafield)*)>
+
+<!ELEMENT pointer ((%BOOLEXP;)?,(attributefield|chardatafield)*)>
+
+<!ELEMENT attributefield (%BOOLEXP;)?>
+<!ATTLIST attributefield name CDATA #REQUIRED
+                         type (string|qname) #IMPLIED>
+
+<!ELEMENT chardatafield (%BOOLEXP;)?>
+<!ATTLIST chardatafield type (string|qname) #IMPLIED>
+
+<!ELEMENT include EMPTY>
+<!ATTLIST include href CDATA #REQUIRED>
+
+<!ELEMENT doc ANY>
+<!ATTLIST doc m CDATA #IMPLIED>

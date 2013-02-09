@@ -1,0 +1,105 @@
+html {
+	padding-right: 2em; padding-left: 2em; background: #e3ebed; padding-bottom: 3em; padding-top: 0em; min-width: 700px
+}
+body {
+	color: #333; font-family: verdana,sans-serif; voice-family: inherit
+}
+div {
+	color: #333; font-family: verdana,sans-serif; voice-family: inherit
+}
+td {
+	color: #333; font-family: verdana,sans-serif; voice-family: inherit
+}
+th {
+	color: #333; font-family: verdana,sans-serif; voice-family: inherit
+}
+h2 {
+	color: #333; font-family: verdana,sans-serif; voice-family: inherit
+}
+h3 {
+	color: #333; font-family: verdana,sans-serif; voice-family: inherit
+}
+h4 {
+	color: #333; font-family: verdana,sans-serif; voice-family: inherit
+}
+#projects {
+	font-size: 70%; padding-bottom: 2em; text-align: right
+}
+a {
+	color: #008
+}
+a:hover {
+	color: #33f
+}
+h1 {
+	font-weight: bold; font-size: 200%; padding-bottom: 0.5em; margin: 0px; color: #335; font-family: trebuchet ms,arial,verdana,sans-serif
+}
+tt {
+	font-family: lucida console,monospace,courier
+}
+#main {
+	clear: both; border-right: #666 1px solid; padding-right: 20px; border-top: #666 1px solid; margin-top: -1px; padding-left: 20px; min-height: 200px; background: #ffffff; padding-bottom: 20px; border-left: #666 1px solid; width: 98%; padding-top: 20px; border-bottom: #666 1px solid; text-align: left
+}
+#tabs {
+	clear: both; font-size: 85%; font-family: tahoma,verdana,sans-serif; text-align: center
+}
+#tabs ul {
+	padding-right: 0px; display: inline; padding-left: 0px; padding-bottom: 0px; margin: 0px; padding-top: 0px; list-style-type: none
+}
+#tabs li {
+	float: left
+}
+#tabs a {
+	width: 150px
+}
+span {
+	width: 150px
+}
+#tabs span {
+	border-right: #666 1px solid; padding-right: 4px; border-top: #666 1px solid; padding-left: 10px; background: #d0d8f0; float: left; padding-bottom: 6px; margin: 0px 2px 0px 0px; border-left: #666 1px solid; color: #333; padding-top: 6px; position: relative; top: 0px; text-decoration: none
+}
+#tabs a {
+	border-right: #aaa 1px solid; padding-right: 4px; border-top: #aaa 1px solid; padding-left: 10px; background: #e3ebff; float: left; padding-bottom: 5px; margin: 1px 2px 0px 0px; border-left: #aaa 1px solid; color: #333; padding-top: 5px; position: relative; top: 0px; text-decoration: none
+}
+#tabs a:hover {
+	padding-right: 4px; margin-top: 0px; padding-left: 10px; background: #d8e0f8; padding-bottom: 6px; padding-top: 5px; position: relative; top: 0px
+}
+ul.fancy {
+	padding-right: 0px; padding-left: 0px; padding-bottom: 0px; margin-left: 1em; padding-top: 0px
+}
+ul.fancy li {
+	background-position: 0px -3px; margin-top: 1em; padding-left: 45px; margin-bottom: 1em; padding-bottom: 5px; padding-top: 5px; background-repeat: no-repeat; list-style-type: none
+}
+ul.fancy li.pdf {
+	background-image: url(/~amoeller/icons/pdf.gif)
+}
+ul.fancy li.doc {
+	background-image: url(/~amoeller/icons/info.png)
+}
+ul.fancy li.jar {
+	background-image: url(/~amoeller/icons/jar.png)
+}
+ul.fancy li.java {
+	background-image: url(/~amoeller/icons/java.png)
+}
+ul.fancy li.txt {
+	background-image: url(/~amoeller/icons/text.png)
+}
+ul.fancy li.link {
+	background-image: url(/~amoeller/icons/link.png)
+}
+ul.fancy li.package {
+	background-image: url(/~amoeller/icons/package.png)
+}
+ul.fancy li.presentation {
+	background-image: url(/~amoeller/icons/presentation.png)
+}
+ul.plain li {
+	padding-right: 0px; padding-left: 0px; padding-bottom: 0px; margin: 0px; padding-top: 0px; list-style-type: disc
+}
+table.form {
+	border-right: 1px solid; padding-right: 1em; border-top: 1px solid; padding-left: 1em; background: #e3ebf0; padding-bottom: 1em; margin-left: auto; border-left: 1px solid; margin-right: auto; padding-top: 1em; border-bottom: 1px solid
+}
+.smallcap {
+	font-variant: small-caps
+}

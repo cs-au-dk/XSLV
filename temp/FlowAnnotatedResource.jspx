@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- params
+systemId
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+  <jsp:directive.page language="java" session="true" isThreadSafe="true" isELIgnored="false" pageEncoding="utf-8"/>
+  <jsp:useBean id="validator" scope="session" class="dongfang.xsltools.context.InteractiveRequestResponseBean"/>
+  <tr xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xml:lang="en" lang="en">
+    <td>
+      <table width="100%">
+        <tr>
+          <td colspan="2">
+            <i>${param.systemId}</i>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <c:url var="editURL" value="EditorWindow.html?systemId=${param.systemId}&amp;amp;mainpage=${param.mainpage}" />
+            <a href="${editURL}">edit</a>
+<!--<a onclick="javascript:window.open('./EditorWindow.html?systemId=${param.systemId}', 
+'edit', 'toolbar=no,menu=no,directories=no,status=no')">edit</a>
+-->
+          </td>
+          <td>
+            <jsp:setProperty name="validator" property="annotatedSystemId" value="${param.systemId}">
+ </jsp:setProperty>
+ 			<c:url var="viewFlowURL" value="${validator.annotatedSystemId}" />
+            <a href="${viewFlowURL}">View flow annotations
+</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</jsp:root>
