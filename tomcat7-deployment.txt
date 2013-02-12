@@ -1,0 +1,23 @@
+How to deploy the XSLV web application to Tomcat 7:
+
+1) Tomcat7 must be installed. It runs on a JVM (Java machine with compiler tools included), not just a JRE (Runtime Environment).
+2) From the root dir of this project, run "ant war"
+3) If all goes well, there should now be a dist/xslv.war file, containing almost necessary resources except dongfang-handler.jar. Deploy this to Tomcat in the usual way (file copy or via Manager app.)
+4) In dist/endorsed, there should be a dongfang-handler.jar file.
+
+For full functionality, the XSLV web app also needs Graphviz to be installed: http://www.graphviz.org/
+
+The JVM running the app must have the following parameters set. For how to do this, refer to Tomcat documentation:
+-Djava.endorsed.dirs=<Path to the directory where dongfang-handler.jar resides (excluding the file name of the jar, just the dir.)>
+-Ddongfang.xsltools.dot.exe=<Path to the dot.exe or dot executable of Graphviz, including filename>
+
+Instead of setting java.endorsed.dirs, one can also endorse dongfang-handler.jar by copying it to the default endorsed dir of the JVM. See http://download.java.net/jdk8/docs/technotes/guides/standards/index.html
+
+
+Optionally these system properties may also be set:
+Process logging files (logging of online validation process progress, for debugging cycles, stuck processes etc). Will default to the value of java.io.tmpdir if not set:
+-Ddongfang.xsltools.progresslogdir=<Path to a dir with write access>
+
+Working dir for Graphviz. Will default to the value of java.io.tmpdir if not set:
+-Ddongfang.xsltools.dot.work=<Path to a tmp dir with write access>
+

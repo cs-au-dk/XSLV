@@ -67,13 +67,8 @@
 
 	<target name="jar" depends="compile">
 		<mkdir dir="dist"/>
-		<jar jarfile="dist/${project}.jar" basedir="build"/>
-		
-		<!-- 
-		For the web app, there is a special "protocol" used for making URLs that refer to
-		resources used in the current session: dongfang protocol. This is the handler. It 
-		should be endorsed to the JVM running the web app.
-		-->
+		<jar jarfile="dist/${project}.jar" manifest="manifest.txt" basedir="build"/>
+		<mkdir dir="dist/endorsed"/>
 	    <jar destfile="dist/endorsed/dongfang-handler.jar">
 	      <fileset dir="build">
 	        <include name="dongfang/xsltools/resolver/ResolutionContext.class"/>
