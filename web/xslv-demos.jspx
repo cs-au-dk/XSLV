@@ -63,8 +63,19 @@
           <jsp:scriptlet>
             dongfang.xsltools.util.TestTriple triple;
             if ((triple = (dongfang.xsltools.util.TestTriple)triples.get(pageContext.findAttribute("democase")))==null) {
-           	  java.net.URL Url = new java.net.URL("http://localhost:8080" + request.getContextPath() + "/examples/" + pageContext.findAttribute("democase") + "/triple.xml");
-   	          triple = dongfang.xsltools.util.TestTriple.readTriple(Url);
+           	  //java.net.URL Url = new java.net.URL("http://localhost:8080" + request.getContextPath() + "/examples/" + pageContext.findAttribute("democase") + "/triple.xml");
+
+           	  String myURL = request.getRequestURL().toString();
+           	  // TODO: How to properly do this??? Reconstruct an URL to the hostname and port of the incoming request
+           	  // URL but with context stripped.
+           	  String ctx = request.getContextPath();
+           	  int idx = myURL.indexOf(ctx) + ctx.length();
+           	  myURL = myURL.substring(0, idx) + "/examples/";
+           	  
+           	  myURL += pageContext.findAttribute("democase") + "/triple.xml";
+           	  
+           	  java.net.URL url = new java.net.URL(myURL);
+   	          triple = dongfang.xsltools.util.TestTriple.readTriple(url);
 			  triples.put(pageContext.findAttribute("democase"), triple);
             }
             pageContext.setAttribute("triple", triple);

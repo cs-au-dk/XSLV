@@ -41,7 +41,14 @@
 	<c:set var="democase" scope="session" value="${param.democase}" />
 	<jsp:scriptlet>
   String democase = request.getParameter("democase");
-  String prefix = "http://localhost:8080/" + request.getContextPath() + "/examples/";
+ 
+  String myURL = request.getRequestURL().toString();
+  // TODO: How to properly do this??? Reconstruct an URL to the hostname and port of the incoming request
+  // URL but with context stripped.
+  String ctx = request.getContextPath();
+  int idx = myURL.indexOf(ctx) + ctx.length();
+  myURL = myURL.substring(0, idx);
+  String prefix = myURL + "/examples/";
   String suffix = "/triple.xml";
   
   /* Quite silly style, but at least no security hole */
@@ -70,7 +77,7 @@
   {
     try {
      String triple = prefix + democase + suffix;
-     demonstrator.preresolveTriple(triple, "http://localhost:8080" + request.getContextPath());
+     demonstrator.preresolveTriple(triple, myURL);
      demonstrator.reset(false);
   }
   catch (Exception ex) {
