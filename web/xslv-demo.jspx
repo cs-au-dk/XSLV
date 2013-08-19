@@ -52,8 +52,7 @@
   String suffix = "/triple.xml";
   
   /* Quite silly style, but at least no security hole */
-  if ("adressebog2xhtml".equals(democase)
-   || "agenda2xhtml".equals(democase)
+  if ("agenda2xhtml".equals(democase)
    || "availablesupplies2html".equals(democase)
    || "dsd2html".equals(democase)
    || "emaillist2xhtml".equals(democase)

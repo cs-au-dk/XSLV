@@ -14,7 +14,6 @@
  * This is the master control of which democases are included.
  */
     String[] democases = new String[] {
-    "adressebog2xhtml",
     "agenda2xhtml",
     "supplies2html",
     "dsd2html",

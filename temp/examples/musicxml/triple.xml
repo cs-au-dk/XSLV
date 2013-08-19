@@ -1,6 +1,5 @@
 <triple name="adressebog">
   <input type="DTD" DTDNamespaceURI="">io/partwise.dtd</input>
   <output>io/timewise.dtd</output>
-<!--  <xslt>xslt/adressebog_experiment.xsl</xslt> -->
   <xslt>xslt/parttime.xsl</xslt>
 </triple>

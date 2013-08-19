@@ -8,7 +8,7 @@
 This is a rather bad stylesheet, in terms of output validity. Some examples of errors are:
 <ul>
 
-<li>As in the <i>adressebog2xhtml</i> example, there is an attempt to output documents with two roots: <tt>link</tt> and <tt>html</tt>.</li>
+<li>As in the <i>adressebog2xhtml</i> example (which we have removed on request of the original author of the XSLT), there is an attempt to output documents with two roots: <tt>link</tt> and <tt>html</tt>.</li>
 <li>An attempt to make small paragraphs by nesting <tt>p</tt> elements into <tt>small</tt> elements.</li>
 <!--
 <li>Contents of <tt>href</tt> attributes on <tt>a</t> elements are copied from <tt>#PCDATA</tt>-declared elements. DTD has no text type specifying valid email addresses.</li>
