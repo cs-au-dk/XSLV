@@ -1,4 +1,4 @@
-<triple name="adressebog">
+<triple name="musicxml">
   <input type="DTD" DTDNamespaceURI="">io/partwise.dtd</input>
   <output>io/timewise.dtd</output>
   <xslt>xslt/parttime.xsl</xslt>
